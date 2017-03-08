@@ -1,0 +1,57 @@
+
+/* Class = "UILabel"; text = "ID:"; ObjectID = "7TN-bM-ozM"; */
+"7TN-bM-ozM.text" = "ID:";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "8ek-sm-CuR"; */
+"8ek-sm-CuR.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "9Q1-Bm-7x7"; */
+"9Q1-Bm-7x7.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "UIButton"; normalTitle = "LOAD"; ObjectID = "B2H-K0-Zaa"; */
+"B2H-K0-Zaa.normalTitle" = "LOAD";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "BbH-Sx-YCA"; */
+"BbH-Sx-YCA.title" = "Item";
+
+/* Class = "UIButton"; normalTitle = "VIDEO SINGLE"; ObjectID = "DXp-i6-bA3"; */
+"DXp-i6-bA3.normalTitle" = "AD1";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Dmm-0n-MpM"; */
+"Dmm-0n-MpM.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "INFO"; ObjectID = "MPs-Uk-gBi"; */
+"MPs-Uk-gBi.normalTitle" = "INFO";
+
+/* Class = "UIButton"; normalTitle = "SHOW"; ObjectID = "Qs2-b1-ZFN"; */
+"Qs2-b1-ZFN.normalTitle" = "SHOW";
+
+/* Class = "UIButton"; normalTitle = "SHOW"; ObjectID = "TU7-PV-Ggv"; */
+"TU7-PV-Ggv.normalTitle" = "SHOW";
+
+/* Class = "UIButton"; normalTitle = "SHOW"; ObjectID = "TdC-7w-jhy"; */
+"TdC-7w-jhy.normalTitle" = "SHOW";
+
+/* Class = "UILabel"; text = "SDK V"; ObjectID = "foj-5w-V4R"; */
+"foj-5w-V4R.text" = "SDK V";
+
+/* Class = "UIButton"; normalTitle = "VIDEO MULTI"; ObjectID = "g42-R9-zWY"; */
+"g42-R9-zWY.normalTitle" = "VIDEO MULTI";
+
+/* Class = "UIButton"; normalTitle = "LOAD"; ObjectID = "hJq-92-LhY"; */
+"hJq-92-LhY.normalTitle" = "LOAD";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "pCn-uz-NUg"; */
+"pCn-uz-NUg.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "UILabel"; text = "App V"; ObjectID = "pNF-2S-2Wo"; */
+"pNF-2S-2Wo.text" = "App V";
+
+/* Class = "UIButton"; normalTitle = "LOAD"; ObjectID = "qN0-2x-Phx"; */
+"qN0-2x-Phx.normalTitle" = "LOAD";
+
+/* Class = "UILabel"; text = "ID:"; ObjectID = "wdc-ec-7QD"; */
+"wdc-ec-7QD.text" = "ID:";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, "; ObjectID = "xu3-jq-fap"; */
+"xu3-jq-fap.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, ";
