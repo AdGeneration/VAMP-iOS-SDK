@@ -56,20 +56,11 @@
     
     // maio SDK Version
     NSString *maioSdkVersion = [Maio sdkVersion];
-    if ([Maio canShow]) {
-        _adInfoView.text = [NSString stringWithFormat:@"%@\nmaioSDK:%@ canShow:YES", _adInfoView.text,maioSdkVersion];
-    } else {
-        _adInfoView.text = [NSString stringWithFormat:@"%@\nmaioSDK:%@ canShow:NO", _adInfoView.text,maioSdkVersion];
-    }
+    _adInfoView.text = [NSString stringWithFormat:@"%@\nmaioSDK:%@", _adInfoView.text,maioSdkVersion];
     
     // UnityAds SDK Version
     NSString *unitySdkVersion = [UnityAds getVersion];
-    _adInfoView.text = [NSString stringWithFormat:@"%@\nUnityAdsSDK:%@ isInitialized:YES", _adInfoView.text,unitySdkVersion];
-    if( [UnityAds isInitialized] ) {
-    } else
-    {
-        _adInfoView.text = [NSString stringWithFormat:@"%@\nUnityAdsSDK:%@ isInitialized:NO", _adInfoView.text,unitySdkVersion];
-    }
+    _adInfoView.text = [NSString stringWithFormat:@"%@\nUnityAdsSDK:%@\n", _adInfoView.text,unitySdkVersion];
     
     // デバイス名
     NSString *myDeviceName = [[UIDevice currentDevice] name];
