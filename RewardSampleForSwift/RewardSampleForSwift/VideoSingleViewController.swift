@@ -15,7 +15,7 @@ class VideoSingleViewController:UIViewController, VAMPDelegate {
     @IBOutlet var adLogView:UITextView!
     @IBOutlet var adShowButton:UIButton!
     
-    let pubId:String! = "45280" // 広告枠IDを設定してください
+    let pubId:String! = "*****" // 広告枠IDを設定してください
     
     var adReward:VAMP!
     var soundOffButton:UIButton!
