@@ -216,7 +216,6 @@
 				TargetAttributes = {
 					EF0893C11E5C2F3F00F08BE5 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = V9763WTHSN;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -384,7 +383,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				DEVELOPMENT_TEAM = V9763WTHSN;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/RewardSampleForObjC/sdk",
@@ -396,8 +395,8 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.supership.vamp.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "aa63f8e6-b8b9-4e97-9edf-8e2c253848dc";
-				PROVISIONING_PROFILE_SPECIFIER = PC0192;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};

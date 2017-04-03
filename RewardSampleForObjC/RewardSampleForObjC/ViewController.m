@@ -25,10 +25,10 @@
     NSLog(@"supportedOSVersion:%.01f", [VAMP SupportedOSVersion]);
     
     // テストモード AppLovin、maio、UnityAds
-//    [VAMP setTestMode:YES];
+    //[VAMP setTestMode:YES];
     
     // デバッグモード AppLovin、AppVador、UnityAds
-//    [VAMP setDebugMode:YES];
+    //[VAMP setDebugMode:YES];
     
     // アドネットワークSDK　初期化メディエーション
     // initializeAdnwSDKを使う場合は、初期化が終わる前にAD画面へ遷移してloadしないようご注意ください。

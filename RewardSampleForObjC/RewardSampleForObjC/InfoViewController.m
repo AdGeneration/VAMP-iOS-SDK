@@ -117,10 +117,6 @@
         _adInfoView.text = [NSString stringWithFormat:@"%@\n縦幅（ピクセル）：%.01f", _adInfoView.text, myNativeBoundSize.height];
     }
     
-    // 言語と地域
-//    NSString *myLanguageCode = [NSLocale currentLocale].languageCode;
-//    _adInfoView.text = [NSString stringWithFormat:@"%@\nlanguage：%@", _adInfoView.text, myLanguageCode];
-    
 }
 
 @end
