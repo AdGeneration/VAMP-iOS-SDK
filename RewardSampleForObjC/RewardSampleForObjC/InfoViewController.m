@@ -11,6 +11,7 @@
 #import <CoreTelephony/CTTelephonyNetworkInfo.h>
 #import <CoreTelephony/CTCarrier.h>
 #import <AdSupport/AdSupport.h>
+#import <VAMP/VAMP.h>
 #import <AppLovinSDK/AppLovinSDK.h>
 #import <Maio/Maio.h>
 #import <UnityAds/UnityAds.h>
@@ -83,10 +84,22 @@
     CTCarrier *provider = [networkInfo subscriberCellularProvider];
     _adInfoView.text = [NSString stringWithFormat:@"%@\ncarrier name：%@", _adInfoView.text, provider.carrierName];
     
-    // 国コード
+    // 国コードISO
     NSString *isoCountry = provider.isoCountryCode;
     if ([isoCountry length] > 0) {
         _adInfoView.text = [NSString stringWithFormat:@"%@\nISO Country code：%@", _adInfoView.text, isoCountry];
+    }
+    
+    // 国コードPreferredLanguage
+    NSString * countryCode = [[NSLocale preferredLanguages] objectAtIndex:0];
+    if ([countryCode length] > 0) {
+        _adInfoView.text = [NSString stringWithFormat:@"%@\nPreferredLanguage：%@", _adInfoView.text, countryCode];
+    }
+    
+    // 言語コード
+    NSString * localecode = [[NSLocale currentLocale] objectForKey:NSLocaleIdentifier];
+    if ([localecode length] > 0) {
+        _adInfoView.text = [NSString stringWithFormat:@"%@\ncode：%@", _adInfoView.text, localecode];
     }
     
     // IDFA
@@ -117,6 +130,8 @@
         _adInfoView.text = [NSString stringWithFormat:@"%@\n縦幅（ピクセル）：%.01f", _adInfoView.text, myNativeBoundSize.height];
     }
     
+    // サポートOSバージョン
+    _adInfoView.text = [NSString stringWithFormat:@"%@\nサポートOSバージョン：%.01f以上", _adInfoView.text, [VAMP SupportedOSVersion]];
 }
 
 @end

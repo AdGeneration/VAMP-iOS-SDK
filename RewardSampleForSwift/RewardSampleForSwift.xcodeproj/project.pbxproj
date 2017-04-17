@@ -32,6 +32,7 @@
 		63C3782D1DE216B100583E3E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C3782C1DE216B100583E3E /* WebKit.framework */; };
 		63C3782F1DE216C000583E3E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C3782E1DE216C000583E3E /* UIKit.framework */; };
 		DD53D3311E1D4E050053DC99 /* invisible.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EF31231D1DF6705D00131E96 /* invisible.mp3 */; };
+		DDA5884D1EA08F300044069B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA5884C1EA08F300044069B /* StoreKit.framework */; };
 		EF3123201DF69C2D00131E96 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF31231F1DF69C2D00131E96 /* MobileCoreServices.framework */; };
 		EF3BD8BF1DE3E6F400841B08 /* BorderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3BD8BE1DE3E6F400841B08 /* BorderButton.swift */; };
 		EF3BD8C21DE3E72000841B08 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF3BD8C01DE3E72000841B08 /* Main.storyboard */; };
@@ -67,6 +68,7 @@
 		63C3782E1DE216C000583E3E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DD53D32F1E1D463E0053DC99 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		DD53D3301E1D463E0053DC99 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		DDA5884C1EA08F300044069B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		EF31231D1DF6705D00131E96 /* invisible.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = invisible.mp3; sourceTree = "<group>"; };
 		EF31231F1DF69C2D00131E96 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		EF3BD8BE1DE3E6F400841B08 /* BorderButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderButton.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDA5884D1EA08F300044069B /* StoreKit.framework in Frameworks */,
 				EF3123201DF69C2D00131E96 /* MobileCoreServices.framework in Frameworks */,
 				63C3782F1DE216C000583E3E /* UIKit.framework in Frameworks */,
 				63C3782D1DE216B100583E3E /* WebKit.framework in Frameworks */,
@@ -150,6 +153,7 @@
 		63C378091DE2163100583E3E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DDA5884C1EA08F300044069B /* StoreKit.framework */,
 				EF31231F1DF69C2D00131E96 /* MobileCoreServices.framework */,
 				63C3782E1DE216C000583E3E /* UIKit.framework */,
 				63C3782C1DE216B100583E3E /* WebKit.framework */,

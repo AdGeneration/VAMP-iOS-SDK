@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DDA5884B1EA08EFC0044069B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA5884A1EA08EFC0044069B /* StoreKit.framework */; };
 		EF0893C71E5C2F3F00F08BE5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EF0893C61E5C2F3F00F08BE5 /* main.m */; };
 		EF0893CA1E5C2F3F00F08BE5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF0893C91E5C2F3F00F08BE5 /* AppDelegate.m */; };
 		EF0893CD1E5C2F3F00F08BE5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF0893CC1E5C2F3F00F08BE5 /* ViewController.m */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DDA5884A1EA08EFC0044069B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		EF0893C21E5C2F3F00F08BE5 /* RewardSampleForObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RewardSampleForObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF0893C61E5C2F3F00F08BE5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EF0893C81E5C2F3F00F08BE5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDA5884B1EA08EFC0044069B /* StoreKit.framework in Frameworks */,
 				EF0894201E5C373900F08BE5 /* AdSupport.framework in Frameworks */,
 				EF08941E1E5C373200F08BE5 /* SystemConfiguration.framework in Frameworks */,
 				EF08941C1E5C372D00F08BE5 /* CoreTelephony.framework in Frameworks */,
@@ -163,6 +166,7 @@
 		EF0893FC1E5C355500F08BE5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DDA5884A1EA08EFC0044069B /* StoreKit.framework */,
 				EF08941F1E5C373900F08BE5 /* AdSupport.framework */,
 				EF08941D1E5C373200F08BE5 /* SystemConfiguration.framework */,
 				EF08941B1E5C372D00F08BE5 /* CoreTelephony.framework */,
