@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		61327BAB1E896180007C6447 /* UnityAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61327BAA1E896180007C6447 /* UnityAds.framework */; };
 		63C377C01DE20D3900583E3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C377BF1DE20D3900583E3E /* AppDelegate.swift */; };
 		63C377C21DE20D3900583E3E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C377C11DE20D3900583E3E /* ViewController.swift */; };
 		63C377C71DE20D3900583E3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63C377C61DE20D3900583E3E /* Assets.xcassets */; };
@@ -32,20 +31,14 @@
 		63C3782B1DE216AA00583E3E /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C3782A1DE216AA00583E3E /* Social.framework */; };
 		63C3782D1DE216B100583E3E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C3782C1DE216B100583E3E /* WebKit.framework */; };
 		63C3782F1DE216C000583E3E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C3782E1DE216C000583E3E /* UIKit.framework */; };
-		DD0A16371EB828E60031ADD5 /* ADGPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD0A16361EB828E60031ADD5 /* ADGPlayer.framework */; };
-		DD0A16391EB829060031ADD5 /* APVReward.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD0A16381EB829060031ADD5 /* APVReward.framework */; };
-		DD4348FC1EA451D200DE9D67 /* AppLovinSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD4348FB1EA451D200DE9D67 /* AppLovinSDK.framework */; };
-		DD53D32C1E1CDCD00053DC99 /* VAMP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD53D32B1E1CDCD00053DC99 /* VAMP.framework */; };
 		DD53D3311E1D4E050053DC99 /* invisible.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EF31231D1DF6705D00131E96 /* invisible.mp3 */; };
 		DDA5884D1EA08F300044069B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA5884C1EA08F300044069B /* StoreKit.framework */; };
-		DDF8D06E1EAF7237004EEE43 /* Maio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDF8D06D1EAF7237004EEE43 /* Maio.framework */; };
 		EF3123201DF69C2D00131E96 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF31231F1DF69C2D00131E96 /* MobileCoreServices.framework */; };
 		EF3BD8BF1DE3E6F400841B08 /* BorderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3BD8BE1DE3E6F400841B08 /* BorderButton.swift */; };
 		EF3BD8C21DE3E72000841B08 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF3BD8C01DE3E72000841B08 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		61327BAA1E896180007C6447 /* UnityAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnityAds.framework; sourceTree = "<group>"; };
 		63C377BC1DE20D3900583E3E /* RewardSampleForSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RewardSampleForSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63C377BF1DE20D3900583E3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63C377C11DE20D3900583E3E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -73,14 +66,9 @@
 		63C3782A1DE216AA00583E3E /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		63C3782C1DE216B100583E3E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		63C3782E1DE216C000583E3E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		DD0A16361EB828E60031ADD5 /* ADGPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ADGPlayer.framework; sourceTree = "<group>"; };
-		DD0A16381EB829060031ADD5 /* APVReward.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = APVReward.framework; sourceTree = "<group>"; };
-		DD4348FB1EA451D200DE9D67 /* AppLovinSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppLovinSDK.framework; sourceTree = "<group>"; };
-		DD53D32B1E1CDCD00053DC99 /* VAMP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VAMP.framework; sourceTree = "<group>"; };
 		DD53D32F1E1D463E0053DC99 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		DD53D3301E1D463E0053DC99 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		DDA5884C1EA08F300044069B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		DDF8D06D1EAF7237004EEE43 /* Maio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Maio.framework; sourceTree = "<group>"; };
 		EF31231D1DF6705D00131E96 /* invisible.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = invisible.mp3; sourceTree = "<group>"; };
 		EF31231F1DF69C2D00131E96 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		EF3BD8BE1DE3E6F400841B08 /* BorderButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderButton.swift; sourceTree = "<group>"; };
@@ -93,31 +81,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDA5884D1EA08F300044069B /* StoreKit.framework in Frameworks */,
-				DD0A16391EB829060031ADD5 /* APVReward.framework in Frameworks */,
 				EF3123201DF69C2D00131E96 /* MobileCoreServices.framework in Frameworks */,
 				63C3782F1DE216C000583E3E /* UIKit.framework in Frameworks */,
 				63C3782D1DE216B100583E3E /* WebKit.framework in Frameworks */,
 				63C3782B1DE216AA00583E3E /* Social.framework in Frameworks */,
 				63C378291DE216A100583E3E /* MessageUI.framework in Frameworks */,
 				63C378271DE2169A00583E3E /* EventKitUI.framework in Frameworks */,
-				DD53D32C1E1CDCD00053DC99 /* VAMP.framework in Frameworks */,
 				63C378251DE2169500583E3E /* EventKit.framework in Frameworks */,
 				63C378231DE2168800583E3E /* AudioToolbox.framework in Frameworks */,
 				63C378211DE2167900583E3E /* libz.1.2.8.tbd in Frameworks */,
 				63C3781D1DE2166D00583E3E /* CoreMedia.framework in Frameworks */,
 				63C3781B1DE2166300583E3E /* CFNetwork.framework in Frameworks */,
-				DD0A16371EB828E60031ADD5 /* ADGPlayer.framework in Frameworks */,
 				63C378191DE2165D00583E3E /* AVFoundation.framework in Frameworks */,
 				63C378171DE2165700583E3E /* CoreGraphics.framework in Frameworks */,
 				63C378151DE2165100583E3E /* QuartzCore.framework in Frameworks */,
 				63C378131DE2164B00583E3E /* Security.framework in Frameworks */,
-				DD4348FC1EA451D200DE9D67 /* AppLovinSDK.framework in Frameworks */,
 				63C378111DE2164500583E3E /* MediaPlayer.framework in Frameworks */,
 				63C3780F1DE2163E00583E3E /* CoreTelephony.framework in Frameworks */,
 				63C3780D1DE2163700583E3E /* SystemConfiguration.framework in Frameworks */,
 				63C3780B1DE2163100583E3E /* AdSupport.framework in Frameworks */,
-				DDF8D06E1EAF7237004EEE43 /* Maio.framework in Frameworks */,
-				61327BAB1E896180007C6447 /* UnityAds.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,12 +146,6 @@
 		63C377D91DE2113E00583E3E /* sdk */ = {
 			isa = PBXGroup;
 			children = (
-				DD0A16381EB829060031ADD5 /* APVReward.framework */,
-				DD0A16361EB828E60031ADD5 /* ADGPlayer.framework */,
-				DDF8D06D1EAF7237004EEE43 /* Maio.framework */,
-				DD4348FB1EA451D200DE9D67 /* AppLovinSDK.framework */,
-				61327BAA1E896180007C6447 /* UnityAds.framework */,
-				DD53D32B1E1CDCD00053DC99 /* VAMP.framework */,
 			);
 			path = sdk;
 			sourceTree = "<group>";

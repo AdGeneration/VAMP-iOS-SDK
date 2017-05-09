@@ -7,19 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		61327BA91E89616C007C6447 /* UnityAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61327BA81E89616C007C6447 /* UnityAds.framework */; };
-		DD0A16351EB828E10031ADD5 /* ADGPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD0A16341EB828E10031ADD5 /* ADGPlayer.framework */; };
-		DD0A163B1EB8290B0031ADD5 /* APVReward.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD0A163A1EB8290B0031ADD5 /* APVReward.framework */; };
-		DD4348FE1EA451D900DE9D67 /* AppLovinSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD4348FD1EA451D900DE9D67 /* AppLovinSDK.framework */; };
 		DDA5884B1EA08EFC0044069B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA5884A1EA08EFC0044069B /* StoreKit.framework */; };
-		DDF8D06C1EAF7232004EEE43 /* Maio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDF8D06B1EAF7232004EEE43 /* Maio.framework */; };
 		EF0893C71E5C2F3F00F08BE5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EF0893C61E5C2F3F00F08BE5 /* main.m */; };
 		EF0893CA1E5C2F3F00F08BE5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF0893C91E5C2F3F00F08BE5 /* AppDelegate.m */; };
 		EF0893CD1E5C2F3F00F08BE5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF0893CC1E5C2F3F00F08BE5 /* ViewController.m */; };
 		EF0893D01E5C2F3F00F08BE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF0893CE1E5C2F3F00F08BE5 /* Main.storyboard */; };
 		EF0893D21E5C2F3F00F08BE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF0893D11E5C2F3F00F08BE5 /* Assets.xcassets */; };
 		EF0893D51E5C2F3F00F08BE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF0893D31E5C2F3F00F08BE5 /* LaunchScreen.storyboard */; };
-		EF0893EA1E5C30E500F08BE5 /* VAMP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF0893E41E5C30E500F08BE5 /* VAMP.framework */; };
 		EF0893EC1E5C310400F08BE5 /* invisible.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EF0893EB1E5C310400F08BE5 /* invisible.mp3 */; };
 		EF0893EF1E5C33D100F08BE5 /* BorderButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EF0893EE1E5C33D100F08BE5 /* BorderButton.m */; };
 		EF0893F21E5C340200F08BE5 /* VideoSingleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF0893F11E5C340200F08BE5 /* VideoSingleViewController.m */; };
@@ -45,12 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		61327BA81E89616C007C6447 /* UnityAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnityAds.framework; sourceTree = "<group>"; };
-		DD0A16341EB828E10031ADD5 /* ADGPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ADGPlayer.framework; sourceTree = "<group>"; };
-		DD0A163A1EB8290B0031ADD5 /* APVReward.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = APVReward.framework; sourceTree = "<group>"; };
-		DD4348FD1EA451D900DE9D67 /* AppLovinSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppLovinSDK.framework; sourceTree = "<group>"; };
 		DDA5884A1EA08EFC0044069B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		DDF8D06B1EAF7232004EEE43 /* Maio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Maio.framework; sourceTree = "<group>"; };
 		EF0893C21E5C2F3F00F08BE5 /* RewardSampleForObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RewardSampleForObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF0893C61E5C2F3F00F08BE5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EF0893C81E5C2F3F00F08BE5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -61,7 +50,6 @@
 		EF0893D11E5C2F3F00F08BE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF0893D41E5C2F3F00F08BE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF0893D61E5C2F3F00F08BE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EF0893E41E5C30E500F08BE5 /* VAMP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VAMP.framework; sourceTree = "<group>"; };
 		EF0893EB1E5C310400F08BE5 /* invisible.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = invisible.mp3; sourceTree = "<group>"; };
 		EF0893ED1E5C33D100F08BE5 /* BorderButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BorderButton.h; sourceTree = "<group>"; };
 		EF0893EE1E5C33D100F08BE5 /* BorderButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BorderButton.m; sourceTree = "<group>"; };
@@ -96,12 +84,10 @@
 			files = (
 				DDA5884B1EA08EFC0044069B /* StoreKit.framework in Frameworks */,
 				EF0894201E5C373900F08BE5 /* AdSupport.framework in Frameworks */,
-				DDF8D06C1EAF7232004EEE43 /* Maio.framework in Frameworks */,
 				EF08941E1E5C373200F08BE5 /* SystemConfiguration.framework in Frameworks */,
 				EF08941C1E5C372D00F08BE5 /* CoreTelephony.framework in Frameworks */,
 				EF08941A1E5C372700F08BE5 /* MediaPlayer.framework in Frameworks */,
 				EF0894181E5C371C00F08BE5 /* Security.framework in Frameworks */,
-				DD0A163B1EB8290B0031ADD5 /* APVReward.framework in Frameworks */,
 				EF0894161E5C365600F08BE5 /* QuartzCore.framework in Frameworks */,
 				EF0894141E5C364C00F08BE5 /* CoreGraphics.framework in Frameworks */,
 				EF0894121E5C364500F08BE5 /* AVFoundation.framework in Frameworks */,
@@ -111,14 +97,10 @@
 				EF08940A1E5C35A500F08BE5 /* AudioToolbox.framework in Frameworks */,
 				EF0894081E5C358200F08BE5 /* EventKitUI.framework in Frameworks */,
 				EF0894061E5C357200F08BE5 /* MessageUI.framework in Frameworks */,
-				DD0A16351EB828E10031ADD5 /* ADGPlayer.framework in Frameworks */,
 				EF0894041E5C356900F08BE5 /* Social.framework in Frameworks */,
-				DD4348FE1EA451D900DE9D67 /* AppLovinSDK.framework in Frameworks */,
 				EF0894021E5C356300F08BE5 /* WebKit.framework in Frameworks */,
 				EF0894001E5C355D00F08BE5 /* UIKit.framework in Frameworks */,
 				EF0893FE1E5C355500F08BE5 /* MobileCoreServices.framework in Frameworks */,
-				EF0893EA1E5C30E500F08BE5 /* VAMP.framework in Frameworks */,
-				61327BA91E89616C007C6447 /* UnityAds.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,12 +159,6 @@
 		EF0893DE1E5C30E500F08BE5 /* sdk */ = {
 			isa = PBXGroup;
 			children = (
-				DD0A163A1EB8290B0031ADD5 /* APVReward.framework */,
-				DD0A16341EB828E10031ADD5 /* ADGPlayer.framework */,
-				DDF8D06B1EAF7232004EEE43 /* Maio.framework */,
-				DD4348FD1EA451D900DE9D67 /* AppLovinSDK.framework */,
-				61327BA81E89616C007C6447 /* UnityAds.framework */,
-				EF0893E41E5C30E500F08BE5 /* VAMP.framework */,
 			);
 			path = sdk;
 			sourceTree = "<group>";
