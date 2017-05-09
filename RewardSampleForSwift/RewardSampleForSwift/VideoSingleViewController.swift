@@ -24,6 +24,7 @@ class VideoSingleViewController:UIViewController, VAMPDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // テストモード確認
         print("isTestMode:" + String(VAMP.isTestMode()))
 
@@ -119,12 +120,12 @@ class VideoSingleViewController:UIViewController, VAMPDelegate {
         let now = NSDate()
         
         let dateFormatter = DateFormatter()
-        dateFormatter.locale = NSLocale.system //ここ注意。Locale 設定しないと１２時間表示している場合に、HH指定で午後・午前とでる。
+        dateFormatter.locale = NSLocale.system
         dateFormatter.dateFormat = "MM-dd HH:mm:ss "
         
         let logmessage = dateFormatter.string(from: now as Date).appending(message)
         
-        // MainThread でないとエラーになるので注意
+        // MainThread でないとエラー
         DispatchQueue.main.async() {
             self.adLogView.text = NSString(format:"%@%@", logmessage, self.adLogView.text) as String;
         };
@@ -184,7 +185,7 @@ class VideoSingleViewController:UIViewController, VAMPDelegate {
         let _failMessage = error.localizedDescription
         
         self.addLogText(message:"vampDidFail(\(_placementId))\(codeString) \(_failMessage)\n")
-        print("[VAMP]vampDidFail:%@", _failMessage)
+        print("[VAMP]vampDidFail:\(_placementId) \(codeString) \(_failMessage)")
     }
 
     // 広告準備完了から55分経つと取得した広告が表示はできてもRTBの収益は発生しません。
@@ -194,6 +195,7 @@ class VideoSingleViewController:UIViewController, VAMPDelegate {
         self.addLogText(message:"vampDidExpired(\(_placementId))\n")
         print("[VAMP]vampDidExpired placementId:\(_placementId)")
         
+        // 期限切れになったのでloadをやり直す
         self.loadAd(sender: self)
     }
 }

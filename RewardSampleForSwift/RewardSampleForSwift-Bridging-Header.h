@@ -6,5 +6,7 @@
 //
 
 #import <VAMP/VAMP.h>
-
+#import <APVReward/APVRAdManager.h>
+#import <APVReward/APVRewardAd.h>
+#import <APVReward/APVRError.h>
 

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import VAMP
 
 class ViewController: UIViewController {
     
@@ -18,7 +19,7 @@ class ViewController: UIViewController {
         
         // 対応OSバージョン
         print("supportedOSVersion:\(VAMP.supportedOSVersion())")
-        
+                
         // テストモード
         // 連携アドネットワーク（AppLovin、maio、UnityAds）
         // リリースする際は必ずコメントアウトしてください。収益が発生しない広告が配信されます。
@@ -53,7 +54,7 @@ class ViewController: UIViewController {
         guard let sdkVersion = sdkV else { return }
         
         // バージョン情報
-        self.sdkVersion.text = "APP \(appVersion)\nSDK \(sdkVersion)\n"
+        self.sdkVersion.text = "Swift APP \(appVersion)\nSDK \(sdkVersion)\n"
     }
     
     override func didReceiveMemoryWarning() {

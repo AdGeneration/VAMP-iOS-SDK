@@ -9,11 +9,12 @@ import Foundation
 import AVFoundation
 import CoreTelephony
 import AdSupport
+import VAMP
 import AppLovinSDK
 import Maio
 import UnityAds
 
-class InfoViewController:UIViewController {
+class InfoViewController:UIViewController ,APVRewardAdDelegate {
     @IBOutlet weak var deviceLabel: UILabel!
     @IBOutlet weak var adInfoView: UITextView!
     
@@ -51,7 +52,13 @@ class InfoViewController:UIViewController {
         // UnityAds SDK Version
         let unitySdk:String? = UnityAds.getVersion()
         if let unitySdkVersion = unitySdk {
-            adInfoView.text.append("\nUnityAdsSDK：" + unitySdkVersion + "\n")
+            adInfoView.text.append("\nUnityAdsSDK：" + unitySdkVersion)
+        }
+        
+        // AppVador SDK Version
+        let appvadorSdk:String? = APVRewardAd.sdkVersion()
+        if let appvadorSdkVersion = appvadorSdk {
+            adInfoView.text.append("\nAppVadorSDK：" + appvadorSdkVersion + "\n")
         }
         
         // デバイス名

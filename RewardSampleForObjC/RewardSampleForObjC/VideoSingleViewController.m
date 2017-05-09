@@ -29,7 +29,7 @@ static NSString * const kPubId = @"*****"; // 広告枠IDを設定してくだ�
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     // テストモード
     NSLog(@"isTestMode:%@", [VAMP isTestMode]?@"YES":@"NO");
     
@@ -150,8 +150,8 @@ static NSString * const kPubId = @"*****"; // 広告枠IDを設定してくだ�
     NSString *codeString = [error kVAMPErrorString];
     NSString *failMessage = error.localizedDescription;
     
-    [self addLogText:[NSString stringWithFormat:@"vampDidFail(%@)(%@)\n", placementId,codeString]];
-    NSLog(@"[VAMP]vampDidFail:%@", failMessage);
+    [self addLogText:[NSString stringWithFormat:@"vampDidFail(%@)%@ %@\n",placementId ,codeString ,failMessage]];
+    NSLog(@"[VAMP]vampDidFail:%@ %@ %@",placementId ,codeString ,failMessage);
 }
 
 // インセンティブ付与可能になったタイミングで通知されます
@@ -189,6 +189,8 @@ static NSString * const kPubId = @"*****"; // 広告枠IDを設定してくだ�
 {
     [self addLogText:[NSString stringWithFormat:@"vampDidExpired(%@)\n", placementId]];
     NSLog(@"[VAMP]vampDidExpired placementId:(%@)", placementId);
-    [self loadAd:self];
+    
+    // 期限切れになったのでloadをやり直す
+    [self.adReward load];
 }
 @end

@@ -23,7 +23,7 @@
     
     // 対応OSバージョン
     NSLog(@"supportedOSVersion:%.01f", [VAMP SupportedOSVersion]);
-    
+        
     // テストモード AppLovin、maio、UnityAds
     //[VAMP setTestMode:YES];
     
@@ -53,7 +53,7 @@
     NSString *sdkV = [VAMP SDKVersion];
     
     // バージョン情報
-    self.sdkVersion.text = [NSString stringWithFormat:@"APP %@\nSDK %@\n", appV, sdkV];
+    self.sdkVersion.text = [NSString stringWithFormat:@"Objective-C APP %@\nSDK %@\n", appV, sdkV];
 }
 
 

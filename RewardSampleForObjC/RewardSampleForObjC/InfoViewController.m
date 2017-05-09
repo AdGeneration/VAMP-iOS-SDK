@@ -16,6 +16,7 @@
 #import <Maio/Maio.h>
 #import <UnityAds/UnityAds.h>
 #import "InfoViewController.h"
+#import <APVReward/APVRewardAd.h>
 
 @interface InfoViewController ()
 
@@ -62,6 +63,10 @@
     // UnityAds SDK Version
     NSString *unitySdkVersion = [UnityAds getVersion];
     _adInfoView.text = [NSString stringWithFormat:@"%@\nUnityAdsSDK:%@\n", _adInfoView.text,unitySdkVersion];
+    
+    // AppVador SDK Version
+    NSString *apvSdkVersion = [APVRewardAd sdkVersion];
+    _adInfoView.text = [NSString stringWithFormat:@"%@\nAppVadorSDK:%@\n", _adInfoView.text,apvSdkVersion];
     
     // デバイス名
     NSString *myDeviceName = [[UIDevice currentDevice] name];
