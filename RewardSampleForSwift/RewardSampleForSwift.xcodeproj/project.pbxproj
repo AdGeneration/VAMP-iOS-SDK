@@ -17,9 +17,6 @@
 		63C3780D1DE2163700583E3E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C3780C1DE2163700583E3E /* SystemConfiguration.framework */; };
 		63C3780F1DE2163E00583E3E /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C3780E1DE2163E00583E3E /* CoreTelephony.framework */; };
 		63C378111DE2164500583E3E /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C378101DE2164500583E3E /* MediaPlayer.framework */; };
-		63C378131DE2164B00583E3E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C378121DE2164B00583E3E /* Security.framework */; };
-		63C378151DE2165100583E3E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C378141DE2165100583E3E /* QuartzCore.framework */; };
-		63C378171DE2165700583E3E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C378161DE2165700583E3E /* CoreGraphics.framework */; };
 		63C378191DE2165D00583E3E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C378181DE2165D00583E3E /* AVFoundation.framework */; };
 		63C3781B1DE2166300583E3E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C3781A1DE2166300583E3E /* CFNetwork.framework */; };
 		63C3781D1DE2166D00583E3E /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C3781C1DE2166D00583E3E /* CoreMedia.framework */; };
@@ -31,8 +28,9 @@
 		63C3782B1DE216AA00583E3E /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C3782A1DE216AA00583E3E /* Social.framework */; };
 		63C3782D1DE216B100583E3E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C3782C1DE216B100583E3E /* WebKit.framework */; };
 		63C3782F1DE216C000583E3E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C3782E1DE216C000583E3E /* UIKit.framework */; };
+		DD0A16371EB828E60031ADD5 /* ADGPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD0A16361EB828E60031ADD5 /* ADGPlayer.framework */; };
 		DD53D3311E1D4E050053DC99 /* invisible.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EF31231D1DF6705D00131E96 /* invisible.mp3 */; };
-		DDA5884D1EA08F300044069B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA5884C1EA08F300044069B /* StoreKit.framework */; };
+		DDF0993D1EDBC3C8002E5729 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDF0993C1EDBC3C8002E5729 /* StoreKit.framework */; };
 		EF3123201DF69C2D00131E96 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF31231F1DF69C2D00131E96 /* MobileCoreServices.framework */; };
 		EF3BD8BF1DE3E6F400841B08 /* BorderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3BD8BE1DE3E6F400841B08 /* BorderButton.swift */; };
 		EF3BD8C21DE3E72000841B08 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF3BD8C01DE3E72000841B08 /* Main.storyboard */; };
@@ -66,9 +64,10 @@
 		63C3782A1DE216AA00583E3E /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		63C3782C1DE216B100583E3E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		63C3782E1DE216C000583E3E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DD0A16361EB828E60031ADD5 /* ADGPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ADGPlayer.framework; sourceTree = "<group>"; };
 		DD53D32F1E1D463E0053DC99 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		DD53D3301E1D463E0053DC99 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		DDA5884C1EA08F300044069B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		DDF0993C1EDBC3C8002E5729 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		EF31231D1DF6705D00131E96 /* invisible.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = invisible.mp3; sourceTree = "<group>"; };
 		EF31231F1DF69C2D00131E96 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		EF3BD8BE1DE3E6F400841B08 /* BorderButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderButton.swift; sourceTree = "<group>"; };
@@ -80,7 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDA5884D1EA08F300044069B /* StoreKit.framework in Frameworks */,
+				DDF0993D1EDBC3C8002E5729 /* StoreKit.framework in Frameworks */,
 				EF3123201DF69C2D00131E96 /* MobileCoreServices.framework in Frameworks */,
 				63C3782F1DE216C000583E3E /* UIKit.framework in Frameworks */,
 				63C3782D1DE216B100583E3E /* WebKit.framework in Frameworks */,
@@ -92,10 +91,8 @@
 				63C378211DE2167900583E3E /* libz.1.2.8.tbd in Frameworks */,
 				63C3781D1DE2166D00583E3E /* CoreMedia.framework in Frameworks */,
 				63C3781B1DE2166300583E3E /* CFNetwork.framework in Frameworks */,
+				DD0A16371EB828E60031ADD5 /* ADGPlayer.framework in Frameworks */,
 				63C378191DE2165D00583E3E /* AVFoundation.framework in Frameworks */,
-				63C378171DE2165700583E3E /* CoreGraphics.framework in Frameworks */,
-				63C378151DE2165100583E3E /* QuartzCore.framework in Frameworks */,
-				63C378131DE2164B00583E3E /* Security.framework in Frameworks */,
 				63C378111DE2164500583E3E /* MediaPlayer.framework in Frameworks */,
 				63C3780F1DE2163E00583E3E /* CoreTelephony.framework in Frameworks */,
 				63C3780D1DE2163700583E3E /* SystemConfiguration.framework in Frameworks */,
@@ -153,7 +150,7 @@
 		63C378091DE2163100583E3E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DDA5884C1EA08F300044069B /* StoreKit.framework */,
+				DDF0993C1EDBC3C8002E5729 /* StoreKit.framework */,
 				EF31231F1DF69C2D00131E96 /* MobileCoreServices.framework */,
 				63C3782E1DE216C000583E3E /* UIKit.framework */,
 				63C3782C1DE216B100583E3E /* WebKit.framework */,
@@ -210,7 +207,7 @@
 					63C377BB1DE20D3900583E3E = {
 						CreatedOnToolsVersion = 8.0;
 						LastSwiftMigration = 0820;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
 								enabled = 0;
@@ -330,7 +327,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -376,7 +373,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -399,7 +396,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = RewardSampleForSwift/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -430,7 +427,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = RewardSampleForSwift/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

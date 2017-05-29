@@ -111,8 +111,10 @@ static NSString * const kPubId = @"*****"; // 広告枠IDを設定してくだ�
 
 -(IBAction)showAd:(id)sender
 {
+    NSLog(@"[VAMP]showAd isReady:%@",[self.adReward isReady]?@"YES":@"NO");
+
     // 広告の表示
-    if ((self.adReward) != nil) {
+    if ([self.adReward isReady]) {
         BOOL isShow = [self.adReward show];
         [self addLogText: @"[show]\n"];
         NSLog(@"[VAMP]show");
@@ -179,8 +181,17 @@ static NSString * const kPubId = @"*****"; // 広告枠IDを設定してくだ�
 // この通知をもとにshowしないようご注意ください。showする判定は、onReceiveを受け取ったタイミングで判断ください。
 -(void)vampLoadResult:(NSString *)placementId success:(BOOL)success adnwName:(NSString *)adnwName message:(NSString *)message
 {
-    [self addLogText:[NSString stringWithFormat:@"vampLoadResult(%@ success:%@)\n", adnwName, success?@"YES":@"NO"]];
-    NSLog(@"[VAMP]vampLoadResult(%@) placementId:%@ success:%@ %@", adnwName, placementId, success?@"YES":@"NO" ,message);
+    if ([message length] > 0) {
+        if (success) {
+            [self addLogText:[NSString stringWithFormat:@"vampLoadResult(%@ success:%@)\n", adnwName, success?@"YES":@"NO"]];
+        } else {
+            [self addLogText:[NSString stringWithFormat:@"vampLoadResult(%@ success:%@ %@)\n", adnwName, success?@"YES":@"NO", message]];
+        }
+        NSLog(@"[VAMP]vampLoadResult(%@) placementId:%@ success:%@ %@", adnwName, placementId, success?@"YES":@"NO" ,message);
+    } else {
+        [self addLogText:[NSString stringWithFormat:@"vampLoadResult(%@ success:%@)\n", adnwName, success?@"YES":@"NO"]];
+        NSLog(@"[VAMP]vampLoadResult(%@) placementId:%@ success:%@", adnwName, placementId, success?@"YES":@"NO");
+    }
 }
 
 // 広告準備完了から55分経つと取得した広告が表示はできてもRTBの収益は発生しません

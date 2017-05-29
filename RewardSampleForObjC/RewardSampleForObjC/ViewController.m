@@ -24,13 +24,15 @@
     // 対応OSバージョン
     NSLog(@"supportedOSVersion:%.01f", [VAMP SupportedOSVersion]);
         
-    // テストモード AppLovin、maio、UnityAds
-    //[VAMP setTestMode:YES];
+    /* テストモード */
+    // AppLovin、maio、UnityAds
+//    [VAMP setTestMode:YES];
     
-    // デバッグモード AppLovin、AppVador、UnityAds
-    //[VAMP setDebugMode:YES];
+    /* デバッグモード */
+    // AppLovin、AppVador、UnityAds
+//    [VAMP setDebugMode:YES];
     
-    // アドネットワークSDK　初期化メディエーション
+    /* アドネットワークSDK　初期化メディエーション */
     // initializeAdnwSDKを使う場合は、初期化が終わる前にAD画面へ遷移してloadしないようご注意ください。
     // ├ ステータス設定。デフォルトAUTO
     //    kVAMPInitializeStateAUTO	接続環境によって、WEIGHTとALL設定を自動的に切り替える（Wi-Fi:ALL、キャリア回線:WEIGHT）
@@ -53,7 +55,7 @@
     NSString *sdkV = [VAMP SDKVersion];
     
     // バージョン情報
-    self.sdkVersion.text = [NSString stringWithFormat:@"Objective-C APP %@\nSDK %@\n", appV, sdkV];
+    self.sdkVersion.text = [NSString stringWithFormat:@"APP %@(Objective-C)\nSDK %@\n", appV, sdkV];
 }
 
 

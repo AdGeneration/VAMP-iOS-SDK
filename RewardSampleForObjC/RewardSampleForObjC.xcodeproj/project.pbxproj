@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD0A16351EB828E10031ADD5 /* ADGPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD0A16341EB828E10031ADD5 /* ADGPlayer.framework */; };
+		DD0A163B1EB8290B0031ADD5 /* APVReward.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD0A163A1EB8290B0031ADD5 /* APVReward.framework */; };
+		DD6C75E31ED295950017130E /* AppLovinSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD6C75E21ED295950017130E /* AppLovinSDK.framework */; };
 		DDA5884B1EA08EFC0044069B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA5884A1EA08EFC0044069B /* StoreKit.framework */; };
 		EF0893C71E5C2F3F00F08BE5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EF0893C61E5C2F3F00F08BE5 /* main.m */; };
 		EF0893CA1E5C2F3F00F08BE5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF0893C91E5C2F3F00F08BE5 /* AppDelegate.m */; };
@@ -29,9 +32,6 @@
 		EF08940E1E5C35B200F08BE5 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF08940D1E5C35B200F08BE5 /* CoreMedia.framework */; };
 		EF0894101E5C35B800F08BE5 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF08940F1E5C35B800F08BE5 /* CFNetwork.framework */; };
 		EF0894121E5C364500F08BE5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF0894111E5C364500F08BE5 /* AVFoundation.framework */; };
-		EF0894141E5C364C00F08BE5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF0894131E5C364C00F08BE5 /* CoreGraphics.framework */; };
-		EF0894161E5C365600F08BE5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF0894151E5C365600F08BE5 /* QuartzCore.framework */; };
-		EF0894181E5C371C00F08BE5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF0894171E5C371C00F08BE5 /* Security.framework */; };
 		EF08941A1E5C372700F08BE5 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF0894191E5C372700F08BE5 /* MediaPlayer.framework */; };
 		EF08941C1E5C372D00F08BE5 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF08941B1E5C372D00F08BE5 /* CoreTelephony.framework */; };
 		EF08941E1E5C373200F08BE5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF08941D1E5C373200F08BE5 /* SystemConfiguration.framework */; };
@@ -39,6 +39,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DD0A16341EB828E10031ADD5 /* ADGPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ADGPlayer.framework; sourceTree = "<group>"; };
+		DD0A163A1EB8290B0031ADD5 /* APVReward.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = APVReward.framework; sourceTree = "<group>"; };
+		DD6C75E21ED295950017130E /* AppLovinSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppLovinSDK.framework; sourceTree = "<group>"; };
 		DDA5884A1EA08EFC0044069B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		EF0893C21E5C2F3F00F08BE5 /* RewardSampleForObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RewardSampleForObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF0893C61E5C2F3F00F08BE5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -87,16 +90,16 @@
 				EF08941E1E5C373200F08BE5 /* SystemConfiguration.framework in Frameworks */,
 				EF08941C1E5C372D00F08BE5 /* CoreTelephony.framework in Frameworks */,
 				EF08941A1E5C372700F08BE5 /* MediaPlayer.framework in Frameworks */,
-				EF0894181E5C371C00F08BE5 /* Security.framework in Frameworks */,
-				EF0894161E5C365600F08BE5 /* QuartzCore.framework in Frameworks */,
-				EF0894141E5C364C00F08BE5 /* CoreGraphics.framework in Frameworks */,
+				DD0A163B1EB8290B0031ADD5 /* APVReward.framework in Frameworks */,
 				EF0894121E5C364500F08BE5 /* AVFoundation.framework in Frameworks */,
 				EF0894101E5C35B800F08BE5 /* CFNetwork.framework in Frameworks */,
 				EF08940E1E5C35B200F08BE5 /* CoreMedia.framework in Frameworks */,
 				EF08940C1E5C35AA00F08BE5 /* libz.1.2.8.tbd in Frameworks */,
 				EF08940A1E5C35A500F08BE5 /* AudioToolbox.framework in Frameworks */,
 				EF0894081E5C358200F08BE5 /* EventKitUI.framework in Frameworks */,
+				DD6C75E31ED295950017130E /* AppLovinSDK.framework in Frameworks */,
 				EF0894061E5C357200F08BE5 /* MessageUI.framework in Frameworks */,
+				DD0A16351EB828E10031ADD5 /* ADGPlayer.framework in Frameworks */,
 				EF0894041E5C356900F08BE5 /* Social.framework in Frameworks */,
 				EF0894021E5C356300F08BE5 /* WebKit.framework in Frameworks */,
 				EF0894001E5C355D00F08BE5 /* UIKit.framework in Frameworks */,
@@ -220,7 +223,8 @@
 				TargetAttributes = {
 					EF0893C11E5C2F3F00F08BE5 = {
 						CreatedOnToolsVersion = 8.2.1;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = E9SEU5S586;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -387,7 +391,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = E9SEU5S586;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/RewardSampleForObjC/sdk",
@@ -413,7 +417,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = E9SEU5S586;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/RewardSampleForObjC/sdk",
@@ -429,6 +433,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.supership.vamp.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

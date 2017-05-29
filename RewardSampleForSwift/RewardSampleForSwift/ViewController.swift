@@ -23,13 +23,13 @@ class ViewController: UIViewController {
         // テストモード
         // 連携アドネットワーク（AppLovin、maio、UnityAds）
         // リリースする際は必ずコメントアウトしてください。収益が発生しない広告が配信されます。
-        //VAMP.setTestMode(true)
-        
+//        VAMP.setTestMode(true)
+
         // デバッグモード
         // 連携アドネットワーク（AppLovin、UnityAds）
-        //VAMP.setDebugMode(true)
-        
-        // アドネットワークSDK　初期化メディエーション
+//        VAMP.setDebugMode(true)
+
+        /* アドネットワークSDK　初期化メディエーション */
         // initializeAdnwSDKを使う場合は、初期化が終わる前にAD画面へ遷移してloadしないようご注意ください。
         // ├ ステータス設定。デフォルトAUTO
         //    VAMPInitializeState.AUTO	接続環境によって、WEIGHTとALL設定を自動的に切り替える（Wi-Fi:ALL、キャリア回線:WEIGHT）
@@ -54,7 +54,7 @@ class ViewController: UIViewController {
         guard let sdkVersion = sdkV else { return }
         
         // バージョン情報
-        self.sdkVersion.text = "Swift APP \(appVersion)\nSDK \(sdkVersion)\n"
+        self.sdkVersion.text = "APP \(appVersion)(Swift)\nSDK \(sdkVersion)\n"
     }
     
     override func didReceiveMemoryWarning() {

@@ -105,8 +105,8 @@ class VideoSingleViewController:UIViewController, VAMPDelegate {
     
     @IBAction func showAd(sender:AnyObject) {
         // 広告の表示
-        if ((self.adReward) != nil) {
-            let isShow = self.adReward.show()
+        if (adReward.isReady()) {
+            let isShow: Bool = self.adReward.show()
             self.addLogText(message: "[show]\n")
             print("[VAMP]show")
             if (self.soundPlayer.isPlaying && isShow) {
@@ -171,11 +171,17 @@ class VideoSingleViewController:UIViewController, VAMPDelegate {
         guard let _placementId = placementId else { return }
         guard let _adnwName = adnwName else { return }
         if let _message = message {
+            if (success) {
+                // 成功の場合はメッセージ不要
+                self.addLogText(message:"vampLoadResult(\(_adnwName) success:\(success))\n")
+            } else {
+                self.addLogText(message:"vampLoadResult(\(_adnwName) success:\(success) \(_message))\n")
+            }
             print("[VAMP]vampLoadResult(\(_adnwName)) success:\(success) placementId:\(_placementId) message:\(_message)")
         } else {
+            self.addLogText(message:"vampLoadResult(\(_adnwName) success:\(success))\n")
             print("[VAMP]vampLoadResult(\(_adnwName)) success:\(success) placementId:\(_placementId)")
         }
-        self.addLogText(message:"vampLoadResult(\(_adnwName) success:\(success))\n")
     }
     
     // エラー
