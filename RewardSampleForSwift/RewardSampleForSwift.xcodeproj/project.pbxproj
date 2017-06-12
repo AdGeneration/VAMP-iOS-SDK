@@ -207,7 +207,7 @@
 					63C377BB1DE20D3900583E3E = {
 						CreatedOnToolsVersion = 8.0;
 						LastSwiftMigration = 0820;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
 								enabled = 0;
