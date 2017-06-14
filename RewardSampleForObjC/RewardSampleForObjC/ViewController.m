@@ -43,10 +43,10 @@
     /*
     self.adReward = [[VAMP alloc] init];
     if ((self.adReward) != nil) {
-        [self.adReward initializeAdnwSDK:@"*****" initializeState:kVAMPInitializeStateALL duration:5];
+        [self.adReward initializeAdnwSDK:@"*****" initializeState:kVAMPInitializeStateAUTO duration:5];
         NSLog(@"[VAMP]initilizedAdnwSDK");
     }
-     */
+    */
     
     // アプリバージョン。info.plistから取得
     NSString *appV = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];

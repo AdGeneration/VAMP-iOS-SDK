@@ -28,7 +28,6 @@
 		63C3782B1DE216AA00583E3E /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C3782A1DE216AA00583E3E /* Social.framework */; };
 		63C3782D1DE216B100583E3E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C3782C1DE216B100583E3E /* WebKit.framework */; };
 		63C3782F1DE216C000583E3E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C3782E1DE216C000583E3E /* UIKit.framework */; };
-		DD0A16371EB828E60031ADD5 /* ADGPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD0A16361EB828E60031ADD5 /* ADGPlayer.framework */; };
 		DD53D3311E1D4E050053DC99 /* invisible.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EF31231D1DF6705D00131E96 /* invisible.mp3 */; };
 		DDF0993D1EDBC3C8002E5729 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDF0993C1EDBC3C8002E5729 /* StoreKit.framework */; };
 		EF3123201DF69C2D00131E96 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF31231F1DF69C2D00131E96 /* MobileCoreServices.framework */; };
@@ -64,7 +63,6 @@
 		63C3782A1DE216AA00583E3E /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		63C3782C1DE216B100583E3E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		63C3782E1DE216C000583E3E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		DD0A16361EB828E60031ADD5 /* ADGPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ADGPlayer.framework; sourceTree = "<group>"; };
 		DD53D32F1E1D463E0053DC99 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		DD53D3301E1D463E0053DC99 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		DDF0993C1EDBC3C8002E5729 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -91,7 +89,6 @@
 				63C378211DE2167900583E3E /* libz.1.2.8.tbd in Frameworks */,
 				63C3781D1DE2166D00583E3E /* CoreMedia.framework in Frameworks */,
 				63C3781B1DE2166300583E3E /* CFNetwork.framework in Frameworks */,
-				DD0A16371EB828E60031ADD5 /* ADGPlayer.framework in Frameworks */,
 				63C378191DE2165D00583E3E /* AVFoundation.framework in Frameworks */,
 				63C378111DE2164500583E3E /* MediaPlayer.framework in Frameworks */,
 				63C3780F1DE2163E00583E3E /* CoreTelephony.framework in Frameworks */,
