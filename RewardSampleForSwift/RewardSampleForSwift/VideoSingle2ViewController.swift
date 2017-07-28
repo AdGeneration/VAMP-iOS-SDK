@@ -1,5 +1,5 @@
 //
-//  VideoSingleViewController.swift
+//  VideoSingle2ViewController.swift
 //  RewardSampleForSwift
 //
 //  Created by AdGeneration on 2017/02/21.
@@ -10,7 +10,7 @@ import Foundation
 import VAMP
 import AVFoundation
 
-class VideoSingleViewController:UIViewController, VAMPDelegate {
+class VideoSingle2ViewController:UIViewController, VAMPDelegate {
     
     @IBOutlet var adcodeField:UITextField!
     @IBOutlet var adLogView:UITextView!
@@ -28,7 +28,7 @@ class VideoSingleViewController:UIViewController, VAMPDelegate {
         
         // テストモード確認
         print("isTestMode:" + String(VAMP.isTestMode()))
-
+        
         // デバッグモード確認
         print("isDebugMode:" + String(VAMP.isDebugMode()))
         
@@ -71,9 +71,9 @@ class VideoSingleViewController:UIViewController, VAMPDelegate {
             // 音声読み込み失敗
             print(error)
         }
-
+        
         self.adReward = VAMP()
-       
+        
         self.adReward.setPlacementId(self.pubId)
         self.adReward.delegate = self
         self.adReward.setRootViewController(self)
@@ -194,7 +194,7 @@ class VideoSingleViewController:UIViewController, VAMPDelegate {
         self.addLogText(message:"vampDidFail(\(_placementId))\(codeString) \(_failMessage)\n")
         print("[VAMP]vampDidFail:\(_placementId) \(codeString) \(_failMessage)")
     }
-
+    
     // 広告準備完了から55分経つと取得した広告が表示はできてもRTBの収益は発生しません。
     // この通知を受け取ったら、もう一度loadからやり直す必要があります。
     func vampDidExpired(_ placementId: String!) {

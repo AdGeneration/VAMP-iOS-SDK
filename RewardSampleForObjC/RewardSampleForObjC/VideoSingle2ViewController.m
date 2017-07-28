@@ -1,18 +1,16 @@
 //
-//  VideoSingleViewController.m
+//  VideoSingle2ViewController.m
 //  RewardSampleForObjC
 //
 //  Created by AdGeneration on 2017/02/21.
 //  Copyright © 2017年 Supership Inc. All rights reserved.
 //
 
-
-#import <Foundation/Foundation.h>
 #import <VAMP/VAMP.h>
 #import <AVFoundation/AVFoundation.h>
-#import "VideoSingleViewController.h"
+#import "VideoSingle2ViewController.h"
 
-@interface VideoSingleViewController () <VAMPDelegate>
+@interface VideoSingle2ViewController () <VAMPDelegate>
 
 @property (nonatomic, weak) IBOutlet UITextField* adcodeField;
 @property (nonatomic, weak) IBOutlet UITextView* adLogView;
@@ -24,7 +22,7 @@
 
 @end
 
-@implementation VideoSingleViewController
+@implementation VideoSingle2ViewController
 
 static NSString * const kPubId = @"*****"; // 広告枠IDを設定してください
 
@@ -36,7 +34,7 @@ static NSString * const kPubId = @"*****"; // 広告枠IDを設定してくだ�
     
     // デバッグモード
     NSLog(@"isDebugMode:%@", [VAMP isDebugMode]?@"YES":@"NO");
-
+    
     // TextViewを上寄せで表示
     self.automaticallyAdjustsScrollViewInsets = NO;
     
@@ -56,7 +54,7 @@ static NSString * const kPubId = @"*****"; // 広告枠IDを設定してくだ�
     [self.soundOffButton setBackgroundImage:[UIImage imageNamed:@"soundOn"] forState:UIControlStateNormal];
     self.soundOffButton.frame = CGRectMake(0, 0, 40, 40);
     [self.soundOffButton addTarget:self action:@selector(soundOff) forControlEvents:UIControlEventTouchUpInside];
-
+    
     self.soundOnButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.soundOnButton setBackgroundImage:[UIImage imageNamed:@"soundOff"] forState:UIControlStateNormal];
     self.soundOnButton.frame = CGRectMake(0, 0, 40, 40);
@@ -113,7 +111,7 @@ static NSString * const kPubId = @"*****"; // 広告枠IDを設定してくだ�
 -(IBAction)showAd:(id)sender
 {
     NSLog(@"[VAMP]showAd isReady:%@",[self.adReward isReady]?@"YES":@"NO");
-
+    
     // 広告の表示
     if ([self.adReward isReady]) {
         BOOL isShow = [self.adReward show];
@@ -205,4 +203,5 @@ static NSString * const kPubId = @"*****"; // 広告枠IDを設定してくだ�
     // 期限切れになったのでloadをやり直す
     [self.adReward load];
 }
+
 @end

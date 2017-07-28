@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  VideoSingle2ViewController.h
 //  RewardSampleForObjC
 //
 //  Created by AdGeneration on 2017/02/21.
@@ -8,10 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
-
+@interface VideoSingle2ViewController : UIViewController
 
 @end
-

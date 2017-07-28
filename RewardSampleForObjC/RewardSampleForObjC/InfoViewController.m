@@ -2,8 +2,8 @@
 //  InfoViewController.m
 //  RewardSampleForObjC
 //
-//  Created by zaizen on 2017/02/21.
-//  Copyright © 2017年 jp.bitm. All rights reserved.
+//  Created by AdGeneration on 2017/02/21.
+//  Copyright © 2017年 Supership Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -17,6 +17,8 @@
 #import <UnityAds/UnityAds.h>
 #import "InfoViewController.h"
 #import <APVReward/APVRewardAd.h>
+#import <VungleSDK/VungleSDK.h>
+#import <ADGPlayer/ADGPlayer.h>
 
 @interface InfoViewController ()
 
@@ -62,11 +64,19 @@
     
     // UnityAds SDK Version
     NSString *unitySdkVersion = [UnityAds getVersion];
-    _adInfoView.text = [NSString stringWithFormat:@"%@\nUnityAdsSDK:%@\n", _adInfoView.text,unitySdkVersion];
+    _adInfoView.text = [NSString stringWithFormat:@"%@\nUnityAdsSDK:%@", _adInfoView.text,unitySdkVersion];
+    
+    // Vungle SDK Version
+    NSString *vungleSdkVersion = VungleSDKVersion;
+    _adInfoView.text = [NSString stringWithFormat:@"%@\nVungleSDK:%@", _adInfoView.text, vungleSdkVersion];
     
     // AppVador SDK Version
     NSString *apvSdkVersion = [APVRewardAd sdkVersion];
-    _adInfoView.text = [NSString stringWithFormat:@"%@\nAppVadorSDK:%@\n", _adInfoView.text,apvSdkVersion];
+    _adInfoView.text = [NSString stringWithFormat:@"%@\nAppVadorSDK:%@", _adInfoView.text,apvSdkVersion];
+    
+    // ADGPlayer Version
+    NSString *adgPlayerVersion = [ADGPlayer sdkVersion];
+    _adInfoView.text = [NSString stringWithFormat:@"%@\nADGPlayerSDK:%@\n", _adInfoView.text, adgPlayerVersion];
     
     // デバイス名
     NSString *myDeviceName = [[UIDevice currentDevice] name];
@@ -110,6 +120,10 @@
     // IDFA
     NSString *IDFA = [[ASIdentifierManager sharedManager] advertisingIdentifier].UUIDString;
     _adInfoView.text = [NSString stringWithFormat:@"%@\nIDFA：%@", _adInfoView.text, IDFA];
+    
+    // IDFV
+    NSString *IDFV = [UIDevice currentDevice].identifierForVendor.UUIDString;
+    _adInfoView.text = [NSString stringWithFormat:@"%@\nIDFV：%@", _adInfoView.text, IDFV];
     
     // BundleID
     NSString *BundleID = [[NSBundle mainBundle] bundleIdentifier];

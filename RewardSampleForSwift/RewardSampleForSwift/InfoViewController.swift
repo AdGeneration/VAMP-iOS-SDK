@@ -2,7 +2,8 @@
 //  InfoViewController.swift
 //  RewardSampleForSwift
 //
-//  Copyright © 2016年 example. All rights reserved.
+//  Created by AdGeneration on 2017/02/21.
+//  Copyright © 2017年 Supership Inc. All rights reserved.
 //
 
 import Foundation
@@ -55,10 +56,19 @@ class InfoViewController:UIViewController ,APVRewardAdDelegate {
             adInfoView.text.append("\nUnityAdsSDK：" + unitySdkVersion)
         }
         
+        // Vungle SDK Version
+        adInfoView.text.append("\nVungleSDK：" + VungleSDKVersion)
+        
         // AppVador SDK Version
         let appvadorSdk:String? = APVRewardAd.sdkVersion()
         if let appvadorSdkVersion = appvadorSdk {
-            adInfoView.text.append("\nAppVadorSDK：" + appvadorSdkVersion + "\n")
+            adInfoView.text.append("\nAppVadorSDK：" + appvadorSdkVersion)
+        }
+        
+        // ADGPlayer Version
+        let adgPlayer:String? = ADGPlayer.sdkVersion()
+        if let adgPlayerVersion = adgPlayer {
+            adInfoView.text.append("\nADGPlayerSDK：" + adgPlayerVersion + "\n")
         }
         
         // デバイス名
@@ -100,6 +110,12 @@ class InfoViewController:UIViewController ,APVRewardAdDelegate {
         let idfa:String? = ASIdentifierManager.shared().advertisingIdentifier.uuidString
         if let IDFA = idfa {
             adInfoView.text.append("\nIDFA：" + IDFA)
+        }
+        
+        // IDFV
+        let idfv:String? = UIDevice.current.identifierForVendor?.uuidString
+        if let IDFV = idfv {
+            adInfoView.text.append("\nIDFV：" + IDFV)
         }
         
         // BundleID

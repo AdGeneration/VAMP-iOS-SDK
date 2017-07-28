@@ -2,7 +2,8 @@
 //  ViewController.swift
 //  RewardSampleForSwift
 //
-//  Copyright © 2016年 example. All rights reserved.
+//  Created by AdGeneration on 2017/02/21.
+//  Copyright © 2017年 Supership Inc. All rights reserved.
 //
 
 import UIKit
@@ -26,24 +27,25 @@ class ViewController: UIViewController {
 //        VAMP.setTestMode(true)
 
         // デバッグモード
-        // 連携アドネットワーク（AppLovin、UnityAds）
+        // 連携アドネットワーク（AppLovin、AppVador、UnityAds、Vungle）
 //        VAMP.setDebugMode(true)
 
         /* アドネットワークSDK　初期化メディエーション */
         // initializeAdnwSDKを使う場合は、初期化が終わる前にAD画面へ遷移してloadしないようご注意ください。
         // ├ ステータス設定。デフォルトAUTO
-        //    VAMPInitializeState.AUTO	接続環境によって、WEIGHTとALL設定を自動的に切り替える（Wi-Fi:ALL、キャリア回線:WEIGHT）
-        //    VAMPInitializeState.WEIGHT	配信比率が高いものをひとつ初期化する
-        //    VAMPInitializeState.ALL	全アドネットワークを初期化する
+        //    VAMPInitializeState.AUTO      接続環境によって、WEIGHTとALL設定を自動的に切り替える（Wi-Fi:ALL、キャリア回線:WEIGHT）
+        //    VAMPInitializeState.WEIGHT    配信比率が高いものをひとつ初期化する
+        //    VAMPInitializeState.ALL       全アドネットワークを初期化する
+        //    VAMPInitializeState.WIFIONLY  Wi-Fi接続時のみ全アドネットワークを初期化する
         // └ アドネットワークのSDKを初期化する間隔（秒数）
-        //   duration:秒単位で指定する。最小4秒、最大60秒。デフォルトは10秒。（対象:AppLovin、maio、UnityAds）
+        //   duration:秒単位で指定する。最小4秒、最大60秒。デフォルトは10秒。（対象:AppLovin、maio、UnityAds、Vungle）
         /*
         self.adReward = VAMP()
         if ((self.adReward) != nil) {
             self.adReward.initializeAdnwSDK("*****", initializeState:VAMPInitializeState.AUTO, duration:10) // 広告枠IDを設定してください
             print("[VAMP]initilizedAdnwSDK")
         }
-         */
+        */
 
         // アプリバージョン。info.plistから取得
         let appV:String? = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
@@ -59,24 +61,6 @@ class ViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-    }
-    
-    // 画面遷移部
-    @IBAction func Reword1(){
-        performSegue(withIdentifier: "pushReword1", sender:self)
-    }
-    
-    @IBAction func Reword2() {
-        performSegue(withIdentifier: "pushReword2", sender:self)
-    }
-    
-    // 詳細画面
-    @IBAction func Info() {
-        performSegue(withIdentifier: "pushInfo", sender: self)
-    }
-    
-    @IBAction func Ad2() {
-        performSegue(withIdentifier: "pushAd2", sender: self)
     }
 }
 

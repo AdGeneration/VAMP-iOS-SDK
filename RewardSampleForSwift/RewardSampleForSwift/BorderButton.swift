@@ -2,7 +2,8 @@
 //  BorderButton.swift
 //  RewardSampleForSwift
 //
-//  Copyright © 2016年 example. All rights reserved.
+//  Created by AdGeneration on 2017/02/21.
+//  Copyright © 2017年 Supership Inc. All rights reserved.
 //
 // Button_Custom と同様の内容ですが、そのまま使用しているとStoryBoardが暴走したので名称を変更
 

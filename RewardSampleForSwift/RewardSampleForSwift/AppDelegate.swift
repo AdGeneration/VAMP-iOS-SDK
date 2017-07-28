@@ -2,7 +2,8 @@
 //  AppDelegate.swift
 //  RewardSampleForSwift
 //
-//  Copyright © 2016年 example. All rights reserved.
+//  Created by AdGeneration on 2017/02/21.
+//  Copyright © 2017年 Supership Inc. All rights reserved.
 //
 
 import UIKit

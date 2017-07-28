@@ -2,8 +2,8 @@
 //  AppDelegate.m
 //  RewardSampleForObjC
 //
-//  Created by zaizen on 2017/02/21.
-//  Copyright © 2017年 jp.bitm. All rights reserved.
+//  Created by AdGeneration on 2017/02/21.
+//  Copyright © 2017年 Supership Inc. All rights reserved.
 //
 
 #import "AppDelegate.h"
