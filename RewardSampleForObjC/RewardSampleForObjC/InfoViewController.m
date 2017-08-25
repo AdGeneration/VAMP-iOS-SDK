@@ -16,7 +16,6 @@
 #import <Maio/Maio.h>
 #import <UnityAds/UnityAds.h>
 #import "InfoViewController.h"
-#import <APVReward/APVRewardAd.h>
 #import <VungleSDK/VungleSDK.h>
 #import <ADGPlayer/ADGPlayer.h>
 
@@ -69,10 +68,6 @@
     // Vungle SDK Version
     NSString *vungleSdkVersion = VungleSDKVersion;
     _adInfoView.text = [NSString stringWithFormat:@"%@\nVungleSDK:%@", _adInfoView.text, vungleSdkVersion];
-    
-    // AppVador SDK Version
-    NSString *apvSdkVersion = [APVRewardAd sdkVersion];
-    _adInfoView.text = [NSString stringWithFormat:@"%@\nAppVadorSDK:%@", _adInfoView.text,apvSdkVersion];
     
     // ADGPlayer Version
     NSString *adgPlayerVersion = [ADGPlayer sdkVersion];
@@ -151,6 +146,7 @@
     
     // サポートOSバージョン
     _adInfoView.text = [NSString stringWithFormat:@"%@\nサポートOSバージョン：%.01f以上", _adInfoView.text, [VAMP SupportedOSVersion]];
+    _adInfoView.text = [NSString stringWithFormat:@"%@\nサポート対象OS：%@", _adInfoView.text, [VAMP isSupportedOSVersion] ? @"true" : @"false"];
 }
 
 @end

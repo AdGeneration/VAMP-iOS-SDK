@@ -199,9 +199,6 @@ static NSString * const kPubId = @"*****"; // 広告枠IDを設定してくだ�
 {
     [self addLogText:[NSString stringWithFormat:@"vampDidExpired(%@)\n", placementId]];
     NSLog(@"[VAMP]vampDidExpired placementId:(%@)", placementId);
-    
-    // 期限切れになったのでloadをやり直す
-    [self.adReward load];
 }
 
 @end

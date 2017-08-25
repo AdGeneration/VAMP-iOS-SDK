@@ -15,7 +15,7 @@ import AppLovinSDK
 import Maio
 import UnityAds
 
-class InfoViewController:UIViewController ,APVRewardAdDelegate {
+class InfoViewController:UIViewController {
     @IBOutlet weak var deviceLabel: UILabel!
     @IBOutlet weak var adInfoView: UITextView!
     
@@ -58,12 +58,6 @@ class InfoViewController:UIViewController ,APVRewardAdDelegate {
         
         // Vungle SDK Version
         adInfoView.text.append("\nVungleSDK：" + VungleSDKVersion)
-        
-        // AppVador SDK Version
-        let appvadorSdk:String? = APVRewardAd.sdkVersion()
-        if let appvadorSdkVersion = appvadorSdk {
-            adInfoView.text.append("\nAppVadorSDK：" + appvadorSdkVersion)
-        }
         
         // ADGPlayer Version
         let adgPlayer:String? = ADGPlayer.sdkVersion()
@@ -163,5 +157,6 @@ class InfoViewController:UIViewController ,APVRewardAdDelegate {
         if let mySupportOSV = supportOSV {
             adInfoView.text.append("\nサポートOSバージョン：" + String(format:"%.01f", mySupportOSV) + "以上")
         }
+        adInfoView.text.append("\nサポート対象OS：" + (VAMP.isSupportedOSVersion() ? "true" : "false"))
     }
 }

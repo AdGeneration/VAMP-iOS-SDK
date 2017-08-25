@@ -201,8 +201,5 @@ class VideoSingleViewController:UIViewController, VAMPDelegate {
         guard let _placementId = placementId else { return }
         self.addLogText(message:"vampDidExpired(\(_placementId))\n")
         print("[VAMP]vampDidExpired placementId:\(_placementId)")
-        
-        // 期限切れになったのでloadをやり直す
-        self.loadAd(sender: self)
     }
 }
