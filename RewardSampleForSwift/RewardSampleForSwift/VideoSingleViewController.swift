@@ -83,13 +83,13 @@ class VideoSingleViewController:UIViewController, VAMPDelegate {
         super.viewDidAppear(animated)
     }
     
-    func soundOff()
+    @objc func soundOff()
     {
         self.navigationItem.rightBarButtonItem?.customView = self.soundOnButton
         self.soundPlayer.pause()
     }
     
-    func soundOn()
+    @objc func soundOn()
     {
         self.navigationItem.rightBarButtonItem?.customView = self.soundOffButton
         self.soundPlayer.play()

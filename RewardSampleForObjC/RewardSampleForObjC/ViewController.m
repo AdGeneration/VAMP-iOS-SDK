@@ -56,7 +56,13 @@
     NSString *sdkV = [VAMP SDKVersion];
     
     // バージョン情報
-    self.sdkVersion.text = [NSString stringWithFormat:@"APP %@(Objective-C)\nSDK %@\n", appV, sdkV];
+    self.sdkVersion.text = [NSString stringWithFormat:@"APP %@(Objective-C)\nSDK %@", appV, sdkV];
+    
+    // 国コードの取得サンプル
+    __weak typeof(self) weakSelf = self;
+    [VAMP getCountryCode:^(NSString *countryCode) {
+        weakSelf.sdkVersion.text = [NSString stringWithFormat:@"%@ / %@", weakSelf.sdkVersion.text, countryCode];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

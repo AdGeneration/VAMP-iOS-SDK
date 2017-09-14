@@ -56,7 +56,14 @@ class ViewController: UIViewController {
         guard let sdkVersion = sdkV else { return }
         
         // バージョン情報
-        self.sdkVersion.text = "APP \(appVersion)(Swift)\nSDK \(sdkVersion)\n"
+        self.sdkVersion.text = "APP \(appVersion)(Swift)\nSDK \(sdkVersion)"
+        
+        // 国コードの取得サンプル
+        VAMP.getCountryCode { [weak self] (countryCode: String?) in
+            if let weakSelf = self {
+                weakSelf.sdkVersion.text = "\(weakSelf.sdkVersion.text!) / \(countryCode!)"
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {

@@ -18,6 +18,7 @@
 #import "InfoViewController.h"
 #import <VungleSDK/VungleSDK.h>
 #import <ADGPlayer/ADGPlayer.h>
+#import <GoogleMobileAds/GoogleMobileAds.h>
 
 @interface InfoViewController ()
 
@@ -71,7 +72,12 @@
     
     // ADGPlayer Version
     NSString *adgPlayerVersion = [ADGPlayer sdkVersion];
-    _adInfoView.text = [NSString stringWithFormat:@"%@\nADGPlayerSDK:%@\n", _adInfoView.text, adgPlayerVersion];
+    _adInfoView.text = [NSString stringWithFormat:@"%@\nADGPlayerSDK:%@", _adInfoView.text, adgPlayerVersion];
+    
+    // Admob SDK Version
+    NSString *admobVersion = [NSString stringWithCString:(const char *) GoogleMobileAdsVersionString
+                                                encoding:NSUTF8StringEncoding];
+    _adInfoView.text = [NSString stringWithFormat:@"%@\nAdmobSDK:%@\n", _adInfoView.text, admobVersion];
     
     // デバイス名
     NSString *myDeviceName = [[UIDevice currentDevice] name];
