@@ -39,30 +39,27 @@ class InfoViewController:UIViewController {
         self.automaticallyAdjustsScrollViewInsets = false
         
         // AppLovin SDK Version
-        let alSdk:String? = ALSdk.version()
-        if let alSdkVersion = alSdk {
-            adInfoView.text = "AppLovinSDK：" + alSdkVersion
-        }
+        adInfoView.text = "AppLovinSDK：\(ALSdk.version())"
         
         // maio SDK Version
         let maioSdk:String? = Maio.sdkVersion()
         if let maioSdkVersion = maioSdk {
-            adInfoView.text.append("\nmaioSDK：" + maioSdkVersion)
+            adInfoView.text.append("\nmaioSDK：\(maioSdkVersion)")
         }
         
         // UnityAds SDK Version
-        let unitySdk:String? = UnityAds.getVersion()
-        if let unitySdkVersion = unitySdk {
-            adInfoView.text.append("\nUnityAdsSDK：" + unitySdkVersion)
-        }
+        adInfoView.text.append("\nUnityAdsSDK：\(UnityAds.getVersion())")
         
         // Vungle SDK Version
-        adInfoView.text.append("\nVungleSDK：" + VungleSDKVersion)
+        adInfoView.text.append("\nVungleSDK：\(VungleSDKVersion)")
+        
+        // FAN SDK Version
+        adInfoView.text.append("\nFAN SDK：\(FB_AD_SDK_VERSION)")
         
         // ADGPlayer Version
         let adgPlayer:String? = ADGPlayer.sdkVersion()
         if let adgPlayerVersion = adgPlayer {
-            adInfoView.text.append("\nADGPlayerSDK：" + adgPlayerVersion + "\n")
+            adInfoView.text.append("\nADGPlayerSDK：\(adgPlayerVersion)\n")
         }
         
         // デバイス名

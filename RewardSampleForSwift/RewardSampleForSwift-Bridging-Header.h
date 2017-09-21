@@ -9,4 +9,5 @@
 #import <VAMP/VAMP.h>
 #import <VungleSDK/VungleSDK.h>
 #import <ADGPlayer/ADGPlayer.h>
+#import <FBAudienceNetwork/FBAudienceNetwork.h>
 

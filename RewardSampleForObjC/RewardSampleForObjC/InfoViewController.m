@@ -11,14 +11,17 @@
 #import <CoreTelephony/CTTelephonyNetworkInfo.h>
 #import <CoreTelephony/CTCarrier.h>
 #import <AdSupport/AdSupport.h>
+
 #import <VAMP/VAMP.h>
 #import <AppLovinSDK/AppLovinSDK.h>
 #import <Maio/Maio.h>
 #import <UnityAds/UnityAds.h>
-#import "InfoViewController.h"
 #import <VungleSDK/VungleSDK.h>
 #import <ADGPlayer/ADGPlayer.h>
 #import <GoogleMobileAds/GoogleMobileAds.h>
+#import <FBAudienceNetwork/FBAudienceNetwork.h>
+
+#import "InfoViewController.h"
 
 @interface InfoViewController ()
 
@@ -69,6 +72,11 @@
     // Vungle SDK Version
     NSString *vungleSdkVersion = VungleSDKVersion;
     _adInfoView.text = [NSString stringWithFormat:@"%@\nVungleSDK:%@", _adInfoView.text, vungleSdkVersion];
+    
+    // FAN SDK Version
+#ifdef FB_AD_SDK_VERSION
+    _adInfoView.text = [NSString stringWithFormat:@"%@\nFAN SDK:%@", _adInfoView.text, FB_AD_SDK_VERSION];
+#endif
     
     // ADGPlayer Version
     NSString *adgPlayerVersion = [ADGPlayer sdkVersion];

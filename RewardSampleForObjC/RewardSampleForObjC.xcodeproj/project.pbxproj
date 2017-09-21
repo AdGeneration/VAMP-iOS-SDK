@@ -10,6 +10,8 @@
 		662BB9671F177684006821AD /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 662BB9661F177684006821AD /* GLKit.framework */; };
 		662BB9691F1776AF006821AD /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 662BB9681F1776AF006821AD /* CoreMotion.framework */; };
 		662BB99E1F177C03006821AD /* VideoSingle2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 662BB99D1F177C03006821AD /* VideoSingle2ViewController.m */; };
+		667551E51F73799A002D3BE8 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 667551E41F73799A002D3BE8 /* libc++.tbd */; };
+		667551E71F7379A0002D3BE8 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 667551E61F7379A0002D3BE8 /* libxml2.tbd */; };
 		66A8099B1F29E6840012FD66 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF0894131E5C364C00F08BE5 /* CoreGraphics.framework */; };
 		66A8099D1F29E6A30012FD66 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66A8099C1F29E6A30012FD66 /* Foundation.framework */; };
 		66A8099F1F29E6AF0012FD66 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 66A8099E1F29E6AF0012FD66 /* libz.tbd */; };
@@ -48,6 +50,8 @@
 		662BB9681F1776AF006821AD /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		662BB99C1F177C03006821AD /* VideoSingle2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoSingle2ViewController.h; sourceTree = "<group>"; };
 		662BB99D1F177C03006821AD /* VideoSingle2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoSingle2ViewController.m; sourceTree = "<group>"; };
+		667551E41F73799A002D3BE8 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		667551E61F7379A0002D3BE8 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		66A8099C1F29E6A30012FD66 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		66A8099E1F29E6AF0012FD66 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		66A809A01F29E6BB0012FD66 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
@@ -94,6 +98,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				667551E71F7379A0002D3BE8 /* libxml2.tbd in Frameworks */,
+				667551E51F73799A002D3BE8 /* libc++.tbd in Frameworks */,
 				EF0894021E5C356300F08BE5 /* WebKit.framework in Frameworks */,
 				66A809A21F29E6CC0012FD66 /* QuartzCore.framework in Frameworks */,
 				66A809A11F29E6BB0012FD66 /* libsqlite3.tbd in Frameworks */,
@@ -184,6 +190,8 @@
 		EF0893FC1E5C355500F08BE5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				667551E61F7379A0002D3BE8 /* libxml2.tbd */,
+				667551E41F73799A002D3BE8 /* libc++.tbd */,
 				66A809A01F29E6BB0012FD66 /* libsqlite3.tbd */,
 				66A8099E1F29E6AF0012FD66 /* libz.tbd */,
 				66A8099C1F29E6A30012FD66 /* Foundation.framework */,
@@ -243,8 +251,7 @@
 				TargetAttributes = {
 					EF0893C11E5C2F3F00F08BE5 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = E9SEU5S586;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -412,6 +419,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -438,6 +446,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
