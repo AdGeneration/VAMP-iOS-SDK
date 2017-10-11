@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63B277301F1298160016295A /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63B2772F1F1298160016295A /* ImageIO.framework */; };
+		63B277321F129C290016295A /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63B277311F129C290016295A /* PassKit.framework */; };
+		63B277361F129D7D0016295A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63B277351F129D7D0016295A /* CoreData.framework */; };
+		63B277381F129D8D0016295A /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63B277371F129D8D0016295A /* CoreMotion.framework */; };
+		63B2773A1F129DA50016295A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63B277391F129DA50016295A /* MapKit.framework */; };
+		63B2773B1F129DBD0016295A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C378121DE2164B00583E3E /* Security.framework */; };
 		63C377C01DE20D3900583E3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C377BF1DE20D3900583E3E /* AppDelegate.swift */; };
 		63C377C21DE20D3900583E3E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C377C11DE20D3900583E3E /* ViewController.swift */; };
 		63C377C71DE20D3900583E3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63C377C61DE20D3900583E3E /* Assets.xcassets */; };
@@ -20,7 +26,6 @@
 		63C378191DE2165D00583E3E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C378181DE2165D00583E3E /* AVFoundation.framework */; };
 		63C3781B1DE2166300583E3E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C3781A1DE2166300583E3E /* CFNetwork.framework */; };
 		63C3781D1DE2166D00583E3E /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C3781C1DE2166D00583E3E /* CoreMedia.framework */; };
-		63C378211DE2167900583E3E /* libz.1.2.8.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C378201DE2167900583E3E /* libz.1.2.8.tbd */; };
 		63C378231DE2168800583E3E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C378221DE2168800583E3E /* AudioToolbox.framework */; };
 		63C378251DE2169500583E3E /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C378241DE2169500583E3E /* EventKit.framework */; };
 		63C378271DE2169A00583E3E /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C378261DE2169A00583E3E /* EventKitUI.framework */; };
@@ -29,23 +34,29 @@
 		63C3782D1DE216B100583E3E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C3782C1DE216B100583E3E /* WebKit.framework */; };
 		63C3782F1DE216C000583E3E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C3782E1DE216C000583E3E /* UIKit.framework */; };
 		662BB9971F177B4C006821AD /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 662BB9961F177B4C006821AD /* GLKit.framework */; };
-		662BB9991F177B55006821AD /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 662BB9981F177B55006821AD /* CoreMotion.framework */; };
 		662BB99B1F177BF1006821AD /* VideoSingle2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662BB99A1F177BF1006821AD /* VideoSingle2ViewController.swift */; };
 		667551F91F737A0B002D3BE8 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 667551F81F737A0B002D3BE8 /* libc++.tbd */; };
 		667551FB1F737A12002D3BE8 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 667551FA1F737A11002D3BE8 /* libxml2.tbd */; };
-		66A809A31F29E77C0012FD66 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C378161DE2165700583E3E /* CoreGraphics.framework */; };
-		66A809A51F29E78E0012FD66 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66A809A41F29E78E0012FD66 /* Foundation.framework */; };
 		66A809A71F29E7960012FD66 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 66A809A61F29E7960012FD66 /* libz.tbd */; };
 		66A809A91F29E79E0012FD66 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 66A809A81F29E79E0012FD66 /* libsqlite3.tbd */; };
-		66A809AA1F29E7B80012FD66 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C378141DE2165100583E3E /* QuartzCore.framework */; };
+		66BB2EA71F838B84009C43B0 /* ADNWVersionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 66BB2EA61F838B84009C43B0 /* ADNWVersionHelper.m */; };
+		66C9D0981F8DF5760062D10F /* NendAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66C9D0521F8DF10A0062D10F /* NendAd.framework */; };
+		66C9D0991F8DF5760062D10F /* Tapjoy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66C9D0541F8DF1190062D10F /* Tapjoy.framework */; };
+		66F3CE4E1F0F8BBB000F8B3F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C378161DE2165700583E3E /* CoreGraphics.framework */; };
+		66F3CE501F0F8BCB000F8B3F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66F3CE4F1F0F8BCB000F8B3F /* Foundation.framework */; };
+		66F3CE551F0F8BF1000F8B3F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C378141DE2165100583E3E /* QuartzCore.framework */; };
 		DD53D3311E1D4E050053DC99 /* invisible.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EF31231D1DF6705D00131E96 /* invisible.mp3 */; };
 		DDF0993D1EDBC3C8002E5729 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDF0993C1EDBC3C8002E5729 /* StoreKit.framework */; };
-		EF3123201DF69C2D00131E96 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF31231F1DF69C2D00131E96 /* MobileCoreServices.framework */; };
 		EF3BD8BF1DE3E6F400841B08 /* BorderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3BD8BE1DE3E6F400841B08 /* BorderButton.swift */; };
 		EF3BD8C21DE3E72000841B08 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF3BD8C01DE3E72000841B08 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		63B2772F1F1298160016295A /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		63B277311F129C290016295A /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
+		63B277351F129D7D0016295A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		63B277371F129D8D0016295A /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		63B277391F129DA50016295A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		63C377BC1DE20D3900583E3E /* RewardSampleForSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RewardSampleForSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63C377BF1DE20D3900583E3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63C377C11DE20D3900583E3E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +92,15 @@
 		66A809A41F29E78E0012FD66 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		66A809A61F29E7960012FD66 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		66A809A81F29E79E0012FD66 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		66BB2EA51F838B84009C43B0 /* ADNWVersionHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADNWVersionHelper.h; sourceTree = "<group>"; };
+		66BB2EA61F838B84009C43B0 /* ADNWVersionHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ADNWVersionHelper.m; sourceTree = "<group>"; };
+		66C9D0521F8DF10A0062D10F /* NendAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NendAd.framework; path = RewardSampleForSwift/sdk/NendAd.embeddedframework/NendAd.framework; sourceTree = "<group>"; };
+		66C9D0541F8DF1190062D10F /* Tapjoy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Tapjoy.framework; path = RewardSampleForSwift/sdk/Tapjoy.embeddedframework/Tapjoy.framework; sourceTree = "<group>"; };
+		66DEE1E81F736364005F78E9 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		66DEE1EA1F73636A005F78E9 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		66F3CE4F1F0F8BCB000F8B3F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		66F3CE511F0F8BD4000F8B3F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		66F3CE531F0F8BDC000F8B3F /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		DD53D32F1E1D463E0053DC99 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		DD53D3301E1D463E0053DC99 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		DDF0993C1EDBC3C8002E5729 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -88,6 +108,7 @@
 		EF31231F1DF69C2D00131E96 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		EF3BD8BE1DE3E6F400841B08 /* BorderButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderButton.swift; sourceTree = "<group>"; };
 		EF3BD8C11DE3E72000841B08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EF805D791F036E78009789B4 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,23 +118,26 @@
 			files = (
 				667551FB1F737A12002D3BE8 /* libxml2.tbd in Frameworks */,
 				667551F91F737A0B002D3BE8 /* libc++.tbd in Frameworks */,
-				66A809AA1F29E7B80012FD66 /* QuartzCore.framework in Frameworks */,
 				66A809A91F29E79E0012FD66 /* libsqlite3.tbd in Frameworks */,
 				66A809A71F29E7960012FD66 /* libz.tbd in Frameworks */,
-				66A809A51F29E78E0012FD66 /* Foundation.framework in Frameworks */,
-				66A809A31F29E77C0012FD66 /* CoreGraphics.framework in Frameworks */,
 				63C378231DE2168800583E3E /* AudioToolbox.framework in Frameworks */,
-				662BB9991F177B55006821AD /* CoreMotion.framework in Frameworks */,
 				662BB9971F177B4C006821AD /* GLKit.framework in Frameworks */,
 				DDF0993D1EDBC3C8002E5729 /* StoreKit.framework in Frameworks */,
-				EF3123201DF69C2D00131E96 /* MobileCoreServices.framework in Frameworks */,
+				63B2773B1F129DBD0016295A /* Security.framework in Frameworks */,
+				63B2773A1F129DA50016295A /* MapKit.framework in Frameworks */,
+				63B277381F129D8D0016295A /* CoreMotion.framework in Frameworks */,
+				63B277361F129D7D0016295A /* CoreData.framework in Frameworks */,
+				63B277321F129C290016295A /* PassKit.framework in Frameworks */,
+				63B277301F1298160016295A /* ImageIO.framework in Frameworks */,
+				66F3CE551F0F8BF1000F8B3F /* QuartzCore.framework in Frameworks */,
+				66F3CE501F0F8BCB000F8B3F /* Foundation.framework in Frameworks */,
+				66F3CE4E1F0F8BBB000F8B3F /* CoreGraphics.framework in Frameworks */,
 				63C3782F1DE216C000583E3E /* UIKit.framework in Frameworks */,
 				63C3782D1DE216B100583E3E /* WebKit.framework in Frameworks */,
 				63C3782B1DE216AA00583E3E /* Social.framework in Frameworks */,
 				63C378291DE216A100583E3E /* MessageUI.framework in Frameworks */,
 				63C378271DE2169A00583E3E /* EventKitUI.framework in Frameworks */,
 				63C378251DE2169500583E3E /* EventKit.framework in Frameworks */,
-				63C378211DE2167900583E3E /* libz.1.2.8.tbd in Frameworks */,
 				63C3781D1DE2166D00583E3E /* CoreMedia.framework in Frameworks */,
 				63C3781B1DE2166300583E3E /* CFNetwork.framework in Frameworks */,
 				63C378191DE2165D00583E3E /* AVFoundation.framework in Frameworks */,
@@ -121,6 +145,8 @@
 				63C3780F1DE2163E00583E3E /* CoreTelephony.framework in Frameworks */,
 				63C3780D1DE2163700583E3E /* SystemConfiguration.framework in Frameworks */,
 				63C3780B1DE2163100583E3E /* AdSupport.framework in Frameworks */,
+				66C9D0981F8DF5760062D10F /* NendAd.framework in Frameworks */,
+				66C9D0991F8DF5760062D10F /* Tapjoy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +158,8 @@
 			children = (
 				63C377BE1DE20D3900583E3E /* RewardSampleForSwift */,
 				63C378081DE2155900583E3E /* RewardSampleForSwift-Bridging-Header.h */,
+				66BB2EA51F838B84009C43B0 /* ADNWVersionHelper.h */,
+				66BB2EA61F838B84009C43B0 /* ADNWVersionHelper.m */,
 				63C378091DE2163100583E3E /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -175,6 +203,8 @@
 		63C378091DE2163100583E3E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				66C9D0541F8DF1190062D10F /* Tapjoy.framework */,
+				66C9D0521F8DF10A0062D10F /* NendAd.framework */,
 				667551FA1F737A11002D3BE8 /* libxml2.tbd */,
 				667551F81F737A0B002D3BE8 /* libc++.tbd */,
 				66A809A81F29E79E0012FD66 /* libsqlite3.tbd */,
@@ -184,12 +214,21 @@
 				662BB9961F177B4C006821AD /* GLKit.framework */,
 				DDF0993C1EDBC3C8002E5729 /* StoreKit.framework */,
 				EF31231F1DF69C2D00131E96 /* MobileCoreServices.framework */,
-				63C3782E1DE216C000583E3E /* UIKit.framework */,
-				63C3782C1DE216B100583E3E /* WebKit.framework */,
 				63C3782A1DE216AA00583E3E /* Social.framework */,
 				63C378281DE216A100583E3E /* MessageUI.framework */,
 				63C378261DE2169A00583E3E /* EventKitUI.framework */,
 				63C378241DE2169500583E3E /* EventKit.framework */,
+				66DEE1EA1F73636A005F78E9 /* libxml2.tbd */,
+				66DEE1E81F736364005F78E9 /* libc++.tbd */,
+				63B277391F129DA50016295A /* MapKit.framework */,
+				63B277371F129D8D0016295A /* CoreMotion.framework */,
+				63B277351F129D7D0016295A /* CoreData.framework */,
+				63B277311F129C290016295A /* PassKit.framework */,
+				63B2772F1F1298160016295A /* ImageIO.framework */,
+				66F3CE531F0F8BDC000F8B3F /* libsqlite3.tbd */,
+				66F3CE511F0F8BD4000F8B3F /* libz.tbd */,
+				66F3CE4F1F0F8BCB000F8B3F /* Foundation.framework */,
+				EF805D791F036E78009789B4 /* ImageIO.framework */,
 				63C378221DE2168800583E3E /* AudioToolbox.framework */,
 				63C378201DE2167900583E3E /* libz.1.2.8.tbd */,
 				63C3781C1DE2166D00583E3E /* CoreMedia.framework */,
@@ -202,6 +241,8 @@
 				63C3780E1DE2163E00583E3E /* CoreTelephony.framework */,
 				63C3780C1DE2163700583E3E /* SystemConfiguration.framework */,
 				63C3780A1DE2163100583E3E /* AdSupport.framework */,
+				63C3782E1DE216C000583E3E /* UIKit.framework */,
+				63C3782C1DE216B100583E3E /* WebKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -291,6 +332,7 @@
 				63C377D41DE20FDB00583E3E /* VideoSingleViewController.swift in Sources */,
 				63C377D81DE2102400583E3E /* InfoViewController.swift in Sources */,
 				EF3BD8BF1DE3E6F400841B08 /* BorderButton.swift in Sources */,
+				66BB2EA71F838B84009C43B0 /* ADNWVersionHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,6 +470,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/RewardSampleForSwift/sdk",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/RewardSampleForSwift/sdk/Tapjoy.embeddedframework",
+					"$(PROJECT_DIR)/RewardSampleForSwift/sdk/NendAd.embeddedframework",
 				);
 				INFOPLIST_FILE = RewardSampleForSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -460,6 +504,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/RewardSampleForSwift/sdk",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/RewardSampleForSwift/sdk/Tapjoy.embeddedframework",
+					"$(PROJECT_DIR)/RewardSampleForSwift/sdk/NendAd.embeddedframework",
 				);
 				INFOPLIST_FILE = RewardSampleForSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

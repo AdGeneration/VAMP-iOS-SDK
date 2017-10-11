@@ -48,12 +48,12 @@ class VideoSingle2ViewController:UIViewController, VAMPDelegate {
         
         // ナビゲーションのボタンを設定
         self.soundOffButton = UIButton()
-        self.soundOffButton.setBackgroundImage(UIImage(named:"soundOn"), for: UIControlState.normal);
+        self.soundOffButton.setBackgroundImage(UIImage(named:"soundOn"), for: UIControlState.normal)
         self.soundOffButton.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
         self.soundOffButton.addTarget(self, action:#selector(self.soundOff), for: UIControlEvents.touchUpInside)
         
         self.soundOnButton = UIButton()
-        self.soundOnButton.setBackgroundImage(UIImage(named:"soundOff"), for: UIControlState.normal);
+        self.soundOnButton.setBackgroundImage(UIImage(named:"soundOff"), for: UIControlState.normal)
         self.soundOnButton.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
         self.soundOnButton.addTarget(self, action:#selector(self.soundOn), for: UIControlEvents.touchUpInside)
         
@@ -61,11 +61,11 @@ class VideoSingle2ViewController:UIViewController, VAMPDelegate {
         self.navigationItem.rightBarButtonItem = barButton
         
         // 再生する音声を追加
-        let soundPath = Bundle.main.path(forResource: "invisible", ofType: "mp3");
-        let soundUrl:NSURL? = NSURL(fileURLWithPath: soundPath!);
+        let soundPath = Bundle.main.path(forResource: "invisible", ofType: "mp3")
+        let soundUrl:NSURL? = NSURL(fileURLWithPath: soundPath!)
         do {
             // Fallback on earlier versions
-            self.soundPlayer = try AVAudioPlayer(contentsOf: soundUrl! as URL);
+            self.soundPlayer = try AVAudioPlayer(contentsOf: soundUrl! as URL)
             self.soundPlayer.prepareToPlay()
         } catch {
             // 音声読み込み失敗
@@ -128,7 +128,7 @@ class VideoSingle2ViewController:UIViewController, VAMPDelegate {
         
         // MainThread でないとエラー
         DispatchQueue.main.async() {
-            self.adLogView.text = NSString(format:"%@%@", logmessage, self.adLogView.text) as String;
+            self.adLogView.text = NSString(format:"%@%@", logmessage, self.adLogView.text) as String
         };
     }
     

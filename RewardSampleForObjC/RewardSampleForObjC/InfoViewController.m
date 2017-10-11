@@ -17,6 +17,8 @@
 #import <Maio/Maio.h>
 #import <UnityAds/UnityAds.h>
 #import <VungleSDK/VungleSDK.h>
+#import <NendAd/NendAd.h>
+#import <Tapjoy/Tapjoy.h>
 #import <ADGPlayer/ADGPlayer.h>
 #import <GoogleMobileAds/GoogleMobileAds.h>
 #import <FBAudienceNetwork/FBAudienceNetwork.h>
@@ -73,10 +75,16 @@
     NSString *vungleSdkVersion = VungleSDKVersion;
     _adInfoView.text = [NSString stringWithFormat:@"%@\nVungleSDK:%@", _adInfoView.text, vungleSdkVersion];
     
+    // nend SDK Version
+    _adInfoView.text = [NSString stringWithFormat:@"%@\nnendSDK:%s", _adInfoView.text, NendAdVersionString];
+    
     // FAN SDK Version
 #ifdef FB_AD_SDK_VERSION
     _adInfoView.text = [NSString stringWithFormat:@"%@\nFAN SDK:%@", _adInfoView.text, FB_AD_SDK_VERSION];
 #endif
+    
+    // Tapjoy SDK Version
+    _adInfoView.text = [NSString stringWithFormat:@"%@\nTapjoySDK:%@", _adInfoView.text, [Tapjoy getVersion]];
     
     // ADGPlayer Version
     NSString *adgPlayerVersion = [ADGPlayer sdkVersion];
