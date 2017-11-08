@@ -27,7 +27,7 @@ class ViewController: UIViewController {
 //        VAMP.setTestMode(true)
 
         // デバッグモード
-        // 連携アドネットワーク（AppLovin、AppVador、UnityAds、Vungle）
+        // 連携アドネットワーク（AppLovin、UnityAds、FAN、Tapjoy）
 //        VAMP.setDebugMode(true)
 
         /* アドネットワークSDK　初期化メディエーション */

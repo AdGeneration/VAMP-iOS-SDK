@@ -7,21 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		662BB9671F177684006821AD /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 662BB9661F177684006821AD /* GLKit.framework */; };
-		662BB9691F1776AF006821AD /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 662BB9681F1776AF006821AD /* CoreMotion.framework */; };
-		662BB99E1F177C03006821AD /* VideoSingle2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 662BB99D1F177C03006821AD /* VideoSingle2ViewController.m */; };
-		667551E51F73799A002D3BE8 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 667551E41F73799A002D3BE8 /* libc++.tbd */; };
-		667551E71F7379A0002D3BE8 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 667551E61F7379A0002D3BE8 /* libxml2.tbd */; };
 		66A8098D1F2895BF0012FD66 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF0894171E5C371C00F08BE5 /* Security.framework */; };
 		66A8098F1F2895CE0012FD66 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66A8098E1F2895CE0012FD66 /* ImageIO.framework */; };
 		66A809911F2895EB0012FD66 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66A809901F2895EB0012FD66 /* SafariServices.framework */; };
-		66A8099B1F29E6840012FD66 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF0894131E5C364C00F08BE5 /* CoreGraphics.framework */; };
-		66A8099D1F29E6A30012FD66 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66A8099C1F29E6A30012FD66 /* Foundation.framework */; };
-		66A8099F1F29E6AF0012FD66 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 66A8099E1F29E6AF0012FD66 /* libz.tbd */; };
-		66A809A11F29E6BB0012FD66 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 66A809A01F29E6BB0012FD66 /* libsqlite3.tbd */; };
-		66C9D07F1F8DF40F0062D10F /* NendAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66C9D07E1F8DF40E0062D10F /* NendAd.framework */; };
-		66C9D0811F8DF41E0062D10F /* Tapjoy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66C9D0801F8DF41D0062D10F /* Tapjoy.framework */; };
+		66D341C51EF8D4E700809D9B /* VideoSingle2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D341C41EF8D4E700809D9B /* VideoSingle2ViewController.m */; };
+		66DEE1E61F7361CB005F78E9 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 66DEE1E51F7361CB005F78E9 /* libxml2.tbd */; };
+		66DEE1E71F7361DB005F78E9 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 66DEE1E31F7361A7005F78E9 /* libc++.tbd */; };
+		66F3CE421F0F89AA000F8B3F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF0894131E5C364C00F08BE5 /* CoreGraphics.framework */; };
 		66F3CE441F0F89C4000F8B3F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66F3CE431F0F89C4000F8B3F /* Foundation.framework */; };
+		66F3CE461F0F89DC000F8B3F /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 66F3CE451F0F89DC000F8B3F /* libz.tbd */; };
+		66F3CE481F0F89ED000F8B3F /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 66F3CE471F0F89ED000F8B3F /* libsqlite3.tbd */; };
 		66F3CE491F0F8A0D000F8B3F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF0894151E5C365600F08BE5 /* QuartzCore.framework */; };
 		DDA5884B1EA08EFC0044069B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA5884A1EA08EFC0044069B /* StoreKit.framework */; };
 		EF0893C71E5C2F3F00F08BE5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EF0893C61E5C2F3F00F08BE5 /* main.m */; };
@@ -41,6 +36,7 @@
 		EF0894061E5C357200F08BE5 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF0894051E5C357200F08BE5 /* MessageUI.framework */; };
 		EF0894081E5C358200F08BE5 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF0894071E5C358200F08BE5 /* EventKitUI.framework */; };
 		EF08940A1E5C35A500F08BE5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF0894091E5C35A500F08BE5 /* AudioToolbox.framework */; };
+		EF08940C1E5C35AA00F08BE5 /* libz.1.2.8.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EF08940B1E5C35AA00F08BE5 /* libz.1.2.8.tbd */; };
 		EF08940E1E5C35B200F08BE5 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF08940D1E5C35B200F08BE5 /* CoreMedia.framework */; };
 		EF0894101E5C35B800F08BE5 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF08940F1E5C35B800F08BE5 /* CFNetwork.framework */; };
 		EF0894121E5C364500F08BE5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF0894111E5C364500F08BE5 /* AVFoundation.framework */; };
@@ -51,19 +47,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		662BB9661F177684006821AD /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
-		662BB9681F1776AF006821AD /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
-		662BB99C1F177C03006821AD /* VideoSingle2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoSingle2ViewController.h; sourceTree = "<group>"; };
-		662BB99D1F177C03006821AD /* VideoSingle2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoSingle2ViewController.m; sourceTree = "<group>"; };
-		667551E41F73799A002D3BE8 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
-		667551E61F7379A0002D3BE8 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		66A8098E1F2895CE0012FD66 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		66A809901F2895EB0012FD66 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
-		66A8099C1F29E6A30012FD66 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		66A8099E1F29E6AF0012FD66 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		66A809A01F29E6BB0012FD66 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		66C9D07E1F8DF40E0062D10F /* NendAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NendAd.framework; path = RewardSampleForObjC/sdk/NendAd.embeddedframework/NendAd.framework; sourceTree = "<group>"; };
-		66C9D0801F8DF41D0062D10F /* Tapjoy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Tapjoy.framework; path = RewardSampleForObjC/sdk/Tapjoy.embeddedframework/Tapjoy.framework; sourceTree = "<group>"; };
+		66D341C31EF8D4E700809D9B /* VideoSingle2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoSingle2ViewController.h; sourceTree = "<group>"; };
+		66D341C41EF8D4E700809D9B /* VideoSingle2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoSingle2ViewController.m; sourceTree = "<group>"; };
 		66DEE1E31F7361A7005F78E9 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		66DEE1E51F7361CB005F78E9 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		66F3CE431F0F89C4000F8B3F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -112,19 +99,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66C9D0811F8DF41E0062D10F /* Tapjoy.framework in Frameworks */,
-				66C9D07F1F8DF40F0062D10F /* NendAd.framework in Frameworks */,
-				667551E71F7379A0002D3BE8 /* libxml2.tbd in Frameworks */,
-				667551E51F73799A002D3BE8 /* libc++.tbd in Frameworks */,
-				EF0894021E5C356300F08BE5 /* WebKit.framework in Frameworks */,
-				66A809A11F29E6BB0012FD66 /* libsqlite3.tbd in Frameworks */,
-				66A8099F1F29E6AF0012FD66 /* libz.tbd in Frameworks */,
-				66A8099D1F29E6A30012FD66 /* Foundation.framework in Frameworks */,
-				66A8099B1F29E6840012FD66 /* CoreGraphics.framework in Frameworks */,
-				662BB9691F1776AF006821AD /* CoreMotion.framework in Frameworks */,
-				662BB9671F177684006821AD /* GLKit.framework in Frameworks */,
+				66DEE1E71F7361DB005F78E9 /* libc++.tbd in Frameworks */,
+				66DEE1E61F7361CB005F78E9 /* libxml2.tbd in Frameworks */,
 				66F3CE491F0F8A0D000F8B3F /* QuartzCore.framework in Frameworks */,
+				66F3CE481F0F89ED000F8B3F /* libsqlite3.tbd in Frameworks */,
+				66F3CE461F0F89DC000F8B3F /* libz.tbd in Frameworks */,
 				66F3CE441F0F89C4000F8B3F /* Foundation.framework in Frameworks */,
+				66F3CE421F0F89AA000F8B3F /* CoreGraphics.framework in Frameworks */,
 				66A809911F2895EB0012FD66 /* SafariServices.framework in Frameworks */,
 				66A8098F1F2895CE0012FD66 /* ImageIO.framework in Frameworks */,
 				66A8098D1F2895BF0012FD66 /* Security.framework in Frameworks */,
@@ -136,10 +117,12 @@
 				EF0894121E5C364500F08BE5 /* AVFoundation.framework in Frameworks */,
 				EF0894101E5C35B800F08BE5 /* CFNetwork.framework in Frameworks */,
 				EF08940E1E5C35B200F08BE5 /* CoreMedia.framework in Frameworks */,
+				EF08940C1E5C35AA00F08BE5 /* libz.1.2.8.tbd in Frameworks */,
 				EF08940A1E5C35A500F08BE5 /* AudioToolbox.framework in Frameworks */,
 				EF0894081E5C358200F08BE5 /* EventKitUI.framework in Frameworks */,
 				EF0894061E5C357200F08BE5 /* MessageUI.framework in Frameworks */,
 				EF0894041E5C356900F08BE5 /* Social.framework in Frameworks */,
+				EF0894021E5C356300F08BE5 /* WebKit.framework in Frameworks */,
 				EF0894001E5C355D00F08BE5 /* UIKit.framework in Frameworks */,
 				EF0893FE1E5C355500F08BE5 /* MobileCoreServices.framework in Frameworks */,
 			);
@@ -148,27 +131,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		66D143251F8DEC3C001F07E3 /* Recovered References */ = {
-			isa = PBXGroup;
-			children = (
-				66DEE1E31F7361A7005F78E9 /* libc++.tbd */,
-				66DEE1E51F7361CB005F78E9 /* libxml2.tbd */,
-				66F3CE471F0F89ED000F8B3F /* libsqlite3.tbd */,
-				66F3CE451F0F89DC000F8B3F /* libz.tbd */,
-				66F3CE431F0F89C4000F8B3F /* Foundation.framework */,
-				66A809901F2895EB0012FD66 /* SafariServices.framework */,
-				66A8098E1F2895CE0012FD66 /* ImageIO.framework */,
-			);
-			name = "Recovered References";
-			sourceTree = "<group>";
-		};
 		EF0893B91E5C2F3F00F08BE5 = {
 			isa = PBXGroup;
 			children = (
 				EF0893C41E5C2F3F00F08BE5 /* RewardSampleForObjC */,
 				EF0893C31E5C2F3F00F08BE5 /* Products */,
 				EF0893FC1E5C355500F08BE5 /* Frameworks */,
-				66D143251F8DEC3C001F07E3 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -188,8 +156,8 @@
 				EF0893EE1E5C33D100F08BE5 /* BorderButton.m */,
 				EF0893F01E5C340200F08BE5 /* VideoSingleViewController.h */,
 				EF0893F11E5C340200F08BE5 /* VideoSingleViewController.m */,
-				662BB99C1F177C03006821AD /* VideoSingle2ViewController.h */,
-				662BB99D1F177C03006821AD /* VideoSingle2ViewController.m */,
+				66D341C31EF8D4E700809D9B /* VideoSingle2ViewController.h */,
+				66D341C41EF8D4E700809D9B /* VideoSingle2ViewController.m */,
 				EF0893F91E5C34DE00F08BE5 /* InfoViewController.h */,
 				EF0893FA1E5C34DE00F08BE5 /* InfoViewController.m */,
 				EF0893C81E5C2F3F00F08BE5 /* AppDelegate.h */,
@@ -224,34 +192,32 @@
 		EF0893FC1E5C355500F08BE5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				66C9D0801F8DF41D0062D10F /* Tapjoy.framework */,
-				66C9D07E1F8DF40E0062D10F /* NendAd.framework */,
-				667551E61F7379A0002D3BE8 /* libxml2.tbd */,
-				667551E41F73799A002D3BE8 /* libc++.tbd */,
-				66A809A01F29E6BB0012FD66 /* libsqlite3.tbd */,
-				66A8099E1F29E6AF0012FD66 /* libz.tbd */,
-				66A8099C1F29E6A30012FD66 /* Foundation.framework */,
-				662BB9681F1776AF006821AD /* CoreMotion.framework */,
-				662BB9661F177684006821AD /* GLKit.framework */,
-				DDA5884A1EA08EFC0044069B /* StoreKit.framework */,
+				66DEE1E51F7361CB005F78E9 /* libxml2.tbd */,
+				66DEE1E31F7361A7005F78E9 /* libc++.tbd */,
+				66F3CE471F0F89ED000F8B3F /* libsqlite3.tbd */,
+				66F3CE451F0F89DC000F8B3F /* libz.tbd */,
+				66F3CE431F0F89C4000F8B3F /* Foundation.framework */,
+				66A809901F2895EB0012FD66 /* SafariServices.framework */,
+				66A8098E1F2895CE0012FD66 /* ImageIO.framework */,
 				EF08941F1E5C373900F08BE5 /* AdSupport.framework */,
-				EF08941D1E5C373200F08BE5 /* SystemConfiguration.framework */,
-				EF08941B1E5C372D00F08BE5 /* CoreTelephony.framework */,
-				EF0894191E5C372700F08BE5 /* MediaPlayer.framework */,
-				EF0894171E5C371C00F08BE5 /* Security.framework */,
-				EF0894151E5C365600F08BE5 /* QuartzCore.framework */,
-				EF0894131E5C364C00F08BE5 /* CoreGraphics.framework */,
+				EF0894091E5C35A500F08BE5 /* AudioToolbox.framework */,
 				EF0894111E5C364500F08BE5 /* AVFoundation.framework */,
 				EF08940F1E5C35B800F08BE5 /* CFNetwork.framework */,
+				EF0894131E5C364C00F08BE5 /* CoreGraphics.framework */,
 				EF08940D1E5C35B200F08BE5 /* CoreMedia.framework */,
-				EF08940B1E5C35AA00F08BE5 /* libz.1.2.8.tbd */,
-				EF0894091E5C35A500F08BE5 /* AudioToolbox.framework */,
+				EF08941B1E5C372D00F08BE5 /* CoreTelephony.framework */,
 				EF0894071E5C358200F08BE5 /* EventKitUI.framework */,
+				EF08940B1E5C35AA00F08BE5 /* libz.1.2.8.tbd */,
+				EF0894191E5C372700F08BE5 /* MediaPlayer.framework */,
 				EF0894051E5C357200F08BE5 /* MessageUI.framework */,
-				EF0894031E5C356900F08BE5 /* Social.framework */,
-				EF0894011E5C356300F08BE5 /* WebKit.framework */,
-				EF0893FF1E5C355D00F08BE5 /* UIKit.framework */,
 				EF0893FD1E5C355500F08BE5 /* MobileCoreServices.framework */,
+				EF0894151E5C365600F08BE5 /* QuartzCore.framework */,
+				EF0894171E5C371C00F08BE5 /* Security.framework */,
+				EF0894031E5C356900F08BE5 /* Social.framework */,
+				DDA5884A1EA08EFC0044069B /* StoreKit.framework */,
+				EF08941D1E5C373200F08BE5 /* SystemConfiguration.framework */,
+				EF0893FF1E5C355D00F08BE5 /* UIKit.framework */,
+				EF0894011E5C356300F08BE5 /* WebKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -334,7 +300,7 @@
 				EF0893CA1E5C2F3F00F08BE5 /* AppDelegate.m in Sources */,
 				EF0893C71E5C2F3F00F08BE5 /* main.m in Sources */,
 				EF0893EF1E5C33D100F08BE5 /* BorderButton.m in Sources */,
-				662BB99E1F177C03006821AD /* VideoSingle2ViewController.m in Sources */,
+				66D341C51EF8D4E700809D9B /* VideoSingle2ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

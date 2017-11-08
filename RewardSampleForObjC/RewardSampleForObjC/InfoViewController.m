@@ -19,7 +19,6 @@
 #import <VungleSDK/VungleSDK.h>
 #import <NendAd/NendAd.h>
 #import <Tapjoy/Tapjoy.h>
-#import <ADGPlayer/ADGPlayer.h>
 #import <GoogleMobileAds/GoogleMobileAds.h>
 #import <FBAudienceNetwork/FBAudienceNetwork.h>
 
@@ -85,10 +84,6 @@
     
     // Tapjoy SDK Version
     _adInfoView.text = [NSString stringWithFormat:@"%@\nTapjoySDK:%@", _adInfoView.text, [Tapjoy getVersion]];
-    
-    // ADGPlayer Version
-    NSString *adgPlayerVersion = [ADGPlayer sdkVersion];
-    _adInfoView.text = [NSString stringWithFormat:@"%@\nADGPlayerSDK:%@", _adInfoView.text, adgPlayerVersion];
     
     // Admob SDK Version
     NSString *admobVersion = [NSString stringWithCString:(const char *) GoogleMobileAdsVersionString

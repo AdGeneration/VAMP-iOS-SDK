@@ -9,7 +9,6 @@
 #import <VAMP/VAMP.h>
 #import <VungleSDK/VungleSDK.h>
 #import <Tapjoy/Tapjoy.h>
-#import <ADGPlayer/ADGPlayer.h>
 #import <FBAudienceNetwork/FBAudienceNetwork.h>
 
 #import "ADNWVersionHelper.h"

@@ -62,12 +62,6 @@ class InfoViewController:UIViewController {
         // Tapjoy SDK Version
         adInfoView.text.append("\nTapjoySDK：\(Tapjoy.getVersion()!)")
         
-        // ADGPlayer Version
-        let adgPlayer:String? = ADGPlayer.sdkVersion()
-        if let adgPlayerVersion = adgPlayer {
-            adInfoView.text.append("\nADGPlayerSDK：\(adgPlayerVersion)")
-        }
-        
         // Admob SDK Version
         adInfoView.text.append("\nAdmobSDK：\(ADNWVersionHelper.admobVersion())\n")
         

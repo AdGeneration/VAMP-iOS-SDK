@@ -2,7 +2,7 @@
 //  ADNWVersionHelper.m
 //  RewardSampleForSwift
 //
-//  Created by masaki.ando on 2017/10/03.
+//  Created by AdGeneration on 2017/10/03.
 //  Copyright © 2017年 Supership Inc. All rights reserved.
 //
 
@@ -13,7 +13,8 @@
 @implementation ADNWVersionHelper
 
 + (NSString *)admobVersion {
-    NSString *ver = [NSString stringWithCString:GoogleMobileAdsVersionString encoding:NSUTF8StringEncoding];
+    NSString *ver = [NSString stringWithCString:(const char *) GoogleMobileAdsVersionString
+                                       encoding:NSUTF8StringEncoding];
     
     if (!ver) {
         return @"unknown";
@@ -23,7 +24,8 @@
 }
 
 + (NSString *)nendVersion {
-    NSString *ver = [NSString stringWithCString:NendAdVersionString encoding:NSUTF8StringEncoding];
+    NSString *ver = [NSString stringWithCString:(const char *) NendAdVersionString
+                                       encoding:NSUTF8StringEncoding];
     
     if (!ver) {
         return @"unknown";

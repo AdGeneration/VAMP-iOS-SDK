@@ -2,7 +2,7 @@
 //  ADNWVersionHelper.h
 //  RewardSampleForSwift
 //
-//  Created by masaki.ando on 2017/10/03.
+//  Created by AdGeneration on 2017/10/03.
 //  Copyright © 2017年 Supership Inc. All rights reserved.
 //
 

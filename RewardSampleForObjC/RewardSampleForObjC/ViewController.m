@@ -29,7 +29,7 @@
 //    [VAMP setTestMode:YES];
     
     /* デバッグモード */
-    // AppLovin、AppVador、UnityAds、Vungle
+    // AppLovin、UnityAds、FAN、Tapjoy
 //    [VAMP setDebugMode:YES];
     
     /* アドネットワークSDK　初期化メディエーション */
