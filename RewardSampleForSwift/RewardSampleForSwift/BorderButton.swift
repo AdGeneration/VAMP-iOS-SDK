@@ -12,6 +12,14 @@ class BorderButton: UIButton {
     
     @IBInspectable var textColor: UIColor?
     
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        self.layer.cornerRadius = 5.0
+        self.layer.borderWidth = 1.0
+        self.layer.borderColor = UIColor.lightGray.cgColor
+    }
+    
     @IBInspectable var cornerRadius: CGFloat = 0 {
         didSet {
             layer.cornerRadius = cornerRadius

@@ -19,8 +19,8 @@ class VideoSingle2ViewController:UIViewController, VAMPDelegate {
     let pubId:String! = "*****" // 広告枠IDを設定してください
     
     var adReward:VAMP!
-    var soundOffButton:UIButton!
-    var soundOnButton:UIButton!
+    var soundOffButton:UIBarButtonItem!
+    var soundOnButton:UIBarButtonItem!
     var soundPlayer:AVAudioPlayer!
     
     override func viewDidLoad() {
@@ -47,18 +47,15 @@ class VideoSingle2ViewController:UIViewController, VAMPDelegate {
         self.adLogView.isEditable = false
         
         // ナビゲーションのボタンを設定
-        self.soundOffButton = UIButton()
-        self.soundOffButton.setBackgroundImage(UIImage(named:"soundOn"), for: UIControlState.normal)
-        self.soundOffButton.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
-        self.soundOffButton.addTarget(self, action:#selector(self.soundOff), for: UIControlEvents.touchUpInside)
+        let soundOnImage = UIImage(named: "soundOn")?.withRenderingMode(.alwaysOriginal)
+        self.soundOffButton = UIBarButtonItem.init(image: soundOnImage, style: .plain, target: self,
+                                                   action: #selector(self.soundOff))
         
-        self.soundOnButton = UIButton()
-        self.soundOnButton.setBackgroundImage(UIImage(named:"soundOff"), for: UIControlState.normal)
-        self.soundOnButton.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
-        self.soundOnButton.addTarget(self, action:#selector(self.soundOn), for: UIControlEvents.touchUpInside)
+        let soundOffImage = UIImage(named: "soundOff")?.withRenderingMode(.alwaysOriginal)
+        self.soundOnButton = UIBarButtonItem.init(image: soundOffImage, style: .plain, target: self,
+                                                  action: #selector(self.soundOn))
         
-        let barButton = UIBarButtonItem(customView:self.soundOnButton)
-        self.navigationItem.rightBarButtonItem = barButton
+        self.navigationItem.rightBarButtonItem = self.soundOnButton
         
         // 再生する音声を追加
         let soundPath = Bundle.main.path(forResource: "invisible", ofType: "mp3")
@@ -85,13 +82,13 @@ class VideoSingle2ViewController:UIViewController, VAMPDelegate {
     
     @objc func soundOff()
     {
-        self.navigationItem.rightBarButtonItem?.customView = self.soundOnButton
+        self.navigationItem.rightBarButtonItem = self.soundOnButton
         self.soundPlayer.pause()
     }
     
     @objc func soundOn()
     {
-        self.navigationItem.rightBarButtonItem?.customView = self.soundOffButton
+        self.navigationItem.rightBarButtonItem = self.soundOffButton
         self.soundPlayer.play()
     }
     

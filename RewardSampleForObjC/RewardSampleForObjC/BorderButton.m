@@ -23,23 +23,31 @@
 
 @implementation BorderButton
 
+- (instancetype) initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    
+    if (self) {
+        self.layer.cornerRadius = 5.f;
+        self.layer.borderWidth = 1.f;
+        self.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    }
+    
+    return self;
+}
 
-- (void) setCornerRadius:(CGFloat)cornerRadius
-{
+- (void) setCornerRadius:(CGFloat)cornerRadius {
     self.layer.cornerRadius = cornerRadius;
 }
 
-- (void) setBorderWidth:(CGFloat)borderWidth
-{
+- (void) setBorderWidth:(CGFloat)borderWidth {
     self.layer.borderWidth = borderWidth;
 }
 
-- (void) setBorderColor:(UIColor *)borderColor
-{
+- (void) setBorderColor:(UIColor *)borderColor {
     self.layer.borderColor = (__bridge CGColorRef _Nullable)(borderColor);
 }
 
--(BOOL) isHighlighted {
+- (BOOL) isHighlighted {
     
     if ([super isHighlighted]) {
         self.backgroundColor = _highlightedBackgroundColor;

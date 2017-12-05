@@ -18,8 +18,8 @@
 @property (nonatomic, weak) IBOutlet UITextView* adLogView;
 @property (nonatomic, weak) IBOutlet UIButton* adShowButton;
 @property (nonatomic, strong) VAMP* adReward;
-@property (nonatomic, strong) UIButton *soundOffButton;
-@property (nonatomic, strong) UIButton *soundOnButton;
+@property (nonatomic, strong) UIBarButtonItem *soundOffButton;
+@property (nonatomic, strong) UIBarButtonItem *soundOnButton;
 @property (nonatomic, strong) AVAudioPlayer* soundPlayer;
 
 @end
@@ -52,18 +52,19 @@ static NSString * const kPubId = @"*****"; // 広告枠IDを設定してくだ�
     self.adLogView.editable = NO;
     
     // ナビゲーションのボタンを設定
-    self.soundOffButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [self.soundOffButton setBackgroundImage:[UIImage imageNamed:@"soundOn"] forState:UIControlStateNormal];
-    self.soundOffButton.frame = CGRectMake(0, 0, 40, 40);
-    [self.soundOffButton addTarget:self action:@selector(soundOff) forControlEvents:UIControlEventTouchUpInside];
-
-    self.soundOnButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [self.soundOnButton setBackgroundImage:[UIImage imageNamed:@"soundOff"] forState:UIControlStateNormal];
-    self.soundOnButton.frame = CGRectMake(0, 0, 40, 40);
-    [self.soundOnButton addTarget:self action:@selector(soundOn) forControlEvents:UIControlEventTouchUpInside];
+    UIImage *soundOnImage = [[UIImage imageNamed:@"soundOn"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    self.soundOffButton = [[UIBarButtonItem alloc] initWithImage:soundOnImage
+                                                           style:UIBarButtonItemStylePlain
+                                                          target:self
+                                                          action:@selector(soundOff)];
     
-    UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithCustomView:self.soundOnButton];
-    self.navigationItem.rightBarButtonItem = barButton;
+    UIImage *soundOffImage = [[UIImage imageNamed:@"soundOff"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    self.soundOnButton = [[UIBarButtonItem alloc] initWithImage:soundOffImage
+                                                          style:UIBarButtonItemStylePlain
+                                                         target:self
+                                                         action:@selector(soundOn)];
+    
+    self.navigationItem.rightBarButtonItem = self.soundOnButton;
     
     // 再生する音声を追加
     NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"invisible" ofType:@"mp3"];
@@ -90,13 +91,13 @@ static NSString * const kPubId = @"*****"; // 広告枠IDを設定してくだ�
 
 -(void) soundOff
 {
-    self.navigationItem.rightBarButtonItem.customView = self.soundOnButton;
+    self.navigationItem.rightBarButtonItem = self.soundOnButton;
     [self.soundPlayer pause];
 }
 
 -(void) soundOn
 {
-    self.navigationItem.rightBarButtonItem.customView = self.soundOffButton;
+    self.navigationItem.rightBarButtonItem = self.soundOffButton;
     [self.soundPlayer play];
 }
 
