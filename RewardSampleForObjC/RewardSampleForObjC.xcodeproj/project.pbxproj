@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		665EC9EB1FD681E900C60895 /* VideoMultiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 665EC9EA1FD681E900C60895 /* VideoMultiViewController.m */; };
 		66A8098D1F2895BF0012FD66 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF0894171E5C371C00F08BE5 /* Security.framework */; };
 		66A8098F1F2895CE0012FD66 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66A8098E1F2895CE0012FD66 /* ImageIO.framework */; };
 		66A809911F2895EB0012FD66 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66A809901F2895EB0012FD66 /* SafariServices.framework */; };
@@ -47,6 +48,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		665EC9E91FD681E900C60895 /* VideoMultiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoMultiViewController.h; sourceTree = "<group>"; };
+		665EC9EA1FD681E900C60895 /* VideoMultiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoMultiViewController.m; sourceTree = "<group>"; };
 		66A8098E1F2895CE0012FD66 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		66A809901F2895EB0012FD66 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		66D341C31EF8D4E700809D9B /* VideoSingle2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoSingle2ViewController.h; sourceTree = "<group>"; };
@@ -158,6 +161,8 @@
 				EF0893F11E5C340200F08BE5 /* VideoSingleViewController.m */,
 				66D341C31EF8D4E700809D9B /* VideoSingle2ViewController.h */,
 				66D341C41EF8D4E700809D9B /* VideoSingle2ViewController.m */,
+				665EC9E91FD681E900C60895 /* VideoMultiViewController.h */,
+				665EC9EA1FD681E900C60895 /* VideoMultiViewController.m */,
 				EF0893F91E5C34DE00F08BE5 /* InfoViewController.h */,
 				EF0893FA1E5C34DE00F08BE5 /* InfoViewController.m */,
 				EF0893C81E5C2F3F00F08BE5 /* AppDelegate.h */,
@@ -300,6 +305,7 @@
 				EF0893CA1E5C2F3F00F08BE5 /* AppDelegate.m in Sources */,
 				EF0893C71E5C2F3F00F08BE5 /* main.m in Sources */,
 				EF0893EF1E5C33D100F08BE5 /* BorderButton.m in Sources */,
+				665EC9EB1FD681E900C60895 /* VideoMultiViewController.m in Sources */,
 				66D341C51EF8D4E700809D9B /* VideoSingle2ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

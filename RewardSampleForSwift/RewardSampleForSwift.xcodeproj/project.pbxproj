@@ -34,6 +34,7 @@
 		63C3782B1DE216AA00583E3E /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C3782A1DE216AA00583E3E /* Social.framework */; };
 		63C3782D1DE216B100583E3E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C3782C1DE216B100583E3E /* WebKit.framework */; };
 		63C3782F1DE216C000583E3E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C3782E1DE216C000583E3E /* UIKit.framework */; };
+		665EC9ED1FD6823B00C60895 /* VideoMultiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665EC9EC1FD6823B00C60895 /* VideoMultiViewController.swift */; };
 		66BB2EA71F838B84009C43B0 /* ADNWVersionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 66BB2EA61F838B84009C43B0 /* ADNWVersionHelper.m */; };
 		66D341C21EF8D00C00809D9B /* VideoSingle2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D341C11EF8D00C00809D9B /* VideoSingle2ViewController.swift */; };
 		66DEE1E91F736364005F78E9 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 66DEE1E81F736364005F78E9 /* libc++.tbd */; };
@@ -84,6 +85,7 @@
 		63C3782A1DE216AA00583E3E /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		63C3782C1DE216B100583E3E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		63C3782E1DE216C000583E3E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		665EC9EC1FD6823B00C60895 /* VideoMultiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoMultiViewController.swift; sourceTree = "<group>"; };
 		66BB2EA51F838B84009C43B0 /* ADNWVersionHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADNWVersionHelper.h; sourceTree = "<group>"; };
 		66BB2EA61F838B84009C43B0 /* ADNWVersionHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ADNWVersionHelper.m; sourceTree = "<group>"; };
 		66D341C11EF8D00C00809D9B /* VideoSingle2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoSingle2ViewController.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				EF3BD8BE1DE3E6F400841B08 /* BorderButton.swift */,
 				63C377D31DE20FDB00583E3E /* VideoSingleViewController.swift */,
 				66D341C11EF8D00C00809D9B /* VideoSingle2ViewController.swift */,
+				665EC9EC1FD6823B00C60895 /* VideoMultiViewController.swift */,
 				63C377D71DE2102400583E3E /* InfoViewController.swift */,
 				63C377BF1DE20D3900583E3E /* AppDelegate.swift */,
 				63C377C11DE20D3900583E3E /* ViewController.swift */,
@@ -311,6 +314,7 @@
 			files = (
 				63C377C21DE20D3900583E3E /* ViewController.swift in Sources */,
 				63C377C01DE20D3900583E3E /* AppDelegate.swift in Sources */,
+				665EC9ED1FD6823B00C60895 /* VideoMultiViewController.swift in Sources */,
 				66D341C21EF8D00C00809D9B /* VideoSingle2ViewController.swift in Sources */,
 				63C377D41DE20FDB00583E3E /* VideoSingleViewController.swift in Sources */,
 				63C377D81DE2102400583E3E /* InfoViewController.swift in Sources */,
