@@ -6,13 +6,13 @@
 //  Copyright © 2017年 Supership Inc. All rights reserved.
 //
 
-#import "ViewController.h"
 #import <VAMP/VAMP.h>
+
+#import "ViewController.h"
 
 @interface ViewController ()
 
-@property (nonatomic, weak) IBOutlet UILabel* sdkVersion;
-@property (nonatomic, strong) VAMP* adReward;
+@property (nonatomic, weak) IBOutlet UILabel *sdkVersion;
 
 @end
 
@@ -21,15 +21,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // 対応OSバージョン
-    NSLog(@"supportedOSVersion:%.01f", [VAMP SupportedOSVersion]);
-        
-    /* テストモード */
-    // AppLovin、maio、UnityAds
+    // VAMPが対応するiOSの最低バージョン
+    NSLog(@"[VAMP]supportedOSVersion:%.01f", [VAMP SupportedOSVersion]);
+    
+    // テストモード
+    // 連携アドネットワーク（AppLovin、maio、UnityAds）
+    // リリースする際は必ずコメントアウトしてください。収益が発生しない広告が配信されます
 //    [VAMP setTestMode:YES];
     
-    /* デバッグモード */
-    // AppLovin、UnityAds、FAN、Tapjoy
+    // デバッグモード
+    // 連携アドネットワーク（AppLovin、UnityAds、FAN、Tapjoy）
 //    [VAMP setDebugMode:YES];
     
     /* アドネットワークSDK　初期化メディエーション */
@@ -41,21 +42,14 @@
     //    kVAMPInitializeStateWIFIONLY  Wi-Fi接続時のみ全アドネットワークを初期化する
     // └ アドネットワークのSDKを初期化する間隔（秒数）
     //   duration:秒単位で指定する。最小4秒、最大60秒。デフォルトは10秒。（対象:AppLovin、maio、UnityAds、Vungle）
-    /*
-    self.adReward = [[VAMP alloc] init];
-    if ((self.adReward) != nil) {
-        [self.adReward initializeAdnwSDK:@"*****" initializeState:kVAMPInitializeStateAUTO duration:5];
-        NSLog(@"[VAMP]initilizedAdnwSDK");
-    }
-    */
+//    [[VAMP new] initializeAdnwSDK:@"*****" initializeState:kVAMPInitializeStateAUTO duration:5];    // 広告枠IDを設定してください
+//    NSLog(@"[VAMP]initilizedAdnwSDK");
     
-    // アプリバージョン。info.plistから取得
     NSString *appV = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
     
     // VAMPのSDKバージョン
     NSString *sdkV = [VAMP SDKVersion];
     
-    // バージョン情報
     self.sdkVersion.text = [NSString stringWithFormat:@"APP %@(Objective-C)\nSDK %@", appV, sdkV];
     
     // 国コードの取得サンプル
@@ -63,11 +57,6 @@
     [VAMP getCountryCode:^(NSString *countryCode) {
         weakSelf.sdkVersion.text = [NSString stringWithFormat:@"%@ / %@", weakSelf.sdkVersion.text, countryCode];
     }];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

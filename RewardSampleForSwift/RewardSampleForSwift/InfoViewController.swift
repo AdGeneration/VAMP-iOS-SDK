@@ -15,148 +15,118 @@ import AppLovinSDK
 import Maio
 import UnityAds
 
-class InfoViewController:UIViewController {
-    @IBOutlet weak var deviceLabel: UILabel!
+class InfoViewController: UIViewController {
+    
     @IBOutlet weak var adInfoView: UITextView!
     
     override func viewDidLoad() {
-        // TextViewを上詰めで表示
         self.automaticallyAdjustsScrollViewInsets = false
+        
+        self.adInfoView.text = ""
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated);
-        // 通知は消す。
-        NotificationCenter.default.removeObserver(self);
-    }
-    
-    override func viewDidLayoutSubviews() {
-        // TextViewを上詰めで表示
-        self.automaticallyAdjustsScrollViewInsets = false
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Admob SDK Version
+        self.addInfoText("AdmobSDK: \(ADNWVersionHelper.admobVersion())")
         
         // AppLovin SDK Version
-        adInfoView.text = "AppLovinSDK：\(ALSdk.version())"
+        self.addInfoText("AppLovinSDK: \(ALSdk.version())")
+        
+        // FAN SDK Version
+        self.addInfoText("FAN SDK: \(FB_AD_SDK_VERSION)")
         
         // maio SDK Version
-        let maioSdk:String? = Maio.sdkVersion()
-        if let maioSdkVersion = maioSdk {
-            adInfoView.text.append("\nmaioSDK：\(maioSdkVersion)")
+        if let maioSdkVersion = Maio.sdkVersion() {
+            self.addInfoText("maioSDK: \(maioSdkVersion)")
+        }
+        
+        // nend SDK Version
+        self.addInfoText("nendSDK: \(ADNWVersionHelper.nendVersion())")
+        
+        // Tapjoy SDK Version
+        if let tjVersion = Tapjoy.getVersion() {
+            self.addInfoText("TapjoySDK: \(tjVersion)")
         }
         
         // UnityAds SDK Version
-        adInfoView.text.append("\nUnityAdsSDK：\(UnityAds.getVersion())")
+        self.addInfoText("UnityAdsSDK: \(UnityAds.getVersion())")
         
         // Vungle SDK Version
-        adInfoView.text.append("\nVungleSDK：\(VungleSDKVersion)")
+        self.addInfoText("VungleSDK: \(VungleSDKVersion)")
         
-        // nend SDK Version
-        adInfoView.text.append("\nnendSDK：\(ADNWVersionHelper.nendVersion())")
-        
-        // FAN SDK Version
-        adInfoView.text.append("\nFAN SDK：\(FB_AD_SDK_VERSION)")
-        
-        // Tapjoy SDK Version
-        adInfoView.text.append("\nTapjoySDK：\(Tapjoy.getVersion()!)")
-        
-        // Admob SDK Version
-        adInfoView.text.append("\nAdmobSDK：\(ADNWVersionHelper.admobVersion())\n")
+        self.addInfoText("\n")
         
         // デバイス名
-        let deviceName:String? = UIDevice.current.name
-        if let myDeviceName = deviceName {
-            adInfoView.text.append("\ndevice name：" + myDeviceName)
-        }
+        self.addInfoText("device name: \(UIDevice.current.name)")
         
         // OS名
-        let osName:String? = UIDevice.current.systemName
-        guard let myOsName = osName else { return }
-        adInfoView.text.append("\nsystem name：" + myOsName)
+        self.addInfoText("system name: \(UIDevice.current.systemName)")
         
         // OSバージョン
-        let osVersion:String? = UIDevice.current.systemVersion
-        if let myOsVersion = osVersion {
-            adInfoView.text.append("\nsystem version：" + myOsVersion)
-        }
+        self.addInfoText("system version: \(UIDevice.current.systemVersion)")
         
         // OSモデル
-        let osModel:String? = UIDevice.current.model
-        if let myOsModel = osModel {
-            adInfoView.text.append("\nOS model：" + myOsModel)
-        }
+        self.addInfoText("OS model: \(UIDevice.current.model)")
         
         // キャリア情報
-        let carrier:String? = CTTelephonyNetworkInfo().subscriberCellularProvider?.carrierName
-        if let carrierName = carrier {
-            adInfoView.text.append("\ncarrier name：" + carrierName)
+        if let carrierName = CTTelephonyNetworkInfo().subscriberCellularProvider?.carrierName {
+            self.addInfoText("carrier name: \(carrierName)")
         }
         
         // 国コード
-        let isoCountry:String? = CTTelephonyNetworkInfo().subscriberCellularProvider?.isoCountryCode
-        if let isoCountryCode = isoCountry {
-            adInfoView.text.append("\nISO Country code：" + isoCountryCode + "\n")
+        if let isoCountryCode = CTTelephonyNetworkInfo().subscriberCellularProvider?.isoCountryCode {
+            self.addInfoText("ISO Country code: \(isoCountryCode)")
         }
        
         // IDFA
-        let idfa:String? = ASIdentifierManager.shared().advertisingIdentifier.uuidString
-        if let IDFA = idfa {
-            adInfoView.text.append("\nIDFA：" + IDFA)
+        if let idfa = ASIdentifierManager.shared().advertisingIdentifier?.uuidString {
+            self.addInfoText("IDFA: \(idfa)")
         }
         
         // IDFV
-        let idfv:String? = UIDevice.current.identifierForVendor?.uuidString
-        if let IDFV = idfv {
-            adInfoView.text.append("\nIDFV：" + IDFV)
+        if let idfv = UIDevice.current.identifierForVendor?.uuidString {
+            self.addInfoText("IDFV : \(idfv)")
         }
         
         // BundleID
-        let bundleId:String? = Bundle.main.bundleIdentifier
-        if let BundleID = bundleId {
-            adInfoView.text.append("\nBundleID：" + BundleID)
+        if let bundleId = Bundle.main.bundleIdentifier {
+            self.addInfoText("BundleID: \(bundleId)")
         }
         
         // 画面サイズ（ポイント）
-        let screenB:CGSize? = UIScreen.main.bounds.size
-        if let screenBounds = screenB {
-            // 横
-            let screenW:CGFloat? = screenBounds.width
-            guard let screenWidth = screenW else { return }
-            adInfoView.text.append("\n横幅（ポイント）：" + String(format:"%.01f", Float(screenWidth)))
-            
-            // 縦
-            let screenH:CGFloat? = screenBounds.height
-            guard let screenHeight = screenH else { return }
-            adInfoView.text.append("\n縦幅（ポイント）：" + String(format:"%.01f", Float(screenHeight)))
-            
-            // 画面サイズ（ピクセル）
-            // iOS 8.0以降で動く
-            if #available(iOS 8.0, *) {
-                let myNativeBoundSize:CGSize? = UIScreen.main.nativeBounds.size
-                guard let myNativeBoundSizeResult = myNativeBoundSize else { return }
-                adInfoView.text.append("\n横幅（ピクセル）：" + String(describing: myNativeBoundSizeResult.width))
-                adInfoView.text.append("\n縦幅（ピクセル）：" + String(describing: myNativeBoundSizeResult.height))
-            }
+        let screen = UIScreen.main.bounds.size
+        // 横
+        self.addInfoText("横幅（ポイント）: \(String(format:"%.01f", screen.width))")
+        // 縦
+        self.addInfoText("縦幅（ポイント）: \(String(format:"%.01f", screen.height))")
+        
+        // 画面サイズ（ピクセル）
+        // iOS 8.0以降で動く
+        if #available(iOS 8.0, *) {
+            let screen = UIScreen.main.nativeBounds.size
+            self.addInfoText("横幅（ピクセル）: \(String(describing: screen.width))")
+            self.addInfoText("縦幅（ピクセル）: \(String(describing: screen.height))")
         }
         
-        // 言語と地域
-        let languageCode:String? = Locale.current.languageCode
-        if let myLanguageCode = languageCode {
-            adInfoView.text.append("\nlanguage：" + myLanguageCode)
+        // 言語
+        if let langCode = Locale.current.languageCode {
+            self.addInfoText("language: \(langCode)")
         }
         
-        let regionCode:String? = Locale.current.regionCode
-        if let myRegionCode = regionCode {
-            adInfoView.text.append("\nregion：" + myRegionCode)
+        // 地域
+        if let regionCode = Locale.current.regionCode {
+            self.addInfoText("region: \(regionCode)")
         }
         
         // サポートOSバージョン
-        let supportOSV:Float? = VAMP.supportedOSVersion()
-        if let mySupportOSV = supportOSV {
-            adInfoView.text.append("\nサポートOSバージョン：" + String(format:"%.01f", mySupportOSV) + "以上")
-        }
-        adInfoView.text.append("\nサポート対象OS：" + (VAMP.isSupportedOSVersion() ? "true" : "false"))
+        self.addInfoText("サポートOSバージョン: \(String(format:"%.01f", VAMP.supportedOSVersion()))以上")
+        self.addInfoText("サポート対象OS: \(String(VAMP.isSupportedOSVersion()))")
+    }
+    
+    func addInfoText(_ text: String) {
+        self.adInfoView.text.append("\n\(text)")
     }
 }
+

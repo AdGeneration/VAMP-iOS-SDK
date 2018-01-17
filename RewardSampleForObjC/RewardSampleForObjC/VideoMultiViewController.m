@@ -6,8 +6,8 @@
 //  Copyright © 2017年 Supership Inc. All rights reserved.
 //
 
-#import <VAMP/VAMP.h>
 #import <AVFoundation/AVFoundation.h>
+#import <VAMP/VAMP.h>
 
 #import "VideoMultiViewController.h"
 
@@ -28,16 +28,16 @@
 
 @implementation VideoMultiViewController
 
-static NSString * const kAdId1 = @"*****";  // 広告枠ID1を設定してください
-static NSString * const kAdId2 = @"*****";  // 広告枠ID2を設定してください
+static NSString * const kPlacementId1 = @"*****";   // 広告枠ID1を設定してください
+static NSString * const kPlacementId2 = @"*****";   // 広告枠ID2を設定してください
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     
-    self.adCodeField1.text = kAdId1;
-    self.adCodeField2.text = kAdId2;
+    self.adCodeField1.text = kPlacementId1;
+    self.adCodeField2.text = kPlacementId2;
     
     self.adLogView.text = @"";
     self.adLogView.editable = NO;
@@ -66,15 +66,15 @@ static NSString * const kAdId2 = @"*****";  // 広告枠ID2を設定してくだ
     }
     
     // 広告枠ID1用のVAMPインスタンスを生成します
-    self.vamp1 = [[VAMP alloc] init];
-    [self.vamp1 setPlacementId:kAdId1];
-    [self.vamp1 setDelegate:self];
+    self.vamp1 = [VAMP new];
+    self.vamp1.delegate = self;
+    [self.vamp1 setPlacementId:kPlacementId1];
     [self.vamp1 setRootViewController:self];
     
     // 広告枠ID2用のVAMPインスタンスを生成します
-    self.vamp2 = [[VAMP alloc] init];
-    [self.vamp2 setPlacementId:kAdId2];
-    [self.vamp2 setDelegate:self];
+    self.vamp2 = [VAMP new];
+    self.vamp2.delegate = self;
+    [self.vamp2 setPlacementId:kPlacementId2];
     [self.vamp2 setRootViewController:self];
     
     [self addLogText:[NSString stringWithFormat:@"isTestMode:%@", [VAMP isTestMode] ? @"YES" : @"NO"]];
@@ -138,70 +138,101 @@ static NSString * const kAdId2 = @"*****";  // 広告枠ID2を設定してくだ
 }
 
 - (void)addLogText:(NSString *)message {
+    NSDate *now = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.locale = [NSLocale systemLocale];
-    dateFormatter.dateFormat = @"MM-dd HH:mm:ss";
-    NSString *timestamp = [dateFormatter stringFromDate:[NSDate date]];
-    NSString *log = [NSString stringWithFormat:@"%@ %@", timestamp, message];
+    dateFormatter.dateFormat = @"MM-dd HH:mm:ss ";
+    
+    NSString *log = [NSString stringWithFormat:@"%@ %@", [dateFormatter stringFromDate:now], message];
     
     dispatch_async(dispatch_get_main_queue(), ^{
         self.adLogView.text = [NSString stringWithFormat:@"%@\n%@", log, self.adLogView.text];
     });
     
-    NSLog(@"[VAMP]%@", log);
+    NSLog(@"[VAMP]%@", message);
+}
+
+- (NSString *)vampStateString:(VAMPState)state {
+    switch (state) {
+        case kVAMPStateIdle:
+            return @"Idle";
+        case kVAMPStateLoading:
+            return @"Loading";
+        case kVAMPStateReady:
+            return @"Ready";
+        case kVAMPStateLoaded:
+            return @"Loaded";
+        case kVAMPStateShowing:
+            return @"Showing";
+        default:
+            return @"Unknown";
+    }
 }
 
 #pragma mark - VAMPDelegate
 
 // load完了して、広告表示できる状態になったことを通知します
 - (void)vampDidReceive:(NSString *)placementId adnwName:(NSString *)adnwName {
-    [self addLogText:[NSString stringWithFormat:@"[%@] vampDidReceive(%@)", placementId, adnwName]];
+    [self addLogText:[NSString stringWithFormat:@"vampDidReceive(%@) placementId:%@",
+                      adnwName, placementId]];
 }
 
-// エラー
+// エラーが発生した時に通知されます
 - (void)vampDidFail:(NSString *)placementId error:(VAMPError *)error {
     NSString *codeString = [error kVAMPErrorString];
     NSString *failMessage = error.localizedDescription;
     
-    [self addLogText:[NSString stringWithFormat:@"[%@] vampDidFail %@ %@", placementId, codeString, failMessage]];
+    [self addLogText:[NSString stringWithFormat:@"vampDidFail placementId:%@ %@ %@",
+                      placementId, codeString, failMessage]];
 }
 
 // インセンティブ付与可能になったタイミングで通知されます
 - (void)vampDidComplete:(NSString *)placementId adnwName:(NSString *)adnwName {
-    [self addLogText:[NSString stringWithFormat:@"[%@] vampDidComplete(%@)", placementId, adnwName]];
+    [self addLogText:[NSString stringWithFormat:@"vampDidComplete(%@) placementId:%@",
+                      adnwName, placementId]];
 }
 
 // 広告が閉じられた時に呼ばれます
 - (void)vampDidClose:(NSString *)placementId adnwName:(NSString *)adnwName {
-    [self addLogText:[NSString stringWithFormat:@"[%@] vampDidClose(%@)", placementId, adnwName]];
+    [self addLogText:[NSString stringWithFormat:@"vampDidClose(%@) placementId:%@",
+                      adnwName, placementId]];
 }
 
-// アドネットワークごとの広告取得が開始されたときに通知されます
+// アドネットワークごとの広告取得が開始された時に通知されます
 - (void)vampLoadStart:(NSString *)placementId adnwName:(NSString *)adnwName {
-    [self addLogText:[NSString stringWithFormat:@"[%@] vampLoadStart(%@)", placementId, adnwName]];
+    [self addLogText:[NSString stringWithFormat:@"vampLoadStart(%@) placementId:%@",
+                      adnwName, placementId]];
 }
 
-// アドネットワークごとの広告取得結果を通知する。（success,failedどちらも通知）
-// この通知をもとにshowしないようご注意ください。showする判定は、onReceiveを受け取ったタイミングで判断ください。
-- (void)vampLoadResult:(NSString *)placementId success:(BOOL)success adnwName:(NSString *)adnwName message:(NSString *)message {
-    if ([message length] > 0) {
-        if (success) {
-            [self addLogText:[NSString stringWithFormat:@"[%@] vampLoadResult(%@ success:%@)",
-                              placementId, adnwName, success ? @"YES" : @"NO"]];
-        } else {
-            [self addLogText:[NSString stringWithFormat:@"[%@] vampLoadResult(%@ success:%@ %@)",
-                              placementId, adnwName, success ? @"YES" : @"NO", message]];
-        }
+// アドネットワークごとの広告取得結果が通知されます（success,failedどちらも通知）。
+// この通知をもとにshowしないようご注意ください。showする判定は、vampDidReceiveを受け取ったタイミングで判断してください
+- (void)vampLoadResult:(NSString *)placementId success:(BOOL)success adnwName:(NSString *)adnwName
+               message:(NSString *)message {
+    
+    if (success) {
+        [self addLogText:[NSString stringWithFormat:@"vampLoadResult(%@) success:%@ placementId:%@",
+                          adnwName, success ? @"YES" : @"NO", placementId]];
     } else {
-        [self addLogText:[NSString stringWithFormat:@"[%@] vampLoadResult(%@ success:%@)",
-                          placementId, adnwName, success ? @"YES" : @"NO"]];
+        [self addLogText:[NSString stringWithFormat:@"vampLoadResult(%@) success:%@ message:%@ placementId:%@",
+                          adnwName, success ? @"YES" : @"NO", message, placementId]];
     }
 }
 
-// 広告準備完了から55分経つと取得した広告が表示はできてもRTBの収益は発生しません
-// この通知を受け取ったら、もう一度loadからやり直す必要があります。
+// 広告準備完了から55分経つと取得した広告の表示はできてもRTBの収益は発生しません。
+// この通知を受け取ったら、もう一度loadからやり直す必要があります
 - (void)vampDidExpired:(NSString *)placementId {
-    [self addLogText:[NSString stringWithFormat:@"[%@] vampDidExpired", placementId]];
+    [self addLogText:[NSString stringWithFormat:@"vampDidExpired placementId:%@", placementId]];
+}
+
+// VAMPの状態が変化したときの通知されます
+- (void)vampDidChangeState:(VAMPState)oldState intoState:(VAMPState)newState
+           withPlacementId:(NSString *)placementId {
+    
+    NSString *oldStateStr = [self vampStateString:oldState];
+    NSString *newStateStr = [self vampStateString:newState];
+    
+    [self addLogText:[NSString stringWithFormat:@"vampDidChangeState %@ -> %@, placementId:%@",
+                      oldStateStr, newStateStr, placementId]];
 }
 
 @end

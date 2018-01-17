@@ -26,7 +26,6 @@
 
 @interface InfoViewController ()
 
-@property (nonatomic, weak) IBOutlet UILabel *deviceLabel;
 @property (nonatomic, weak) IBOutlet UITextView *adInfoView;
 
 @end
@@ -35,135 +34,113 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    // TextViewを上詰めで表示
+    
     self.automaticallyAdjustsScrollViewInsets = NO;
+    
+    self.adInfoView.text = @"";
 }
 
--(void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
--(void)viewDidDisappear:(BOOL)animated
-{
-    [super viewDidDisappear:animated];
-
-    // 通知は消す。
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
-
--(void)viewDidLayoutSubviews
-{
-    // TextViewを上詰めで表示
-    self.automaticallyAdjustsScrollViewInsets = NO;
-
-    // AppLovin SDK Version
-    NSString *alSdkVersion = [ALSdk version];
-    _adInfoView.text = [NSString stringWithFormat:@"AppLovinSDK:%@", alSdkVersion];
-    
-    // maio SDK Version
-    NSString *maioSdkVersion = [Maio sdkVersion];
-    _adInfoView.text = [NSString stringWithFormat:@"%@\nmaioSDK:%@", _adInfoView.text,maioSdkVersion];
-    
-    // UnityAds SDK Version
-    NSString *unitySdkVersion = [UnityAds getVersion];
-    _adInfoView.text = [NSString stringWithFormat:@"%@\nUnityAdsSDK:%@", _adInfoView.text,unitySdkVersion];
-    
-    // Vungle SDK Version
-    NSString *vungleSdkVersion = VungleSDKVersion;
-    _adInfoView.text = [NSString stringWithFormat:@"%@\nVungleSDK:%@", _adInfoView.text, vungleSdkVersion];
-    
-    // nend SDK Version
-    _adInfoView.text = [NSString stringWithFormat:@"%@\nnendSDK:%s", _adInfoView.text, NendAdVersionString];
-    
-    // FAN SDK Version
-#ifdef FB_AD_SDK_VERSION
-    _adInfoView.text = [NSString stringWithFormat:@"%@\nFAN SDK:%@", _adInfoView.text, FB_AD_SDK_VERSION];
-#endif
-    
-    // Tapjoy SDK Version
-    _adInfoView.text = [NSString stringWithFormat:@"%@\nTapjoySDK:%@", _adInfoView.text, [Tapjoy getVersion]];
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     
     // Admob SDK Version
     NSString *admobVersion = [NSString stringWithCString:(const char *) GoogleMobileAdsVersionString
                                                 encoding:NSUTF8StringEncoding];
-    _adInfoView.text = [NSString stringWithFormat:@"%@\nAdmobSDK:%@\n", _adInfoView.text, admobVersion];
+    [self addInfoText:[NSString stringWithFormat:@"AdmobSDK: %@", admobVersion]];
+    
+    // AppLovin SDK Version
+    [self addInfoText:[NSString stringWithFormat:@"AppLovinSDK: %@", [ALSdk version]]];
+    
+    // FAN SDK Version
+#ifdef FB_AD_SDK_VERSION
+    [self addInfoText:[NSString stringWithFormat:@"FAN SDK: %@", FB_AD_SDK_VERSION]];
+#endif
+    
+    // maio SDK Version
+    [self addInfoText:[NSString stringWithFormat:@"maioSDK: %@", [Maio sdkVersion]]];
+    
+    // nend SDK Version
+    [self addInfoText:[NSString stringWithFormat:@"nendSDK: %s", NendAdVersionString]];
+    
+    // Tapjoy SDK Version
+    [self addInfoText:[NSString stringWithFormat:@"TapjoySDK: %@", [Tapjoy getVersion]]];
+    
+    // UnityAds SDK Version
+    [self addInfoText:[NSString stringWithFormat:@"UnityAdsSDK: %@", [UnityAds getVersion]]];
+    
+    // Vungle SDK Version
+    [self addInfoText:[NSString stringWithFormat:@"VungleSDK: %@", VungleSDKVersion]];
+    
+    [self addInfoText:@"\n"];
     
     // デバイス名
-    NSString *myDeviceName = [[UIDevice currentDevice] name];
-    _adInfoView.text = [NSString stringWithFormat:@"%@\ndevice name：%@", _adInfoView.text,myDeviceName];
+    [self addInfoText:[NSString stringWithFormat:@"device name: %@", [UIDevice currentDevice].name]];
     
     // OS名
-    NSString *mySystemName = [[UIDevice currentDevice] systemName];
-    _adInfoView.text = [NSString stringWithFormat:@"%@\nsystem name：%@", _adInfoView.text,mySystemName];
+    [self addInfoText:[NSString stringWithFormat:@"system name: %@", [UIDevice currentDevice].systemVersion]];
     
     // OSバージョン
-    NSString *myOsVersion = [[UIDevice currentDevice] systemVersion];
-    _adInfoView.text = [NSString stringWithFormat:@"%@\nsystem version：%@", _adInfoView.text,myOsVersion];
+    [self addInfoText:[NSString stringWithFormat:@"system version: %@", [UIDevice currentDevice].systemVersion]];
     
     // OSモデル
-    NSString *myOsModel = [[UIDevice currentDevice] model];
-    _adInfoView.text = [NSString stringWithFormat:@"%@\nOS model：%@", _adInfoView.text,myOsModel];
+    [self addInfoText:[NSString stringWithFormat:@"OS model: %@", [UIDevice currentDevice].model]];
     
     // キャリア情報
     CTTelephonyNetworkInfo *networkInfo = [[CTTelephonyNetworkInfo alloc] init];
     CTCarrier *provider = [networkInfo subscriberCellularProvider];
-    _adInfoView.text = [NSString stringWithFormat:@"%@\ncarrier name：%@", _adInfoView.text, provider.carrierName];
+    [self addInfoText:[NSString stringWithFormat:@"carrier name: %@", provider.carrierName]];
     
     // 国コードISO
     NSString *isoCountry = provider.isoCountryCode;
-    if ([isoCountry length] > 0) {
-        _adInfoView.text = [NSString stringWithFormat:@"%@\nISO Country code：%@", _adInfoView.text, isoCountry];
+    if (isoCountry.length > 0) {
+        [self addInfoText:[NSString stringWithFormat:@"ISO Country code: %@", isoCountry]];
     }
     
     // 国コードPreferredLanguage
     NSString * countryCode = [[NSLocale preferredLanguages] objectAtIndex:0];
-    if ([countryCode length] > 0) {
-        _adInfoView.text = [NSString stringWithFormat:@"%@\nPreferredLanguage：%@", _adInfoView.text, countryCode];
+    if (countryCode.length > 0) {
+        [self addInfoText:[NSString stringWithFormat:@"PreferredLanguage: %@", countryCode]];
     }
     
     // 言語コード
-    NSString * localecode = [[NSLocale currentLocale] objectForKey:NSLocaleIdentifier];
-    if ([localecode length] > 0) {
-        _adInfoView.text = [NSString stringWithFormat:@"%@\ncode：%@", _adInfoView.text, localecode];
+    NSString * localeCode = [[NSLocale currentLocale] objectForKey:NSLocaleIdentifier];
+    if (localeCode.length > 0) {
+        [self addInfoText:[NSString stringWithFormat:@"code: %@", localeCode]];
     }
     
     // IDFA
-    NSString *IDFA = [[ASIdentifierManager sharedManager] advertisingIdentifier].UUIDString;
-    _adInfoView.text = [NSString stringWithFormat:@"%@\nIDFA：%@", _adInfoView.text, IDFA];
+    NSString *idfa = [[ASIdentifierManager sharedManager] advertisingIdentifier].UUIDString;
+    [self addInfoText:[NSString stringWithFormat:@"IDFA: %@", idfa]];
     
     // IDFV
-    NSString *IDFV = [UIDevice currentDevice].identifierForVendor.UUIDString;
-    _adInfoView.text = [NSString stringWithFormat:@"%@\nIDFV：%@", _adInfoView.text, IDFV];
+    NSString *idfv = [UIDevice currentDevice].identifierForVendor.UUIDString;
+    [self addInfoText:[NSString stringWithFormat:@"IDFV: %@", idfv]];
     
     // BundleID
-    NSString *BundleID = [[NSBundle mainBundle] bundleIdentifier];
-    _adInfoView.text = [NSString stringWithFormat:@"%@\nBundleID：%@", _adInfoView.text, BundleID];
+    NSString *bundleId = [[NSBundle mainBundle] bundleIdentifier];
+    [self addInfoText:[NSString stringWithFormat:@"BundleID: %@", bundleId]];
     
     // 画面サイズ（ポイント）
-    CGSize screenBounds = [UIScreen mainScreen].bounds.size;
-    
-    // 横
-    CGFloat screenWidth = screenBounds.width;
-    _adInfoView.text = [NSString stringWithFormat:@"%@\n横幅（ポイント）：%.01f", _adInfoView.text, screenWidth];
-    
-    // 縦
-    CGFloat screenHeight = screenBounds.height;
-    _adInfoView.text = [NSString stringWithFormat:@"%@\n縦幅（ポイント）：%.01f", _adInfoView.text, screenHeight];
+    CGSize screenSize = [UIScreen mainScreen].bounds.size;
+    [self addInfoText:[NSString stringWithFormat:@"横幅（ポイント）: %.01f", screenSize.width]];
+    [self addInfoText:[NSString stringWithFormat:@"縦幅（ポイント）: %.01f", screenSize.height]];
     
     // 画面サイズ（ピクセル）
     // iOS 8.0以降で動く
-    if (floor(NSFoundationVersionNumber) >= NSFoundationVersionNumber_iOS_8_0)
-    {
-        CGSize myNativeBoundSize = [UIScreen mainScreen].nativeBounds.size;
-        _adInfoView.text = [NSString stringWithFormat:@"%@\n縦幅（ピクセル）：%.01f", _adInfoView.text, myNativeBoundSize.width];
-        _adInfoView.text = [NSString stringWithFormat:@"%@\n縦幅（ピクセル）：%.01f", _adInfoView.text, myNativeBoundSize.height];
+    if (floor(NSFoundationVersionNumber) >= NSFoundationVersionNumber_iOS_8_0) {
+        CGSize screenSize = [UIScreen mainScreen].nativeBounds.size;
+        [self addInfoText:[NSString stringWithFormat:@"縦幅（ピクセル）: %.01f", screenSize.width]];
+        [self addInfoText:[NSString stringWithFormat:@"縦幅（ピクセル）: %.01f", screenSize.height]];
     }
     
     // サポートOSバージョン
-    _adInfoView.text = [NSString stringWithFormat:@"%@\nサポートOSバージョン：%.01f以上", _adInfoView.text, [VAMP SupportedOSVersion]];
-    _adInfoView.text = [NSString stringWithFormat:@"%@\nサポート対象OS：%@", _adInfoView.text, [VAMP isSupportedOSVersion] ? @"true" : @"false"];
+    [self addInfoText:[NSString stringWithFormat:@"サポートOSバージョン: %.01f以上", [VAMP SupportedOSVersion]]];
+    [self addInfoText:[NSString stringWithFormat:@"サポート対象OS: %@", [VAMP isSupportedOSVersion] ? @"true" : @"false"]];
+}
+
+- (void)addInfoText:(NSString *)text {
+    self.adInfoView.text = [self.adInfoView.text stringByAppendingFormat:@"\n%@", text];
 }
 
 @end
+

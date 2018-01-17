@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VideoSingle2ViewController : UIViewController
+#import "VideoSingleViewController.h"
+
+@interface VideoSingle2ViewController : VideoSingleViewController
 
 @end
+

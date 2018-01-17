@@ -12,24 +12,22 @@ import VAMP
 class ViewController: UIViewController {
     
     @IBOutlet weak var sdkVersion: UILabel!
-    var adReward:VAMP!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
-        // 対応OSバージョン
-        print("supportedOSVersion:\(VAMP.supportedOSVersion())")
+        // VAMPが対応するiOSの最低バージョン
+        print("[VAMP]supportedOSVersion:\(VAMP.supportedOSVersion())")
                 
         // テストモード
         // 連携アドネットワーク（AppLovin、maio、UnityAds）
-        // リリースする際は必ずコメントアウトしてください。収益が発生しない広告が配信されます。
+        // リリースする際は必ずコメントアウトしてください。収益が発生しない広告が配信されます
 //        VAMP.setTestMode(true)
 
         // デバッグモード
         // 連携アドネットワーク（AppLovin、UnityAds、FAN、Tapjoy）
 //        VAMP.setDebugMode(true)
-
+        
         /* アドネットワークSDK　初期化メディエーション */
         // initializeAdnwSDKを使う場合は、初期化が終わる前にAD画面へ遷移してloadしないようご注意ください。
         // ├ ステータス設定。デフォルトAUTO
@@ -39,23 +37,15 @@ class ViewController: UIViewController {
         //    VAMPInitializeState.WIFIONLY  Wi-Fi接続時のみ全アドネットワークを初期化する
         // └ アドネットワークのSDKを初期化する間隔（秒数）
         //   duration:秒単位で指定する。最小4秒、最大60秒。デフォルトは10秒。（対象:AppLovin、maio、UnityAds、Vungle）
-        /*
-        self.adReward = VAMP()
-        if ((self.adReward) != nil) {
-            self.adReward.initializeAdnwSDK("*****", initializeState:VAMPInitializeState.AUTO, duration:10) // 広告枠IDを設定してください
-            print("[VAMP]initilizedAdnwSDK")
-        }
-        */
-
-        // アプリバージョン。info.plistから取得
-        let appV:String? = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
+//        VAMP().initializeAdnwSDK("*****", initializeState: .AUTO, duration: 5)  // 広告枠IDを設定してください
+//        print("[VAMP]initilizedAdnwSDK")
+        
+        let appV = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
         guard let appVersion = appV else { return }
         
         // VAMPのSDKバージョン
-        let sdkV:String? = VAMP.sdkVersion()
-        guard let sdkVersion = sdkV else { return }
+        let sdkVersion = VAMP.sdkVersion()!
         
-        // バージョン情報
         self.sdkVersion.text = "APP \(appVersion)(Swift)\nSDK \(sdkVersion)"
         
         // 国コードの取得サンプル
@@ -64,10 +54,6 @@ class ViewController: UIViewController {
                 weakSelf.sdkVersion.text = "\(weakSelf.sdkVersion.text!) / \(countryCode!)"
             }
         }
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
 }
 

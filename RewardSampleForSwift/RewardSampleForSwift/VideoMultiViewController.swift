@@ -16,8 +16,8 @@ class VideoMultiViewController : UIViewController, VAMPDelegate {
     @IBOutlet var adCodeField2: UITextField!
     @IBOutlet var adLogView: UITextView!
     
-    let adId1: String! = "*****"    // 広告枠ID1を設定してください
-    let adId2: String! = "*****"    // 広告枠ID2を設定してください
+    let placementId1 = "*****"  // 広告枠ID1を設定してください
+    let placementId2 = "*****"  // 広告枠ID2を設定してください
     
     var soundOffButton: UIBarButtonItem!
     var soundOnButton: UIBarButtonItem!
@@ -31,8 +31,8 @@ class VideoMultiViewController : UIViewController, VAMPDelegate {
         
         self.automaticallyAdjustsScrollViewInsets = false
         
-        self.adCodeField1.text = self.adId1
-        self.adCodeField2.text = self.adId2
+        self.adCodeField1.text = self.placementId1
+        self.adCodeField2.text = self.placementId2
         
         self.adLogView.text = ""
         self.adLogView.isEditable = false
@@ -47,24 +47,25 @@ class VideoMultiViewController : UIViewController, VAMPDelegate {
         
         self.navigationItem.rightBarButtonItem = self.soundOnButton
         
-        let soundFileUrl: NSURL? = NSURL(fileURLWithPath: Bundle.main.path(forResource: "invisible", ofType: "mp3")!)
+        let soundPath = Bundle.main.path(forResource: "invisible", ofType: "mp3")
+        let soundUrl = URL(fileURLWithPath: soundPath!)
         
         do {
             // Fallback on earlier versions
-            self.soundPlayer = try AVAudioPlayer(contentsOf: soundFileUrl! as URL)
+            self.soundPlayer = try AVAudioPlayer(contentsOf: soundUrl)
             self.soundPlayer.prepareToPlay()
         } catch {
             print(error)
         }
         
         self.vamp1 = VAMP()
-        self.vamp1.setPlacementId(self.adId1)
         self.vamp1.delegate = self
+        self.vamp1.setPlacementId(self.placementId1)
         self.vamp1.setRootViewController(self)
         
         self.vamp2 = VAMP()
-        self.vamp2.setPlacementId(self.adId2)
         self.vamp2.delegate = self
+        self.vamp2.setPlacementId(self.placementId2)
         self.vamp2.setRootViewController(self)
         
         self.addLogText("isTestMode:" + String(VAMP.isTestMode()))
@@ -121,7 +122,7 @@ class VideoMultiViewController : UIViewController, VAMPDelegate {
         }
     }
     
-    func addLogText(_ message: String!) {
+    func addLogText(_ message: String) {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = NSLocale.system
         dateFormatter.dateFormat = "MM-dd HH:mm:ss"
@@ -129,80 +130,105 @@ class VideoMultiViewController : UIViewController, VAMPDelegate {
         let log = String.init(format: "%@ %@", timestamp, message)
         
         DispatchQueue.main.async() {
-            self.adLogView.text = String.init(format: "%@\n%@", log, self.adLogView.text)
+            self.adLogView.text = NSString(format: "%@\n%@", log, self.adLogView.text) as String
         }
         
-        print("[VAMP]\(log)")
+        print("[VAMP]\(log)");
+    }
+    
+    func vampStateString(_ state: VAMPState) -> String {
+        switch state {
+        case .idle:
+            return "Idle"
+        case .loading:
+            return "Loading"
+        case .ready:
+            return "Ready"
+        case .loaded:
+            return "Loaded"
+        case .showing:
+            return "Showing"
+        default:
+            return "Unknown"
+        }
     }
     
     // MARK: - VAMPDelegate
     
     // load完了して、広告表示できる状態になったことを通知します
     func vampDidReceive(_ placementId: String?, adnwName: String?) {
-        guard let placementId = placementId else { return }
-        guard let adnwName = adnwName else { return }
+        guard let _placementId = placementId else { return }
+        guard let _adnwName = adnwName else { return }
         
-        self.addLogText("[\(placementId)] vampDidReceive(\(adnwName))")
+        self.addLogText("vampDidReceive(\(_adnwName)) placementId:\(_placementId)")
+    }
+    
+    // エラーが発生した時に通知されます
+    func vampDidFail(_ placementId: String!, error: VAMPError!) {
+        guard let _placementId = placementId else { return }
+        guard let codeString = error.kVAMPErrorString() else { return }
+        let failMessage = error.localizedDescription
+        
+        self.addLogText("vampDidFail placementId:\(_placementId) \(codeString) \(failMessage)")
     }
     
     // インセンティブ付与可能になったタイミングで通知されます
     func vampDidComplete(_ placementId: String?, adnwName: String?) {
-        guard let adnwName = adnwName else { return }
-        guard let placementId = placementId else { return }
+        guard let _adnwName = adnwName else { return }
+        guard let _placementId = placementId else { return }
         
-        self.addLogText("[\(placementId)] vampDidComplete(\(adnwName))")
+        self.addLogText("vampDidComplete(\(_adnwName)) placementId:\(_placementId)")
     }
     
     // 広告が閉じられた時に呼ばれます
     func vampDidClose(_ placementId: String!, adnwName: String?) {
-        guard let placementId = placementId else { return }
-        guard let adnwName = adnwName else { return }
+        guard let _placementId = placementId else { return }
+        guard let _adnwName = adnwName else { return }
         
-        self.addLogText("[\(placementId)] vampDidClose(\(adnwName))")
+        self.addLogText("vampDidClose(\(_adnwName)) placementId:\(_placementId)")
     }
     
-    // アドネットワークごとの広告取得が開始されたときに通知されます
+    // アドネットワークごとの広告取得が開始された時に通知されます
     func vampLoadStart(_ placementId: String!, adnwName: String!) {
-        guard let placementId = placementId else { return }
-        guard let adnwName = adnwName else { return }
+        guard let _placementId = placementId else { return }
+        guard let _adnwName = adnwName else { return }
         
-        self.addLogText("[\(placementId)] vampLoadStart(\(adnwName))")
+        self.addLogText("vampLoadStart(\(_adnwName)) placementId:\(_placementId)")
     }
     
-    // アドネットワークごとの広告取得結果を通知する。（success,failedどちらも通知）
-    // この通知をもとにshowしないようご注意ください。showする判定は、onReceiveを受け取ったタイミングで判断ください。
+    // アドネットワークごとの広告取得結果が通知されます（success,failedどちらも通知）。
+    // この通知をもとにshowしないようご注意ください。showする判定は、vampDidReceiveを受け取ったタイミングで判断してください
     func vampLoadResult(_ placementId: String!, success: Bool, adnwName: String!, message: String?) {
-        guard let placementId = placementId else { return }
-        guard let adnwName = adnwName else { return }
+        guard let _placementId = placementId else { return }
+        guard let _adnwName = adnwName else { return }
         
-        if let message = message {
-            if (success) {
-                // 成功の場合はメッセージ不要
-                self.addLogText("[\(placementId)] vampLoadResult(\(adnwName) success:\(success))")
-            } else {
-                self.addLogText("[\(placementId)] vampLoadResult(\(adnwName) success:\(success) \(message))")
-            }
+        if (success) {
+            self.addLogText("vampLoadResult(\(_adnwName)) success:\(success) placementId:\(_placementId)")
         } else {
-            self.addLogText("[\(placementId)] vampLoadResult(\(adnwName) success:\(success))")
+            if let _message = message {
+                self.addLogText("vampLoadResult(\(_adnwName)) success:\(success) message:\(_message) placementId:\(_placementId)")
+            } else {
+                self.addLogText("vampLoadResult(\(_adnwName)) success:\(success) placementId:\(_placementId)")
+            }
         }
     }
     
-    // エラー
-    func vampDidFail(_ placementId: String!, error: VAMPError!) {
-        guard let placementId = placementId else { return }
-        guard let codeString = error.kVAMPErrorString() else { return }
+    // 広告準備完了から55分経つと取得した広告の表示はできてもRTBの収益は発生しません。
+    // この通知を受け取ったら、もう一度loadからやり直す必要があります
+    func vampDidExpired(_ placementId: String!) {
+        guard let _placementId = placementId else { return }
         
-        let failMessage = error.localizedDescription
-        
-        self.addLogText("[\(placementId)] vampDidFail \(codeString) \(failMessage)")
+        self.addLogText("vampDidExpired placementId:\(_placementId)")
     }
     
-    // 広告準備完了から55分経つと取得した広告が表示はできてもRTBの収益は発生しません。
-    // この通知を受け取ったら、もう一度loadからやり直す必要があります。
-    func vampDidExpired(_ placementId: String!) {
+    // VAMPの状態が変化したときの通知されます
+    func vampDidChange(_ oldState: VAMPState, into newState: VAMPState, withPlacementId placementId: String!) {
         guard let placementId = placementId else { return }
         
-        self.addLogText("[\(placementId)] vampDidExpired")
+        let oldStateStr = self.vampStateString(oldState)
+        let newStateStr = self.vampStateString(newState)
+        
+        self.addLogText("vampDidChangeState \(oldStateStr) -> \(newStateStr), placementId:\(placementId)")
     }
 }
 

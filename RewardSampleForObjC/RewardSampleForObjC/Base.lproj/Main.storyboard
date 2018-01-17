@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gra-D4-7xL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gra-D4-7xL">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment version="2304" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -173,7 +173,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B2H-K0-Zaa" customClass="BorderButton">
-                                <rect key="frame" x="40" y="72" width="80" height="30"/>
+                                <rect key="frame" x="16" y="72" width="80" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="3VW-R5-9yl"/>
                                     <constraint firstAttribute="width" constant="80" id="bM3-71-b5u"/>
@@ -195,7 +195,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TdC-7w-jhy" customClass="BorderButton">
-                                <rect key="frame" x="200" y="72" width="80" height="30"/>
+                                <rect key="frame" x="120" y="72" width="80" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="cKl-El-yOo"/>
                                     <constraint firstAttribute="height" constant="30" id="erG-4w-9NE"/>
@@ -216,6 +216,28 @@
                                     <action selector="showAd:" destination="Wic-HQ-F92" eventType="touchUpInside" id="rnF-cQ-qW9"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jof-1w-9R0" customClass="BorderButton">
+                                <rect key="frame" x="224" y="72" width="80" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="B9x-FC-yh7"/>
+                                    <constraint firstAttribute="height" constant="30" id="qCG-J5-ord"/>
+                                </constraints>
+                                <state key="normal" title="CLEAR"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="clearLoadedAd:" destination="Wic-HQ-F92" eventType="touchUpInside" id="pCD-Dd-Qos"/>
+                                </connections>
+                            </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9Q1-Bm-7x7">
                                 <rect key="frame" x="16" y="142" width="288" height="426"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -228,13 +250,13 @@
                         <constraints>
                             <constraint firstItem="9Q1-Bm-7x7" firstAttribute="leading" secondItem="XAv-y8-cXt" secondAttribute="leadingMargin" id="015-7I-lXn"/>
                             <constraint firstItem="9Q1-Bm-7x7" firstAttribute="top" secondItem="FkQ-rT-28c" secondAttribute="bottom" constant="5" id="7jQ-g3-H3b"/>
+                            <constraint firstItem="TdC-7w-jhy" firstAttribute="centerX" secondItem="XAv-y8-cXt" secondAttribute="centerX" id="C3P-Tm-LQ5"/>
                             <constraint firstItem="QQ6-Ot-3my" firstAttribute="top" secondItem="9Q1-Bm-7x7" secondAttribute="bottom" id="Ej4-cX-Wzl"/>
                             <constraint firstItem="FkQ-rT-28c" firstAttribute="trailing" secondItem="XAv-y8-cXt" secondAttribute="trailingMargin" id="NIS-87-Nhe"/>
-                            <constraint firstItem="B2H-K0-Zaa" firstAttribute="centerX" secondItem="XAv-y8-cXt" secondAttribute="centerX" constant="-80" id="NMU-uJ-ecP">
-                                <variation key="heightClass=compact-widthClass=compact" constant="-80"/>
-                            </constraint>
-                            <constraint firstItem="TdC-7w-jhy" firstAttribute="centerX" secondItem="XAv-y8-cXt" secondAttribute="centerX" constant="80" id="Qp8-ns-fzT"/>
                             <constraint firstItem="TdC-7w-jhy" firstAttribute="top" secondItem="qIt-sG-Jew" secondAttribute="bottom" constant="8" id="S3H-HI-RbV"/>
+                            <constraint firstItem="Jof-1w-9R0" firstAttribute="top" secondItem="qIt-sG-Jew" secondAttribute="bottom" constant="8" id="c9w-Im-bIY"/>
+                            <constraint firstItem="Jof-1w-9R0" firstAttribute="trailing" secondItem="FkQ-rT-28c" secondAttribute="trailing" id="iSu-YY-VuY"/>
+                            <constraint firstItem="FkQ-rT-28c" firstAttribute="leading" secondItem="B2H-K0-Zaa" secondAttribute="leading" id="iUq-Bt-S9E"/>
                             <constraint firstItem="FkQ-rT-28c" firstAttribute="leading" secondItem="XAv-y8-cXt" secondAttribute="leadingMargin" id="k3s-WX-itT"/>
                             <constraint firstItem="9Q1-Bm-7x7" firstAttribute="centerX" secondItem="XAv-y8-cXt" secondAttribute="centerX" id="oRM-8c-Akf"/>
                             <constraint firstItem="9Q1-Bm-7x7" firstAttribute="trailing" secondItem="XAv-y8-cXt" secondAttribute="trailingMargin" id="pcL-Jj-SZy"/>
@@ -248,7 +270,6 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="adLogView" destination="9Q1-Bm-7x7" id="TIL-hu-ggR"/>
-                        <outlet property="adShowButton" destination="TdC-7w-jhy" id="vab-tP-FdA"/>
                         <outlet property="adcodeField" destination="FkQ-rT-28c" id="aUp-AH-geo"/>
                     </connections>
                 </viewController>
@@ -316,7 +337,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Lb-AP-zL8" customClass="BorderButton">
-                                <rect key="frame" x="40" y="72" width="80" height="30"/>
+                                <rect key="frame" x="16" y="72" width="80" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="OZl-rs-r6D"/>
                                     <constraint firstAttribute="width" constant="80" id="c87-b2-m0T"/>
@@ -338,7 +359,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VWT-f8-V4I" customClass="BorderButton">
-                                <rect key="frame" x="200" y="72" width="80" height="30"/>
+                                <rect key="frame" x="120" y="72" width="80" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="JAg-we-GwM"/>
                                     <constraint firstAttribute="height" constant="30" id="t1v-FL-Qcc"/>
@@ -366,23 +387,45 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eNF-vx-oTv" customClass="BorderButton">
+                                <rect key="frame" x="224" y="72" width="80" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="2LW-gU-xlN"/>
+                                    <constraint firstAttribute="height" constant="30" id="QgR-AU-0Pa"/>
+                                </constraints>
+                                <state key="normal" title="CLEAR"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="clearLoadedAd:" destination="gBi-vN-akO" eventType="touchUpInside" id="9Th-Xw-6ph"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="9Lb-AP-zL8" firstAttribute="top" secondItem="YAO-wF-Jgj" secondAttribute="bottom" constant="8" id="4yv-5n-4Wi"/>
                             <constraint firstItem="hZs-wJ-ko1" firstAttribute="centerX" secondItem="PdV-0g-kV1" secondAttribute="centerX" id="6Lv-Hr-LmF"/>
+                            <constraint firstItem="VWT-f8-V4I" firstAttribute="centerX" secondItem="PdV-0g-kV1" secondAttribute="centerX" id="Axm-Ds-zbe"/>
                             <constraint firstItem="hZs-wJ-ko1" firstAttribute="trailing" secondItem="PdV-0g-kV1" secondAttribute="trailingMargin" id="CdC-Ei-qus"/>
-                            <constraint firstItem="VWT-f8-V4I" firstAttribute="centerX" secondItem="PdV-0g-kV1" secondAttribute="centerX" constant="80" id="L9B-UW-bMk"/>
                             <constraint firstItem="hZs-wJ-ko1" firstAttribute="leading" secondItem="PdV-0g-kV1" secondAttribute="leadingMargin" id="Om9-2F-6s4"/>
                             <constraint firstItem="hZs-wJ-ko1" firstAttribute="top" secondItem="tVa-zr-gsS" secondAttribute="bottom" constant="5" id="Pjj-Mb-PTg"/>
                             <constraint firstItem="VWT-f8-V4I" firstAttribute="top" secondItem="YAO-wF-Jgj" secondAttribute="bottom" constant="8" id="RpB-NV-9eB"/>
                             <constraint firstItem="W4Q-dd-sFe" firstAttribute="top" secondItem="hZs-wJ-ko1" secondAttribute="bottom" id="VG3-XE-l39"/>
                             <constraint firstItem="tVa-zr-gsS" firstAttribute="trailing" secondItem="PdV-0g-kV1" secondAttribute="trailingMargin" id="Ya6-Te-YyU"/>
                             <constraint firstItem="tVa-zr-gsS" firstAttribute="top" secondItem="VWT-f8-V4I" secondAttribute="bottom" constant="5" id="ebg-x8-XIL"/>
-                            <constraint firstItem="9Lb-AP-zL8" firstAttribute="centerX" secondItem="PdV-0g-kV1" secondAttribute="centerX" constant="-80" id="k9m-eZ-yWm">
-                                <variation key="heightClass=compact-widthClass=compact" constant="-80"/>
-                            </constraint>
+                            <constraint firstItem="eNF-vx-oTv" firstAttribute="trailing" secondItem="tVa-zr-gsS" secondAttribute="trailing" id="fMq-tW-eJf"/>
+                            <constraint firstItem="eNF-vx-oTv" firstAttribute="top" secondItem="YAO-wF-Jgj" secondAttribute="bottom" constant="8" id="i8f-kd-BSe"/>
                             <constraint firstItem="tVa-zr-gsS" firstAttribute="leading" secondItem="PdV-0g-kV1" secondAttribute="leadingMargin" id="opx-jd-Pd1"/>
+                            <constraint firstItem="tVa-zr-gsS" firstAttribute="leading" secondItem="9Lb-AP-zL8" secondAttribute="leading" id="pkr-RO-qpR"/>
                         </constraints>
                     </view>
                     <toolbarItems>
@@ -391,7 +434,6 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="adLogView" destination="hZs-wJ-ko1" id="4qQ-Qi-2Be"/>
-                        <outlet property="adShowButton" destination="VWT-f8-V4I" id="jIK-fy-iUJ"/>
                         <outlet property="adcodeField" destination="tVa-zr-gsS" id="vLT-Rs-w3M"/>
                     </connections>
                 </viewController>
