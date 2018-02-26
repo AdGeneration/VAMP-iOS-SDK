@@ -22,6 +22,7 @@ class VideoMultiViewController : UIViewController, VAMPDelegate {
     var soundOffButton: UIBarButtonItem!
     var soundOnButton: UIBarButtonItem!
     var soundPlayer: AVAudioPlayer!
+    var isPlayingPrev = false
     
     var vamp1: VAMP!
     var vamp2: VAMP!
@@ -95,6 +96,8 @@ class VideoMultiViewController : UIViewController, VAMPDelegate {
             self.vamp1.show()
             
             self.addLogText("show ad1")
+            
+            self.isPlayingPrev = self.soundPlayer.isPlaying
             
             if (self.soundPlayer.isPlaying) {
                 self.soundPlayer.pause()
@@ -186,6 +189,10 @@ class VideoMultiViewController : UIViewController, VAMPDelegate {
         guard let _adnwName = adnwName else { return }
         
         self.addLogText("vampDidClose(\(_adnwName)) placementId:\(_placementId)")
+        
+        if self.isPlayingPrev {
+            self.soundPlayer.play()
+        }
     }
     
     // アドネットワークごとの広告取得が開始された時に通知されます

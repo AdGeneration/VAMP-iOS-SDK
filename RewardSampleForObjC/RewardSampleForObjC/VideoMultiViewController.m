@@ -20,6 +20,7 @@
 @property (nonatomic) UIBarButtonItem *soundOffButton;
 @property (nonatomic) UIBarButtonItem *soundOnButton;
 @property (nonatomic) AVAudioPlayer *soundPlayer;
+@property (nonatomic) BOOL isPlayingPrev;
 
 @property (nonatomic) VAMP *vamp1;
 @property (nonatomic) VAMP *vamp2;
@@ -107,6 +108,8 @@ static NSString * const kPlacementId2 = @"*****";   // 広告枠ID2を設定し�
         [self.vamp1 show];
         
         [self addLogText:@"show ad1"];
+        
+        self.isPlayingPrev = self.soundPlayer.isPlaying;
         
         if (self.soundPlayer.isPlaying) {
             [self.soundPlayer pause];
@@ -196,6 +199,10 @@ static NSString * const kPlacementId2 = @"*****";   // 広告枠ID2を設定し�
 - (void)vampDidClose:(NSString *)placementId adnwName:(NSString *)adnwName {
     [self addLogText:[NSString stringWithFormat:@"vampDidClose(%@) placementId:%@",
                       adnwName, placementId]];
+    
+    if (self.isPlayingPrev) {
+        [self.soundPlayer play];
+    }
 }
 
 // アドネットワークごとの広告取得が開始された時に通知されます

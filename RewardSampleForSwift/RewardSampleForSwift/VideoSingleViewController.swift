@@ -15,12 +15,17 @@ class VideoSingleViewController: UIViewController, VAMPDelegate {
     @IBOutlet var adcodeField: UITextField!
     @IBOutlet var adLogView: UITextView!
     
-    let placementId = "*****"   // 広告枠IDを設定してください
+    /**
+     広告枠IDを設定してください
+     59755 : iOSテスト用ID (このIDのままリリースしないでください)
+     */
+    let placementId = "59755"
     
     var vamp: VAMP!
     var soundOffButton: UIBarButtonItem!
     var soundOnButton: UIBarButtonItem!
     var soundPlayer: AVAudioPlayer!
+    var isPlayingPrev = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,6 +98,8 @@ class VideoSingleViewController: UIViewController, VAMPDelegate {
             let success = self.vamp.show()
             
             self.addLogText("[show]")
+            
+            self.isPlayingPrev = self.soundPlayer.isPlaying
             
             if (self.soundPlayer.isPlaying && success) {
                 self.soundPlayer.pause()
@@ -172,6 +179,10 @@ class VideoSingleViewController: UIViewController, VAMPDelegate {
         guard let _adnwName = adnwName else { return }
         
         self.addLogText("vampDidClose(\(_adnwName)) placementId:\(_placementId)")
+        
+        if self.isPlayingPrev {
+            self.soundPlayer.play()
+        }
     }
     
     // アドネットワークごとの広告取得が開始された時に通知されます

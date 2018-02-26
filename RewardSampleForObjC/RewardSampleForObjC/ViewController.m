@@ -33,6 +33,18 @@
     // 連携アドネットワーク（AppLovin、UnityAds、FAN、Tapjoy）
 //    [VAMP setDebugMode:YES];
     
+    // ユーザ属性の設定
+    // 誕生日
+    NSDateComponents *components = [NSDateComponents new];
+    components.year = 1980;
+    components.month = 2;
+    components.day = 20;
+    NSDate *birthday = [[[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian]
+                        dateFromComponents:components];
+    [VAMP setBirthday:birthday];
+    // 性別
+    [VAMP setGender:kVAMPGenderMale];
+    
     /* アドネットワークSDK　初期化メディエーション */
     // initializeAdnwSDKを使う場合は、初期化が終わる前にAD画面へ遷移してloadしないようご注意ください。
     // ├ ステータス設定。デフォルトAUTO

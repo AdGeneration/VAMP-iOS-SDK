@@ -28,6 +28,18 @@ class ViewController: UIViewController {
         // 連携アドネットワーク（AppLovin、UnityAds、FAN、Tapjoy）
 //        VAMP.setDebugMode(true)
         
+        // ユーザ属性の設定
+        // 誕生日
+        var components = DateComponents()
+        components.year = 1980
+        components.month = 2
+        components.day = 20
+        let calendar = NSCalendar(calendarIdentifier: .gregorian)!
+        let birthday = calendar.date(from: components)
+        VAMP.setBirthday(birthday)
+        // 性別
+        VAMP.setGender(.male)
+        
         /* アドネットワークSDK　初期化メディエーション */
         // initializeAdnwSDKを使う場合は、初期化が終わる前にAD画面へ遷移してloadしないようご注意ください。
         // ├ ステータス設定。デフォルトAUTO
