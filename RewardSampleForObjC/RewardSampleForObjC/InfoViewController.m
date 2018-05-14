@@ -38,10 +38,6 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     self.adInfoView.text = @"";
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
     
     // Admob SDK Version
     NSString *admobVersion = [NSString stringWithCString:(const char *) GoogleMobileAdsVersionString

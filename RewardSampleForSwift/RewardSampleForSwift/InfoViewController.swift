@@ -23,10 +23,6 @@ class InfoViewController: UIViewController {
         self.automaticallyAdjustsScrollViewInsets = false
         
         self.adInfoView.text = ""
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         
         // Admob SDK Version
         self.addInfoText("AdmobSDK: \(ADNWVersionHelper.admobVersion())")

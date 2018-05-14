@@ -13,7 +13,9 @@
 
 @interface VideoSingleViewController ()
 
-- (NSString *)placementId;
+- (void)addLogText:(NSString *)message;
+- (void)pauseSound;
+- (void)resumeSound;
 
 @end
 
@@ -22,15 +24,88 @@
 @property (nonatomic, weak) IBOutlet UITextField *adcodeField;
 @property (nonatomic, weak) IBOutlet UITextView *adLogView;
 
+@property (nonatomic) VAMP *vamp;
+
 @end
 
 @implementation VideoSingle2ViewController
 
-static NSString * const kPlacementId = @"*****";    // 広告枠IDを設定してください
+static NSString * const kPlacementId = @"59755";    // 広告枠IDを設定してください
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    // VAMPインスタンスを生成し初期化
+    self.vamp = [VAMP new];
+    self.vamp.delegate = self;
+    [self.vamp setPlacementId:self.placementId];
+    [self.vamp setRootViewController:self];
+    
+    // 画面表示時に広告をプリロード
+    [self.vamp preload];
+}
 
 - (NSString *)placementId {
     return kPlacementId;
 }
 
-@end
+- (IBAction)showAd:(id)sender {
+    // 広告取得済みか判定
+    if (self.vamp.isReady) {
+        [self addLogText:@"[show]"];
+        [self pauseSound];
+        
+        // 広告表示
+        [self.vamp show];
+    }
+    else {
+        [self addLogText:@"[load]"];
+        
+        // 広告取得
+        [self.vamp load];
+    }
+}
 
+#pragma mark - VAMPDelegate
+
+// 広告表示が可能になると通知
+- (void)vampDidReceive:(NSString *)placementId adnwName:(NSString *)adnwName {
+    [self addLogText:[NSString stringWithFormat:@"vampDidReceive(%@, %@)", adnwName, placementId]];
+    [self addLogText:@"[show]"];
+    [self pauseSound];
+    
+    [self.vamp show];
+}
+
+// 全アドネットワークにおいて広告が取得できなかったときに通知
+- (void)vamp:(VAMP *)vamp didFailToLoadWithError:(VAMPError *)error withPlacementId:(NSString *)placementId {
+    [self addLogText:[NSString stringWithFormat:@"vampDidFailToLoad(%@, %@)", error.localizedDescription, placementId]];
+    
+    // 必要に応じて広告の再ロード
+//    if (/* 任意のリトライ条件 */) {
+//        [vamp load];
+//    }
+}
+
+// 広告の表示に失敗したときに通知
+- (void)vamp:(VAMP *)vamp didFailToShowWithError:(VAMPError *)error withPlacementId:(NSString *)placementId {
+    [self addLogText:[NSString stringWithFormat:@"vampDidFailToShow(%@, %@)",
+                      error.localizedDescription, placementId]];
+    [self resumeSound];
+}
+
+// インセンティブ付与可能になったタイミングで通知
+- (void)vampDidComplete:(NSString *)placementId adnwName:(NSString *)adnwName {
+    [self addLogText:[NSString stringWithFormat:@"vampDidComplete(%@, %@)", adnwName, placementId]];
+}
+
+// 広告が閉じられた時に通知
+- (void)vampDidClose:(NSString *)placementId adnwName:(NSString *)adnwName {
+    [self addLogText:[NSString stringWithFormat:@"vampDidClose(%@, %@)", adnwName, placementId]];
+    [self resumeSound];
+    
+    // 必要に応じて次に表示する広告をプリロード
+    [self.vamp preload];
+}
+
+@end

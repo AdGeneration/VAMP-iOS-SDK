@@ -18,27 +18,27 @@ class ViewController: UIViewController {
         
         // VAMPが対応するiOSの最低バージョン
         print("[VAMP]supportedOSVersion:\(VAMP.supportedOSVersion())")
-                
+
         // テストモード
-        // 連携アドネットワーク（AppLovin、maio、UnityAds）
+        // 連携アドネットワーク（AdMob、AppLovin、FAN、maio、nend、UnityAds）
         // リリースする際は必ずコメントアウトしてください。収益が発生しない広告が配信されます
 //        VAMP.setTestMode(true)
 
         // デバッグモード
-        // 連携アドネットワーク（AppLovin、UnityAds、FAN、Tapjoy）
+        // 連携アドネットワーク（AppLovin、UnityAds、FAN、nend、Vungle、Tapjoy）
 //        VAMP.setDebugMode(true)
         
         // ユーザ属性の設定
-        // 誕生日
-        var components = DateComponents()
-        components.year = 1980
-        components.month = 2
-        components.day = 20
-        let calendar = NSCalendar(calendarIdentifier: .gregorian)!
-        let birthday = calendar.date(from: components)
-        VAMP.setBirthday(birthday)
-        // 性別
-        VAMP.setGender(.male)
+//        // 誕生日
+//        var components = DateComponents()
+//        components.year = 1980
+//        components.month = 2
+//        components.day = 20
+//        let calendar = NSCalendar(calendarIdentifier: .gregorian)!
+//        let birthday = calendar.date(from: components)
+//        VAMP.setBirthday(birthday)
+//        // 性別
+//        VAMP.setGender(.male)
         
         /* アドネットワークSDK　初期化メディエーション */
         // initializeAdnwSDKを使う場合は、初期化が終わる前にAD画面へ遷移してloadしないようご注意ください。
@@ -56,7 +56,7 @@ class ViewController: UIViewController {
         guard let appVersion = appV else { return }
         
         // VAMPのSDKバージョン
-        let sdkVersion = VAMP.sdkVersion()!
+        let sdkVersion = VAMP.sdkVersion()
         
         self.sdkVersion.text = "APP \(appVersion)(Swift)\nSDK \(sdkVersion)"
         
