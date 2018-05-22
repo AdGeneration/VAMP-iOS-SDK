@@ -56,23 +56,25 @@ class VideoSingle2ViewController: VideoSingleViewController {
             self.pauseSound()
             // 広告表示
             vamp.show()
-            self.addLogText("vampLoadResult(\(adnwName), \(placementId), success) show()")
+            self.addLogText("vampLoadResult(\(adnwName), \(placementId), success) show()", color: UIColor.black)
         } else {
             // 失敗しても、次のアドネットワークがあれば、広告取得を試みます。
             // 最終的に全てのアドネットワークの広告在庫が無ければ
             // onFailedToLoadのNO_ADSTOCKが通知されるので、ここで処理を止めないでください。
             let msg = message != nil ? message! : ""
-            self.addLogText("vampLoadResult(\(adnwName), \(placementId), success:NG, \(msg))")
+            self.addLogText("vampLoadResult(\(adnwName), \(placementId), success:NG, \(msg))", color: UIColor.red)
         }
     }
     
     // 全アドネットワークにおいて広告が取得できなかったときに通知
     override func vamp(_ vamp: VAMP, didFailToLoadWithError error: VAMPError, withPlacementId placementId: String?) {
         let errorString: String? = error.kVAMPErrorString()
+        
         if let errorStr = errorString {
-            self.addLogText("vampDidFailToLoad(\(errorStr), \(String(describing: placementId)))")
+            let pid = placementId != nil ? placementId! : "";
+            self.addLogText("vampDidFailToLoad(\(errorStr), \(pid))", color:UIColor.red)
         } else {
-            self.addLogText("vampDidFailToLoad")
+            self.addLogText("vampDidFailToLoad", color: UIColor.red)
         }
     
         // 必要に応じて広告の再ロードを試みます
@@ -85,21 +87,21 @@ class VideoSingle2ViewController: VideoSingleViewController {
     override func vamp(_ vamp: VAMP, didFailToShowWithError error: VAMPError, withPlacementId placementId: String) {
         let errorString: String? = error.kVAMPErrorString()
         if let errorStr = errorString {
-            self.addLogText("vampDidFailToShow(\(errorStr))")
+            self.addLogText("vampDidFailToShow(\(errorStr))", color: UIColor.red)
         } else {
-            self.addLogText("vampDidFailToShow")
+            self.addLogText("vampDidFailToShow", color: UIColor.red)
         }
         self.resumeSound()
     }
     
     // インセンティブ付与可能になったタイミングで通知（エンドカード閉じる、再生キャンセル）
     override func vampDidComplete(_ placementId: String, adnwName: String) {
-        self.addLogText("vampDidComplete(\(adnwName), \(placementId))")
+        self.addLogText("vampDidComplete(\(adnwName), \(placementId))", color: UIColor.blue)
     }
     
     // 広告が閉じられた時に通知
     override func vampDidClose(_ placementId: String, adnwName: String) {
-        self.addLogText("vampDidClose(\(adnwName), \(placementId))")
+        self.addLogText("vampDidClose(\(adnwName), \(placementId))", color: UIColor.black)
         self.resumeSound()
         
         // 必要に応じて、次に表示する広告をプリロード

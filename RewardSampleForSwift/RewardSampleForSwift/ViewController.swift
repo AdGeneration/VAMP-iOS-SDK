@@ -66,6 +66,26 @@ class ViewController: UIViewController {
                 weakSelf.sdkVersion.text = "\(weakSelf.sdkVersion.text!) / \(countryCode!)"
             }
         }
+
+        // EU圏内ならばユーザに同意を求めるサンプル
+//        VAMP.isEUAccess { access in
+//            if !access {
+//                // Nothing to do
+//                return
+//            }
+//
+//            let alert = UIAlertController(title: "Personalized Ads", message: "Accept?", preferredStyle: .alert)
+//
+//            alert.addAction(UIAlertAction(title: "Accept", style: .default) { action in
+//                VAMP.setUserConsent(VAMPConsentStatus.accepted)
+//            })
+//
+//            alert.addAction(UIAlertAction(title: "Deny", style: .destructive) { action in
+//                VAMP.setUserConsent(VAMPConsentStatus.denied)
+//            })
+//
+//            self.present(alert, animated: true, completion: nil)
+//        }
     }
 }
 

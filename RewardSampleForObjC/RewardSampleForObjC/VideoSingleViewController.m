@@ -116,19 +116,30 @@ static NSString * const kPlacementId = @"59755";
     }
 }
 
-- (void)addLogText:(NSString *)message {
+- (void)addLogText:(NSString *)message color:(nonnull UIColor *)color {
     NSDate *now = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.locale = [NSLocale systemLocale];
     dateFormatter.dateFormat = @"MM-dd HH:mm:ss ";
     
-    NSString *log = [NSString stringWithFormat:@"%@ %@", [dateFormatter stringFromDate:now], message];
+    NSAttributedString *attributedNow = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@ ", [dateFormatter stringFromDate:now]] attributes:@{NSForegroundColorAttributeName : UIColor.grayColor}];
     
+    NSAttributedString *attributedMessage = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@\n", message] attributes:@{NSForegroundColorAttributeName : color}];
+
     dispatch_async(dispatch_get_main_queue(), ^{
-        self.adLogView.text = [NSString stringWithFormat:@"%@\n%@", log, self.adLogView.text];
+        NSMutableAttributedString *mutableAttributedString = [[NSMutableAttributedString alloc] init];
+        [mutableAttributedString appendAttributedString:attributedNow];
+        [mutableAttributedString appendAttributedString:attributedMessage];
+        
+        [mutableAttributedString appendAttributedString:self.adLogView.attributedText];
+        self.adLogView.attributedText = mutableAttributedString;
     });
     
     NSLog(@"[VAMP]%@", message);
+}
+
+- (void)addLogText:(NSString *)message {
+    [self addLogText:message color:UIColor.grayColor];
 }
 
 - (NSString *)vampStateString:(VAMPState)state {
@@ -179,13 +190,16 @@ static NSString * const kPlacementId = @"59755";
 // 例）在庫が無い、タイムアウトなど
 // @see https://github.com/AdGeneration/VAMP-iOS-SDK/wiki/VAMP-iOS-API-Errors
 - (void)vamp:(VAMP *)vamp didFailToLoadWithError:(VAMPError *)error withPlacementId:(NSString *)placementId {
-    [self addLogText:[NSString stringWithFormat:@"vampDidFailToLoad(%@, %@)", error.localizedDescription, placementId]];
+    [self addLogText:[NSString stringWithFormat:@"vampDidFailToLoad(%@, %@)", error.localizedDescription, placementId]
+               color:UIColor.redColor];
 }
 
 // 広告表示失敗
 - (void)vamp:(VAMP *)vamp didFailToShowWithError:(VAMPError *)error withPlacementId:(NSString *)placementId {
     [self addLogText:[NSString stringWithFormat:@"vampDidFailToShow(%@, %@)",
-                      error.localizedDescription, placementId]];
+                      error.localizedDescription, placementId]
+               color:UIColor.redColor];
+    
     [self resumeSound];
 }
 
@@ -193,20 +207,23 @@ static NSString * const kPlacementId = @"59755";
 // インセンティブ付与が可能になったタイミング（動画再生完了時、またはエンドカードを閉じたタイミング）で通知
 // アドネットワークによって通知タイミングが異なる
 - (void)vampDidComplete:(NSString *)placementId adnwName:(NSString *)adnwName {
-    [self addLogText:[NSString stringWithFormat:@"vampDidComplete(%@, %@)", adnwName, placementId]];
+    [self addLogText:[NSString stringWithFormat:@"vampDidComplete(%@, %@)", adnwName, placementId]
+               color:UIColor.blueColor];
 }
 
 // 広告閉じる
 // エンドカード閉じる、途中で広告再生キャンセル
 - (void)vampDidClose:(NSString *)placementId adnwName:(NSString *)adnwName {
-    [self addLogText:[NSString stringWithFormat:@"vampDidClose(%@, %@)", adnwName, placementId]];
+    [self addLogText:[NSString stringWithFormat:@"vampDidClose(%@, %@)", adnwName, placementId]
+               color:UIColor.blackColor];
     [self resumeSound];
 }
 
 // 広告準備完了から55分経つと取得した広告の表示はできてもRTBの収益は発生しない
 // この通知を受け取ったら、もう一度loadからやり直す必要あり
 - (void)vampDidExpired:(NSString *)placementId {
-    [self addLogText:[NSString stringWithFormat:@"vampDidExpired(%@)", placementId]];
+    [self addLogText:[NSString stringWithFormat:@"vampDidExpired(%@)", placementId]
+               color:UIColor.redColor];
 }
 
 // アドネットワークの広告取得が開始されたときに通知
@@ -218,10 +235,12 @@ static NSString * const kPlacementId = @"59755";
 // success=NOのとき、次位のアドネットワークがある場合はロード処理は継続
 - (void)vampLoadResult:(NSString *)placementId success:(BOOL)success adnwName:(NSString *)adnwName message:(NSString *)message {
     if (success) {
-        [self addLogText:[NSString stringWithFormat:@"vampLoadResult(%@, %@, success:OK)", adnwName, placementId]];
+        [self addLogText:[NSString stringWithFormat:@"vampLoadResult(%@, %@, success:OK)", adnwName, placementId]
+                   color:UIColor.blackColor];
     }
     else {
-        [self addLogText:[NSString stringWithFormat:@"vampLoadResult(%@, %@, success:NG, %@)", adnwName, placementId, message]];
+        [self addLogText:[NSString stringWithFormat:@"vampLoadResult(%@, %@, success:NG, %@)", adnwName, placementId, message]
+                   color:UIColor.redColor];
     }
 }
 

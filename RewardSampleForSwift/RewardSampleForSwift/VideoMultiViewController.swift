@@ -125,18 +125,28 @@ class VideoMultiViewController : UIViewController, VAMPDelegate {
         }
     }
     
-    func addLogText(_ message: String) {
+    func addLogText(_ message: String, color: UIColor) {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = NSLocale.system
         dateFormatter.dateFormat = "MM-dd HH:mm:ss"
         let timestamp = dateFormatter.string(from: Date())
-        let log = String.init(format: "%@ %@", timestamp, message)
+        
+        let attributedNow = NSAttributedString.init(string: String.init(format: "%@ ", timestamp), attributes: [NSForegroundColorAttributeName : UIColor.gray])
+        let attributedMessage = NSAttributedString.init(string: String.init(format: "%@\n", message), attributes: [NSForegroundColorAttributeName : color])
         
         DispatchQueue.main.async() {
-            self.adLogView.text = NSString(format: "%@\n%@", log, self.adLogView.text) as String
+            let mutableAttributedString = NSMutableAttributedString.init()
+            mutableAttributedString.append(attributedNow)
+            mutableAttributedString.append(attributedMessage)
+            mutableAttributedString.append(self.adLogView.attributedText)
+            self.adLogView.attributedText = mutableAttributedString
         }
         
-        print("[VAMP]\(log)");
+        print("[VAMP]\(timestamp) \(message)")
+    }
+    
+    func addLogText(_ message: String) {
+        self.addLogText(message, color: UIColor.gray)
     }
     
     func vampStateString(_ state: VAMPState) -> String {
@@ -175,30 +185,32 @@ class VideoMultiViewController : UIViewController, VAMPDelegate {
     
     // 全アドネットワークにおいて広告が取得できなかったときに通知
     func vamp(_ vamp: VAMP, didFailToLoadWithError error: VAMPError, withPlacementId placementId: String?) {
-        self.addLogText("vampDidFailToLoad(\(error.localizedDescription), \(placementId))")
+        if let bindPid = placementId {
+            self.addLogText("vampDidFailToLoad(\(error.localizedDescription), \(bindPid))", color: UIColor.red)
+        }
     }
     
     // 広告の表示に失敗したときに通知
     func vamp(_ vamp: VAMP, didFailToShowWithError error: VAMPError, withPlacementId placementId: String) {
-        self.addLogText("vampDidFailToShow(\(error.localizedDescription), \(placementId))")
+        self.addLogText("vampDidFailToShow(\(error.localizedDescription), \(placementId))", color: UIColor.red)
         self.resumeSound()
     }
     
     // インセンティブ付与可能になったタイミングで通知
     func vampDidComplete(_ placementId: String, adnwName: String) {
-        self.addLogText("vampDidComplete(\(adnwName), \(placementId))")
+        self.addLogText("vampDidComplete(\(adnwName), \(placementId))", color: UIColor.blue)
     }
     
     // 広告が閉じられた時に通知
     func vampDidClose(_ placementId: String, adnwName: String) {
-        self.addLogText("vampDidClose(\(adnwName), \(placementId))")
+        self.addLogText("vampDidClose(\(adnwName), \(placementId))", color: UIColor.black)
         self.resumeSound()
     }
     
     // 広告準備完了から55分経つと取得した広告の表示はできてもRTBの収益は発生しません。
     // この通知を受け取ったら、もう一度loadからやり直す必要があります
     func vampDidExpired(_ placementId: String) {
-        self.addLogText("vampDidExpired(\(placementId))")
+        self.addLogText("vampDidExpired(\(placementId))", color: UIColor.red)
     }
     
     // アドネットワークの広告取得が開始されたときに通知
@@ -210,10 +222,10 @@ class VideoMultiViewController : UIViewController, VAMPDelegate {
     // success=NOのとき、次位のアドネットワークがある場合はロード処理は継続されます
     func vampLoadResult(_ placementId: String, success: Bool, adnwName: String, message: String?) {
         if success {
-            self.addLogText("vampLoadResult(\(adnwName), \(placementId), success:OK)")
+            self.addLogText("vampLoadResult(\(adnwName), \(placementId), success:OK)", color: UIColor.black)
         } else {
             let msg = message != nil ? message! : ""
-            self.addLogText("vampLoadResult(\(adnwName), \(placementId), success:NG, \(msg))")
+            self.addLogText("vampLoadResult(\(adnwName), \(placementId), success:NG, \(msg))", color: UIColor.red)
         }
     }
     

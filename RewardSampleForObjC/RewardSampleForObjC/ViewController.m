@@ -69,6 +69,28 @@
     [VAMP getCountryCode:^(NSString *countryCode) {
         weakSelf.sdkVersion.text = [NSString stringWithFormat:@"%@ / %@", weakSelf.sdkVersion.text, countryCode];
     }];
+
+    // EU圏内ならばユーザに同意を求めるサンプル
+//    [VAMP isEUAccess:^(BOOL access) {
+//        if (!access) {
+//            // Nothing to do
+//            return;
+//        }
+//
+//        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Personalized Ads"
+//                                                                       message:@"Accept?"
+//                                                                preferredStyle:UIAlertControllerStyleAlert];
+//
+//        [alert addAction:[UIAlertAction actionWithTitle:@"Accept" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+//            [VAMP setUserConsent:kVAMPConsentStatusAccepted];
+//        }]];
+//
+//        [alert addAction:[UIAlertAction actionWithTitle:@"Deny" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+//            [VAMP setUserConsent:kVAMPConsentStatusDenied];
+//        }]];
+//
+//        [self presentViewController:alert animated:YES completion:nil];
+//    }];
 }
 
 @end
