@@ -178,6 +178,24 @@ class VideoSingleViewController: UIViewController, VAMPDelegate {
     func vamp(_ vamp: VAMP, didFailToLoadWithError error: VAMPError, withPlacementId placementId: String?) {
         if let bindPid = placementId {
             self.addLogText("vampDidFailToLoad(\(error.localizedDescription), \(bindPid))", color: UIColor.red)
+
+            let code = VAMPErrorCode(rawValue: UInt(error.code))
+            if code == .noAdStock {
+                // 在庫が無いので、再度loadをしてもらう必要があります。
+                // 連続で発生する場合、時間を置いてからloadをする必要があります。
+                print("[VAMP]vampDidFailToLoad(noAdStock, \(error.localizedDescription))")
+            } else if code == .noAdnetwork {
+                // アドジェネ管理画面でアドネットワークの配信がONになっていない、
+                // またはEU圏からのアクセスの場合(GDPR)に発生します。
+                print("[VAMP]vampDidFailToLoad(noAdnetwork, \(error.localizedDescription))")
+            } else if code == .needConnection {
+                // ネットワークに接続できない状況です。
+                // 電波状況をご確認ください。
+                print("[VAMP]vampDidFailToLoad(needConnection, \(error.localizedDescription))")
+            } else if code == .mediationTimeout {
+                // アドネットワークSDKから返答が得られず、タイムアウトしました。
+                print("[VAMP]vampDidFailToLoad(mediationTimeout, \(error.localizedDescription))")
+            }
         }
     }
     
@@ -186,12 +204,20 @@ class VideoSingleViewController: UIViewController, VAMPDelegate {
     // 例）ユーザーが広告再生を途中でキャンセルなど
     func vamp(_ vamp: VAMP, didFailToShowWithError error: VAMPError, withPlacementId placementId: String) {
         self.addLogText("vampDidFailToShow(\(error.localizedDescription), \(placementId))", color: UIColor.red)
+        
+        let code = VAMPErrorCode(rawValue: UInt(error.code))
+        if (code == .userCancel) {
+            // ユーザが広告再生を途中でキャンセルしました。
+            // AdMobは動画再生の途中でユーザーによるキャンセルが可能
+            print("[VAMP]vampDidFailToShow(userCancel, \(error.localizedDescription))");
+        }
+        
         self.resumeSound()
     }
     
     // インセンティブ付与OK
-    // インセンティブ付与が可能になったタイミング（動画再生完了時、またはエンドカードを閉じたタイミング）で通知
-    // アドネットワークによって通知タイミングが異なる
+    // インセンティブ付与が可能になったタイミングで通知
+    // アドネットワークによって通知タイミングが異なる（動画再生完了時、またはエンドカードを閉じたタイミング）
     func vampDidComplete(_ placementId: String, adnwName: String) {
         self.addLogText("vampDidComplete(\(adnwName), \(placementId))", color: UIColor.blue)
     }

@@ -186,6 +186,24 @@ class VideoMultiViewController : UIViewController, VAMPDelegate {
     // 全アドネットワークにおいて広告が取得できなかったときに通知
     func vamp(_ vamp: VAMP, didFailToLoadWithError error: VAMPError, withPlacementId placementId: String?) {
         if let bindPid = placementId {
+            let code = VAMPErrorCode(rawValue: UInt(error.code))
+            if code == .noAdStock {
+                // 在庫が無いので、再度loadをしてもらう必要があります。
+                // 連続で発生する場合、時間を置いてからloadをする必要があります。
+                print("[VAMP]vampDidFailToLoad(noAdStock, \(error.localizedDescription))")
+            } else if code == .noAdnetwork {
+                // アドジェネ管理画面でアドネットワークの配信がONになっていない、
+                // またはEU圏からのアクセスの場合(GDPR)発生します。
+                print("[VAMP]vampDidFailToLoad(noAdnetwork, \(error.localizedDescription))")
+            } else if code == .needConnection {
+                // ネットワークに接続できない状況です。
+                // 電波状況をご確認ください。
+                print("[VAMP]vampDidFailToLoad(needConnection, \(error.localizedDescription))")
+            } else if code == .mediationTimeout {
+                // アドネットワークSDKから返答が得られず、タイムアウトしました。
+                print("[VAMP]vampDidFailToLoad(mediationTimeout, \(error.localizedDescription))")
+            }
+
             self.addLogText("vampDidFailToLoad(\(error.localizedDescription), \(bindPid))", color: UIColor.red)
         }
     }
@@ -193,6 +211,13 @@ class VideoMultiViewController : UIViewController, VAMPDelegate {
     // 広告の表示に失敗したときに通知
     func vamp(_ vamp: VAMP, didFailToShowWithError error: VAMPError, withPlacementId placementId: String) {
         self.addLogText("vampDidFailToShow(\(error.localizedDescription), \(placementId))", color: UIColor.red)
+        
+        let code = VAMPErrorCode(rawValue: UInt(error.code))
+        if (code == .userCancel) {
+            // ユーザが広告再生を途中でキャンセルしました。
+            print("[VAMP]vampDidFailToShow(userCancel, \(error.localizedDescription))");
+        }
+        
         self.resumeSound()
     }
     

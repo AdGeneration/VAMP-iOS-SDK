@@ -87,6 +87,23 @@ static NSString * const kPlacementId = @"59755";    // 広告枠IDを設定し�
 //    if (/* 任意のリトライ条件 */) {
 //        [vamp load];
 //    }
+    VAMPErrorCode code = error.code;
+    if(code == VAMPErrorCodeNoAdStock) {
+        // 在庫が無いので、再度loadをしてもらう必要があります。
+        // 連続で発生する場合、時間を置いてからloadをする必要があります。
+        NSLog(@"[VAMP]vampDidFailToLoad(VAMPErrorCodeNoAdStock, %@)", error.localizedDescription);
+    } else if(code == VAMPErrorCodeNoAdnetwork) {
+        // アドジェネ管理画面でアドネットワークの配信がONになっていない、
+        // またはEU圏からのアクセスの場合(GDPR)に発生します。
+        NSLog(@"[VAMP]vampDidFailToLoad(VAMPErrorCodeNoAdnetwork, %@)", error.localizedDescription);
+    } else if(code == VAMPErrorCodeNeedConnection) {
+        // ネットワークに接続できない状況です。
+        // 電波状況をご確認ください。
+        NSLog(@"[VAMP]vampDidFailToLoad(VAMPErrorCodeNeedConnection, %@)", error.localizedDescription);
+    } else if(code == VAMPErrorCodeMediationTimeout) {
+        // アドネットワークSDKから返答が得られず、タイムアウトしました。
+        NSLog(@"[VAMP]vampDidFailToLoad(VAMPErrorCodeMediationTimeout, %@)", error.localizedDescription);
+    }
 }
 
 // 広告の表示に失敗したときに通知
@@ -94,10 +111,17 @@ static NSString * const kPlacementId = @"59755";    // 広告枠IDを設定し�
     [self addLogText:[NSString stringWithFormat:@"vampDidFailToShow(%@, %@)",
                       error.localizedDescription, placementId]
                color:UIColor.redColor];
+    if (error.code == VAMPErrorCodeUserCancel) {
+        // ユーザが広告再生を途中でキャンセルしました。
+        // AdMobは動画再生の途中でユーザーによるキャンセルが可能
+        NSLog(@"[VAMP]vampDidFailToShow(VAMPErrorCodeUserCancel, %@)", error.localizedDescription);
+    }
+    
     [self resumeSound];
 }
 
-// インセンティブ付与可能になったタイミングで通知
+// インセンティブ付与が可能になったタイミングで通知
+// アドネットワークによって通知タイミングが異なる（動画再生完了時、またはエンドカードを閉じたタイミング）
 - (void)vampDidComplete:(NSString *)placementId adnwName:(NSString *)adnwName {
     [self addLogText:[NSString stringWithFormat:@"vampDidComplete(%@, %@)", adnwName, placementId]
                color:UIColor.blueColor];
