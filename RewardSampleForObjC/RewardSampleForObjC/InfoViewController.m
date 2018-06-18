@@ -21,6 +21,7 @@
 #import <Tapjoy/Tapjoy.h>
 #import <GoogleMobileAds/GoogleMobileAds.h>
 #import <FBAudienceNetwork/FBAudienceNetwork.h>
+#import <MVSDK/MVSDK.h>
 
 #import "InfoViewController.h"
 
@@ -66,6 +67,9 @@
     
     // Vungle SDK Version
     [self addInfoText:[NSString stringWithFormat:@"VungleSDK: %@", VungleSDKVersion]];
+    
+    // Mintegral SDK Version
+    [self addInfoText:[NSString stringWithFormat:@"MintegralSDK: %@", MVSDKVersion]];
     
     [self addInfoText:@"\n"];
     

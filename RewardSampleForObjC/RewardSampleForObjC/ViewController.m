@@ -25,13 +25,13 @@
     NSLog(@"[VAMP]supportedOSVersion:%.01f", [VAMP SupportedOSVersion]);
     
     // テストモード
-    // 連携アドネットワーク（AdMob、AppLovin、FAN、maio、nend、UnityAds）
+    // 連携アドネットワーク（AdMob、AppLovin、FAN、maio、nend、UnityAds、Mintegral）
     // リリースする際は必ずコメントアウトしてください。収益が発生しない広告が配信されます
-//    [VAMP setTestMode:YES];
+    [VAMP setTestMode:YES];
     
     // デバッグモード
     // 連携アドネットワーク（AppLovin、UnityAds、FAN、nend、Vungle、Tapjoy）
-//    [VAMP setDebugMode:YES];
+    [VAMP setDebugMode:YES];
     
     // ユーザ属性の設定
 //    // 誕生日

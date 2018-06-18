@@ -20,13 +20,13 @@ class ViewController: UIViewController {
         print("[VAMP]supportedOSVersion:\(VAMP.supportedOSVersion())")
 
         // テストモード
-        // 連携アドネットワーク（AdMob、AppLovin、FAN、maio、nend、UnityAds）
+        // 連携アドネットワーク（AdMob、AppLovin、FAN、maio、nend、UnityAds、Mintegral）
         // リリースする際は必ずコメントアウトしてください。収益が発生しない広告が配信されます
-//        VAMP.setTestMode(true)
-
+        VAMP.setTestMode(true)
+        
         // デバッグモード
-        // 連携アドネットワーク（AppLovin、UnityAds、FAN、nend、Vungle、Tapjoy）
-//        VAMP.setDebugMode(true)
+        // 連携アドネットワーク（AppLovin、UnityAds、FAN、nend、Vungle、Tapjoy、Mintegral）
+        VAMP.setDebugMode(true)
         
         // ユーザ属性の設定
 //        // 誕生日
