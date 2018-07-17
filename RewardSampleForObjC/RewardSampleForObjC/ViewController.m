@@ -25,12 +25,12 @@
     NSLog(@"[VAMP]supportedOSVersion:%.01f", [VAMP SupportedOSVersion]);
     
     // テストモード
-    // 連携アドネットワーク（AdMob、AppLovin、FAN、maio、nend、UnityAds、Mintegral）
+    // 連携アドネットワーク（AdMob、AppLovin、FAN、maio、nend、UnityAds、Mintegral、MoPub）
     // リリースする際は必ずコメントアウトしてください。収益が発生しない広告が配信されます
     [VAMP setTestMode:YES];
     
     // デバッグモード
-    // 連携アドネットワーク（AppLovin、UnityAds、FAN、nend、Vungle、Tapjoy）
+    // 連携アドネットワーク（AppLovin、UnityAds、FAN、nend、Vungle、Tapjoy、MoPub）
     [VAMP setDebugMode:YES];
     
     // ユーザ属性の設定
@@ -44,6 +44,13 @@
 //    [VAMP setBirthday:birthday];
 //    // 性別
 //    [VAMP setGender:kVAMPGenderMale];
+
+    VAMPConfiguration *vampConfiguration = [VAMPConfiguration defaultConfiguration];
+    vampConfiguration.playerCancelable = YES;
+    vampConfiguration.playerAlertTitleText = @"動画を終了しますか？";
+    vampConfiguration.playerAlertBodyText = @"報酬がもらえません";
+    vampConfiguration.playerAlertCloseButtonText = @"動画を終了";
+    vampConfiguration.playerAlertContinueButtonText = @"動画を再開";
     
     /* アドネットワークSDK　初期化メディエーション */
     // initializeAdnwSDKを使う場合は、初期化が終わる前にAD画面へ遷移してloadしないようご注意ください。

@@ -44,6 +44,8 @@
 		66F3CE521F0F8BD5000F8B3F /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 66F3CE511F0F8BD4000F8B3F /* libz.tbd */; };
 		66F3CE541F0F8BDC000F8B3F /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 66F3CE531F0F8BDC000F8B3F /* libsqlite3.tbd */; };
 		66F3CE551F0F8BF1000F8B3F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C378141DE2165100583E3E /* QuartzCore.framework */; };
+		8318F63F20FD8F89004C2B46 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8318F63E20FD8F88004C2B46 /* CoreLocation.framework */; };
+		8318F66B20FDAD6F004C2B46 /* VideoSingle3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8318F66A20FDAD6F004C2B46 /* VideoSingle3ViewController.swift */; };
 		DD53D3311E1D4E050053DC99 /* invisible.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EF31231D1DF6705D00131E96 /* invisible.mp3 */; };
 		DD67362D1EDBC8B8002C6849 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD67362C1EDBC8B8002C6849 /* StoreKit.framework */; };
 		EF3123201DF69C2D00131E96 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF31231F1DF69C2D00131E96 /* MobileCoreServices.framework */; };
@@ -94,6 +96,8 @@
 		66F3CE4F1F0F8BCB000F8B3F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		66F3CE511F0F8BD4000F8B3F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		66F3CE531F0F8BDC000F8B3F /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		8318F63E20FD8F88004C2B46 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		8318F66A20FDAD6F004C2B46 /* VideoSingle3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoSingle3ViewController.swift; sourceTree = "<group>"; };
 		DD53D32F1E1D463E0053DC99 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		DD53D3301E1D463E0053DC99 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		DD67362C1EDBC8B8002C6849 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -109,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8318F63F20FD8F89004C2B46 /* CoreLocation.framework in Frameworks */,
 				66DEE1EB1F73636A005F78E9 /* libxml2.tbd in Frameworks */,
 				66DEE1E91F736364005F78E9 /* libc++.tbd in Frameworks */,
 				63B2773B1F129DBD0016295A /* Security.framework in Frameworks */,
@@ -170,6 +175,7 @@
 		63C377BE1DE20D3900583E3E /* RewardSampleForSwift */ = {
 			isa = PBXGroup;
 			children = (
+				8318F66A20FDAD6F004C2B46 /* VideoSingle3ViewController.swift */,
 				EF31231D1DF6705D00131E96 /* invisible.mp3 */,
 				EF3BD8BE1DE3E6F400841B08 /* BorderButton.swift */,
 				63C377D31DE20FDB00583E3E /* VideoSingleViewController.swift */,
@@ -198,6 +204,7 @@
 		63C378091DE2163100583E3E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8318F63E20FD8F88004C2B46 /* CoreLocation.framework */,
 				66DEE1EA1F73636A005F78E9 /* libxml2.tbd */,
 				66DEE1E81F736364005F78E9 /* libc++.tbd */,
 				63B277391F129DA50016295A /* MapKit.framework */,
@@ -315,6 +322,7 @@
 				63C377C21DE20D3900583E3E /* ViewController.swift in Sources */,
 				63C377C01DE20D3900583E3E /* AppDelegate.swift in Sources */,
 				665EC9ED1FD6823B00C60895 /* VideoMultiViewController.swift in Sources */,
+				8318F66B20FDAD6F004C2B46 /* VideoSingle3ViewController.swift in Sources */,
 				66D341C21EF8D00C00809D9B /* VideoSingle2ViewController.swift in Sources */,
 				63C377D41DE20FDB00583E3E /* VideoSingleViewController.swift in Sources */,
 				63C377D81DE2102400583E3E /* InfoViewController.swift in Sources */,

@@ -39,7 +39,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MPs-Uk-gBi" customClass="BorderButton" customModule="RewardSampleForSwift" customModuleProvider="target">
-                                <rect key="frame" x="107" y="433" width="160" height="35"/>
+                                <rect key="frame" x="107.5" y="486.5" width="160" height="35"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="1ew-oO-lX3"/>
@@ -72,7 +72,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DXp-i6-bA3" customClass="BorderButton" customModule="RewardSampleForSwift" customModuleProvider="target">
-                                <rect key="frame" x="107" y="264" width="160" height="35"/>
+                                <rect key="frame" x="107.5" y="216" width="160" height="35"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="gjh-kz-6JH"/>
@@ -95,7 +95,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eve-Lu-HtE" customClass="BorderButton" customModule="RewardSampleForSwift" customModuleProvider="target">
-                                <rect key="frame" x="107" y="316" width="160" height="35"/>
+                                <rect key="frame" x="107.5" y="283" width="160" height="35"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="Djy-2P-sAw"/>
@@ -118,7 +118,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GBY-wJ-0aX" customClass="BorderButton" customModule="RewardSampleForSwift" customModuleProvider="target">
-                                <rect key="frame" x="107" y="368" width="160" height="35"/>
+                                <rect key="frame" x="107.5" y="417" width="160" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="iWQ-nW-n1q"/>
                                     <constraint firstAttribute="height" constant="35" id="x81-oh-oOl"/>
@@ -128,19 +128,32 @@
                                     <segue destination="h4j-J7-9dd" kind="push" id="kyp-Ju-9ur"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7WA-R3-edT" customClass="BorderButton" customModule="RewardSampleForSwift" customModuleProvider="target">
+                                <rect key="frame" x="107.5" y="350" width="160" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="N89-wA-Bqh"/>
+                                    <constraint firstAttribute="height" constant="35" id="rbM-Fl-MTu"/>
+                                </constraints>
+                                <state key="normal" title="AD3"/>
+                                <connections>
+                                    <segue destination="t4d-Dd-zPj" kind="show" id="t5S-Yy-pHg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="WXU-r2-Qp7" firstAttribute="top" secondItem="foj-5w-V4R" secondAttribute="bottom" constant="20" id="39T-Yc-qQQ"/>
                             <constraint firstItem="foj-5w-V4R" firstAttribute="centerX" secondItem="C9e-wZ-ZdE" secondAttribute="centerX" id="Ab9-8h-bf9"/>
-                            <constraint firstItem="DXp-i6-bA3" firstAttribute="centerY" secondItem="C9e-wZ-ZdE" secondAttribute="centerY" constant="-52" id="P9R-9y-xWz"/>
-                            <constraint firstItem="GBY-wJ-0aX" firstAttribute="centerY" secondItem="C9e-wZ-ZdE" secondAttribute="centerY" constant="52" id="Z6B-OU-jAW"/>
+                            <constraint firstItem="7WA-R3-edT" firstAttribute="centerX" secondItem="C9e-wZ-ZdE" secondAttribute="centerX" id="ND4-Dw-A7e"/>
+                            <constraint firstItem="DXp-i6-bA3" firstAttribute="centerY" secondItem="C9e-wZ-ZdE" secondAttribute="centerY" constant="-100" id="P9R-9y-xWz"/>
+                            <constraint firstItem="GBY-wJ-0aX" firstAttribute="centerY" secondItem="C9e-wZ-ZdE" secondAttribute="centerY" constant="101" id="Z6B-OU-jAW"/>
+                            <constraint firstItem="DXp-i6-bA3" firstAttribute="centerX" secondItem="C9e-wZ-ZdE" secondAttribute="centerX" id="eZ3-OJ-Dax"/>
                             <constraint firstItem="eve-Lu-HtE" firstAttribute="centerX" secondItem="C9e-wZ-ZdE" secondAttribute="centerX" id="gpv-Nl-aiR"/>
-                            <constraint firstItem="DXp-i6-bA3" firstAttribute="centerX" secondItem="C9e-wZ-ZdE" secondAttribute="centerX" id="hPv-dt-I9W"/>
-                            <constraint firstItem="MPs-Uk-gBi" firstAttribute="top" secondItem="GBY-wJ-0aX" secondAttribute="bottom" constant="30" id="luL-s2-yBb"/>
+                            <constraint firstItem="MPs-Uk-gBi" firstAttribute="top" secondItem="GBY-wJ-0aX" secondAttribute="bottom" constant="34.5" id="luL-s2-yBb"/>
                             <constraint firstItem="GBY-wJ-0aX" firstAttribute="centerX" secondItem="C9e-wZ-ZdE" secondAttribute="centerX" id="qjc-Jt-2kO"/>
                             <constraint firstItem="MPs-Uk-gBi" firstAttribute="centerX" secondItem="C9e-wZ-ZdE" secondAttribute="centerX" id="u9w-vI-NwX"/>
-                            <constraint firstItem="eve-Lu-HtE" firstAttribute="centerY" secondItem="C9e-wZ-ZdE" secondAttribute="centerY" id="x7g-Bk-jY0"/>
+                            <constraint firstItem="7WA-R3-edT" firstAttribute="centerY" secondItem="C9e-wZ-ZdE" secondAttribute="centerY" constant="34" id="vXW-2o-rLu"/>
+                            <constraint firstItem="eve-Lu-HtE" firstAttribute="centerY" secondItem="C9e-wZ-ZdE" secondAttribute="centerY" constant="-33" id="x7g-Bk-jY0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rI9-93-alv"/>
@@ -195,7 +208,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TdC-7w-jhy" customClass="BorderButton" customModule="RewardSampleForSwift" customModuleProvider="target">
-                                <rect key="frame" x="147" y="72" width="80" height="30"/>
+                                <rect key="frame" x="147.5" y="72" width="80" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="cKl-El-yOo"/>
                                     <constraint firstAttribute="height" constant="30" id="erG-4w-9NE"/>
@@ -252,6 +265,154 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t3O-lc-GTk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2233" y="-631"/>
+        </scene>
+        <!--Video Single3 View Controller-->
+        <scene sceneID="G4f-l2-E6N">
+            <objects>
+                <viewController id="t4d-Dd-zPj" customClass="VideoSingle3ViewController" customModule="RewardSampleForSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HCk-1A-Rzn"/>
+                        <viewControllerLayoutGuide type="bottom" id="MUI-EI-M4G"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BCC-V3-D2i">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="wZc-nW-ad6" userLabel="Adcode Field">
+                                <rect key="frame" x="16" y="107" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="WHI-lq-fzn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xFr-fX-sgv" customClass="BorderButton" customModule="RewardSampleForSwift" customModuleProvider="target">
+                                <rect key="frame" x="16" y="72" width="80" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="Ue5-uF-ktz"/>
+                                    <constraint firstAttribute="height" constant="30" id="kOc-La-EAM"/>
+                                </constraints>
+                                <state key="normal" title="LOAD"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loadAd:" destination="t4d-Dd-zPj" eventType="touchUpInside" id="Fbn-yu-RXc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qxx-gC-nAU" customClass="BorderButton" customModule="RewardSampleForSwift" customModuleProvider="target">
+                                <rect key="frame" x="147.5" y="72" width="80" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="SaD-Mh-NkF"/>
+                                    <constraint firstAttribute="width" constant="80" id="kme-bl-On6"/>
+                                </constraints>
+                                <state key="normal" title="SHOW"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="showAd:" destination="t4d-Dd-zPj" eventType="touchUpInside" id="brT-4C-37z"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gDA-Da-fEW" userLabel="Ad Log View">
+                                <rect key="frame" x="16" y="297" width="343" height="370"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABy-yR-lwG" customClass="BorderButton" customModule="RewardSampleForSwift" customModuleProvider="target">
+                                <rect key="frame" x="67.5" y="145" width="240" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="V9L-QI-9mm"/>
+                                    <constraint firstAttribute="height" constant="30" id="aZm-tE-19X"/>
+                                </constraints>
+                                <state key="normal" title="SetFrequencyCap"/>
+                                <connections>
+                                    <action selector="setFrequencyCap:" destination="t4d-Dd-zPj" eventType="touchUpInside" id="oMW-qP-Ku8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OPc-Ov-2d0" customClass="BorderButton" customModule="RewardSampleForSwift" customModuleProvider="target">
+                                <rect key="frame" x="67.5" y="183" width="240" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="gVf-iB-tBX"/>
+                                    <constraint firstAttribute="height" constant="30" id="sxK-bW-Zam"/>
+                                </constraints>
+                                <state key="normal" title="GetFrequencyCappedStatus"/>
+                                <connections>
+                                    <action selector="getFrequencyCappedStatus:" destination="t4d-Dd-zPj" eventType="touchUpInside" id="fbM-Q2-INt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LbO-oC-zsC" customClass="BorderButton" customModule="RewardSampleForSwift" customModuleProvider="target">
+                                <rect key="frame" x="67.5" y="221" width="240" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="atJ-Hq-b4x"/>
+                                    <constraint firstAttribute="height" constant="30" id="ybf-EM-nv8"/>
+                                </constraints>
+                                <state key="normal" title="ClearFrequencyCap"/>
+                                <connections>
+                                    <action selector="clearFrequencyCap:" destination="t4d-Dd-zPj" eventType="touchUpInside" id="1W4-B7-GwB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RHJ-wN-0DZ" customClass="BorderButton" customModule="RewardSampleForSwift" customModuleProvider="target">
+                                <rect key="frame" x="67" y="259" width="240" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="tyY-zK-Hit"/>
+                                    <constraint firstAttribute="height" constant="30" id="xCv-tL-9Q5"/>
+                                </constraints>
+                                <state key="normal" title="ResetFrequencyCap"/>
+                                <connections>
+                                    <action selector="resetFrequencyCap:" destination="t4d-Dd-zPj" eventType="touchUpInside" id="bkL-9y-n6j"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qxx-gC-nAU" firstAttribute="centerX" secondItem="BCC-V3-D2i" secondAttribute="centerX" id="2Xs-WP-6xU"/>
+                            <constraint firstItem="gDA-Da-fEW" firstAttribute="leading" secondItem="BCC-V3-D2i" secondAttribute="leadingMargin" id="3wf-JH-UNy"/>
+                            <constraint firstItem="MUI-EI-M4G" firstAttribute="top" secondItem="gDA-Da-fEW" secondAttribute="bottom" id="6PW-yg-txK"/>
+                            <constraint firstItem="ABy-yR-lwG" firstAttribute="centerX" secondItem="BCC-V3-D2i" secondAttribute="centerX" id="7dk-Uc-2fK"/>
+                            <constraint firstItem="OPc-Ov-2d0" firstAttribute="centerX" secondItem="BCC-V3-D2i" secondAttribute="centerX" id="7fO-5k-v4G"/>
+                            <constraint firstItem="RHJ-wN-0DZ" firstAttribute="centerX" secondItem="BCC-V3-D2i" secondAttribute="centerX" id="8Sa-dN-1Zn"/>
+                            <constraint firstItem="xFr-fX-sgv" firstAttribute="top" secondItem="HCk-1A-Rzn" secondAttribute="bottom" constant="8" id="Bx0-hu-cdo"/>
+                            <constraint firstItem="qxx-gC-nAU" firstAttribute="top" secondItem="HCk-1A-Rzn" secondAttribute="bottom" constant="8" id="Fwp-2e-2pP"/>
+                            <constraint firstItem="wZc-nW-ad6" firstAttribute="leading" secondItem="gDA-Da-fEW" secondAttribute="leading" id="RYj-Jr-TkL"/>
+                            <constraint firstItem="RHJ-wN-0DZ" firstAttribute="top" secondItem="LbO-oC-zsC" secondAttribute="bottom" constant="8" id="U7X-DD-XYZ"/>
+                            <constraint firstItem="gDA-Da-fEW" firstAttribute="top" secondItem="RHJ-wN-0DZ" secondAttribute="bottom" constant="8" id="UUo-p5-Q1P"/>
+                            <constraint firstItem="LbO-oC-zsC" firstAttribute="top" secondItem="OPc-Ov-2d0" secondAttribute="bottom" constant="8" id="XWK-Lw-FHC"/>
+                            <constraint firstItem="LbO-oC-zsC" firstAttribute="centerX" secondItem="BCC-V3-D2i" secondAttribute="centerX" id="hao-dQ-IC8"/>
+                            <constraint firstItem="wZc-nW-ad6" firstAttribute="top" secondItem="qxx-gC-nAU" secondAttribute="bottom" constant="5" id="ko4-CM-YtI"/>
+                            <constraint firstItem="OPc-Ov-2d0" firstAttribute="top" secondItem="ABy-yR-lwG" secondAttribute="bottom" constant="8" id="rb7-YY-keR"/>
+                            <constraint firstItem="ABy-yR-lwG" firstAttribute="top" secondItem="wZc-nW-ad6" secondAttribute="bottom" constant="8" id="sPb-sD-lsW"/>
+                            <constraint firstItem="wZc-nW-ad6" firstAttribute="trailing" secondItem="gDA-Da-fEW" secondAttribute="trailing" id="sT7-CO-YLW"/>
+                            <constraint firstItem="wZc-nW-ad6" firstAttribute="leading" secondItem="xFr-fX-sgv" secondAttribute="leading" id="vdu-c5-4tO"/>
+                            <constraint firstItem="gDA-Da-fEW" firstAttribute="trailing" secondItem="BCC-V3-D2i" secondAttribute="trailingMargin" id="zku-dS-qe4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="adLogView" destination="gDA-Da-fEW" id="JMr-pF-P73"/>
+                        <outlet property="adcodeField" destination="wZc-nW-ad6" id="kJj-0B-oz9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z40-oO-Qcu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="567.20000000000005" y="728.18590704647681"/>
         </scene>
         <!--Info View Controller-->
         <scene sceneID="qYN-Pm-e8S">

@@ -19,6 +19,8 @@
 		66F3CE461F0F89DC000F8B3F /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 66F3CE451F0F89DC000F8B3F /* libz.tbd */; };
 		66F3CE481F0F89ED000F8B3F /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 66F3CE471F0F89ED000F8B3F /* libsqlite3.tbd */; };
 		66F3CE491F0F8A0D000F8B3F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF0894151E5C365600F08BE5 /* QuartzCore.framework */; };
+		8318F64120FD8F92004C2B46 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8318F64020FD8F92004C2B46 /* CoreLocation.framework */; };
+		8318F66920FDAD5B004C2B46 /* VideoSingle3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8318F66820FDAD5B004C2B46 /* VideoSingle3ViewController.m */; };
 		DDA5884B1EA08EFC0044069B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA5884A1EA08EFC0044069B /* StoreKit.framework */; };
 		EF0893C71E5C2F3F00F08BE5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EF0893C61E5C2F3F00F08BE5 /* main.m */; };
 		EF0893CA1E5C2F3F00F08BE5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF0893C91E5C2F3F00F08BE5 /* AppDelegate.m */; };
@@ -59,6 +61,9 @@
 		66F3CE431F0F89C4000F8B3F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		66F3CE451F0F89DC000F8B3F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		66F3CE471F0F89ED000F8B3F /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		8318F64020FD8F92004C2B46 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		8318F66720FDAD5B004C2B46 /* VideoSingle3ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoSingle3ViewController.h; sourceTree = "<group>"; };
+		8318F66820FDAD5B004C2B46 /* VideoSingle3ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoSingle3ViewController.m; sourceTree = "<group>"; };
 		DDA5884A1EA08EFC0044069B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		EF0893C21E5C2F3F00F08BE5 /* RewardSampleForObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RewardSampleForObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF0893C61E5C2F3F00F08BE5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -102,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8318F64120FD8F92004C2B46 /* CoreLocation.framework in Frameworks */,
 				66DEE1E71F7361DB005F78E9 /* libc++.tbd in Frameworks */,
 				66DEE1E61F7361CB005F78E9 /* libxml2.tbd in Frameworks */,
 				66F3CE491F0F8A0D000F8B3F /* QuartzCore.framework in Frameworks */,
@@ -154,6 +160,8 @@
 		EF0893C41E5C2F3F00F08BE5 /* RewardSampleForObjC */ = {
 			isa = PBXGroup;
 			children = (
+				8318F66720FDAD5B004C2B46 /* VideoSingle3ViewController.h */,
+				8318F66820FDAD5B004C2B46 /* VideoSingle3ViewController.m */,
 				EF0893EB1E5C310400F08BE5 /* invisible.mp3 */,
 				EF0893ED1E5C33D100F08BE5 /* BorderButton.h */,
 				EF0893EE1E5C33D100F08BE5 /* BorderButton.m */,
@@ -197,6 +205,7 @@
 		EF0893FC1E5C355500F08BE5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8318F64020FD8F92004C2B46 /* CoreLocation.framework */,
 				66DEE1E51F7361CB005F78E9 /* libxml2.tbd */,
 				66DEE1E31F7361A7005F78E9 /* libc++.tbd */,
 				66F3CE471F0F89ED000F8B3F /* libsqlite3.tbd */,
@@ -305,6 +314,7 @@
 				EF0893CA1E5C2F3F00F08BE5 /* AppDelegate.m in Sources */,
 				EF0893C71E5C2F3F00F08BE5 /* main.m in Sources */,
 				EF0893EF1E5C33D100F08BE5 /* BorderButton.m in Sources */,
+				8318F66920FDAD5B004C2B46 /* VideoSingle3ViewController.m in Sources */,
 				665EC9EB1FD681E900C60895 /* VideoMultiViewController.m in Sources */,
 				66D341C51EF8D4E700809D9B /* VideoSingle2ViewController.m in Sources */,
 			);

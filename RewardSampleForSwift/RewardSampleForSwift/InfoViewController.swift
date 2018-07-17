@@ -54,7 +54,6 @@ class InfoViewController: UIViewController {
         
         // Mintegral SDK Version
         self.addInfoText("MintegralSDK: \(MVSDKVersion)")
-        
         self.addInfoText("\n")
         
         // デバイス名
@@ -122,6 +121,10 @@ class InfoViewController: UIViewController {
         // サポートOSバージョン
         self.addInfoText("サポートOSバージョン: \(String(format:"%.01f", VAMP.supportedOSVersion()))以上")
         self.addInfoText("サポート対象OS: \(String(VAMP.isSupportedOSVersion()))")
+        
+        // VAMPConfiguration
+        let vampConfiguration = VAMPConfiguration.default()
+        self.addInfoText("VAMPPlayer cancelable: \(String(vampConfiguration.isPlayerCancelable))")
     }
     
     func addInfoText(_ text: String) {

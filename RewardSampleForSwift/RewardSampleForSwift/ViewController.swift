@@ -20,12 +20,12 @@ class ViewController: UIViewController {
         print("[VAMP]supportedOSVersion:\(VAMP.supportedOSVersion())")
 
         // テストモード
-        // 連携アドネットワーク（AdMob、AppLovin、FAN、maio、nend、UnityAds、Mintegral）
+        // 連携アドネットワーク（AdMob、AppLovin、FAN、maio、nend、UnityAds、Mintegral、MoPub）
         // リリースする際は必ずコメントアウトしてください。収益が発生しない広告が配信されます
         VAMP.setTestMode(true)
         
         // デバッグモード
-        // 連携アドネットワーク（AppLovin、UnityAds、FAN、nend、Vungle、Tapjoy、Mintegral）
+        // 連携アドネットワーク（AppLovin、UnityAds、FAN、nend、Vungle、Tapjoy、MoPub）
         VAMP.setDebugMode(true)
         
         // ユーザ属性の設定
@@ -39,6 +39,13 @@ class ViewController: UIViewController {
 //        VAMP.setBirthday(birthday)
 //        // 性別
 //        VAMP.setGender(.male)
+        
+        let vampConfiguration = VAMPConfiguration.default()
+        vampConfiguration.isPlayerCancelable = true
+        vampConfiguration.playerAlertTitleText = "動画を終了しますか？"
+        vampConfiguration.playerAlertBodyText = "報酬がもらえません"
+        vampConfiguration.playerAlertCloseButtonText = "動画を終了"
+        vampConfiguration.playerAlertContinueButtonText = "動画を再開"
         
         /* アドネットワークSDK　初期化メディエーション */
         // initializeAdnwSDKを使う場合は、初期化が終わる前にAD画面へ遷移してloadしないようご注意ください。

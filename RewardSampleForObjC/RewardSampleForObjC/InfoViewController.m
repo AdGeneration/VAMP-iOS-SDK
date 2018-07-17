@@ -136,6 +136,10 @@
     // サポートOSバージョン
     [self addInfoText:[NSString stringWithFormat:@"サポートOSバージョン: %.01f以上", [VAMP SupportedOSVersion]]];
     [self addInfoText:[NSString stringWithFormat:@"サポート対象OS: %@", [VAMP isSupportedOSVersion] ? @"true" : @"false"]];
+    
+    // VAMPConfiguration
+    VAMPConfiguration *vampConfiguration = [VAMPConfiguration defaultConfiguration];
+    [self addInfoText:[NSString stringWithFormat:@"VAMPPlayer cancelable: %@", vampConfiguration.playerCancelable ? @"true" : @"false"]];
 }
 
 - (void)addInfoText:(NSString *)text {

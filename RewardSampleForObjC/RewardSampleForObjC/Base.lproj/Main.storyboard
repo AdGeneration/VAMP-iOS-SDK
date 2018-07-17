@@ -49,7 +49,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DXp-i6-bA3" customClass="BorderButton">
-                                <rect key="frame" x="80" y="199.5" width="160" height="35"/>
+                                <rect key="frame" x="80" y="166.5" width="160" height="35"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="gjh-kz-6JH"/>
@@ -72,7 +72,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QTP-di-SPy" customClass="BorderButton">
-                                <rect key="frame" x="80" y="266.5" width="160" height="35"/>
+                                <rect key="frame" x="80" y="233.5" width="160" height="35"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="S1N-Lp-jQJ"/>
@@ -95,7 +95,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQw-XR-vci" customClass="BorderButton">
-                                <rect key="frame" x="80" y="333.5" width="160" height="35"/>
+                                <rect key="frame" x="80" y="367.5" width="160" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="76a-f5-5bQ"/>
                                     <constraint firstAttribute="height" constant="35" id="aso-1H-xzA"/>
@@ -105,8 +105,19 @@
                                     <segue destination="aal-S7-tSx" kind="push" id="Nqg-tf-SB1"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UoL-uJ-CAg" customClass="BorderButton">
+                                <rect key="frame" x="80" y="300.5" width="160" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="IQg-VM-yIl"/>
+                                    <constraint firstAttribute="width" constant="160" id="lA4-eO-yI6"/>
+                                </constraints>
+                                <state key="normal" title="AD3"/>
+                                <connections>
+                                    <segue destination="dRI-C9-x3e" kind="show" id="Dgf-xi-EWV"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MPs-Uk-gBi" customClass="BorderButton">
-                                <rect key="frame" x="80" y="398.5" width="160" height="35"/>
+                                <rect key="frame" x="80" y="437" width="160" height="35"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="1ew-oO-lX3"/>
@@ -131,15 +142,17 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="QQw-XR-vci" firstAttribute="centerY" secondItem="C9e-wZ-ZdE" secondAttribute="centerY" constant="67" id="0KT-Qm-pT8"/>
                             <constraint firstItem="WXU-r2-Qp7" firstAttribute="top" secondItem="foj-5w-V4R" secondAttribute="bottom" constant="20" id="39T-Yc-qQQ"/>
+                            <constraint firstItem="UoL-uJ-CAg" firstAttribute="centerY" secondItem="C9e-wZ-ZdE" secondAttribute="centerY" constant="34" id="3Tx-dK-fcB"/>
+                            <constraint firstItem="QQw-XR-vci" firstAttribute="centerY" secondItem="C9e-wZ-ZdE" secondAttribute="centerY" constant="101" id="ASR-ep-KSa"/>
                             <constraint firstItem="foj-5w-V4R" firstAttribute="centerX" secondItem="C9e-wZ-ZdE" secondAttribute="centerX" id="Ab9-8h-bf9"/>
                             <constraint firstItem="QTP-di-SPy" firstAttribute="centerX" secondItem="C9e-wZ-ZdE" secondAttribute="centerX" id="Rw6-y8-Jlx"/>
-                            <constraint firstItem="QQw-XR-vci" firstAttribute="centerX" secondItem="C9e-wZ-ZdE" secondAttribute="centerX" id="T9Z-hs-s9x"/>
-                            <constraint firstItem="MPs-Uk-gBi" firstAttribute="top" secondItem="QQw-XR-vci" secondAttribute="bottom" constant="30" id="XzA-Q5-pNo"/>
-                            <constraint firstItem="QTP-di-SPy" firstAttribute="centerY" secondItem="C9e-wZ-ZdE" secondAttribute="centerY" id="ZVy-YS-TIn"/>
-                            <constraint firstItem="DXp-i6-bA3" firstAttribute="centerY" secondItem="C9e-wZ-ZdE" secondAttribute="centerY" constant="-67" id="blB-BI-tdL"/>
+                            <constraint firstItem="MPs-Uk-gBi" firstAttribute="top" secondItem="QQw-XR-vci" secondAttribute="bottom" constant="34.5" id="XzA-Q5-pNo"/>
+                            <constraint firstItem="QTP-di-SPy" firstAttribute="centerY" secondItem="C9e-wZ-ZdE" secondAttribute="centerY" constant="-33" id="YzU-AD-0BV"/>
+                            <constraint firstItem="DXp-i6-bA3" firstAttribute="centerY" secondItem="C9e-wZ-ZdE" secondAttribute="centerY" constant="-100" id="g5b-zn-802"/>
                             <constraint firstItem="DXp-i6-bA3" firstAttribute="centerX" secondItem="C9e-wZ-ZdE" secondAttribute="centerX" id="hPv-dt-I9W"/>
+                            <constraint firstItem="QQw-XR-vci" firstAttribute="centerX" secondItem="C9e-wZ-ZdE" secondAttribute="centerX" id="hjT-PU-vbZ"/>
+                            <constraint firstItem="UoL-uJ-CAg" firstAttribute="centerX" secondItem="C9e-wZ-ZdE" secondAttribute="centerX" id="qtK-Cr-acc"/>
                             <constraint firstItem="MPs-Uk-gBi" firstAttribute="centerX" secondItem="C9e-wZ-ZdE" secondAttribute="centerX" id="u9w-vI-NwX"/>
                         </constraints>
                     </view>
@@ -252,6 +265,154 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t3O-lc-GTk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2254" y="-699"/>
+        </scene>
+        <!--Video Single3 View Controller-->
+        <scene sceneID="SHT-8k-Kba">
+            <objects>
+                <viewController id="dRI-C9-x3e" customClass="VideoSingle3ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vZE-4A-m2G"/>
+                        <viewControllerLayoutGuide type="bottom" id="vst-wJ-xfG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hx9-UC-LeH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Lma-7S-oOG">
+                                <rect key="frame" x="16" y="107" width="288" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="s2u-ha-yFI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t5a-uV-1T7" customClass="BorderButton">
+                                <rect key="frame" x="16" y="72" width="80" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="G9x-1E-aJC"/>
+                                    <constraint firstAttribute="height" constant="30" id="Spe-lb-fHz"/>
+                                </constraints>
+                                <state key="normal" title="LOAD"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loadAd:" destination="dRI-C9-x3e" eventType="touchUpInside" id="0xf-O5-uHn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dD4-bV-dPn" customClass="BorderButton">
+                                <rect key="frame" x="120" y="72" width="80" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="JDK-XP-TRd"/>
+                                    <constraint firstAttribute="width" constant="80" id="vDb-SF-ZLk"/>
+                                </constraints>
+                                <state key="normal" title="SHOW"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="showAd:" destination="dRI-C9-x3e" eventType="touchUpInside" id="SuQ-Uw-Fba"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="801-SL-iVk" userLabel="Ad Log View">
+                                <rect key="frame" x="16" y="297" width="288" height="271"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="op7-W2-QC9" customClass="BorderButton">
+                                <rect key="frame" x="40" y="145" width="240" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="bdQ-r8-Czj"/>
+                                </constraints>
+                                <state key="normal" title="SetFrequencyCap"/>
+                                <connections>
+                                    <action selector="setFrequencyCap:" destination="dRI-C9-x3e" eventType="touchUpInside" id="iS1-eB-73K"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eDQ-M4-9jB" customClass="BorderButton">
+                                <rect key="frame" x="40" y="183" width="240" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="R1r-Pg-GZ0"/>
+                                    <constraint firstAttribute="height" constant="30" id="yp1-af-s2c"/>
+                                </constraints>
+                                <state key="normal" title="GetFrequencyCappedStatus"/>
+                                <connections>
+                                    <action selector="getFrequencyCappedStatus:" destination="dRI-C9-x3e" eventType="touchUpInside" id="R6g-6f-nk2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zlM-fz-MpE" customClass="BorderButton">
+                                <rect key="frame" x="40" y="221" width="240" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="bty-fA-tFu"/>
+                                    <constraint firstAttribute="width" constant="240" id="g5o-c8-351"/>
+                                </constraints>
+                                <state key="normal" title="ClearFrequencyCap"/>
+                                <connections>
+                                    <action selector="clearFrequencyCap:" destination="dRI-C9-x3e" eventType="touchUpInside" id="4b8-W9-Pj7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MJe-3s-saT" customClass="BorderButton">
+                                <rect key="frame" x="40" y="259" width="240" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Qo9-o2-DRg"/>
+                                    <constraint firstAttribute="width" constant="240" id="yeD-0a-YFP"/>
+                                </constraints>
+                                <state key="normal" title="ResetFrequencyCap"/>
+                                <connections>
+                                    <action selector="resetFrequencyCap:" destination="dRI-C9-x3e" eventType="touchUpInside" id="Cwn-mt-ZsR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dD4-bV-dPn" firstAttribute="centerX" secondItem="hx9-UC-LeH" secondAttribute="centerX" id="12s-Nt-GYp"/>
+                            <constraint firstItem="801-SL-iVk" firstAttribute="bottom" secondItem="vst-wJ-xfG" secondAttribute="top" id="5ef-En-wG8"/>
+                            <constraint firstItem="dD4-bV-dPn" firstAttribute="baseline" secondItem="t5a-uV-1T7" secondAttribute="baseline" id="9VJ-TK-x9h"/>
+                            <constraint firstItem="zlM-fz-MpE" firstAttribute="top" secondItem="eDQ-M4-9jB" secondAttribute="bottom" constant="8" id="9qC-A4-Zen"/>
+                            <constraint firstItem="Lma-7S-oOG" firstAttribute="leading" secondItem="t5a-uV-1T7" secondAttribute="leading" id="GfK-PV-lvg"/>
+                            <constraint firstItem="MJe-3s-saT" firstAttribute="centerX" secondItem="hx9-UC-LeH" secondAttribute="centerX" id="KwH-Ly-dTC"/>
+                            <constraint firstItem="801-SL-iVk" firstAttribute="leading" secondItem="hx9-UC-LeH" secondAttribute="leadingMargin" id="M8R-lh-Q0c"/>
+                            <constraint firstItem="MJe-3s-saT" firstAttribute="top" secondItem="zlM-fz-MpE" secondAttribute="bottom" constant="8" id="Okd-bH-gVf"/>
+                            <constraint firstItem="Lma-7S-oOG" firstAttribute="top" secondItem="dD4-bV-dPn" secondAttribute="bottom" constant="5" id="TvK-5I-m6w"/>
+                            <constraint firstItem="op7-W2-QC9" firstAttribute="top" secondItem="Lma-7S-oOG" secondAttribute="bottom" constant="8" id="V3c-Hc-DMq"/>
+                            <constraint firstItem="t5a-uV-1T7" firstAttribute="leading" secondItem="hx9-UC-LeH" secondAttribute="leadingMargin" id="WUJ-AV-03T"/>
+                            <constraint firstItem="eDQ-M4-9jB" firstAttribute="centerX" secondItem="hx9-UC-LeH" secondAttribute="centerX" id="WmG-X7-wn4"/>
+                            <constraint firstItem="zlM-fz-MpE" firstAttribute="centerX" secondItem="hx9-UC-LeH" secondAttribute="centerX" id="aI0-Ua-yc1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="801-SL-iVk" secondAttribute="trailing" id="bu9-Ry-iIB"/>
+                            <constraint firstItem="dD4-bV-dPn" firstAttribute="top" secondItem="vZE-4A-m2G" secondAttribute="bottom" constant="8" id="h3Z-4m-f4a"/>
+                            <constraint firstItem="t5a-uV-1T7" firstAttribute="top" secondItem="vZE-4A-m2G" secondAttribute="bottom" constant="8" id="hIX-Ca-FPX"/>
+                            <constraint firstItem="Lma-7S-oOG" firstAttribute="trailing" secondItem="hx9-UC-LeH" secondAttribute="trailingMargin" id="mFO-e4-Hgc"/>
+                            <constraint firstItem="801-SL-iVk" firstAttribute="top" secondItem="MJe-3s-saT" secondAttribute="bottom" constant="8" id="oyj-JP-oLI"/>
+                            <constraint firstItem="op7-W2-QC9" firstAttribute="centerX" secondItem="hx9-UC-LeH" secondAttribute="centerX" id="rct-kV-RWe"/>
+                            <constraint firstItem="eDQ-M4-9jB" firstAttribute="top" secondItem="op7-W2-QC9" secondAttribute="bottom" constant="8" id="xuz-qs-1se"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="adLogView" destination="801-SL-iVk" id="3Qs-s0-qjo"/>
+                        <outlet property="adcodeField" destination="Lma-7S-oOG" id="VnD-43-QoM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8D0-1W-sCc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="588.75" y="750"/>
         </scene>
         <!--Info View Controller-->
         <scene sceneID="qYN-Pm-e8S">
