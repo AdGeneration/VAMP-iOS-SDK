@@ -10,6 +10,6 @@
 #import <VungleSDK/VungleSDK.h>
 #import <Tapjoy/Tapjoy.h>
 #import <FBAudienceNetwork/FBAudienceNetwork.h>
-#import <MVSDK/MVSDK.h>
+#import <MTGSDK/MTGSDK.h>
 
 #import "ADNWVersionHelper.h"

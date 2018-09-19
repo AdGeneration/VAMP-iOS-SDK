@@ -53,7 +53,8 @@ class InfoViewController: UIViewController {
         self.addInfoText("VungleSDK: \(VungleSDKVersion)")
         
         // Mintegral SDK Version
-        self.addInfoText("MintegralSDK: \(MVSDKVersion)")
+        self.addInfoText("MintegralSDK: \(MTGSDKVersion)")
+        
         self.addInfoText("\n")
         
         // デバイス名
