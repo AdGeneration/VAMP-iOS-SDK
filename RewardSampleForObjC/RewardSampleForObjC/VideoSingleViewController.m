@@ -221,6 +221,8 @@ static NSString * const kPlacementId = @"59755";
         // ユーザが広告再生を途中でキャンセルしました。
         // AdMobは動画再生の途中でユーザーによるキャンセルが可能
         NSLog(@"[VAMP]vampDidFailToShow(VAMPErrorCodeUserCancel, %@)", error.localizedDescription);
+    } else if(error.code == VAMPErrorCodeNotLoadedAd) {
+        NSLog(@"[VAMP]vampDidFailToShow(VAMPErrorCodeNotLoadedAd, %@)", error.localizedDescription);
     }
     
     [self resumeSound];

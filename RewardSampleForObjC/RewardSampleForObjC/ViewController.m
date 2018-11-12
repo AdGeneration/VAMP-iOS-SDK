@@ -52,18 +52,6 @@
     vampConfiguration.playerAlertCloseButtonText = @"動画を終了";
     vampConfiguration.playerAlertContinueButtonText = @"動画を再開";
     
-    /* アドネットワークSDK　初期化メディエーション */
-    // initializeAdnwSDKを使う場合は、初期化が終わる前にAD画面へ遷移してloadしないようご注意ください。
-    // ├ ステータス設定。デフォルトAUTO
-    //    kVAMPInitializeStateAUTO      接続環境によって、WEIGHTとALL設定を自動的に切り替える（Wi-Fi:ALL、キャリア回線:WEIGHT）
-    //    kVAMPInitializeStateWEIGHT    配信比率が高いものをひとつ初期化する
-    //    kVAMPInitializeStateALL       全アドネットワークを初期化する
-    //    kVAMPInitializeStateWIFIONLY  Wi-Fi接続時のみ全アドネットワークを初期化する
-    // └ アドネットワークのSDKを初期化する間隔（秒数）
-    //   duration:秒単位で指定する。最小4秒、最大60秒。デフォルトは10秒。（対象:AppLovin、maio、UnityAds、Vungle）
-//    [[VAMP new] initializeAdnwSDK:@"*****" initializeState:kVAMPInitializeStateAUTO duration:5];    // 広告枠IDを設定してください
-//    NSLog(@"[VAMP]initilizedAdnwSDK");
-    
     NSString *appV = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
     
     // VAMPのSDKバージョン

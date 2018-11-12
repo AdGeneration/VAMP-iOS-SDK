@@ -79,7 +79,7 @@
     [self addInfoText:[NSString stringWithFormat:@"device name: %@", [UIDevice currentDevice].name]];
     
     // OS名
-    [self addInfoText:[NSString stringWithFormat:@"system name: %@", [UIDevice currentDevice].systemVersion]];
+    [self addInfoText:[NSString stringWithFormat:@"system name: %@", [UIDevice currentDevice].systemName]];
     
     // OSバージョン
     [self addInfoText:[NSString stringWithFormat:@"system version: %@", [UIDevice currentDevice].systemVersion]];

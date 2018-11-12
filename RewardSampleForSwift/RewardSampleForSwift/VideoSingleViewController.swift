@@ -98,7 +98,7 @@ class VideoSingleViewController: UIViewController, VAMPDelegate {
         if (self.vamp.isReady()) {
             self.addLogText("[show]")
             self.pauseSound()
-            
+
             // 広告を表示
             self.vamp.show()
         } else {
@@ -210,6 +210,8 @@ class VideoSingleViewController: UIViewController, VAMPDelegate {
             // ユーザが広告再生を途中でキャンセルしました。
             // AdMobは動画再生の途中でユーザーによるキャンセルが可能
             print("[VAMP]vampDidFailToShow(userCancel, \(error.localizedDescription))");
+        } else if (code == .notLoadedAd) {
+            print("[VAMP]vampDidFailToShow(notLoadedAd, \(error.localizedDescription))");
         }
         
         self.resumeSound()
