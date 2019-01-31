@@ -59,6 +59,11 @@ class ViewController: UIViewController {
         VAMP.getCountryCode { [weak self] (countryCode: String?) in
             if let weakSelf = self {
                 weakSelf.sdkVersion.text = "\(weakSelf.sdkVersion.text!) / \(countryCode!)"
+                
+//                if countryCode == "US" {
+//                    // COPPA対象ユーザである場合はYESを設定する
+//                    VAMP.setCoppaChildDirected(true);
+//                }
             }
         }
 

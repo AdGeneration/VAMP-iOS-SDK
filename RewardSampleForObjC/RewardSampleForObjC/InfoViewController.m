@@ -57,7 +57,9 @@
     [self addInfoText:[NSString stringWithFormat:@"maioSDK: %@", [Maio sdkVersion]]];
     
     // nend SDK Version
-    [self addInfoText:[NSString stringWithFormat:@"nendSDK: %s", NendAdVersionString]];
+    NSString *nendFrameworkBundlePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"NendAdResource.bundle"];
+    NSBundle *nendFrameworkBundle = [NSBundle bundleWithPath:nendFrameworkBundlePath];
+    [self addInfoText:[NSString stringWithFormat:@"nendSDK: %@", [nendFrameworkBundle objectForInfoDictionaryKey:@"CFBundleShortVersionString"]]];
     
     // Tapjoy SDK Version
     [self addInfoText:[NSString stringWithFormat:@"TapjoySDK: %@", [Tapjoy getVersion]]];

@@ -24,8 +24,9 @@
 }
 
 + (NSString *)nendVersion {
-    NSString *ver = [NSString stringWithCString:(const char *) NendAdVersionString
-                                       encoding:NSUTF8StringEncoding];
+    NSString *nendFrameworkBundlePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"NendAdResource.bundle"];
+    NSBundle *nendFrameworkBundle = [NSBundle bundleWithPath:nendFrameworkBundlePath];
+    NSString *ver = [nendFrameworkBundle objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
     
     if (!ver) {
         return @"unknown";
