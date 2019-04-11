@@ -22,6 +22,7 @@
 #import <GoogleMobileAds/GoogleMobileAds.h>
 #import <FBAudienceNetwork/FBAudienceNetwork.h>
 #import <MTGSDK/MTGSDK.h>
+#import <MoPubSDKFramework/MoPub.h>
 
 #import "InfoViewController.h"
 
@@ -43,7 +44,15 @@
     // Admob SDK Version
     NSString *admobVersion = [NSString stringWithCString:(const char *) GoogleMobileAdsVersionString
                                                 encoding:NSUTF8StringEncoding];
-    [self addInfoText:[NSString stringWithFormat:@"AdmobSDK: %@", admobVersion]];
+    NSError *error = nil;
+    NSRegularExpression *regexp = [NSRegularExpression regularExpressionWithPattern:@"[a-zA-Z-]*([0-9.]*)"
+                                                                            options:0
+                                                                              error:&error];
+    if (!error) {
+        NSTextCheckingResult *match = [regexp firstMatchInString:admobVersion options:0 range:NSMakeRange(0, admobVersion.length)];
+        admobVersion = [admobVersion substringWithRange:[match rangeAtIndex:1]];
+        [self addInfoText:[NSString stringWithFormat:@"AdmobSDK: %@", admobVersion]];
+    }
     
     // AppLovin SDK Version
     [self addInfoText:[NSString stringWithFormat:@"AppLovinSDK: %@", [ALSdk version]]];
@@ -73,6 +82,11 @@
     // Mintegral SDK Version
 #ifdef MTGSDKVersion
     [self addInfoText:[NSString stringWithFormat:@"MintegralSDK: %@", MTGSDKVersion]];
+#endif
+
+    // MoPub SDK Version
+#ifdef MP_SDK_VERSION
+    [self addInfoText:[NSString stringWithFormat:@"MoPubSDK: %@", MP_SDK_VERSION]];
 #endif
     
     [self addInfoText:@"\n"];

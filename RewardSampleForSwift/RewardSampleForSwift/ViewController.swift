@@ -62,7 +62,7 @@ class ViewController: UIViewController {
                 
 //                if countryCode == "US" {
 //                    // COPPA対象ユーザである場合はYESを設定する
-//                    VAMP.setCoppaChildDirected(true);
+//                    VAMP.setChildDirected(true);
 //                }
             }
         }

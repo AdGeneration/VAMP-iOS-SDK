@@ -131,8 +131,8 @@ class VideoSingle3ViewController: UIViewController, VAMPDelegate {
         dateFormatter.dateFormat = "MM-dd HH:mm:ss"
         let timestamp = dateFormatter.string(from: Date())
         
-        let attributedNow = NSAttributedString.init(string: String.init(format: "%@ ", timestamp), attributes: [NSForegroundColorAttributeName : UIColor.gray, NSFontAttributeName:UIFont.systemFont(ofSize:12)])
-        let attributedMessage = NSAttributedString.init(string: String.init(format: "%@\n", message), attributes: [NSForegroundColorAttributeName : color, NSFontAttributeName:UIFont.systemFont(ofSize:12)])
+        let attributedNow = NSAttributedString.init(string: String.init(format: "%@ ", timestamp), attributes: [NSAttributedStringKey.foregroundColor : UIColor.gray, NSAttributedStringKey.font:UIFont.systemFont(ofSize:12)])
+        let attributedMessage = NSAttributedString.init(string: String.init(format: "%@\n", message), attributes: [NSAttributedStringKey.foregroundColor : color, NSAttributedStringKey.font:UIFont.systemFont(ofSize:12)])
         
         DispatchQueue.main.async() {
             let mutableAttributedString = NSMutableAttributedString.init()
@@ -177,19 +177,6 @@ class VideoSingle3ViewController: UIViewController, VAMPDelegate {
     }
     
     // MARK: - VAMPDelegate
-    
-    // 広告表示が可能になると通知
-    // Deprecated このメソッドは廃止予定です。
-    //    override func vampDidReceive(_ placementId: String, adnwName: String) {
-    //        // v3.0〜 vmapLoadResult successで判定
-    //    }
-    
-    // Deprecated このメソッドは廃止予定です。
-    // 代わりにvamp:didFailToLoadWithError:withPlacementId:およびvamp:didFailToShowWithError:withPlacementId:メソッドを使用してください
-    //    func vampDidFail(_ placementId: String?, error: VAMPError) {
-    //        print("[VAMP]vampDidFail:error:");
-    //    }
-    
     // 広告取得失敗
     // 広告が取得できなかったときに通知されます。
     // 例）在庫が無い、タイムアウトなど

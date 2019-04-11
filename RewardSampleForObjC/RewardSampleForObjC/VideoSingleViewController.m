@@ -179,12 +179,6 @@ static NSString * const kPlacementId = @"59755";
     [self addLogText:[NSString stringWithFormat:@"vampDidReceive(%@, %@)", adnwName, placementId]];
 }
 
-// Deprecated 廃止予定
-// 代わりにvamp:didFailToLoadWithError:withPlacementId:およびvamp:didFailToShowWithError:withPlacementId:メソッドを使用してください
-- (void)vampDidFail:(NSString *)placementId error:(VAMPError *)error {
-    NSLog(@"[VAMP]vampDidFail:error");
-}
-
 // 広告取得失敗
 // 広告が取得できなかったときに通知されます。
 // 例）在庫が無い、タイムアウトなど

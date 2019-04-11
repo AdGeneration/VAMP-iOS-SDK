@@ -15,6 +15,14 @@
 + (NSString *)admobVersion {
     NSString *ver = [NSString stringWithCString:(const char *) GoogleMobileAdsVersionString
                                        encoding:NSUTF8StringEncoding];
+    NSError *error = nil;
+    NSRegularExpression *regexp = [NSRegularExpression regularExpressionWithPattern:@"[a-zA-Z-]*([0-9.]*)"
+                                                                            options:0
+                                                                              error:&error];
+    if (!error && ver) {
+        NSTextCheckingResult *match = [regexp firstMatchInString:ver options:0 range:NSMakeRange(0, ver.length)];
+        ver = [ver substringWithRange:[match rangeAtIndex:1]];
+    }
     
     if (!ver) {
         return @"unknown";

@@ -14,6 +14,7 @@ import VAMP
 import AppLovinSDK
 import Maio
 import UnityAds
+import MoPubSDKFramework
 
 class InfoViewController: UIViewController {
     
@@ -54,6 +55,9 @@ class InfoViewController: UIViewController {
         
         // Mintegral SDK Version
         self.addInfoText("MintegralSDK: \(MTGSDKVersion)")
+    
+        // MoPub SDK Version
+        self.addInfoText("MoPubSDK: \(MP_SDK_VERSION)")
         
         self.addInfoText("\n")
         
@@ -80,9 +84,7 @@ class InfoViewController: UIViewController {
         }
        
         // IDFA
-        if let idfa = ASIdentifierManager.shared().advertisingIdentifier?.uuidString {
-            self.addInfoText("IDFA: \(idfa)")
-        }
+        self.addInfoText("IDFA: \(ASIdentifierManager.shared().advertisingIdentifier.uuidString)")
         
         // IDFV
         if let idfv = UIDevice.current.identifierForVendor?.uuidString {

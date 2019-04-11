@@ -65,7 +65,7 @@
         weakSelf.sdkVersion.text = [NSString stringWithFormat:@"%@ / %@", weakSelf.sdkVersion.text, countryCode];
 //        if ([countryCode isEqualToString:@"US"]) {
 //            // COPPA対象ユーザである場合はYESを設定する
-//            [VAMP setCoppaChildDirected:YES];
+//            [VAMP setChildDirected:YES];
 //        }
     }];
 

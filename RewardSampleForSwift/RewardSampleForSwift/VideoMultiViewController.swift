@@ -131,8 +131,8 @@ class VideoMultiViewController : UIViewController, VAMPDelegate {
         dateFormatter.dateFormat = "MM-dd HH:mm:ss"
         let timestamp = dateFormatter.string(from: Date())
         
-        let attributedNow = NSAttributedString.init(string: String.init(format: "%@ ", timestamp), attributes: [NSForegroundColorAttributeName : UIColor.gray])
-        let attributedMessage = NSAttributedString.init(string: String.init(format: "%@\n", message), attributes: [NSForegroundColorAttributeName : color])
+        let attributedNow = NSAttributedString.init(string: String.init(format: "%@ ", timestamp), attributes: [NSAttributedStringKey.foregroundColor : UIColor.gray])
+        let attributedMessage = NSAttributedString.init(string: String.init(format: "%@\n", message), attributes: [NSAttributedStringKey.foregroundColor : color])
         
         DispatchQueue.main.async() {
             let mutableAttributedString = NSMutableAttributedString.init()
