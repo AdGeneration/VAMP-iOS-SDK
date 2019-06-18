@@ -30,7 +30,7 @@
     [VAMP setTestMode:YES];
 
     // デバッグモード
-    // 連携アドネットワーク（AppLovin、UnityAds、FAN、nend、Vungle、Tapjoy、MoPub）
+    // 連携アドネットワーク（AppLovin、UnityAds、FAN、nend、Vungle、Tapjoy、MoPub、TikTok）
     [VAMP setDebugMode:YES];
 
     // ユーザ属性の設定

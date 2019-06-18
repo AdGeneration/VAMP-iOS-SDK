@@ -46,6 +46,7 @@
 		66F3CE551F0F8BF1000F8B3F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C378141DE2165100583E3E /* QuartzCore.framework */; };
 		8318F63F20FD8F89004C2B46 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8318F63E20FD8F88004C2B46 /* CoreLocation.framework */; };
 		8318F66B20FDAD6F004C2B46 /* VideoSingle3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8318F66A20FDAD6F004C2B46 /* VideoSingle3ViewController.swift */; };
+		839790DE228A6BCB000599F9 /* libresolv.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 839790DD228A6BCB000599F9 /* libresolv.9.tbd */; };
 		83B5C8EE2151FCEF00098438 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83B5C8ED2151FCEF00098438 /* CoreFoundation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		DD53D3311E1D4E050053DC99 /* invisible.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EF31231D1DF6705D00131E96 /* invisible.mp3 */; };
 		DD67362D1EDBC8B8002C6849 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD67362C1EDBC8B8002C6849 /* StoreKit.framework */; };
@@ -99,6 +100,8 @@
 		66F3CE531F0F8BDC000F8B3F /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		8318F63E20FD8F88004C2B46 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		8318F66A20FDAD6F004C2B46 /* VideoSingle3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoSingle3ViewController.swift; sourceTree = "<group>"; };
+		839790DD228A6BCB000599F9 /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = usr/lib/libresolv.9.tbd; sourceTree = SDKROOT; };
+		839790DF228A6BD1000599F9 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		83B5C8ED2151FCEF00098438 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		DD53D32F1E1D463E0053DC99 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		DD53D3301E1D463E0053DC99 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -115,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				839790DE228A6BCB000599F9 /* libresolv.9.tbd in Frameworks */,
 				83B5C8EE2151FCEF00098438 /* CoreFoundation.framework in Frameworks */,
 				8318F63F20FD8F89004C2B46 /* CoreLocation.framework in Frameworks */,
 				66DEE1EB1F73636A005F78E9 /* libxml2.tbd in Frameworks */,
@@ -207,6 +211,8 @@
 		63C378091DE2163100583E3E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				839790DF228A6BD1000599F9 /* Photos.framework */,
+				839790DD228A6BCB000599F9 /* libresolv.9.tbd */,
 				83B5C8ED2151FCEF00098438 /* CoreFoundation.framework */,
 				8318F63E20FD8F88004C2B46 /* CoreLocation.framework */,
 				66DEE1EA1F73636A005F78E9 /* libxml2.tbd */,
@@ -291,8 +297,10 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = 63C377B31DE20D3900583E3E;
 			productRefGroup = 63C377BD1DE20D3900583E3E /* Products */;

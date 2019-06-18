@@ -15,6 +15,7 @@ import AppLovinSDK
 import Maio
 import UnityAds
 import MoPubSDKFramework
+import BUAdSDK
 
 class InfoViewController: UIViewController {
     
@@ -58,7 +59,10 @@ class InfoViewController: UIViewController {
     
         // MoPub SDK Version
         self.addInfoText("MoPubSDK: \(MP_SDK_VERSION)")
-        
+
+        // TikTok Audience Network SDK Version
+        self.addInfoText("TikiTokSDK: \(BUAdSDKManager.sdkVersion!)")
+
         self.addInfoText("\n")
         
         // デバイス名

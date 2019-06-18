@@ -23,6 +23,7 @@
 #import <FBAudienceNetwork/FBAudienceNetwork.h>
 #import <MTGSDK/MTGSDK.h>
 #import <MoPubSDKFramework/MoPub.h>
+#import <BUAdSDK/BUAdSDK.h>
 
 #import "InfoViewController.h"
 
@@ -88,7 +89,10 @@
 #ifdef MP_SDK_VERSION
     [self addInfoText:[NSString stringWithFormat:@"MoPubSDK: %@", MP_SDK_VERSION]];
 #endif
-    
+
+    // TikTok Audience Network SDK Version
+    [self addInfoText:[NSString stringWithFormat:@"TikTokSDK: %@", BUAdSDKManager.SDKVersion]];
+
     [self addInfoText:@"\n"];
     
     // デバイス名
