@@ -46,6 +46,7 @@
 		66F3CE551F0F8BF1000F8B3F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C378141DE2165100583E3E /* QuartzCore.framework */; };
 		8318F63F20FD8F89004C2B46 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8318F63E20FD8F88004C2B46 /* CoreLocation.framework */; };
 		8318F66B20FDAD6F004C2B46 /* VideoSingle3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8318F66A20FDAD6F004C2B46 /* VideoSingle3ViewController.swift */; };
+		8388F89223279435008AC52D /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8388F89123279434008AC52D /* UIColor+Extension.swift */; };
 		839790DE228A6BCB000599F9 /* libresolv.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 839790DD228A6BCB000599F9 /* libresolv.9.tbd */; };
 		83B5C8EE2151FCEF00098438 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83B5C8ED2151FCEF00098438 /* CoreFoundation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		DD53D3311E1D4E050053DC99 /* invisible.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EF31231D1DF6705D00131E96 /* invisible.mp3 */; };
@@ -100,6 +101,7 @@
 		66F3CE531F0F8BDC000F8B3F /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		8318F63E20FD8F88004C2B46 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		8318F66A20FDAD6F004C2B46 /* VideoSingle3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoSingle3ViewController.swift; sourceTree = "<group>"; };
+		8388F89123279434008AC52D /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		839790DD228A6BCB000599F9 /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = usr/lib/libresolv.9.tbd; sourceTree = SDKROOT; };
 		839790DF228A6BD1000599F9 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		83B5C8ED2151FCEF00098438 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
@@ -191,6 +193,7 @@
 				63C377D71DE2102400583E3E /* InfoViewController.swift */,
 				63C377BF1DE20D3900583E3E /* AppDelegate.swift */,
 				63C377C11DE20D3900583E3E /* ViewController.swift */,
+				8388F89123279434008AC52D /* UIColor+Extension.swift */,
 				EF3BD8C01DE3E72000841B08 /* Main.storyboard */,
 				63C377C61DE20D3900583E3E /* Assets.xcassets */,
 				63C377C81DE20D3900583E3E /* LaunchScreen.storyboard */,
@@ -340,6 +343,7 @@
 				63C377D81DE2102400583E3E /* InfoViewController.swift in Sources */,
 				EF3BD8BF1DE3E6F400841B08 /* BorderButton.swift in Sources */,
 				66BB2EA71F838B84009C43B0 /* ADNWVersionHelper.m in Sources */,
+				8388F89223279435008AC52D /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,6 +10,7 @@
 #import <VAMP/VAMP.h>
 
 #import "VideoSingle3ViewController.h"
+#import "UIColor+Extension.h"
 
 @interface VideoSingle3ViewController () <VAMPDelegate>
 
@@ -146,7 +147,7 @@ static NSString * const kPlacementId = @"59755";
     dateFormatter.locale = [NSLocale systemLocale];
     dateFormatter.dateFormat = @"MM-dd HH:mm:ss ";
     
-    NSAttributedString *attributedNow = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@ ", [dateFormatter stringFromDate:now]] attributes:@{NSForegroundColorAttributeName : UIColor.grayColor}];
+    NSAttributedString *attributedNow = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@ ", [dateFormatter stringFromDate:now]] attributes:@{NSForegroundColorAttributeName : UIColor.systemGrayColor}];
     
     NSAttributedString *attributedMessage = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@\n", message] attributes:@{NSForegroundColorAttributeName : color}];
     
@@ -163,7 +164,7 @@ static NSString * const kPlacementId = @"59755";
 }
 
 - (void)addLogText:(NSString *)message {
-    [self addLogText:message color:UIColor.grayColor];
+    [self addLogText:message color:UIColor.systemGrayColor];
 }
 
 - (NSString *)vampStateString:(VAMPState)state {
@@ -210,7 +211,7 @@ static NSString * const kPlacementId = @"59755";
 // @see https://github.com/AdGeneration/VAMP-iOS-SDK/wiki/VAMP-iOS-API-Errors
 - (void)vamp:(VAMP *)vamp didFailToLoadWithError:(VAMPError *)error withPlacementId:(NSString *)placementId {
     [self addLogText:[NSString stringWithFormat:@"vampDidFailToLoad(%@, %@)", error.localizedDescription, placementId]
-               color:UIColor.redColor];
+               color:UIColor.systemRedColor];
     
     VAMPErrorCode code = error.code;
     if(code == VAMPErrorCodeNoAdStock) {
@@ -235,7 +236,7 @@ static NSString * const kPlacementId = @"59755";
 - (void)vamp:(VAMP *)vamp didFailToShowWithError:(VAMPError *)error withPlacementId:(NSString *)placementId {
     [self addLogText:[NSString stringWithFormat:@"vampDidFailToShow(%@, %@)",
                       error.localizedDescription, placementId]
-               color:UIColor.redColor];
+               color:UIColor.systemRedColor];
     if (error.code == VAMPErrorCodeUserCancel) {
         // ユーザが広告再生を途中でキャンセルしました。
         // AdMobは動画再生の途中でユーザーによるキャンセルが可能
@@ -250,14 +251,14 @@ static NSString * const kPlacementId = @"59755";
 // アドネットワークによって通知タイミングが異なる（動画再生完了時、またはエンドカードを閉じたタイミング）
 - (void)vampDidComplete:(NSString *)placementId adnwName:(NSString *)adnwName {
     [self addLogText:[NSString stringWithFormat:@"vampDidComplete(%@, %@)", adnwName, placementId]
-               color:UIColor.blueColor];
+               color:UIColor.systemBlueColor];
 }
 
 // 広告閉じる
 // エンドカード閉じる、途中で広告再生キャンセル
 - (void)vampDidClose:(NSString *)placementId adnwName:(NSString *)adnwName {
     [self addLogText:[NSString stringWithFormat:@"vampDidClose(%@, %@)", adnwName, placementId]
-               color:UIColor.blackColor];
+               color:UIColor.defaultLabelColor];
     [self resumeSound];
 }
 
@@ -265,7 +266,7 @@ static NSString * const kPlacementId = @"59755";
 // この通知を受け取ったら、もう一度loadからやり直す必要あり
 - (void)vampDidExpired:(NSString *)placementId {
     [self addLogText:[NSString stringWithFormat:@"vampDidExpired(%@)", placementId]
-               color:UIColor.redColor];
+               color:UIColor.systemRedColor];
 }
 
 // アドネットワークの広告取得が開始されたときに通知
@@ -278,11 +279,11 @@ static NSString * const kPlacementId = @"59755";
 - (void)vampLoadResult:(NSString *)placementId success:(BOOL)success adnwName:(NSString *)adnwName message:(NSString *)message {
     if (success) {
         [self addLogText:[NSString stringWithFormat:@"vampLoadResult(%@, %@, success:OK)", adnwName, placementId]
-                   color:UIColor.blackColor];
+                   color:UIColor.defaultLabelColor];
     }
     else {
         [self addLogText:[NSString stringWithFormat:@"vampLoadResult(%@, %@, success:NG, %@)", adnwName, placementId, message]
-                   color:UIColor.redColor];
+                   color:UIColor.systemRedColor];
     }
 }
 

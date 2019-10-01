@@ -10,6 +10,7 @@
 #import <VAMP/VAMP.h>
 
 #import "VideoSingle2ViewController.h"
+#import "UIColor+Extension.h"
 
 @interface VideoSingleViewController ()
 
@@ -81,7 +82,7 @@ static NSString * const kPlacementId = @"59755";    // 広告枠IDを設定し�
 // 全アドネットワークにおいて広告が取得できなかったときに通知
 - (void)vamp:(VAMP *)vamp didFailToLoadWithError:(VAMPError *)error withPlacementId:(NSString *)placementId {
     [self addLogText:[NSString stringWithFormat:@"vampDidFailToLoad(%@, %@)", error.localizedDescription, placementId]
-               color:UIColor.redColor];
+               color:UIColor.systemRedColor];
     
     // 必要に応じて広告の再ロード
 //    if (/* 任意のリトライ条件 */) {
@@ -110,7 +111,7 @@ static NSString * const kPlacementId = @"59755";    // 広告枠IDを設定し�
 - (void)vamp:(VAMP *)vamp didFailToShowWithError:(VAMPError *)error withPlacementId:(NSString *)placementId {
     [self addLogText:[NSString stringWithFormat:@"vampDidFailToShow(%@, %@)",
                       error.localizedDescription, placementId]
-               color:UIColor.redColor];
+               color:UIColor.systemRedColor];
     if (error.code == VAMPErrorCodeUserCancel) {
         // ユーザが広告再生を途中でキャンセルしました。
         // AdMobは動画再生の途中でユーザーによるキャンセルが可能
@@ -124,13 +125,13 @@ static NSString * const kPlacementId = @"59755";    // 広告枠IDを設定し�
 // アドネットワークによって通知タイミングが異なる（動画再生完了時、またはエンドカードを閉じたタイミング）
 - (void)vampDidComplete:(NSString *)placementId adnwName:(NSString *)adnwName {
     [self addLogText:[NSString stringWithFormat:@"vampDidComplete(%@, %@)", adnwName, placementId]
-               color:UIColor.blueColor];
+               color:UIColor.systemBlueColor];
 }
 
 // 広告が閉じられた時に通知
 - (void)vampDidClose:(NSString *)placementId adnwName:(NSString *)adnwName {
     [self addLogText:[NSString stringWithFormat:@"vampDidClose(%@, %@)", adnwName, placementId]
-               color:UIColor.blackColor];
+               color:UIColor.defaultLabelColor];
     [self resumeSound];
     
     // 必要に応じて次に表示する広告をプリロード

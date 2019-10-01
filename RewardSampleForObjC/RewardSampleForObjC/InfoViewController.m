@@ -162,6 +162,8 @@
     // VAMPConfiguration
     VAMPConfiguration *vampConfiguration = [VAMPConfiguration defaultConfiguration];
     [self addInfoText:[NSString stringWithFormat:@"VAMPPlayer cancelable: %@", vampConfiguration.playerCancelable ? @"true" : @"false"]];
+    
+    [self addInfoText:[NSString stringWithFormat:@"ChildDirected: %@", VAMP.isChildDirected ? @"YES" : @"NO"]];
 }
 
 - (void)addInfoText:(NSString *)text {

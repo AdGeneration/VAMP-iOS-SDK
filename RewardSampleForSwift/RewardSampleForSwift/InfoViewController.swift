@@ -132,6 +132,8 @@ class InfoViewController: UIViewController {
         // VAMPConfiguration
         let vampConfiguration = VAMPConfiguration.default()
         self.addInfoText("VAMPPlayer cancelable: \(String(vampConfiguration.isPlayerCancelable))")
+        
+        self.addInfoText("ChildDirected:\(String(VAMP.isChildDirected()))")
     }
     
     func addInfoText(_ text: String) {

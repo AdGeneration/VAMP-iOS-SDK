@@ -56,20 +56,20 @@ class VideoSingle2ViewController: VideoSingleViewController {
             self.pauseSound()
             // 広告表示
             vamp.show()
-            self.addLogText("vampLoadResult(\(adnwName), \(placementId), success) show()", color: UIColor.black)
+            self.addLogText("vampLoadResult(\(adnwName), \(placementId), success) show()", color: UIColor.defaultLabelColor())
         } else {
             // 失敗しても、次のアドネットワークがあれば、広告取得を試みます。
             // 最終的に全てのアドネットワークの広告在庫が無ければ
             // onFailedToLoadのNO_ADSTOCKが通知されるので、ここで処理を止めないでください。
             let msg = message != nil ? message! : ""
-            self.addLogText("vampLoadResult(\(adnwName), \(placementId), success:NG, \(msg))", color: UIColor.red)
+            self.addLogText("vampLoadResult(\(adnwName), \(placementId), success:NG, \(msg))", color: UIColor.systemRed)
         }
     }
     
     // 全アドネットワークにおいて広告が取得できなかったときに通知
     override func vamp(_ vamp: VAMP, didFailToLoadWithError error: VAMPError, withPlacementId placementId: String?) {
         if let bindPid = placementId {
-            self.addLogText("vampDidFailToLoad(\(error.localizedDescription), \(bindPid))", color:UIColor.red)
+            self.addLogText("vampDidFailToLoad(\(error.localizedDescription), \(bindPid))", color:UIColor.systemRed)
         
             let code = VAMPErrorCode(rawValue: UInt(error.code))
             if code == .noAdStock {
@@ -98,7 +98,7 @@ class VideoSingle2ViewController: VideoSingleViewController {
     
     // 広告の表示に失敗したときに通知
     override func vamp(_ vamp: VAMP, didFailToShowWithError error: VAMPError, withPlacementId placementId: String) {
-        self.addLogText("vampDidFailToShow(\(error.localizedDescription), \(placementId))", color: UIColor.red)
+        self.addLogText("vampDidFailToShow(\(error.localizedDescription), \(placementId))", color: UIColor.systemRed)
         
         let code = VAMPErrorCode(rawValue: UInt(error.code))
         if (code == .userCancel) {
@@ -114,12 +114,12 @@ class VideoSingle2ViewController: VideoSingleViewController {
     // インセンティブ付与が可能になったタイミングで通知
     // アドネットワークによって通知タイミングが異なる（動画再生完了時、またはエンドカードを閉じたタイミング）
     override func vampDidComplete(_ placementId: String, adnwName: String) {
-        self.addLogText("vampDidComplete(\(adnwName), \(placementId))", color: UIColor.blue)
+        self.addLogText("vampDidComplete(\(adnwName), \(placementId))", color: UIColor.systemBlue)
     }
     
     // 広告が閉じられた時に通知
     override func vampDidClose(_ placementId: String, adnwName: String) {
-        self.addLogText("vampDidClose(\(adnwName), \(placementId))", color: UIColor.black)
+        self.addLogText("vampDidClose(\(adnwName), \(placementId))", color: UIColor.defaultLabelColor())
         self.resumeSound()
         
         // 必要に応じて、次に表示する広告をプリロード

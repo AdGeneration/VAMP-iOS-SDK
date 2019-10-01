@@ -131,22 +131,20 @@ class VideoMultiViewController : UIViewController, VAMPDelegate {
         dateFormatter.dateFormat = "MM-dd HH:mm:ss"
         let timestamp = dateFormatter.string(from: Date())
         
-        let attributedNow = NSAttributedString.init(string: String.init(format: "%@ ", timestamp), attributes: [NSAttributedStringKey.foregroundColor : UIColor.gray])
+        let attributedNow = NSAttributedString.init(string: String.init(format: "%@ ", timestamp), attributes: [NSAttributedStringKey.foregroundColor : UIColor.systemGray])
         let attributedMessage = NSAttributedString.init(string: String.init(format: "%@\n", message), attributes: [NSAttributedStringKey.foregroundColor : color])
         
-        DispatchQueue.main.async() {
-            let mutableAttributedString = NSMutableAttributedString.init()
-            mutableAttributedString.append(attributedNow)
-            mutableAttributedString.append(attributedMessage)
-            mutableAttributedString.append(self.adLogView.attributedText)
-            self.adLogView.attributedText = mutableAttributedString
-        }
+        let mutableAttributedString = NSMutableAttributedString.init()
+        mutableAttributedString.append(attributedNow)
+        mutableAttributedString.append(attributedMessage)
+        mutableAttributedString.append(self.adLogView.attributedText)
+        self.adLogView.attributedText = mutableAttributedString
         
         print("[VAMP]\(timestamp) \(message)")
     }
     
     func addLogText(_ message: String) {
-        self.addLogText(message, color: UIColor.gray)
+        self.addLogText(message, color: UIColor.systemGray)
     }
     
     func vampStateString(_ state: VAMPState) -> String {
@@ -204,13 +202,13 @@ class VideoMultiViewController : UIViewController, VAMPDelegate {
                 print("[VAMP]vampDidFailToLoad(mediationTimeout, \(error.localizedDescription))")
             }
 
-            self.addLogText("vampDidFailToLoad(\(error.localizedDescription), \(bindPid))", color: UIColor.red)
+            self.addLogText("vampDidFailToLoad(\(error.localizedDescription), \(bindPid))", color: UIColor.systemRed)
         }
     }
     
     // 広告の表示に失敗したときに通知
     func vamp(_ vamp: VAMP, didFailToShowWithError error: VAMPError, withPlacementId placementId: String) {
-        self.addLogText("vampDidFailToShow(\(error.localizedDescription), \(placementId))", color: UIColor.red)
+        self.addLogText("vampDidFailToShow(\(error.localizedDescription), \(placementId))", color: UIColor.systemRed)
         
         let code = VAMPErrorCode(rawValue: UInt(error.code))
         if (code == .userCancel) {
@@ -223,19 +221,19 @@ class VideoMultiViewController : UIViewController, VAMPDelegate {
     
     // インセンティブ付与可能になったタイミングで通知
     func vampDidComplete(_ placementId: String, adnwName: String) {
-        self.addLogText("vampDidComplete(\(adnwName), \(placementId))", color: UIColor.blue)
+        self.addLogText("vampDidComplete(\(adnwName), \(placementId))", color: UIColor.systemBlue)
     }
     
     // 広告が閉じられた時に通知
     func vampDidClose(_ placementId: String, adnwName: String) {
-        self.addLogText("vampDidClose(\(adnwName), \(placementId))", color: UIColor.black)
+        self.addLogText("vampDidClose(\(adnwName), \(placementId))", color: UIColor.defaultLabelColor())
         self.resumeSound()
     }
     
     // 広告準備完了から55分経つと取得した広告の表示はできてもRTBの収益は発生しません。
     // この通知を受け取ったら、もう一度loadからやり直す必要があります
     func vampDidExpired(_ placementId: String) {
-        self.addLogText("vampDidExpired(\(placementId))", color: UIColor.red)
+        self.addLogText("vampDidExpired(\(placementId))", color: UIColor.systemRed)
     }
     
     // アドネットワークの広告取得が開始されたときに通知
@@ -247,10 +245,10 @@ class VideoMultiViewController : UIViewController, VAMPDelegate {
     // success=NOのとき、次位のアドネットワークがある場合はロード処理は継続されます
     func vampLoadResult(_ placementId: String, success: Bool, adnwName: String, message: String?) {
         if success {
-            self.addLogText("vampLoadResult(\(adnwName), \(placementId), success:OK)", color: UIColor.black)
+            self.addLogText("vampLoadResult(\(adnwName), \(placementId), success:OK)", color: UIColor.defaultLabelColor())
         } else {
             let msg = message != nil ? message! : ""
-            self.addLogText("vampLoadResult(\(adnwName), \(placementId), success:NG, \(msg))", color: UIColor.red)
+            self.addLogText("vampLoadResult(\(adnwName), \(placementId), success:NG, \(msg))", color: UIColor.systemRed)
         }
     }
     

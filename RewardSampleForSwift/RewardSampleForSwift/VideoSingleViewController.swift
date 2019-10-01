@@ -112,22 +112,20 @@ class VideoSingleViewController: UIViewController, VAMPDelegate {
         dateFormatter.dateFormat = "MM-dd HH:mm:ss"
         let timestamp = dateFormatter.string(from: Date())
         
-        let attributedNow = NSAttributedString.init(string: String.init(format: "%@ ", timestamp), attributes: [NSAttributedStringKey.foregroundColor : UIColor.gray])
+        let attributedNow = NSAttributedString.init(string: String.init(format: "%@ ", timestamp), attributes: [NSAttributedStringKey.foregroundColor : UIColor.systemGray])
         let attributedMessage = NSAttributedString.init(string: String.init(format: "%@\n", message), attributes: [NSAttributedStringKey.foregroundColor : color])
         
-        DispatchQueue.main.async() {
-            let mutableAttributedString = NSMutableAttributedString.init()
-            mutableAttributedString.append(attributedNow)
-            mutableAttributedString.append(attributedMessage)
-            mutableAttributedString.append(self.adLogView.attributedText)
-            self.adLogView.attributedText = mutableAttributedString
-        }
+        let mutableAttributedString = NSMutableAttributedString.init()
+        mutableAttributedString.append(attributedNow)
+        mutableAttributedString.append(attributedMessage)
+        mutableAttributedString.append(self.adLogView.attributedText)
+        self.adLogView.attributedText = mutableAttributedString
         
         print("[VAMP]\(timestamp) \(message)")
     }
     
     func addLogText(_ message: String) {
-        self.addLogText(message, color: UIColor.gray)
+        self.addLogText(message, color: UIColor.systemGray)
     }
     
     func vampStateString(_ state: VAMPState) -> String {
@@ -171,7 +169,7 @@ class VideoSingleViewController: UIViewController, VAMPDelegate {
     // @see https://github.com/AdGeneration/VAMP-iOS-SDK/wiki/VAMP-iOS-API-Errors
     func vamp(_ vamp: VAMP, didFailToLoadWithError error: VAMPError, withPlacementId placementId: String?) {
         if let bindPid = placementId {
-            self.addLogText("vampDidFailToLoad(\(error.localizedDescription), \(bindPid))", color: UIColor.red)
+            self.addLogText("vampDidFailToLoad(\(error.localizedDescription), \(bindPid))", color: UIColor.systemRed)
 
             let code = VAMPErrorCode(rawValue: UInt(error.code))
             if code == .noAdStock {
@@ -197,7 +195,7 @@ class VideoSingleViewController: UIViewController, VAMPDelegate {
     // show実行したが、何らかの理由で広告表示が失敗したときに通知されます。
     // 例）ユーザーが広告再生を途中でキャンセルなど
     func vamp(_ vamp: VAMP, didFailToShowWithError error: VAMPError, withPlacementId placementId: String) {
-        self.addLogText("vampDidFailToShow(\(error.localizedDescription), \(placementId))", color: UIColor.red)
+        self.addLogText("vampDidFailToShow(\(error.localizedDescription), \(placementId))", color: UIColor.systemRed)
         
         let code = VAMPErrorCode(rawValue: UInt(error.code))
         if (code == .userCancel) {
@@ -215,20 +213,20 @@ class VideoSingleViewController: UIViewController, VAMPDelegate {
     // インセンティブ付与が可能になったタイミングで通知
     // アドネットワークによって通知タイミングが異なる（動画再生完了時、またはエンドカードを閉じたタイミング）
     func vampDidComplete(_ placementId: String, adnwName: String) {
-        self.addLogText("vampDidComplete(\(adnwName), \(placementId))", color: UIColor.blue)
+        self.addLogText("vampDidComplete(\(adnwName), \(placementId))", color: UIColor.systemBlue)
     }
     
     // 広告閉じる
     // エンドカード閉じる、途中で広告再生キャンセル
     func vampDidClose(_ placementId: String, adnwName: String) {
-        self.addLogText("vampDidClose(\(adnwName), \(placementId))", color: UIColor.black)
+        self.addLogText("vampDidClose(\(adnwName), \(placementId))", color: UIColor.defaultLabelColor())
         self.resumeSound()
     }
 
     // 広告準備完了から55分経つと取得した広告の表示はできてもRTBの収益は発生しません。
     // この通知を受け取ったら、もう一度loadからやり直す必要があります
     func vampDidExpired(_ placementId: String) {
-        self.addLogText("vampDidExpired(\(placementId))", color: UIColor.red)
+        self.addLogText("vampDidExpired(\(placementId))", color: UIColor.systemRed)
     }
 
     // 広告取得開始
@@ -241,10 +239,10 @@ class VideoSingleViewController: UIViewController, VAMPDelegate {
     // success=NOのとき、次位のアドネットワークがある場合はロード処理は継続されます
     func vampLoadResult(_ placementId: String, success: Bool, adnwName: String, message: String?) {
         if success {
-            self.addLogText("vampLoadResult(\(adnwName), \(placementId), success:OK)", color: UIColor.black)
+            self.addLogText("vampLoadResult(\(adnwName), \(placementId), success:OK)", color: UIColor.defaultLabelColor())
         } else {
             let msg = message != nil ? message! : ""
-            self.addLogText("vampLoadResult(\(adnwName), \(placementId), success:NG, \(msg))", color: UIColor.red)
+            self.addLogText("vampLoadResult(\(adnwName), \(placementId), success:NG, \(msg))", color: UIColor.systemRed)
         }
     }
     

@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gra-D4-7xL">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14835.7" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gra-D4-7xL">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment version="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14790.5"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="iOS 13.0 system colors" minToolsVersion="11.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -15,7 +13,7 @@
             <objects>
                 <navigationController id="gra-D4-7xL" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="efS-rq-qYi">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -40,7 +38,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MPs-Uk-gBi" customClass="BorderButton" customModule="RewardSampleForSwift" customModuleProvider="target">
                                 <rect key="frame" x="107.5" y="486.5" width="160" height="35"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="1ew-oO-lX3"/>
                                     <constraint firstAttribute="height" constant="35" id="B3g-LP-YJA"/>
@@ -73,7 +71,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DXp-i6-bA3" customClass="BorderButton" customModule="RewardSampleForSwift" customModuleProvider="target">
                                 <rect key="frame" x="107.5" y="216" width="160" height="35"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="gjh-kz-6JH"/>
                                     <constraint firstAttribute="width" constant="160" id="rxu-sA-DIy"/>
@@ -96,7 +94,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eve-Lu-HtE" customClass="BorderButton" customModule="RewardSampleForSwift" customModuleProvider="target">
                                 <rect key="frame" x="107.5" y="283" width="160" height="35"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="Djy-2P-sAw"/>
                                     <constraint firstAttribute="width" constant="160" id="pn6-T1-izH"/>
@@ -119,6 +117,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GBY-wJ-0aX" customClass="BorderButton" customModule="RewardSampleForSwift" customModuleProvider="target">
                                 <rect key="frame" x="107.5" y="417" width="160" height="35"/>
+                                <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="iWQ-nW-n1q"/>
                                     <constraint firstAttribute="height" constant="35" id="x81-oh-oOl"/>
@@ -130,6 +129,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7WA-R3-edT" customClass="BorderButton" customModule="RewardSampleForSwift" customModuleProvider="target">
                                 <rect key="frame" x="107.5" y="350" width="160" height="35"/>
+                                <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="N89-wA-Bqh"/>
                                     <constraint firstAttribute="height" constant="35" id="rbM-Fl-MTu"/>
@@ -140,7 +140,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="WXU-r2-Qp7" firstAttribute="top" secondItem="foj-5w-V4R" secondAttribute="bottom" constant="20" id="39T-Yc-qQQ"/>
                             <constraint firstItem="foj-5w-V4R" firstAttribute="centerX" secondItem="C9e-wZ-ZdE" secondAttribute="centerX" id="Ab9-8h-bf9"/>
@@ -179,6 +179,7 @@
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="FkQ-rT-28c">
                                 <rect key="frame" x="16" y="107" width="343" height="30"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="secondarySystemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="upJ-mX-JVT"/>
                                 </constraints>
@@ -187,6 +188,7 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B2H-K0-Zaa" customClass="BorderButton" customModule="RewardSampleForSwift" customModuleProvider="target">
                                 <rect key="frame" x="16" y="72" width="80" height="30"/>
+                                <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="3VW-R5-9yl"/>
                                     <constraint firstAttribute="width" constant="80" id="bM3-71-b5u"/>
@@ -209,6 +211,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TdC-7w-jhy" customClass="BorderButton" customModule="RewardSampleForSwift" customModuleProvider="target">
                                 <rect key="frame" x="147.5" y="72" width="80" height="30"/>
+                                <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="cKl-El-yOo"/>
                                     <constraint firstAttribute="height" constant="30" id="erG-4w-9NE"/>
@@ -231,13 +234,13 @@
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9Q1-Bm-7x7">
                                 <rect key="frame" x="16" y="142" width="343" height="481"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="9Q1-Bm-7x7" firstAttribute="leading" secondItem="XAv-y8-cXt" secondAttribute="leadingMargin" id="015-7I-lXn"/>
                             <constraint firstItem="9Q1-Bm-7x7" firstAttribute="top" secondItem="FkQ-rT-28c" secondAttribute="bottom" constant="5" id="7jQ-g3-H3b"/>
@@ -280,6 +283,7 @@
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="wZc-nW-ad6" userLabel="Adcode Field">
                                 <rect key="frame" x="16" y="107" width="343" height="30"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="secondarySystemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="WHI-lq-fzn"/>
                                 </constraints>
@@ -288,6 +292,7 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xFr-fX-sgv" customClass="BorderButton" customModule="RewardSampleForSwift" customModuleProvider="target">
                                 <rect key="frame" x="16" y="72" width="80" height="30"/>
+                                <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="Ue5-uF-ktz"/>
                                     <constraint firstAttribute="height" constant="30" id="kOc-La-EAM"/>
@@ -310,6 +315,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qxx-gC-nAU" customClass="BorderButton" customModule="RewardSampleForSwift" customModuleProvider="target">
                                 <rect key="frame" x="147.5" y="72" width="80" height="30"/>
+                                <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="SaD-Mh-NkF"/>
                                     <constraint firstAttribute="width" constant="80" id="kme-bl-On6"/>
@@ -332,13 +338,14 @@
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gDA-Da-fEW" userLabel="Ad Log View">
                                 <rect key="frame" x="16" y="297" width="343" height="370"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABy-yR-lwG" customClass="BorderButton" customModule="RewardSampleForSwift" customModuleProvider="target">
                                 <rect key="frame" x="67.5" y="145" width="240" height="30"/>
+                                <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="V9L-QI-9mm"/>
                                     <constraint firstAttribute="height" constant="30" id="aZm-tE-19X"/>
@@ -350,6 +357,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OPc-Ov-2d0" customClass="BorderButton" customModule="RewardSampleForSwift" customModuleProvider="target">
                                 <rect key="frame" x="67.5" y="183" width="240" height="30"/>
+                                <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="gVf-iB-tBX"/>
                                     <constraint firstAttribute="height" constant="30" id="sxK-bW-Zam"/>
@@ -361,6 +369,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LbO-oC-zsC" customClass="BorderButton" customModule="RewardSampleForSwift" customModuleProvider="target">
                                 <rect key="frame" x="67.5" y="221" width="240" height="30"/>
+                                <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="atJ-Hq-b4x"/>
                                     <constraint firstAttribute="height" constant="30" id="ybf-EM-nv8"/>
@@ -372,6 +381,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RHJ-wN-0DZ" customClass="BorderButton" customModule="RewardSampleForSwift" customModuleProvider="target">
                                 <rect key="frame" x="67" y="259" width="240" height="30"/>
+                                <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="tyY-zK-Hit"/>
                                     <constraint firstAttribute="height" constant="30" id="xCv-tL-9Q5"/>
@@ -382,7 +392,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="qxx-gC-nAU" firstAttribute="centerX" secondItem="BCC-V3-D2i" secondAttribute="centerX" id="2Xs-WP-6xU"/>
                             <constraint firstItem="gDA-Da-fEW" firstAttribute="leading" secondItem="BCC-V3-D2i" secondAttribute="leadingMargin" id="3wf-JH-UNy"/>
@@ -428,7 +438,7 @@
                         <subviews>
                             <textView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xu3-jq-fap">
                                 <rect key="frame" x="16" y="89" width="343" height="578"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, </string>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -437,7 +447,7 @@
                                 </variation>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="xu3-jq-fap" firstAttribute="top" secondItem="aaz-Mc-X92" secondAttribute="bottom" constant="25" id="Ycf-an-BoD"/>
                             <constraint firstItem="xu3-jq-fap" firstAttribute="trailing" secondItem="tAb-kI-s3t" secondAttribute="trailingMargin" id="g8Y-aH-0OI"/>
@@ -475,6 +485,7 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YVo-ed-GLy" customClass="BorderButton" customModule="RewardSampleForSwift" customModuleProvider="target">
                                 <rect key="frame" x="16" y="72" width="184" height="30"/>
+                                <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="pze-Pi-sbS"/>
                                     <constraint firstAttribute="width" constant="184" id="wb9-I3-qnN"/>
@@ -497,13 +508,13 @@
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wG5-Gj-QlL">
                                 <rect key="frame" x="16" y="142" width="343" height="481"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="E9x-D3-5qQ" firstAttribute="top" secondItem="YVo-ed-GLy" secondAttribute="bottom" constant="5" id="BDY-Fm-hta"/>
                             <constraint firstItem="wG5-Gj-QlL" firstAttribute="trailing" secondItem="he4-rL-Yo7" secondAttribute="trailingMargin" id="GFm-f4-nIe"/>
@@ -544,6 +555,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3VC-cV-mGh" customClass="BorderButton" customModule="RewardSampleForSwift" customModuleProvider="target">
                                 <rect key="frame" x="67.5" y="72" width="80" height="30"/>
+                                <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="7kF-tS-IUq"/>
                                     <constraint firstAttribute="width" constant="80" id="JOf-X4-cBN"/>
@@ -568,6 +580,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ced-0G-Vyq" customClass="BorderButton" customModule="RewardSampleForSwift" customModuleProvider="target">
                                 <rect key="frame" x="67.5" y="110" width="80" height="30"/>
+                                <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="0Ma-Gn-GdK"/>
                                     <constraint firstAttribute="width" constant="80" id="4BH-F9-bSh"/>
@@ -602,6 +615,7 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tcj-1Y-8Bg" customClass="BorderButton" customModule="RewardSampleForSwift" customModuleProvider="target">
                                 <rect key="frame" x="227.5" y="72" width="80" height="30"/>
+                                <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="1om-y2-VoY"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="FqB-eH-NUn"/>
@@ -626,6 +640,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ha6-9l-ELb" customClass="BorderButton" customModule="RewardSampleForSwift" customModuleProvider="target">
                                 <rect key="frame" x="227.5" y="110" width="80" height="30"/>
+                                <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="6Fz-7K-v0Z"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="IlI-hC-Sy0"/>
@@ -660,13 +675,13 @@
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="89d-jD-upT">
                                 <rect key="frame" x="16" y="186" width="343" height="481"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="89d-jD-upT" firstAttribute="leading" secondItem="oOP-Kb-4H3" secondAttribute="leadingMargin" id="2bx-Yg-HhC"/>
                             <constraint firstItem="Ced-0G-Vyq" firstAttribute="top" secondItem="3VC-cV-mGh" secondAttribute="bottom" constant="8" id="3DN-WT-WHQ"/>
