@@ -80,7 +80,6 @@ static NSString * const kPlacementId = @"59755";
     self.vamp = [VAMP new];
     self.vamp.delegate = self;
     [self.vamp setPlacementId:self.placementId];
-    [self.vamp setRootViewController:self];
     
     // フリークエンシーキャップの設定
     [VAMP setFrequencyCap:kPlacementId impressions:3 minutes:60];
@@ -114,7 +113,7 @@ static NSString * const kPlacementId = @"59755";
         [self pauseSound];
         
         // 広告表示
-        [self.vamp show];
+        [self.vamp showFromViewController:self];
     } else {
         NSLog(@"[VAMP]not ready");
     }
@@ -256,10 +255,15 @@ static NSString * const kPlacementId = @"59755";
 
 // 広告閉じる
 // エンドカード閉じる、途中で広告再生キャンセル
-- (void)vampDidClose:(NSString *)placementId adnwName:(NSString *)adnwName {
-    [self addLogText:[NSString stringWithFormat:@"vampDidClose(%@, %@)", adnwName, placementId]
+- (void)vampDidClose:(NSString *)placementId adnwName:(NSString *)adnwName adClicked:(BOOL)adClicked {
+    [self addLogText:[NSString stringWithFormat:@"vampDidClose(%@, %@, Click:%@)", adnwName, placementId, adClicked ? @"YES" : @"NO"]
                color:UIColor.defaultLabelColor];
     [self resumeSound];
+}
+
+// 広告表示開始
+- (void)vampDidOpen:(NSString *)placementId adnwName:(NSString *)adnwName {
+    [self addLogText:[NSString stringWithFormat:@"vampDidOpen(%@, %@)", adnwName, placementId]];
 }
 
 // 広告準備完了から55分経つと取得した広告の表示はできてもRTBの収益は発生しない

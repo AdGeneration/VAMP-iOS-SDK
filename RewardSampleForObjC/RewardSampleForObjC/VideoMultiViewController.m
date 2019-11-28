@@ -71,13 +71,11 @@ static NSString * const kPlacementId2 = @"*****";   // 広告枠ID2を設定し�
     self.vamp1 = [VAMP new];
     self.vamp1.delegate = self;
     [self.vamp1 setPlacementId:kPlacementId1];
-    [self.vamp1 setRootViewController:self];
     
     // 広告枠ID2用のVAMPインスタンスを生成
     self.vamp2 = [VAMP new];
     self.vamp2.delegate = self;
     [self.vamp2 setPlacementId:kPlacementId2];
-    [self.vamp2 setRootViewController:self];
     
     [self addLogText:[NSString stringWithFormat:@"isTestMode:%@", [VAMP isTestMode] ? @"YES" : @"NO"]];
     [self addLogText:[NSString stringWithFormat:@"isDebugMode:%@", [VAMP isDebugMode] ? @"YES" : @"NO"]];
@@ -109,7 +107,7 @@ static NSString * const kPlacementId2 = @"*****";   // 広告枠ID2を設定し�
         [self pauseSound];
         
         // 広告1を表示
-        [self.vamp1 show];
+        [self.vamp1 showFromViewController:self];
     }
 }
 
@@ -129,7 +127,7 @@ static NSString * const kPlacementId2 = @"*****";   // 広告枠ID2を設定し�
         [self pauseSound];
         
         // 広告2を再生します
-        [self.vamp2 show];
+        [self.vamp2 showFromViewController:self];
     }
 }
 
@@ -232,6 +230,11 @@ static NSString * const kPlacementId2 = @"*****";   // 広告枠ID2を設定し�
     [self resumeSound];
 }
 
+// 広告表示開始
+- (void)vampDidOpen:(NSString *)placementId adnwName:(NSString *)adnwName {
+    [self addLogText:[NSString stringWithFormat:@"vampDidOpen(%@, %@)", adnwName, placementId]];
+}
+
 // インセンティブ付与可能になったタイミングで通知
 - (void)vampDidComplete:(NSString *)placementId adnwName:(NSString *)adnwName {
     [self addLogText:[NSString stringWithFormat:@"vampDidComplete(%@, %@)", adnwName, placementId]
@@ -239,8 +242,8 @@ static NSString * const kPlacementId2 = @"*****";   // 広告枠ID2を設定し�
 }
 
 // 広告が閉じられた時に通知
-- (void)vampDidClose:(NSString *)placementId adnwName:(NSString *)adnwName {
-    [self addLogText:[NSString stringWithFormat:@"vampDidClose(%@, %@)", adnwName, placementId]
+- (void)vampDidClose:(NSString *)placementId adnwName:(NSString *)adnwName adClicked:(BOOL)adClicked {
+    [self addLogText:[NSString stringWithFormat:@"vampDidClose(%@, %@, Click:%@)", adnwName, placementId, adClicked ? @"YES" : @"NO"]
                color:UIColor.defaultLabelColor];
     [self resumeSound];
 }

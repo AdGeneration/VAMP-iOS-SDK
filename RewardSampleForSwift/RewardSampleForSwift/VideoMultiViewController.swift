@@ -63,13 +63,11 @@ class VideoMultiViewController : UIViewController, VAMPDelegate {
         self.vamp1 = VAMP()
         self.vamp1.delegate = self
         self.vamp1.setPlacementId(self.placementId1)
-        self.vamp1.setRootViewController(self)
         
         // 広告枠ID2用のVAMPインスタンスを生成
         self.vamp2 = VAMP()
         self.vamp2.delegate = self
         self.vamp2.setPlacementId(self.placementId2)
-        self.vamp2.setRootViewController(self)
         
         self.addLogText("isTestMode:" + String(VAMP.isTestMode()))
         self.addLogText("isDebugMode:" + String(VAMP.isDebugMode()))
@@ -101,7 +99,7 @@ class VideoMultiViewController : UIViewController, VAMPDelegate {
             self.pauseSound()
             
             // 広告1を再生
-            self.vamp1.show()
+            self.vamp1.show(from: self)
         }
     }
     
@@ -121,7 +119,7 @@ class VideoMultiViewController : UIViewController, VAMPDelegate {
             self.pauseSound()
             
             // 広告2を再生します
-            self.vamp2.show()
+            self.vamp2.show(from: self)
         }
     }
     
@@ -219,14 +217,19 @@ class VideoMultiViewController : UIViewController, VAMPDelegate {
         self.resumeSound()
     }
     
+    // 広告表示開始
+    func vampDidOpen(_ placementId: String, adnwName: String) {
+        self.addLogText("vampDidOpen(\(adnwName), \(placementId))")
+    }
+    
     // インセンティブ付与可能になったタイミングで通知
     func vampDidComplete(_ placementId: String, adnwName: String) {
         self.addLogText("vampDidComplete(\(adnwName), \(placementId))", color: UIColor.systemBlue)
     }
     
     // 広告が閉じられた時に通知
-    func vampDidClose(_ placementId: String, adnwName: String) {
-        self.addLogText("vampDidClose(\(adnwName), \(placementId))", color: UIColor.defaultLabelColor())
+    func vampDidClose(_ placementId: String, adnwName: String, adClicked: Bool) {
+        self.addLogText("vampDidClose(\(adnwName), \(placementId), Click:\(adClicked))", color: UIColor.defaultLabelColor())
         self.resumeSound()
     }
     

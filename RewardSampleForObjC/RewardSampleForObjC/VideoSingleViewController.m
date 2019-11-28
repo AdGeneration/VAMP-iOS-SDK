@@ -80,7 +80,6 @@ static NSString * const kPlacementId = @"59755";
     self.vamp = [VAMP new];
     self.vamp.delegate = self;
     [self.vamp setPlacementId:self.placementId];
-    [self.vamp setRootViewController:self];
 }
 
 - (NSString *)placementId {
@@ -111,7 +110,7 @@ static NSString * const kPlacementId = @"59755";
         [self pauseSound];
         
         // 広告表示
-        [self.vamp show];
+        [self.vamp showFromViewController:self];
     } else {
         NSLog(@"[VAMP]not ready");
     }
@@ -176,6 +175,7 @@ static NSString * const kPlacementId = @"59755";
 
 // 広告取得完了
 // 広告表示が可能になると通知されます
+// Deprecated
 - (void)vampDidReceive:(NSString *)placementId adnwName:(NSString *)adnwName {
     [self addLogText:[NSString stringWithFormat:@"vampDidReceive(%@, %@)", adnwName, placementId]];
 }
@@ -223,6 +223,10 @@ static NSString * const kPlacementId = @"59755";
     [self resumeSound];
 }
 
+// 広告表示開始
+- (void)vampDidOpen:(NSString *)placementId adnwName:(NSString *)adnwName {
+    [self addLogText:[NSString stringWithFormat:@"vampDidOpen(%@, %@)", adnwName, placementId]];
+}
 // インセンティブ付与OK
 // インセンティブ付与が可能になったタイミングで通知
 // アドネットワークによって通知タイミングが異なる（動画再生完了時、またはエンドカードを閉じたタイミング）
@@ -233,8 +237,8 @@ static NSString * const kPlacementId = @"59755";
 
 // 広告閉じる
 // エンドカード閉じる、途中で広告再生キャンセル
-- (void)vampDidClose:(NSString *)placementId adnwName:(NSString *)adnwName {
-    [self addLogText:[NSString stringWithFormat:@"vampDidClose(%@, %@)", adnwName, placementId]
+- (void)vampDidClose:(NSString *)placementId adnwName:(NSString *)adnwName  adClicked:(BOOL)adClicked {
+    [self addLogText:[NSString stringWithFormat:@"vampDidClose(%@, %@, Click:%@)", adnwName, placementId, adClicked ? @"YES" : @"NO"]
                color:UIColor.defaultLabelColor];
     [self resumeSound];
 }

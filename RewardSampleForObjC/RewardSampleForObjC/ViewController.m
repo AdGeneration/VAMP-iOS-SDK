@@ -25,7 +25,7 @@
     NSLog(@"[VAMP]supportedOSVersion:%.01f", [VAMP SupportedOSVersion]);
 
     // テストモード
-    // 連携アドネットワーク（AdMob、AppLovin、FAN、maio、nend、UnityAds、Mintegral、MoPub）
+    // 連携アドネットワーク（AdMob、FAN、maio、nend、UnityAds、Mintegral、MoPub）
     // リリースする際は必ずコメントアウトしてください。収益が発生しない広告が配信されます
     [VAMP setTestMode:YES];
 
@@ -61,35 +61,53 @@
 
     // 国コードの取得サンプル
     __weak typeof(self) weakSelf = self;
-    [VAMP getCountryCode:^(NSString *countryCode) {
-        weakSelf.sdkVersion.text = [NSString stringWithFormat:@"%@ / %@", weakSelf.sdkVersion.text, countryCode];
-//        if ([countryCode isEqualToString:@"US"]) {
-//            // COPPA対象ユーザである場合はYESを設定する
-//            [VAMP setChildDirected:YES];
-//        }
+    [VAMP getLocation:^(VAMPLocation *location) {
+        weakSelf.sdkVersion.text = [NSString stringWithFormat:@"%@ / %@-%@", weakSelf.sdkVersion.text, location.countryCode, location.region];
+        
+        // アメリカ
+        if ([location.countryCode isEqualToString:@"US"]) {
+            // COPPA対象ユーザである場合はYESを設定する
+            // [VAMP setChildDirected:YES];
+            
+            if ([location.region isEqualToString:@"CA"]) {
+                // カリフォルニア州 (California)
+                // CCPA (https://www.caprivacy.org/)
+            } else if ([location.region isEqualToString:@"NV"]) {
+                // ネバタ州 (Nevada)
+            }
+        }
+        
+        // 日本
+        if ([location.countryCode isEqualToString:@"JP"]) {
+            if ([location.region isEqualToString:@"13"]) {
+                // 東京都
+            } else if ([location.region isEqualToString:@"27"]) {
+                // 大阪府
+            }
+        }
     }];
 
     // EU圏内ならばユーザに同意を求めるサンプル
-//    [VAMP isEUAccess:^(BOOL access) {
-//        if (!access) {
-//            // Nothing to do
-//            return;
-//        }
-//
-//        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Personalized Ads"
-//                                                                       message:@"Accept?"
-//                                                                preferredStyle:UIAlertControllerStyleAlert];
-//
-//        [alert addAction:[UIAlertAction actionWithTitle:@"Accept" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-//            [VAMP setUserConsent:kVAMPConsentStatusAccepted];
-//        }]];
-//
-//        [alert addAction:[UIAlertAction actionWithTitle:@"Deny" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
-//            [VAMP setUserConsent:kVAMPConsentStatusDenied];
-//        }]];
-//
-//        [self presentViewController:alert animated:YES completion:nil];
-//    }];
+    [VAMP isEUAccess:^(BOOL access) {
+        if (!access) {
+            // Nothing to do
+            return;
+        }
+
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Personalized Ads"
+                                                                       message:@"Accept?"
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+
+        [alert addAction:[UIAlertAction actionWithTitle:@"Accept" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            [VAMP setUserConsent:kVAMPConsentStatusAccepted];
+        }]];
+
+        [alert addAction:[UIAlertAction actionWithTitle:@"Deny" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+            [VAMP setUserConsent:kVAMPConsentStatusDenied];
+        }]];
+
+        [self presentViewController:alert animated:YES completion:nil];
+    }];
 }
 
 @end

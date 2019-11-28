@@ -21,7 +21,6 @@ class VideoSingle2ViewController: VideoSingleViewController {
         self.vamp = VAMP()
         self.vamp.delegate = self
         self.vamp.setPlacementId(self.getPlacementId())
-        self.vamp.setRootViewController(self)
         
         // 画面表示時に広告をプリロード
         self.vamp.preload()
@@ -38,7 +37,7 @@ class VideoSingle2ViewController: VideoSingleViewController {
             self.pauseSound()
             
             // 広告表示
-            self.vamp.show()
+            self.vamp.show(from: self)
         } else {
             self.addLogText("[load]")
             
@@ -55,7 +54,7 @@ class VideoSingle2ViewController: VideoSingleViewController {
         if success {
             self.pauseSound()
             // 広告表示
-            vamp.show()
+            vamp.show(from: self)
             self.addLogText("vampLoadResult(\(adnwName), \(placementId), success) show()", color: UIColor.defaultLabelColor())
         } else {
             // 失敗しても、次のアドネットワークがあれば、広告取得を試みます。
@@ -111,6 +110,11 @@ class VideoSingle2ViewController: VideoSingleViewController {
         self.resumeSound()
     }
     
+    // 広告表示開始
+    override func vampDidOpen(_ placementId: String, adnwName: String) {
+        self.addLogText("vampDidOpen(\(adnwName), \(placementId))")
+    }
+    
     // インセンティブ付与が可能になったタイミングで通知
     // アドネットワークによって通知タイミングが異なる（動画再生完了時、またはエンドカードを閉じたタイミング）
     override func vampDidComplete(_ placementId: String, adnwName: String) {
@@ -118,8 +122,8 @@ class VideoSingle2ViewController: VideoSingleViewController {
     }
     
     // 広告が閉じられた時に通知
-    override func vampDidClose(_ placementId: String, adnwName: String) {
-        self.addLogText("vampDidClose(\(adnwName), \(placementId))", color: UIColor.defaultLabelColor())
+    override func vampDidClose(_ placementId: String, adnwName: String, adClicked: Bool) {
+        self.addLogText("vampDidClose(\(adnwName), \(placementId), Click:\(adClicked))", color: UIColor.defaultLabelColor())
         self.resumeSound()
         
         // 必要に応じて、次に表示する広告をプリロード

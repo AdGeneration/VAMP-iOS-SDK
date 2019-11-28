@@ -69,7 +69,6 @@ class VideoSingle3ViewController: UIViewController, VAMPDelegate {
         self.vamp = VAMP()
         self.vamp.delegate = self
         self.vamp.setPlacementId(placementId)
-        self.vamp.setRootViewController(self)
         // フリークエンシーキャップの設定
         VAMP.setFrequencyCap(placementId, impressions: 3, minutes: 60);
     }
@@ -99,7 +98,7 @@ class VideoSingle3ViewController: UIViewController, VAMPDelegate {
             self.pauseSound()
             
             // 広告を表示
-            self.vamp.show()
+            self.vamp.show(from: self)
         } else {
             print("[VAMP]not ready")
         }
@@ -219,6 +218,10 @@ class VideoSingle3ViewController: UIViewController, VAMPDelegate {
         self.resumeSound()
     }
     
+    // 広告表示開始
+    func vampDidOpen(_ placementId: String, adnwName: String) {
+        self.addLogText("vampDidOpen(\(adnwName), \(placementId))")
+    }
     // インセンティブ付与OK
     // インセンティブ付与が可能になったタイミングで通知
     // アドネットワークによって通知タイミングが異なる（動画再生完了時、またはエンドカードを閉じたタイミング）
@@ -228,8 +231,8 @@ class VideoSingle3ViewController: UIViewController, VAMPDelegate {
     
     // 広告閉じる
     // エンドカード閉じる、途中で広告再生キャンセル
-    func vampDidClose(_ placementId: String, adnwName: String) {
-        self.addLogText("vampDidClose(\(adnwName), \(placementId))", color: UIColor.defaultLabelColor())
+    func vampDidClose(_ placementId: String, adnwName: String, adClicked: Bool) {
+        self.addLogText("vampDidClose(\(adnwName), \(placementId), Click:\(adClicked))", color: UIColor.defaultLabelColor())
         self.resumeSound()
     }
     

@@ -41,7 +41,6 @@ static NSString * const kPlacementId = @"59755";    // 広告枠IDを設定し�
     self.vamp = [VAMP new];
     self.vamp.delegate = self;
     [self.vamp setPlacementId:self.placementId];
-    [self.vamp setRootViewController:self];
     
     // 画面表示時に広告をプリロード
     [self.vamp preload];
@@ -58,7 +57,7 @@ static NSString * const kPlacementId = @"59755";    // 広告枠IDを設定し�
         [self pauseSound];
         
         // 広告表示
-        [self.vamp show];
+        [self.vamp showFromViewController:self];
     }
     else {
         [self addLogText:@"[load]"];
@@ -71,12 +70,25 @@ static NSString * const kPlacementId = @"59755";    // 広告枠IDを設定し�
 #pragma mark - VAMPDelegate
 
 // 広告表示が可能になると通知
+// Deprecated
 - (void)vampDidReceive:(NSString *)placementId adnwName:(NSString *)adnwName {
     [self addLogText:[NSString stringWithFormat:@"vampDidReceive(%@, %@)", adnwName, placementId]];
-    [self addLogText:@"[show]"];
-    [self pauseSound];
-    
-    [self.vamp show];
+}
+
+// アドネットワークの広告取得結果が通知されます。成功時はsuccess=YESとなりロード処理は終了
+// success=NOのとき、次位のアドネットワークがある場合はロード処理は継続
+- (void)vampLoadResult:(NSString *)placementId success:(BOOL)success adnwName:(NSString *)adnwName message:(NSString *)message {
+    if (success) {
+        [self addLogText:[NSString stringWithFormat:@"vampLoadResult(%@, %@, success:OK)", adnwName, placementId]
+                   color:UIColor.defaultLabelColor];
+        [self addLogText:@"[show]"];
+        [self pauseSound];
+        
+        [self.vamp showFromViewController:self];
+    } else {
+        [self addLogText:[NSString stringWithFormat:@"vampLoadResult(%@, %@, success:NG, %@)", adnwName, placementId, message]
+                  color:UIColor.systemRedColor];
+    }
 }
 
 // 全アドネットワークにおいて広告が取得できなかったときに通知
@@ -121,6 +133,10 @@ static NSString * const kPlacementId = @"59755";    // 広告枠IDを設定し�
     [self resumeSound];
 }
 
+// 広告表示開始
+- (void)vampDidOpen:(NSString *)placementId adnwName:(NSString *)adnwName {
+    [self addLogText:[NSString stringWithFormat:@"vampDidOpen(%@, %@)", adnwName, placementId]];
+}
 // インセンティブ付与が可能になったタイミングで通知
 // アドネットワークによって通知タイミングが異なる（動画再生完了時、またはエンドカードを閉じたタイミング）
 - (void)vampDidComplete:(NSString *)placementId adnwName:(NSString *)adnwName {
@@ -129,13 +145,12 @@ static NSString * const kPlacementId = @"59755";    // 広告枠IDを設定し�
 }
 
 // 広告が閉じられた時に通知
-- (void)vampDidClose:(NSString *)placementId adnwName:(NSString *)adnwName {
-    [self addLogText:[NSString stringWithFormat:@"vampDidClose(%@, %@)", adnwName, placementId]
+- (void)vampDidClose:(NSString *)placementId adnwName:(NSString *)adnwName adClicked:(BOOL)adClicked {
+    [self addLogText:[NSString stringWithFormat:@"vampDidClose(%@, %@, Click:%@)", adnwName, placementId, adClicked ? @"YES" : @"NO"]
                color:UIColor.defaultLabelColor];
     [self resumeSound];
     
     // 必要に応じて次に表示する広告をプリロード
 //    [self.vamp preload];
 }
-
 @end
