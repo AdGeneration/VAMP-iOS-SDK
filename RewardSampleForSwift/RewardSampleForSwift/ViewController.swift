@@ -60,22 +60,30 @@ class ViewController: UIViewController {
             if let weakSelf = self {
                 weakSelf.sdkVersion.text = "\(weakSelf.sdkVersion.text!) / \(location.countryCode) - \(location.region)"
                 
-                // アメリカ
-                if location.countryCode == "US" {
+                if location.countryCode == kVAMPUnknownCountryCode {
+                    // 国コード取得失敗
+                }
+                else if location.countryCode == "US" {
+                    // アメリカ
                     // COPPA対象ユーザである場合はYESを設定する
                     // VAMP.setChildDirected(true);
                     
-                    if location.region == "CA" {
+                    if location.region.isEmpty {
+                        // 地域取得失敗
+                    }
+                    else if location.region == "CA" {
                         // カリフォルニア州 (California)
                         // CCPA (https://www.caprivacy.org/)
                     } else if location.region == "NV" {
                         // ネバダ州 (Nevada)
                     }
                 }
-                
-                // 日本
-                if location.countryCode == "JP" {
-                    if location.region == "13" {
+                else if location.countryCode == "JP" {
+                    // 日本
+                    if location.region.isEmpty {
+                        // 地域取得失敗
+                    }
+                    else if location.region == "13" {
                         // 東京都
                     } else if location.region == "27" {
                         // 大阪府

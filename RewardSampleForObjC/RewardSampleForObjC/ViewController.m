@@ -64,22 +64,30 @@
     [VAMP getLocation:^(VAMPLocation *location) {
         weakSelf.sdkVersion.text = [NSString stringWithFormat:@"%@ / %@-%@", weakSelf.sdkVersion.text, location.countryCode, location.region];
         
-        // アメリカ
-        if ([location.countryCode isEqualToString:@"US"]) {
+        if ([location.countryCode isEqualToString:kVAMPUnknownCountryCode]) {
+            // 国コード取得失敗
+        }
+        else if ([location.countryCode isEqualToString:@"US"]) {
+            // アメリカ
             // COPPA対象ユーザである場合はYESを設定する
             // [VAMP setChildDirected:YES];
             
-            if ([location.region isEqualToString:@"CA"]) {
+            if (location.region.length <= 0) {
+                // 地域取得失敗
+            }
+            else if ([location.region isEqualToString:@"CA"]) {
                 // カリフォルニア州 (California)
                 // CCPA (https://www.caprivacy.org/)
             } else if ([location.region isEqualToString:@"NV"]) {
                 // ネバタ州 (Nevada)
             }
         }
-        
-        // 日本
-        if ([location.countryCode isEqualToString:@"JP"]) {
-            if ([location.region isEqualToString:@"13"]) {
+         else if ([location.countryCode isEqualToString:@"JP"]) {
+            // 日本
+            if (location.region.length <= 0) {
+                 // 地域取得失敗
+            }
+            else if ([location.region isEqualToString:@"13"]) {
                 // 東京都
             } else if ([location.region isEqualToString:@"27"]) {
                 // 大阪府
