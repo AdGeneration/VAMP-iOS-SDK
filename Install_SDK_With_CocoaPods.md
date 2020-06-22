@@ -1,7 +1,7 @@
 # SDKをCocoaPodsでインストール
 
-[CocoaPods](#https://guides.cocoapods.org/using/getting-started)を使って簡単にSDKをインストールすることができます。
-詳しくは[公式のドキュメント](#https://guides.cocoapods.org/using/using-cocoapods)を参考にしてください。
+[CocoaPods](https://guides.cocoapods.org/using/getting-started)を使って簡単にSDKをインストールすることができます。
+詳しくは[公式のドキュメント](https://guides.cocoapods.org/using/using-cocoapods)を参考にしてください。
 
 ## CocoaPodsのインストール
 - CocoaPodsをインストール
@@ -23,17 +23,17 @@ $ pod init
 ### Podfileを編集
   - 最新のSDKをインストールする場合(VAMPのインストール)
   ```
-  pod 'VAMP-SDK'
+  $ pod 'VAMP-SDK'
   ```
 
   - バージョンを指定してインストールする場合
   ```
-  pod 'VAMP-SDK', "[VERSION]"
+  $ pod 'VAMP-SDK', "[VERSION]"
   ```
   
   v4.0.0の場合
   ```
-  pod 'VAMP-SDK', "4.0.0"
+  $ pod 'VAMP-SDK', "4.0.0"
   ```
 
 ### ライブラリのインストール
