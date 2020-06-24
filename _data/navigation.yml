@@ -1,5 +1,5 @@
 docs:
   - title: Getting Started
     children:
-      - title: "Download"
+      - title: "SDKをCocoaPodsでインストール"
         url: /docs/Install_SDK_With_CocoaPods

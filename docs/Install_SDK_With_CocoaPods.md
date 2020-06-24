@@ -1,5 +1,9 @@
-# SDKをCocoaPodsでインストール
-
+---
+title: SDKをCocoaPodsでインストール
+layout: single
+sidebar:
+  nav: "docs"
+---
 [CocoaPods](https://guides.cocoapods.org/using/getting-started)を使って簡単にSDKをインストールすることができます。
 詳しくは[公式のドキュメント](https://guides.cocoapods.org/using/using-cocoapods)を参考にしてください。
 
