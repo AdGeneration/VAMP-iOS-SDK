@@ -1,1 +1,20 @@
-theme: jekyll-theme-slate
+remote_theme: mmistakes/minimal-mistakes@4.9.0
+
+minimal_mistakes_skin    : "default"
+
+title: "VAMP iOS SDK"
+descripton: "Video Ad Mediation Platform."
+logo: "img/AdGeneration_logo.png"
+
+search: true
+search_full_content: true
+
+defaults:
+# _docs
+- scope:
+    path: ""
+    type: docs
+  values:
+    layout: single
+    sidebar:
+      nav: "docs"

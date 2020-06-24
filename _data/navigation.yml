@@ -1,0 +1,5 @@
+docs:
+  - title: Getting Started
+    children:
+      - title: "Download"
+        url: /docs/Install_SDK_With_CocoaPods
