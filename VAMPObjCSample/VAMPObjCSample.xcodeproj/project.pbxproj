@@ -20,6 +20,7 @@
 		5E6803DA2264802D0032924C /* soundon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E6803D62264802D0032924C /* soundon@2x.png */; };
 		5E6803DB2264802D0032924C /* soundoff@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E6803D72264802D0032924C /* soundoff@3x.png */; };
 		5E6803DC2264802D0032924C /* soundoff@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E6803D82264802D0032924C /* soundoff@2x.png */; };
+		831C74C5251463C700089739 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 831C74C4251463BE00089739 /* libbz2.tbd */; };
 		8327357724C57FB2008256BF /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8327357624C57FB2008256BF /* AVKit.framework */; };
 		83DD25BA24064D3C00CD39A0 /* libresolv.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 83DD25B924064D3400CD39A0 /* libresolv.9.tbd */; };
 		83DD25BC24064D4100CD39A0 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83DD25BB24064D4100CD39A0 /* Accelerate.framework */; };
@@ -58,6 +59,7 @@
 		5E6803D62264802D0032924C /* soundon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "soundon@2x.png"; sourceTree = "<group>"; };
 		5E6803D72264802D0032924C /* soundoff@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "soundoff@3x.png"; sourceTree = "<group>"; };
 		5E6803D82264802D0032924C /* soundoff@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "soundoff@2x.png"; sourceTree = "<group>"; };
+		831C74C4251463BE00089739 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
 		8327357624C57FB2008256BF /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		83DD25B924064D3400CD39A0 /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = usr/lib/libresolv.9.tbd; sourceTree = SDKROOT; };
 		83DD25BB24064D4100CD39A0 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
@@ -71,6 +73,7 @@
 				83DD25BA24064D3C00CD39A0 /* libresolv.9.tbd in Frameworks */,
 				83DD25BC24064D4100CD39A0 /* Accelerate.framework in Frameworks */,
 				8327357724C57FB2008256BF /* AVKit.framework in Frameworks */,
+				831C74C5251463C700089739 /* libbz2.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +141,7 @@
 		83DD25B824064D3400CD39A0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				831C74C4251463BE00089739 /* libbz2.tbd */,
 				8327357624C57FB2008256BF /* AVKit.framework */,
 				83DD25BB24064D4100CD39A0 /* Accelerate.framework */,
 				83DD25B924064D3400CD39A0 /* libresolv.9.tbd */,
