@@ -19,10 +19,7 @@
 		5E680406226487FE0032924C /* soundoff@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E680401226487FE0032924C /* soundoff@3x.png */; };
 		5E680408226488680032924C /* Ad1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E680407226488680032924C /* Ad1ViewController.swift */; };
 		5E68040A226488730032924C /* Ad2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E680409226488730032924C /* Ad2ViewController.swift */; };
-		831C74C9251463FC00089739 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 831C74C8251463F700089739 /* libbz2.tbd */; };
-		8327357524C57F9F008256BF /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8327357424C57F9F008256BF /* AVKit.framework */; };
-		83DD25BF24064D5600CD39A0 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83DD25BE24064D5600CD39A0 /* Accelerate.framework */; };
-		83DD25C124064D6600CD39A0 /* libresolv.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 83DD25C024064D5F00CD39A0 /* libresolv.9.tbd */; };
+		6542D6072615BA1C00806E2A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6542D6062615BA1C00806E2A /* AVFoundation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -53,10 +50,7 @@
 		5E680401226487FE0032924C /* soundoff@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "soundoff@3x.png"; sourceTree = "<group>"; };
 		5E680407226488680032924C /* Ad1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ad1ViewController.swift; sourceTree = "<group>"; };
 		5E680409226488730032924C /* Ad2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ad2ViewController.swift; sourceTree = "<group>"; };
-		831C74C8251463F700089739 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
-		8327357424C57F9F008256BF /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
-		83DD25BE24064D5600CD39A0 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
-		83DD25C024064D5F00CD39A0 /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = usr/lib/libresolv.9.tbd; sourceTree = SDKROOT; };
+		6542D6062615BA1C00806E2A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,10 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83DD25C124064D6600CD39A0 /* libresolv.9.tbd in Frameworks */,
-				83DD25BF24064D5600CD39A0 /* Accelerate.framework in Frameworks */,
-				8327357524C57F9F008256BF /* AVKit.framework in Frameworks */,
-				831C74C9251463FC00089739 /* libbz2.tbd in Frameworks */,
+				6542D6072615BA1C00806E2A /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,7 +70,7 @@
 			children = (
 				5E6803E82264869F0032924C /* VAMPSwiftSample */,
 				5E6803E72264869F0032924C /* Products */,
-				83DD25BD24064D5600CD39A0 /* Frameworks */,
+				6542D6052615BA1B00806E2A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,13 +118,10 @@
 			path = SDK;
 			sourceTree = "<group>";
 		};
-		83DD25BD24064D5600CD39A0 /* Frameworks */ = {
+		6542D6052615BA1B00806E2A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				831C74C8251463F700089739 /* libbz2.tbd */,
-				8327357424C57F9F008256BF /* AVKit.framework */,
-				83DD25C024064D5F00CD39A0 /* libresolv.9.tbd */,
-				83DD25BE24064D5600CD39A0 /* Accelerate.framework */,
+				6542D6062615BA1C00806E2A /* AVFoundation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

@@ -28,51 +28,40 @@ class ViewController: UIViewController {
         tableView.delegate = self
 
         // VAMP SDKバージョン
-        sdkVersionLabel.text = "VAMP SDK \(VAMP.sdkVersion())"
-
-        // VAMPが対応するiOSの最低バージョン
-        print("[VAMP]supportedOSVersion:\(VAMP.supportedOSVersion())")
+        sdkVersionLabel.text = "VAMP SDK \(VAMPSDKVersion)"
 
         // テストモード
-        // 連携アドネットワーク（AdMob、AppLovin、FAN、maio、nend、UnityAds、Mintegral、MoPub）
+        // 連携アドネットワーク（AdMob、AppLovin、FAN、maio、nend、UnityAds）
         // リリースする際は必ずコメントアウトしてください。収益が発生しない広告が配信されます
         VAMP.setTestMode(true)
 
         // デバッグモード
-        // 連携アドネットワーク（AppLovin、UnityAds、FAN、nend、Vungle、Tapjoy、MoPub）
+        // 連携アドネットワーク（AppLovin、UnityAds、FAN、nend、Tapjoy）
         VAMP.setDebugMode(true)
 
-        // VAMPの設定
-        let vampConfiguration = VAMPConfiguration.default()
-        vampConfiguration.isPlayerCancelable = true
-        vampConfiguration.playerAlertTitleText = "動画を終了しますか？"
-        vampConfiguration.playerAlertBodyText = "報酬がもらえません"
-        vampConfiguration.playerAlertCloseButtonText = "動画を終了"
-        vampConfiguration.playerAlertContinueButtonText = "動画を再開"
-
         // ユーザ属性の設定
-//        // 誕生日
+        // 誕生日
 //        var components = DateComponents()
 //        components.year = 1980
 //        components.month = 2
 //        components.day = 20
 //        let calendar = NSCalendar(calendarIdentifier: .gregorian)!
 //        let birthday = calendar.date(from: components)
-//        VAMP.setBirthday(birthday)
+//        VAMPUserFeature.setBirthday(birthday)
 //        // 性別
-//        VAMP.setGender(.male)
+//        VAMPUserFeature.setGender(.male)
 
         // 国コードの取得サンプル
-//        VAMP.getCountryCode { [weak self] (countryCode: String?) in
-//            if let weakSelf = self {
-//                weakSelf.sdkVersionLabel.text = "\(weakSelf.sdkVersionLabel.text!) / \(countryCode!)"
-//
-//                if countryCode == "US" {
-//                    // COPPA対象ユーザである場合はYESを設定する
-//                    VAMP.setChildDirected(true);
-//                }
-//            }
-//        }
+        VAMP.getLocation { [weak self] (location: VAMPLocation) in
+            if let weakSelf = self {
+                weakSelf.sdkVersionLabel.text = "\(weakSelf.sdkVersionLabel.text!) / \(location.countryCode)-\(location.region)"
+
+                if location.countryCode == "US" {
+                    // COPPA対象ユーザである場合はYESを設定する
+                    VAMPPrivacySettings.setChildDirected(VAMPChildDirected.true)
+                }
+            }
+        }
 
         // EU圏内ならばユーザに同意を求めるサンプル
 //        VAMP.isEUAccess { access in
