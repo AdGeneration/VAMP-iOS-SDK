@@ -7,4 +7,4 @@
 [Swift](VAMPSwiftSample)版と[Objective-C](VAMPObjCSample)版のサンプル。
 
 ## 実装マニュアル
-APIリファレンス、実装マニュアル、FAQなどは[wikiタブ](https://github.com/AdGeneration/VAMP-iOS-SDK/wiki)よりご確認ください。
+APIリファレンス、実装マニュアル、FAQなどは[マニュアル](https://docs.sdk.vamp.ad-generation.jp/docs/ios/)よりご確認ください。
