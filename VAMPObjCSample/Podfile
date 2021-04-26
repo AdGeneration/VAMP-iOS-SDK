@@ -11,7 +11,7 @@ target 'VAMPObjCSample' do
   pod 'VAMPAppLovinAdapter', '10.0.1.0'
   pod 'VAMPFANAdapter', '6.3.0.0'
   pod 'VAMPMaioAdapter', '1.5.6.0'
-  pod 'VAMPNendAdapter', '7.0.2.0'
+  pod 'VAMPNendAdapter', '7.0.4.0'
   pod 'VAMPPangleAdapter', '3.4.2.8.0'
   pod 'VAMPTapjoyAdapter', '12.8.0.0'
   pod 'VAMPUnityAdsAdapter', '3.7.0.0'
