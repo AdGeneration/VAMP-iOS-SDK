@@ -13,6 +13,7 @@
 
 #import "Ad1ViewController.h"
 #import "Ad2ViewController.h"
+#import "ARViewController.h"
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -30,6 +31,7 @@
     self.samples = @[
         @"Ad1",
         @"Ad2",
+        @"AR"
     ];
 }
 
@@ -124,6 +126,11 @@
         }
         case 1: {
             UIViewController *viewController = [Ad2ViewController instantiateViewController];
+            [self.navigationController pushViewController:viewController animated:YES];
+            break;
+        }
+        case 2: {
+            UIViewController *viewController = [ARViewController instantiateViewController];
             [self.navigationController pushViewController:viewController animated:YES];
             break;
         }

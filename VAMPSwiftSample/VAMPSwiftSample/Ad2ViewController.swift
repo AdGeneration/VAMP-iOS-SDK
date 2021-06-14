@@ -76,7 +76,6 @@ class Ad2ViewController: UIViewController {
         rewardedAd.delegate = self
 
         videoConfiguration = VAMPVideoConfiguration()
-        videoConfiguration.isPlayerCancelable = true
         videoConfiguration.playerAlertTitleText = "動画を終了しますか？"
         videoConfiguration.playerAlertBodyText = "報酬がもらえません"
         videoConfiguration.playerAlertCloseButtonText = "動画を終了"

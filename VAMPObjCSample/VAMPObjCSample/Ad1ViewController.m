@@ -87,7 +87,6 @@ static NSString *const kPlacementId1 = @"59755";
     VAMPRequest *request = VAMPRequest.request;
 
     VAMPVideoConfiguration *videoConfiguration = VAMPVideoConfiguration.configuration;
-    videoConfiguration.playerCancelable = YES;
     videoConfiguration.playerAlertTitleText = @"動画を終了しますか？";
     videoConfiguration.playerAlertBodyText = @"報酬がもらえません";
     videoConfiguration.playerAlertCloseButtonText = @"動画を終了";

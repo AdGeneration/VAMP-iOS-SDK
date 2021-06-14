@@ -32,6 +32,10 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>For AR</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Take a screenshot for AR demo</string>
 	<key>NSUserTrackingUsageDescription</key>
 	<string>App would like to access IDFA for tracking purpose</string>
 	<key>SKAdNetworkItems</key>

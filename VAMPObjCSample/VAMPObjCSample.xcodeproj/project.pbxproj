@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,6 +21,9 @@
 		5E6803DB2264802D0032924C /* soundoff@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E6803D72264802D0032924C /* soundoff@3x.png */; };
 		5E6803DC2264802D0032924C /* soundoff@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E6803D82264802D0032924C /* soundoff@2x.png */; };
 		6542D6042615B9DF00806E2A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6542D6032615B9DF00806E2A /* AVFoundation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		83AA03DB264E6F8300DA1434 /* ARViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83AA03DA264E6F8300DA1434 /* ARViewController.m */; };
+		83AA03F9264E7B0200DA1434 /* ARKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83AA03F8264E7B0200DA1434 /* ARKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		EB07622A4C08F6D73101772F /* Pods_VAMPObjCSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9793421BBC0FD2FB8C994A10 /* Pods_VAMPObjCSample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +40,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5892859AFA7E925FEB06962B /* Pods-VAMPObjCSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VAMPObjCSample.debug.xcconfig"; path = "Target Support Files/Pods-VAMPObjCSample/Pods-VAMPObjCSample.debug.xcconfig"; sourceTree = "<group>"; };
 		5E68038322646E200032924C /* VAMPObjCSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VAMPObjCSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E68038622646E200032924C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5E68038722646E200032924C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -57,6 +61,11 @@
 		5E6803D72264802D0032924C /* soundoff@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "soundoff@3x.png"; sourceTree = "<group>"; };
 		5E6803D82264802D0032924C /* soundoff@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "soundoff@2x.png"; sourceTree = "<group>"; };
 		6542D6032615B9DF00806E2A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		83AA03D9264E6F8300DA1434 /* ARViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ARViewController.h; sourceTree = "<group>"; };
+		83AA03DA264E6F8300DA1434 /* ARViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ARViewController.m; sourceTree = "<group>"; };
+		83AA03F8264E7B0200DA1434 /* ARKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ARKit.framework; path = System/Library/Frameworks/ARKit.framework; sourceTree = SDKROOT; };
+		9793421BBC0FD2FB8C994A10 /* Pods_VAMPObjCSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VAMPObjCSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AE0279B05712BE06D8F5738 /* Pods-VAMPObjCSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VAMPObjCSample.release.xcconfig"; path = "Target Support Files/Pods-VAMPObjCSample/Pods-VAMPObjCSample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +73,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83AA03F9264E7B0200DA1434 /* ARKit.framework in Frameworks */,
 				6542D6042615B9DF00806E2A /* AVFoundation.framework in Frameworks */,
+				EB07622A4C08F6D73101772F /* Pods_VAMPObjCSample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +88,7 @@
 				5E68038522646E200032924C /* VAMPObjCSample */,
 				5E68038422646E200032924C /* Products */,
 				6542D6022615B9DF00806E2A /* Frameworks */,
+				8CB650EED9E6C6490DC3D70D /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,6 +107,8 @@
 				5E68039D226471800032924C /* Ad1ViewController.m */,
 				5E68039F226471880032924C /* Ad2ViewController.h */,
 				5E6803A0226471880032924C /* Ad2ViewController.m */,
+				83AA03D9264E6F8300DA1434 /* ARViewController.h */,
+				83AA03DA264E6F8300DA1434 /* ARViewController.m */,
 				5E68038622646E200032924C /* AppDelegate.h */,
 				5E68038722646E200032924C /* AppDelegate.m */,
 				5E68038F22646E210032924C /* Assets.xcassets */,
@@ -132,9 +146,20 @@
 		6542D6022615B9DF00806E2A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				83AA03F8264E7B0200DA1434 /* ARKit.framework */,
 				6542D6032615B9DF00806E2A /* AVFoundation.framework */,
+				9793421BBC0FD2FB8C994A10 /* Pods_VAMPObjCSample.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8CB650EED9E6C6490DC3D70D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5892859AFA7E925FEB06962B /* Pods-VAMPObjCSample.debug.xcconfig */,
+				9AE0279B05712BE06D8F5738 /* Pods-VAMPObjCSample.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,10 +169,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5E68039922646E210032924C /* Build configuration list for PBXNativeTarget "VAMPObjCSample" */;
 			buildPhases = (
+				7CB343024AD5E92214BD05B3 /* [CP] Check Pods Manifest.lock */,
 				5E68037F22646E200032924C /* Sources */,
 				5E68038022646E200032924C /* Frameworks */,
 				5E68038122646E200032924C /* Resources */,
 				5E6803D12264793D0032924C /* Embed Frameworks */,
+				E709ECBDFDA4865F9477B9A9 /* [CP] Embed Pods Frameworks */,
+				0A7858336EADC9D395008B51 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -208,12 +236,72 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0A7858336EADC9D395008B51 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VAMPObjCSample/Pods-VAMPObjCSample-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VAMPObjCSample/Pods-VAMPObjCSample-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VAMPObjCSample/Pods-VAMPObjCSample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7CB343024AD5E92214BD05B3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VAMPObjCSample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E709ECBDFDA4865F9477B9A9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VAMPObjCSample/Pods-VAMPObjCSample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VAMPObjCSample/Pods-VAMPObjCSample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VAMPObjCSample/Pods-VAMPObjCSample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5E68037F22646E200032924C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				5E68038B22646E200032924C /* ViewController.m in Sources */,
+				83AA03DB264E6F8300DA1434 /* ARViewController.m in Sources */,
 				5E6803A1226471880032924C /* Ad2ViewController.m in Sources */,
 				5E68039622646E210032924C /* main.m in Sources */,
 				5E68038822646E200032924C /* AppDelegate.m in Sources */,
@@ -359,6 +447,7 @@
 		};
 		5E68039A22646E210032924C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5892859AFA7E925FEB06962B /* Pods-VAMPObjCSample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -381,6 +470,7 @@
 		};
 		5E68039B22646E210032924C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9AE0279B05712BE06D8F5738 /* Pods-VAMPObjCSample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

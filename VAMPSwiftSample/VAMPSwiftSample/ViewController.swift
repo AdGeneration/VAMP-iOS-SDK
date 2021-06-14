@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView:       UITableView!
     @IBOutlet weak var sdkVersionLabel: UILabel!
 
-    let samples = ["Ad1", "Ad2"]
+    let samples = ["Ad1", "Ad2", "AR"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -107,6 +107,9 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
                 navigationController?.pushViewController(viewController, animated: true)
             case 1:
                 let viewController = Ad2ViewController.instantiate()
+                navigationController?.pushViewController(viewController, animated: true)
+            case 2:
+                let viewController = ARViewController.instantiate()
                 navigationController?.pushViewController(viewController, animated: true)
             default:
                 break

@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22B8371F5B4D5CCEAF272A7F /* Pods_VAMPSwiftSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09979F2F4E778926D030EA57 /* Pods_VAMPSwiftSample.framework */; };
 		5E6803EA2264869F0032924C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6803E92264869F0032924C /* AppDelegate.swift */; };
 		5E6803EC2264869F0032924C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6803EB2264869F0032924C /* ViewController.swift */; };
 		5E6803EF2264869F0032924C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E6803ED2264869F0032924C /* Main.storyboard */; };
@@ -20,6 +21,8 @@
 		5E680408226488680032924C /* Ad1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E680407226488680032924C /* Ad1ViewController.swift */; };
 		5E68040A226488730032924C /* Ad2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E680409226488730032924C /* Ad2ViewController.swift */; };
 		6542D6072615BA1C00806E2A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6542D6062615BA1C00806E2A /* AVFoundation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		83AA03F5264E756700DA1434 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AA03F4264E756700DA1434 /* ARViewController.swift */; };
+		83AA03F7264E7AE000DA1434 /* ARKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83AA03F6264E7AE000DA1434 /* ARKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -36,6 +39,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		09979F2F4E778926D030EA57 /* Pods_VAMPSwiftSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VAMPSwiftSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E6803E62264869F0032924C /* VAMPSwiftSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VAMPSwiftSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E6803E92264869F0032924C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E6803EB2264869F0032924C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +55,10 @@
 		5E680407226488680032924C /* Ad1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ad1ViewController.swift; sourceTree = "<group>"; };
 		5E680409226488730032924C /* Ad2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ad2ViewController.swift; sourceTree = "<group>"; };
 		6542D6062615BA1C00806E2A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		83AA03F4264E756700DA1434 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
+		83AA03F6264E7AE000DA1434 /* ARKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ARKit.framework; path = System/Library/Frameworks/ARKit.framework; sourceTree = SDKROOT; };
+		D825CEDE65088F892962AC07 /* Pods-VAMPSwiftSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VAMPSwiftSample.release.xcconfig"; path = "Target Support Files/Pods-VAMPSwiftSample/Pods-VAMPSwiftSample.release.xcconfig"; sourceTree = "<group>"; };
+		FB6EE66278FC7C368B8883CB /* Pods-VAMPSwiftSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VAMPSwiftSample.debug.xcconfig"; path = "Target Support Files/Pods-VAMPSwiftSample/Pods-VAMPSwiftSample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +66,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83AA03F7264E7AE000DA1434 /* ARKit.framework in Frameworks */,
 				6542D6072615BA1C00806E2A /* AVFoundation.framework in Frameworks */,
+				22B8371F5B4D5CCEAF272A7F /* Pods_VAMPSwiftSample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +81,7 @@
 				5E6803E82264869F0032924C /* VAMPSwiftSample */,
 				5E6803E72264869F0032924C /* Products */,
 				6542D6052615BA1B00806E2A /* Frameworks */,
+				6AB6D8545EB78BE8C24B9312 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,6 +98,7 @@
 			children = (
 				5E680407226488680032924C /* Ad1ViewController.swift */,
 				5E680409226488730032924C /* Ad2ViewController.swift */,
+				83AA03F4264E756700DA1434 /* ARViewController.swift */,
 				5E6803E92264869F0032924C /* AppDelegate.swift */,
 				5E6803F0226486A10032924C /* Assets.xcassets */,
 				5E6803F5226486A10032924C /* Info.plist */,
@@ -121,9 +133,20 @@
 		6542D6052615BA1B00806E2A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				83AA03F6264E7AE000DA1434 /* ARKit.framework */,
 				6542D6062615BA1C00806E2A /* AVFoundation.framework */,
+				09979F2F4E778926D030EA57 /* Pods_VAMPSwiftSample.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6AB6D8545EB78BE8C24B9312 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FB6EE66278FC7C368B8883CB /* Pods-VAMPSwiftSample.debug.xcconfig */,
+				D825CEDE65088F892962AC07 /* Pods-VAMPSwiftSample.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,10 +156,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5E6803F8226486A10032924C /* Build configuration list for PBXNativeTarget "VAMPSwiftSample" */;
 			buildPhases = (
+				7FE65F36461FBE3D77624EF9 /* [CP] Check Pods Manifest.lock */,
 				5E6803E22264869F0032924C /* Sources */,
 				5E6803E32264869F0032924C /* Frameworks */,
 				5E6803E42264869F0032924C /* Resources */,
 				5E680495226568310032924C /* Embed Frameworks */,
+				BCEEB9CF8AB57F78AC340B59 /* [CP] Embed Pods Frameworks */,
+				1BA97062FE894AE5D9631F15 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -198,6 +224,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1BA97062FE894AE5D9631F15 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VAMPSwiftSample/Pods-VAMPSwiftSample-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VAMPSwiftSample/Pods-VAMPSwiftSample-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VAMPSwiftSample/Pods-VAMPSwiftSample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7FE65F36461FBE3D77624EF9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VAMPSwiftSample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BCEEB9CF8AB57F78AC340B59 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VAMPSwiftSample/Pods-VAMPSwiftSample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VAMPSwiftSample/Pods-VAMPSwiftSample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VAMPSwiftSample/Pods-VAMPSwiftSample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5E6803E22264869F0032924C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -207,6 +292,7 @@
 				5E6803EC2264869F0032924C /* ViewController.swift in Sources */,
 				5E6803EA2264869F0032924C /* AppDelegate.swift in Sources */,
 				5E680408226488680032924C /* Ad1ViewController.swift in Sources */,
+				83AA03F5264E756700DA1434 /* ARViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +436,7 @@
 		};
 		5E6803F9226486A10032924C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB6EE66278FC7C368B8883CB /* Pods-VAMPSwiftSample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -373,6 +460,7 @@
 		};
 		5E6803FA226486A10032924C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D825CEDE65088F892962AC07 /* Pods-VAMPSwiftSample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

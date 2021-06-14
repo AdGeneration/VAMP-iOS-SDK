@@ -82,7 +82,6 @@ class Ad1ViewController: UIViewController {
 
         // 広告の読み込みを開始
         let videoConfiguration = VAMPVideoConfiguration()
-        videoConfiguration.isPlayerCancelable = true
         videoConfiguration.playerAlertTitleText = "動画を終了しますか？"
         videoConfiguration.playerAlertBodyText = "報酬がもらえません"
         videoConfiguration.playerAlertCloseButtonText = "動画を終了"

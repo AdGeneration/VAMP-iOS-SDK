@@ -80,7 +80,6 @@ static NSString *const kPlacementId2 = @"59755";
 
     // VAMPVidepConfigurationインスタンスを生成し初期化
     self.videoConfiguration = VAMPVideoConfiguration.configuration;
-    self.videoConfiguration.playerCancelable = YES;
     self.videoConfiguration.playerAlertTitleText = @"動画を終了しますか？";
     self.videoConfiguration.playerAlertBodyText = @"報酬がもらえません";
     self.videoConfiguration.playerAlertCloseButtonText = @"動画を終了";
