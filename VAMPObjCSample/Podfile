@@ -7,7 +7,7 @@ target 'VAMPObjCSample' do
 
   # Pods for VAMPObjCSample
   pod 'VAMP-SDK', '4.1.3'
-  pod 'VAMPAdmobAdapter', '8.8.0.0'
+  pod 'VAMPAdmobAdapter', '8.9.0.0'
   pod 'VAMPAppLovinAdapter', '10.3.4.0'
   pod 'VAMPFANAdapter', '6.5.1.0'
   pod 'VAMPMaioAdapter', '1.5.8.0'
