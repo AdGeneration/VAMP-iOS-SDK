@@ -6,14 +6,14 @@ target 'VAMPSwiftSample' do
   use_frameworks!
 
   # Pods for VAMPSwiftSample
-  pod 'VAMP-SDK', '4.3.0'
-  pod 'VAMPAdmobAdapter', '8.11.0.0'
-  pod 'VAMPAppLovinAdapter', '10.3.4.0'
-  pod 'VAMPFANAdapter', '6.5.1.0'
-  pod 'VAMPMaioAdapter', '1.5.8.0'
-  pod 'VAMPNendAdapter', '7.0.6.0'
-  pod 'VAMPPangleAdapter', '3.9.0.4.0'
-  pod 'VAMPTapjoyAdapter', '12.8.1.0'
-  pod 'VAMPUnityAdsAdapter', '3.7.5.0'
-  pod 'VAMPLINEAdsAdapter', '2.4.20210903.0'
+  pod 'VAMP-SDK'
+  pod 'VAMPAdmobAdapter'
+  pod 'VAMPAppLovinAdapter'
+  pod 'VAMPFANAdapter'
+  pod 'VAMPMaioAdapter'
+  pod 'VAMPNendAdapter'
+  pod 'VAMPPangleAdapter'
+  pod 'VAMPTapjoyAdapter'
+  pod 'VAMPUnityAdsAdapter'
+  pod 'VAMPLINEAdsAdapter'
 end
