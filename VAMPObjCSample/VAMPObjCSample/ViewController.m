@@ -6,6 +6,8 @@
 //  Copyright © 2019年 Supership Inc. All rights reserved.
 //
 
+#import <AppTrackingTransparency/AppTrackingTransparency.h>
+
 // VAMP SDKのインポート
 #import <VAMP/VAMP.h>
 
@@ -69,7 +71,7 @@
 
     // 国コードの取得サンプル
     __weak typeof(self) weakSelf = self;
-    [VAMP getLocationWithCompletionHandler:^(VAMPLocation * _Nonnull location) {
+    [VAMP getLocationWithCompletionHandler:^(VAMPLocation *_Nonnull location) {
         weakSelf.sdkVersionLabel.text = [NSString stringWithFormat:@"%@ / %@-%@",
                                                                    weakSelf.sdkVersionLabel.text,
                                                                    location.countryCode,
@@ -102,6 +104,31 @@
 //
 //        [self presentViewController:alert animated:YES completion:nil];
 //    }];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+
+    if (@available(iOS 14, *)) {
+        [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status) {
+
+            NSString *str = @"unknown";
+            if (status == ATTrackingManagerAuthorizationStatusDenied) {
+                str = @"ATTrackingManagerAuthorizationStatusDenied";
+            }
+            else if (status == ATTrackingManagerAuthorizationStatusAuthorized) {
+                str = @"ATTrackingManagerAuthorizationStatusAuthorized";
+            }
+            else if (status == ATTrackingManagerAuthorizationStatusRestricted) {
+                str = @"ATTrackingManagerAuthorizationStatusRestricted";
+            }
+            else if (status == ATTrackingManagerAuthorizationStatusNotDetermined) {
+                str = @"ATTrackingManagerAuthorizationStatusNotDetermined";
+            }
+
+            NSLog(@"ATT status:%@", str);
+        }];
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

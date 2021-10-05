@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AppTrackingTransparency
 
 // VAMP SDKのインポート
 
@@ -82,6 +83,27 @@ class ViewController: UIViewController {
 //
 //            self.present(alert, animated: true, completion: nil)
 //        }
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        if #available(iOS 14, *) {
+            ATTrackingManager.requestTrackingAuthorization { status in
+                var str = "unknown"
+                if status == .denied {
+                    str = "ATTrackingManagerAuthorizationStatusDenied"
+                } else if status == .authorized {
+                    str = "ATTrackingManagerAuthorizationStatusAuthorized"
+                } else if status == .restricted {
+                    str = "ATTrackingManagerAuthorizationStatusRestricted"
+                } else if status == .notDetermined {
+                    str = "ATTrackingManagerAuthorizationStatusNotDetermined"
+                }
+
+                print("ATT status:\(str)")
+            }
+        }
     }
 }
 
