@@ -1,7 +1,10 @@
-# 動画リワードVAMP-iOS-SDK
+# VAMP-iOS-SDK
 
 ## 実装サンプル
-[Swift](VAMPSwiftSample)版と[Objective-C](VAMPObjCSample)版のサンプル。
+
+- [Swift版](VAMPSwiftSample)
+- [Objective-C版](VAMPObjCSample)
 
 ## 実装マニュアル
-APIリファレンス、実装マニュアル、FAQなどは[マニュアル](https://supership-jp.github.io/VAMP-SDK-Document/ios/)よりご確認ください。
+
+実装マニュアル、FAQなどは[マニュアル](https://supership-jp.github.io/VAMP-SDK-Document/ios/)よりご確認ください。
