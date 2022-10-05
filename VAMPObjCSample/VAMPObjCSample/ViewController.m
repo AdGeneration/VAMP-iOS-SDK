@@ -57,18 +57,6 @@
     // 連携アドネットワーク（AppLovin、UnityAds、FAN、nend、Tapjoy）
     [VAMP setDebugMode:YES];
 
-    // ユーザ属性の設定
-    // 誕生日
-    NSDateComponents *components = [NSDateComponents new];
-    components.year = 1980;
-    components.month = 2;
-    components.day = 20;
-    NSDate *birthday = [[[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian]
-                                     dateFromComponents:components];
-    [VAMPUserFeature setBirthday:birthday];
-    // 性別
-    [VAMPUserFeature setGender:kVAMPGenderMale];
-
     // 国コードの取得サンプル
     __weak typeof(self) weakSelf = self;
     [VAMP getLocationWithCompletionHandler:^(VAMPLocation *_Nonnull location) {

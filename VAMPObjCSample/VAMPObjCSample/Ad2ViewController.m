@@ -23,7 +23,6 @@
 @property (nonatomic) BOOL isPlayingPrev;
 // VAMPRewardedAdオブジェクト
 @property (nonatomic) VAMPRewardedAd *rewardedAd;
-@property (nonatomic) VAMPVideoConfiguration *videoConfiguration;
 
 @end
 
@@ -78,20 +77,12 @@ static NSString *const kPlacementId2 = @"59755";
                                                 VAMP.isTestMode ? @"YES" : @"NO",
                                                 VAMP.isDebugMode ? @"YES" : @"NO"]];
 
-    // VAMPVidepConfigurationインスタンスを生成し初期化
-    self.videoConfiguration = VAMPVideoConfiguration.configuration;
-    self.videoConfiguration.playerAlertTitleText = @"動画を終了しますか？";
-    self.videoConfiguration.playerAlertBodyText = @"報酬がもらえません";
-    self.videoConfiguration.playerAlertCloseButtonText = @"動画を終了";
-    self.videoConfiguration.playerAlertContinueButtonText = @"動画を再開";
-
     // VAMPRewardedAdインスタンスを生成し初期化
     self.rewardedAd = [[VAMPRewardedAd alloc] initWithPlacementID:kPlacementId2];
     self.rewardedAd.delegate = self;
 
     // 画面表示時に広告をプリロード
     VAMPRequest *request = VAMPRequest.request;
-    request.videoConfiguration = self.videoConfiguration;
     [self.rewardedAd preloadRequest:request];
 }
 
@@ -111,7 +102,6 @@ static NSString *const kPlacementId2 = @"59755";
 
         // 広告の読み込みを開始
         VAMPRequest *request = VAMPRequest.request;
-        request.videoConfiguration = self.videoConfiguration;
         [self.rewardedAd loadRequest:request];
     }
 }
@@ -149,7 +139,6 @@ static NSString *const kPlacementId2 = @"59755";
     // 必要に応じて広告の再ロード
 //    if (/* 任意のリトライ条件 */) {
 //        VAMPRequest *request = VAMPRequest.request;
-//        request.videoConfiguration = self.videoConfiguration;
 //        [self.rewardedAd loadRequest:request];
 //    }
 
@@ -213,7 +202,6 @@ static NSString *const kPlacementId2 = @"59755";
 
     // 必要に応じて次に表示する広告をプリロード
     VAMPRequest *request = VAMPRequest.request;
-    request.videoConfiguration = self.videoConfiguration;
     [self.rewardedAd preloadRequest:request];
 }
 

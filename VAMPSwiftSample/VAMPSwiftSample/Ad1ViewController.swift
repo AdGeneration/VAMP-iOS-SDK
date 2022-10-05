@@ -81,15 +81,7 @@ class Ad1ViewController: UIViewController {
         addLogText("[load]")
 
         // 広告の読み込みを開始
-        let videoConfiguration = VAMPVideoConfiguration()
-        videoConfiguration.playerAlertTitleText = "動画を終了しますか？"
-        videoConfiguration.playerAlertBodyText = "報酬がもらえません"
-        videoConfiguration.playerAlertCloseButtonText = "動画を終了"
-        videoConfiguration.playerAlertContinueButtonText = "動画を再開"
-
-
         let request = VAMPRequest()
-        request.videoConfiguration = videoConfiguration;
         rewardedAd.load(request)
     }
 

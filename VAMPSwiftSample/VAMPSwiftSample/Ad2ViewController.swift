@@ -75,15 +75,8 @@ class Ad2ViewController: UIViewController {
         rewardedAd = VAMPRewardedAd(placementID: placementId)
         rewardedAd.delegate = self
 
-        videoConfiguration = VAMPVideoConfiguration()
-        videoConfiguration.playerAlertTitleText = "動画を終了しますか？"
-        videoConfiguration.playerAlertBodyText = "報酬がもらえません"
-        videoConfiguration.playerAlertCloseButtonText = "動画を終了"
-        videoConfiguration.playerAlertContinueButtonText = "動画を再開"
-
-        let request = VAMPRequest()
-        request.videoConfiguration = videoConfiguration;
         // 画面表示時に広告をプリロード
+        let request = VAMPRequest()
         rewardedAd.preload(request)
     }
 

@@ -40,18 +40,6 @@ class ViewController: UIViewController {
         // 連携アドネットワーク（AppLovin、UnityAds、FAN、nend、Tapjoy）
         VAMP.setDebugMode(true)
 
-        // ユーザ属性の設定
-        // 誕生日
-//        var components = DateComponents()
-//        components.year = 1980
-//        components.month = 2
-//        components.day = 20
-//        let calendar = NSCalendar(calendarIdentifier: .gregorian)!
-//        let birthday = calendar.date(from: components)
-//        VAMPUserFeature.setBirthday(birthday)
-//        // 性別
-//        VAMPUserFeature.setGender(.male)
-
         // 国コードの取得サンプル
         VAMP.getLocation { [weak self] (location: VAMPLocation) in
             if let weakSelf = self {

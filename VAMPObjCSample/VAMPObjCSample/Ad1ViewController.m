@@ -85,14 +85,6 @@ static NSString *const kPlacementId1 = @"59755";
 
     // 広告の読み込みを開始
     VAMPRequest *request = VAMPRequest.request;
-
-    VAMPVideoConfiguration *videoConfiguration = VAMPVideoConfiguration.configuration;
-    videoConfiguration.playerAlertTitleText = @"動画を終了しますか？";
-    videoConfiguration.playerAlertBodyText = @"報酬がもらえません";
-    videoConfiguration.playerAlertCloseButtonText = @"動画を終了";
-    videoConfiguration.playerAlertContinueButtonText = @"動画を再開";
-
-    request.videoConfiguration = videoConfiguration;
     [self.rewardedAd loadRequest:request];
 }
 
