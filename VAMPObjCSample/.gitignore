@@ -24,3 +24,5 @@ DerivedData/
 
 VAMPObjCSample/SDK/*.framework
 VAMPObjCSample/SDK/*.embeddedframework
+VAMPObjCSample/SDK/*.xcframework
+Podfile.lock
