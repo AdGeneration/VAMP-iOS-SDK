@@ -9,10 +9,11 @@ target 'VAMPObjCSample' do
   pod 'VAMP-SDK'
   pod 'VAMPAdmobAdapter'
   pod 'VAMPFANAdapter'
+  pod 'VAMPIronSourceAdapter'
+  pod 'VAMPLINEAdsAdapter'
   pod 'VAMPMaioAdapter'
   pod 'VAMPNendAdapter'
   pod 'VAMPPangleAdapter'
   pod 'VAMPTapjoyAdapter'
   pod 'VAMPUnityAdsAdapter'
-  pod 'VAMPLINEAdsAdapter'
 end
