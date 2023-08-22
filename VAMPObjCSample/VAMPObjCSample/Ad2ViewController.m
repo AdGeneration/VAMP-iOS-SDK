@@ -21,6 +21,8 @@
 @property (nonatomic) UIBarButtonItem *soundOnButton;
 @property (nonatomic) AVAudioPlayer *soundPlayer;
 @property (nonatomic) BOOL isPlayingPrev;
+@property (nonatomic, copy) NSString *placementId;
+
 // VAMPRewardedAdオブジェクト
 @property (nonatomic) VAMPRewardedAd *rewardedAd;
 
@@ -28,17 +30,15 @@
 
 @implementation Ad2ViewController
 
-// 広告枠IDを設定してください
-//   59755 : iOSテスト用ID (このIDのままリリースしないでください)
-static NSString *const kPlacementId2 = @"59755";
-
-+ (instancetype)instantiateViewController {
++ (instancetype) instantiateViewControllerWithPlacementId:(NSString *)placementId {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     Ad2ViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"Ad2"];
+
+    viewController.placementId = placementId;
     return viewController;
 }
 
-- (void)loadView {
+- (void) loadView {
     [super loadView];
 
     UIImage *soundOnImage = [[UIImage imageNamed:@"soundon"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
@@ -56,12 +56,12 @@ static NSString *const kPlacementId2 = @"59755";
     self.navigationItem.rightBarButtonItem = self.soundOnButton;
 }
 
-- (void)viewDidLoad {
+- (void) viewDidLoad {
     [super viewDidLoad];
 
     self.title = @"Ad2";
 
-    self.placementLabel.text = [NSString stringWithFormat:@"Placement ID: %@", kPlacementId2];
+    self.placementLabel.text = [NSString stringWithFormat:@"Placement ID: %@", self.placementId];
 
     NSURL *soundUrl = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"invisible" ofType:@"mp3"]];
     self.soundPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
@@ -74,11 +74,11 @@ static NSString *const kPlacementId2 = @"59755";
     NSLog(@"[VAMP]isDebugMode:%@", VAMP.isDebugMode ? @"YES" : @"NO");
 
     [self addLogText:[NSString stringWithFormat:@"TestMode:%@ DebugMode:%@",
-                                                VAMP.isTestMode ? @"YES" : @"NO",
-                                                VAMP.isDebugMode ? @"YES" : @"NO"]];
+                      VAMP.isTestMode ? @"YES" : @"NO",
+                      VAMP.isDebugMode ? @"YES" : @"NO"]];
 
     // VAMPRewardedAdインスタンスを生成し初期化
-    self.rewardedAd = [[VAMPRewardedAd alloc] initWithPlacementID:kPlacementId2];
+    self.rewardedAd = [[VAMPRewardedAd alloc] initWithPlacementID:self.placementId];
     self.rewardedAd.delegate = self;
 
     // 画面表示時に広告をプリロード
@@ -88,7 +88,7 @@ static NSString *const kPlacementId2 = @"59755";
 
 #pragma mark - IBAction
 
-- (IBAction)loadAndShowButtonPressed:(id)sender {
+- (IBAction) loadAndShowButtonPressed:(id)sender {
     // 広告取得済みか判定
     if (self.rewardedAd.isReady) {
         [self addLogText:@"[show]"];
@@ -106,12 +106,12 @@ static NSString *const kPlacementId2 = @"59755";
     }
 }
 
-- (void)soundOff {
+- (void) soundOff {
     self.navigationItem.rightBarButtonItem = self.soundOnButton;
     [self.soundPlayer pause];
 }
 
-- (void)soundOn {
+- (void) soundOn {
     self.navigationItem.rightBarButtonItem = self.soundOffButton;
     [self.soundPlayer play];
 }
@@ -121,7 +121,7 @@ static NSString *const kPlacementId2 = @"59755";
 // 広告取得完了
 //
 // 広告表示が可能になると通知されます
-- (void)rewardedAdDidReceive:(VAMPRewardedAd *)rewardedAd {
+- (void) rewardedAdDidReceive:(VAMPRewardedAd *)rewardedAd {
     [self addLogText:[NSString stringWithFormat:@"rewardedAdDidReceive(%@)", rewardedAd.responseInfo.adNetworkName]];
     [self addLogText:@"[show]"];
     [self pauseSound];
@@ -132,9 +132,9 @@ static NSString *const kPlacementId2 = @"59755";
 // 広告取得失敗
 //
 // 広告が取得できなかったときに通知されます。例）在庫が無い、タイムアウトなど
-- (void)rewardedAd:(VAMPRewardedAd *)rewardedAd didFailToLoadWithError:(VAMPError *)error {
+- (void) rewardedAd:(VAMPRewardedAd *)rewardedAd didFailToLoadWithError:(VAMPError *)error {
     [self addLogText:[NSString stringWithFormat:@"rewardedAd:didFailToLoadWithError(%@)", error.localizedDescription]
-               color:UIColor.redColor];
+               color:UIColor.systemRedColor];
 
     // 必要に応じて広告の再ロード
 //    if (/* 任意のリトライ条件 */) {
@@ -169,10 +169,10 @@ static NSString *const kPlacementId2 = @"59755";
 //
 // showを実行したが、何らかの理由で広告表示が失敗したときに通知されます。
 // 例）ユーザーが広告再生を途中でキャンセルなど
-- (void)rewardedAd:(VAMPRewardedAd *)rewardedAd didFailToShowWithError:(VAMPError *)error {
+- (void) rewardedAd:(VAMPRewardedAd *)rewardedAd didFailToShowWithError:(VAMPError *)error {
     [self addLogText:[NSString stringWithFormat:@"rewardedAd:didFailToShowWithError(%@)",
-                                                error.localizedDescription]
-               color:UIColor.redColor];
+                      error.localizedDescription]
+               color:UIColor.systemRedColor];
 
     if (error.code == VAMPErrorCodeUserCancel) {
         // ユーザが広告再生を途中でキャンセルしました。
@@ -187,17 +187,17 @@ static NSString *const kPlacementId2 = @"59755";
 //
 // インセンティブ付与が可能になったタイミングで通知されます。
 // アドネットワークによって通知タイミングは異なります（動画再生完了時、またはエンドカードを閉じたタイミング）
-- (void)rewardedAdDidComplete:(VAMPRewardedAd *)rewardedAd {
+- (void) rewardedAdDidComplete:(VAMPRewardedAd *)rewardedAd {
     [self addLogText:@"rewardedAdDidComplete()"
-               color:UIColor.blueColor];
+               color:UIColor.systemGreenColor];
 }
 
 // 広告表示終了
 //
 // エンドカードが閉じられたとき、または途中で広告再生がキャンセルされたときに通知されます
-- (void)rewardedAd:(VAMPRewardedAd *)rewardedAd didCloseWithClickedFlag:(BOOL)clickedFlag {
+- (void) rewardedAd:(VAMPRewardedAd *)rewardedAd didCloseWithClickedFlag:(BOOL)clickedFlag {
     [self addLogText:[NSString stringWithFormat:@"rewardedAd:didCloseWithClickedFlag(Click:%@)", clickedFlag ? @"YES" : @"NO"]
-               color:UIColor.blackColor];
+               color:UIColor.systemBlueColor];
     [self resumeSound];
 
     // 必要に応じて次に表示する広告をプリロード
@@ -209,15 +209,15 @@ static NSString *const kPlacementId2 = @"59755";
 //
 // 広告取得完了から55分経つと取得した広告の表示はできてもRTBの収益は発生しません。
 // この通知を受け取ったら、もう一度loadからやり直してください
-- (void)rewardedAdDidExpire:(VAMPRewardedAd *)rewardedAd {
+- (void) rewardedAdDidExpire:(VAMPRewardedAd *)rewardedAd {
     [self addLogText:@"rewardedAdDidExpired()"
-               color:UIColor.redColor];
+               color:UIColor.systemRedColor];
 }
 
 // ロード処理のプログレス通知
 //
 // アドネットワークの広告取得が開始されたときに通知されます
-- (void)rewardedAd:(VAMPRewardedAd *)rewardedAd didStartLoadingAd:(NSString *)adNetworkName {
+- (void) rewardedAd:(VAMPRewardedAd *)rewardedAd didStartLoadingAd:(NSString *)adNetworkName {
     [self addLogText:[NSString stringWithFormat:@"rewardedAd:didStartLoadingAd(%@)", adNetworkName]];
 }
 
@@ -225,25 +225,26 @@ static NSString *const kPlacementId2 = @"59755";
 //
 // アドネットワークの広告取得結果が通知されます。成功時はerror==nilとなりロード処理は終了します。
 // error!=nilのときは次位のアドネットワークがある場合はロード処理が継続されます
-- (void)rewardedAd:(VAMPRewardedAd *)rewardedAd didLoadAd:(NSString *)adNetworkName withError:(VAMPError *)error {
+- (void) rewardedAd:(VAMPRewardedAd *)rewardedAd didLoadAd:(NSString *)adNetworkName withError:(VAMPError *)error {
     [self addLogText:[NSString stringWithFormat:@"rewardedAd:didLoadAd:withError(%@, %@)", adNetworkName, error.description]
-               color:error != nil ? UIColor.redColor : UIColor.blackColor];
+               color:error != nil ? UIColor.systemRedColor : UIColor.blackColor];
 }
 
 #pragma mark - private method
 
-- (void)addLogText:(NSString *)message color:(nonnull UIColor *)color {
+- (void) addLogText:(NSString *)message color:(nonnull UIColor *)color {
     NSDate *now = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+
     dateFormatter.locale = [NSLocale systemLocale];
     dateFormatter.dateFormat = @"MM-dd HH:mm:ss ";
 
     NSAttributedString *attributedNow = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@ ",
-                                                                                                              [dateFormatter stringFromDate:now]]
+                                                                                    [dateFormatter stringFromDate:now]]
                                                                         attributes:@{ NSForegroundColorAttributeName: UIColor.grayColor }];
 
     NSAttributedString *attributedMessage = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@\n",
-                                                                                                                  message]
+                                                                                        message]
                                                                             attributes:@{ NSForegroundColorAttributeName: color }];
 
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -258,11 +259,11 @@ static NSString *const kPlacementId2 = @"59755";
     NSLog(@"[VAMP]%@", message);
 }
 
-- (void)addLogText:(NSString *)message {
+- (void) addLogText:(NSString *)message {
     [self addLogText:message color:UIColor.grayColor];
 }
 
-- (void)pauseSound {
+- (void) pauseSound {
     self.isPlayingPrev = self.soundPlayer.isPlaying;
 
     if (self.soundPlayer.isPlaying) {
@@ -270,7 +271,7 @@ static NSString *const kPlacementId2 = @"59755";
     }
 }
 
-- (void)resumeSound {
+- (void) resumeSound {
     if (self.isPlayingPrev) {
         [self.soundPlayer play];
     }

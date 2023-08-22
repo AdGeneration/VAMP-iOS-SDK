@@ -21,9 +21,14 @@
 		5E6803DB2264802D0032924C /* soundoff@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E6803D72264802D0032924C /* soundoff@3x.png */; };
 		5E6803DC2264802D0032924C /* soundoff@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E6803D82264802D0032924C /* soundoff@2x.png */; };
 		6542D6042615B9DF00806E2A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6542D6032615B9DF00806E2A /* AVFoundation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		83AA03DB264E6F8300DA1434 /* ARViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83AA03DA264E6F8300DA1434 /* ARViewController.m */; };
 		83AA03F9264E7B0200DA1434 /* ARKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83AA03F8264E7B0200DA1434 /* ARKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		EB07622A4C08F6D73101772F /* Pods_VAMPObjCSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9793421BBC0FD2FB8C994A10 /* Pods_VAMPObjCSample.framework */; };
+		F40AAC402987F2ED002E6CD8 /* SwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F40AAC3E2987F2ED002E6CD8 /* SwitchCell.m */; };
+		F40AAC412987F2ED002E6CD8 /* SwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F40AAC3F2987F2ED002E6CD8 /* SwitchCell.xib */; };
+		F40AAC452987F530002E6CD8 /* TextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F40AAC432987F530002E6CD8 /* TextFieldCell.m */; };
+		F40AAC462987F530002E6CD8 /* TextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F40AAC442987F530002E6CD8 /* TextFieldCell.xib */; };
+		F4291EEE2984FE73008B2A57 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4291EED2984FE73008B2A57 /* InfoViewController.m */; };
+		F4C4FB83298F7305007502CB /* ARViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C4FB82298F7305007502CB /* ARViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -61,11 +66,19 @@
 		5E6803D72264802D0032924C /* soundoff@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "soundoff@3x.png"; sourceTree = "<group>"; };
 		5E6803D82264802D0032924C /* soundoff@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "soundoff@2x.png"; sourceTree = "<group>"; };
 		6542D6032615B9DF00806E2A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		83AA03D9264E6F8300DA1434 /* ARViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ARViewController.h; sourceTree = "<group>"; };
-		83AA03DA264E6F8300DA1434 /* ARViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ARViewController.m; sourceTree = "<group>"; };
 		83AA03F8264E7B0200DA1434 /* ARKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ARKit.framework; path = System/Library/Frameworks/ARKit.framework; sourceTree = SDKROOT; };
 		9793421BBC0FD2FB8C994A10 /* Pods_VAMPObjCSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VAMPObjCSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AE0279B05712BE06D8F5738 /* Pods-VAMPObjCSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VAMPObjCSample.release.xcconfig"; path = "Target Support Files/Pods-VAMPObjCSample/Pods-VAMPObjCSample.release.xcconfig"; sourceTree = "<group>"; };
+		F40AAC3D2987F2ED002E6CD8 /* SwitchCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwitchCell.h; sourceTree = "<group>"; };
+		F40AAC3E2987F2ED002E6CD8 /* SwitchCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SwitchCell.m; sourceTree = "<group>"; };
+		F40AAC3F2987F2ED002E6CD8 /* SwitchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwitchCell.xib; sourceTree = "<group>"; };
+		F40AAC422987F530002E6CD8 /* TextFieldCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextFieldCell.h; sourceTree = "<group>"; };
+		F40AAC432987F530002E6CD8 /* TextFieldCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextFieldCell.m; sourceTree = "<group>"; };
+		F40AAC442987F530002E6CD8 /* TextFieldCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldCell.xib; sourceTree = "<group>"; };
+		F4291EEC2984FE73008B2A57 /* InfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
+		F4291EED2984FE73008B2A57 /* InfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
+		F4C4FB81298F7305007502CB /* ARViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARViewController.h; sourceTree = "<group>"; };
+		F4C4FB82298F7305007502CB /* ARViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,8 +120,10 @@
 				5E68039D226471800032924C /* Ad1ViewController.m */,
 				5E68039F226471880032924C /* Ad2ViewController.h */,
 				5E6803A0226471880032924C /* Ad2ViewController.m */,
-				83AA03D9264E6F8300DA1434 /* ARViewController.h */,
-				83AA03DA264E6F8300DA1434 /* ARViewController.m */,
+				F4291EEC2984FE73008B2A57 /* InfoViewController.h */,
+				F4291EED2984FE73008B2A57 /* InfoViewController.m */,
+				F4C4FB81298F7305007502CB /* ARViewController.h */,
+				F4C4FB82298F7305007502CB /* ARViewController.m */,
 				5E68038622646E200032924C /* AppDelegate.h */,
 				5E68038722646E200032924C /* AppDelegate.m */,
 				5E68038F22646E210032924C /* Assets.xcassets */,
@@ -120,6 +135,12 @@
 				5E6803A2226474AB0032924C /* SDK */,
 				5E68038922646E200032924C /* ViewController.h */,
 				5E68038A22646E200032924C /* ViewController.m */,
+				F40AAC3D2987F2ED002E6CD8 /* SwitchCell.h */,
+				F40AAC3E2987F2ED002E6CD8 /* SwitchCell.m */,
+				F40AAC3F2987F2ED002E6CD8 /* SwitchCell.xib */,
+				F40AAC422987F530002E6CD8 /* TextFieldCell.h */,
+				F40AAC432987F530002E6CD8 /* TextFieldCell.m */,
+				F40AAC442987F530002E6CD8 /* TextFieldCell.xib */,
 			);
 			path = VAMPObjCSample;
 			sourceTree = "<group>";
@@ -228,7 +249,9 @@
 				5E6803DB2264802D0032924C /* soundoff@3x.png in Resources */,
 				5E6803D422647FB60032924C /* invisible.mp3 in Resources */,
 				5E68039022646E210032924C /* Assets.xcassets in Resources */,
+				F40AAC412987F2ED002E6CD8 /* SwitchCell.xib in Resources */,
 				5E68038E22646E200032924C /* Main.storyboard in Resources */,
+				F40AAC462987F530002E6CD8 /* TextFieldCell.xib in Resources */,
 				5E6803DC2264802D0032924C /* soundoff@2x.png in Resources */,
 				5E6803DA2264802D0032924C /* soundon@2x.png in Resources */,
 			);
@@ -301,8 +324,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E68038B22646E200032924C /* ViewController.m in Sources */,
-				83AA03DB264E6F8300DA1434 /* ARViewController.m in Sources */,
 				5E6803A1226471880032924C /* Ad2ViewController.m in Sources */,
+				F4291EEE2984FE73008B2A57 /* InfoViewController.m in Sources */,
+				F40AAC452987F530002E6CD8 /* TextFieldCell.m in Sources */,
+				F4C4FB83298F7305007502CB /* ARViewController.m in Sources */,
+				F40AAC402987F2ED002E6CD8 /* SwitchCell.m in Sources */,
 				5E68039622646E210032924C /* main.m in Sources */,
 				5E68038822646E200032924C /* AppDelegate.m in Sources */,
 				5E68039E226471800032924C /* Ad1ViewController.m in Sources */,

@@ -21,8 +21,13 @@
 		5E680408226488680032924C /* Ad1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E680407226488680032924C /* Ad1ViewController.swift */; };
 		5E68040A226488730032924C /* Ad2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E680409226488730032924C /* Ad2ViewController.swift */; };
 		6542D6072615BA1C00806E2A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6542D6062615BA1C00806E2A /* AVFoundation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		83AA03F5264E756700DA1434 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AA03F4264E756700DA1434 /* ARViewController.swift */; };
 		83AA03F7264E7AE000DA1434 /* ARKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83AA03F6264E7AE000DA1434 /* ARKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		F40AAC4D298802AE002E6CD8 /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40AAC4B298802AE002E6CD8 /* SwitchCell.swift */; };
+		F40AAC4E298802AE002E6CD8 /* SwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F40AAC4C298802AE002E6CD8 /* SwitchCell.xib */; };
+		F40AAC5129880702002E6CD8 /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40AAC4F29880702002E6CD8 /* TextFieldCell.swift */; };
+		F40AAC5229880702002E6CD8 /* TextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F40AAC5029880702002E6CD8 /* TextFieldCell.xib */; };
+		F458944A29852950001E6EC4 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F458944929852950001E6EC4 /* InfoViewController.swift */; };
+		F4C4FB85298F74DB007502CB /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C4FB84298F74DB007502CB /* ARViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -55,9 +60,14 @@
 		5E680407226488680032924C /* Ad1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ad1ViewController.swift; sourceTree = "<group>"; };
 		5E680409226488730032924C /* Ad2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ad2ViewController.swift; sourceTree = "<group>"; };
 		6542D6062615BA1C00806E2A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		83AA03F4264E756700DA1434 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		83AA03F6264E7AE000DA1434 /* ARKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ARKit.framework; path = System/Library/Frameworks/ARKit.framework; sourceTree = SDKROOT; };
 		D825CEDE65088F892962AC07 /* Pods-VAMPSwiftSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VAMPSwiftSample.release.xcconfig"; path = "Target Support Files/Pods-VAMPSwiftSample/Pods-VAMPSwiftSample.release.xcconfig"; sourceTree = "<group>"; };
+		F40AAC4B298802AE002E6CD8 /* SwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchCell.swift; sourceTree = "<group>"; };
+		F40AAC4C298802AE002E6CD8 /* SwitchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwitchCell.xib; sourceTree = "<group>"; };
+		F40AAC4F29880702002E6CD8 /* TextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCell.swift; sourceTree = "<group>"; };
+		F40AAC5029880702002E6CD8 /* TextFieldCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldCell.xib; sourceTree = "<group>"; };
+		F458944929852950001E6EC4 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		F4C4FB84298F74DB007502CB /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		FB6EE66278FC7C368B8883CB /* Pods-VAMPSwiftSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VAMPSwiftSample.debug.xcconfig"; path = "Target Support Files/Pods-VAMPSwiftSample/Pods-VAMPSwiftSample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,7 +108,7 @@
 			children = (
 				5E680407226488680032924C /* Ad1ViewController.swift */,
 				5E680409226488730032924C /* Ad2ViewController.swift */,
-				83AA03F4264E756700DA1434 /* ARViewController.swift */,
+				F4C4FB84298F74DB007502CB /* ARViewController.swift */,
 				5E6803E92264869F0032924C /* AppDelegate.swift */,
 				5E6803F0226486A10032924C /* Assets.xcassets */,
 				5E6803F5226486A10032924C /* Info.plist */,
@@ -107,6 +117,11 @@
 				5E6803FB226487CB0032924C /* Resources */,
 				5E6803FC226487D30032924C /* SDK */,
 				5E6803EB2264869F0032924C /* ViewController.swift */,
+				F458944929852950001E6EC4 /* InfoViewController.swift */,
+				F40AAC4B298802AE002E6CD8 /* SwitchCell.swift */,
+				F40AAC4C298802AE002E6CD8 /* SwitchCell.xib */,
+				F40AAC4F29880702002E6CD8 /* TextFieldCell.swift */,
+				F40AAC5029880702002E6CD8 /* TextFieldCell.xib */,
 			);
 			path = VAMPSwiftSample;
 			sourceTree = "<group>";
@@ -216,7 +231,9 @@
 				5E680405226487FE0032924C /* soundoff@2x.png in Resources */,
 				5E680403226487FE0032924C /* soundon@3x.png in Resources */,
 				5E6803F4226486A10032924C /* LaunchScreen.storyboard in Resources */,
+				F40AAC4E298802AE002E6CD8 /* SwitchCell.xib in Resources */,
 				5E680404226487FE0032924C /* soundon@2x.png in Resources */,
+				F40AAC5229880702002E6CD8 /* TextFieldCell.xib in Resources */,
 				5E6803F1226486A10032924C /* Assets.xcassets in Resources */,
 				5E6803EF2264869F0032924C /* Main.storyboard in Resources */,
 			);
@@ -291,8 +308,11 @@
 				5E68040A226488730032924C /* Ad2ViewController.swift in Sources */,
 				5E6803EC2264869F0032924C /* ViewController.swift in Sources */,
 				5E6803EA2264869F0032924C /* AppDelegate.swift in Sources */,
+				F4C4FB85298F74DB007502CB /* ARViewController.swift in Sources */,
 				5E680408226488680032924C /* Ad1ViewController.swift in Sources */,
-				83AA03F5264E756700DA1434 /* ARViewController.swift in Sources */,
+				F458944A29852950001E6EC4 /* InfoViewController.swift in Sources */,
+				F40AAC5129880702002E6CD8 /* TextFieldCell.swift in Sources */,
+				F40AAC4D298802AE002E6CD8 /* SwitchCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

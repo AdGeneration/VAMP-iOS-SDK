@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Ad2ViewController : UIViewController
 
-+ (instancetype)instantiateViewController;
++ (instancetype) instantiateViewControllerWithPlacementId:(NSString *)placementId;
 
 @end
 
