@@ -159,7 +159,7 @@ class InfoViewController: UIViewController {
             return "-"
         }
 
-        let obj = cls?.init() as? VAMPAdNetworkInfo
+        let obj = cls?.init() as? VAMPAdapter
         return obj?.adNetworkVersion() ?? "-"
     }
 
@@ -169,7 +169,7 @@ class InfoViewController: UIViewController {
             return "-"
         }
 
-        let obj = cls?.init() as? VAMPAdNetworkInfo
+        let obj = cls?.init() as? VAMPAdapter
         let version = obj?.adapterVersion() ?? "-"
 
         // アダプタバージョンは以下の形式のため、
