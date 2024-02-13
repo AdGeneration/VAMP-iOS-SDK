@@ -13,7 +13,7 @@
 
 #import "Ad2ViewController.h"
 
-@interface Ad2ViewController () <VAMPRewardedAdDelegate>
+@interface Ad2ViewController () <VAMPRewardedAdLoadAdvancedDelegate, VAMPRewardedAdShowDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *placementLabel;
 @property (weak, nonatomic) IBOutlet UITextView *logTextView;
@@ -22,9 +22,6 @@
 @property (nonatomic) AVAudioPlayer *soundPlayer;
 @property (nonatomic) BOOL isPlayingPrev;
 @property (nonatomic, copy) NSString *placementId;
-
-// VAMPRewardedAdオブジェクト
-@property (nonatomic) VAMPRewardedAd *rewardedAd;
 
 @end
 
@@ -77,32 +74,30 @@
                       VAMP.isTestMode ? @"YES" : @"NO",
                       VAMP.isDebugMode ? @"YES" : @"NO"]];
 
-    // VAMPRewardedAdインスタンスを生成し初期化
-    self.rewardedAd = [[VAMPRewardedAd alloc] initWithPlacementID:self.placementId];
-    self.rewardedAd.delegate = self;
-
     // 画面表示時に広告をプリロード
     VAMPRequest *request = VAMPRequest.request;
-    [self.rewardedAd preloadRequest:request];
+    [VAMPRewardedAd loadWithPlacementID:self.placementId request:request delegate:nil];
 }
 
 #pragma mark - IBAction
 
 - (IBAction) loadAndShowButtonPressed:(id)sender {
     // 広告取得済みか判定
-    if (self.rewardedAd.isReady) {
+    VAMPRewardedAd *rewardedAd = [VAMPRewardedAd rewardedAdOfPlacementID:self.placementId];
+
+    if (rewardedAd) {
         [self addLogText:@"[show]"];
         [self pauseSound];
 
         // 広告の表示
-        [self.rewardedAd showFromViewController:self];
+        [rewardedAd showFromViewController:self delegate:self];
     }
     else {
         [self addLogText:@"[load]"];
 
         // 広告の読み込みを開始
         VAMPRequest *request = VAMPRequest.request;
-        [self.rewardedAd loadRequest:request];
+        [VAMPRewardedAd loadWithPlacementID:self.placementId request:request delegate:self];
     }
 }
 
@@ -116,30 +111,41 @@
     [self.soundPlayer play];
 }
 
-#pragma mark - VAMPRewardedAdDelegate
+#pragma mark - VAMPRewardedAdLoadAdvancedDelegate
 
-// 広告取得完了
-//
-// 広告表示が可能になると通知されます
-- (void) rewardedAdDidReceive:(VAMPRewardedAd *)rewardedAd {
-    [self addLogText:[NSString stringWithFormat:@"rewardedAdDidReceive(%@)", rewardedAd.responseInfo.adNetworkName]];
+/**
+ * 広告表示が可能になると通知されます。
+ *
+ * @param placementID 広告枠ID
+ */
+- (void) rewardedAdDidReceiveWithPlacementID:(NSString *)placementID {
+    [self addLogText:[NSString stringWithFormat:@"didReceive(%@)", placementID]];
     [self addLogText:@"[show]"];
     [self pauseSound];
 
-    [self.rewardedAd showFromViewController:self];
+    // 広告の表示
+    VAMPRewardedAd *rewardedAd = [VAMPRewardedAd rewardedAdOfPlacementID:placementID];
+    [rewardedAd showFromViewController:self delegate:self];
 }
 
-// 広告取得失敗
-//
-// 広告が取得できなかったときに通知されます。例）在庫が無い、タイムアウトなど
-- (void) rewardedAd:(VAMPRewardedAd *)rewardedAd didFailToLoadWithError:(VAMPError *)error {
-    [self addLogText:[NSString stringWithFormat:@"rewardedAd:didFailToLoadWithError(%@)", error.localizedDescription]
+/**
+ * 広告の取得に失敗すると通知されます。
+ *
+ * 例) 広告取得時のタイムアウトや、全てのアドネットワークの在庫がない場合など。
+ *
+ * EU圏からのアクセスの場合( `VAMPErrorCodeNoAdnetwork` )が発生します。2018-05-23現在 ※本仕様は変更する可能性があります。
+ *
+ * @param placementID 広告枠ID
+ * @param error `VAMPError` オブジェクト
+ */
+- (void) rewardedAdDidFailToLoadWithPlacementID:(NSString *)placementID error:(VAMPError *)error {
+    [self addLogText:[NSString stringWithFormat:@"didFailToLoad(%@, %@)", placementID, error.localizedDescription]
                color:UIColor.systemRedColor];
 
     // 必要に応じて広告の再ロード
 //    if (/* 任意のリトライ条件 */) {
 //        VAMPRequest *request = VAMPRequest.request;
-//        [self.rewardedAd loadRequest:request];
+//        [VAMPRewardedAd loadWithPlacementID:placementID request:request delegate:self];
 //    }
 
     VAMPErrorCode code = error.code;
@@ -147,87 +153,118 @@
     if (code == VAMPErrorCodeNoAdStock) {
         // 在庫が無いので、再度loadをしてもらう必要があります。
         // 連続で発生する場合、時間を置いてからloadをする必要があります。
-        NSLog(@"[VAMP]rewardedAd:didFailToLoadWithError(VAMPErrorCodeNoAdStock, %@)", error.localizedDescription);
     }
     else if (code == VAMPErrorCodeNoAdnetwork) {
         // アドジェネ管理画面でアドネットワークの配信がONになっていない、
         // またはEU圏からのアクセスの場合(GDPR)に発生します。
-        NSLog(@"[VAMP]rewardedAd:didFailToLoadWithError(VAMPErrorCodeNoAdnetwork, %@)", error.localizedDescription);
     }
     else if (code == VAMPErrorCodeNeedConnection) {
         // ネットワークに接続できない状況です。
         // 電波状況をご確認ください。
-        NSLog(@"[VAMP]rewardedAd:didFailToLoadWithError(VAMPErrorCodeNeedConnection, %@)", error.localizedDescription);
     }
     else if (code == VAMPErrorCodeMediationTimeout) {
         // アドネットワークSDKから返答が得られず、タイムアウトしました。
-        NSLog(@"[VAMP]rewardedAd:didFailToLoadWithError(VAMPErrorCodeMediationTimeout, %@)", error.localizedDescription);
     }
 }
 
-// 広告表示失敗
-//
-// showを実行したが、何らかの理由で広告表示が失敗したときに通知されます。
-// 例）ユーザーが広告再生を途中でキャンセルなど
+/**
+ * RTBはロードが完了してから1時間経過すると、広告表示ができても無効扱いとなり、収益が発生しません。
+ *
+ * この通知を受け取ったらロードからやり直してください。
+ *
+ * @param placementID 広告枠ID
+ */
+- (void) rewardedAdDidExpireWithPlacementID:(NSString *)placementID {
+    [self addLogText:[NSString stringWithFormat:@"didExpire(%@)", placementID]
+               color:UIColor.systemRedColor];
+}
+
+/**
+ * アドネットワークごとの広告取得が開始されたときに通知されます。
+ *
+ * @param adNetworkName アドネットワーク名
+ * @param placementID 広告枠ID
+ */
+- (void) rewardedAdDidStartLoading:(NSString *)adNetworkName withPlacementID:(NSString *)placementID {
+    [self addLogText:[NSString stringWithFormat:@"didStartLoading(%@, %@)", adNetworkName, placementID]];
+}
+
+/**
+ * アドネットワークごとの広告取得結果が通知されます。
+ * このイベントは、ロードの成功時、失敗時どちらの場合も通知されます。
+ * 広告のロードに成功した時は `error==nil` となりロード処理は成功終了します。
+ * `error!=nil` の時は次の配信可能なアドネットワークがある場合、ロード処理は継続されます。ない場合は失敗終了します。
+ *
+ * @param adNetworkName アドネットワーク名
+ * @param placementID 広告枠ID
+ * @param error `VAMPError` オブジェクト
+ */
+- (void) rewardedAdDidLoad:(NSString *)adNetworkName withPlacementID:(NSString *)placementID error:(VAMPError *)error {
+    [self addLogText:[NSString stringWithFormat:@"didLoad(%@, %@, error:%@)", adNetworkName, placementID, error.localizedDescription]
+               color:error ? UIColor.systemRedColor : UIColor.blackColor];
+}
+
+#pragma mark - VAMPRewardedAdShowDelegate
+
+/**
+ * 広告の表示に失敗すると通知されます。
+ *
+ * 例) 視聴完了する前にユーザがキャンセルするなど。
+ *
+ * @param rewardedAd `VAMPRewardedAd` オブジェクト
+ * @param error `VAMPError` オブジェクト
+ */
 - (void) rewardedAd:(VAMPRewardedAd *)rewardedAd didFailToShowWithError:(VAMPError *)error {
-    [self addLogText:[NSString stringWithFormat:@"rewardedAd:didFailToShowWithError(%@)",
-                      error.localizedDescription]
+    [self addLogText:[NSString stringWithFormat:@"didFailToShow(%@)", error.localizedDescription]
                color:UIColor.systemRedColor];
 
     if (error.code == VAMPErrorCodeUserCancel) {
         // ユーザが広告再生を途中でキャンセルしました。
         // AdMobは動画再生の途中でユーザーによるキャンセルが可能
-        NSLog(@"[VAMP]rewardedAd:didFailToShowWithError(VAMPErrorCodeUserCancel, %@)", error.localizedDescription);
+    }
+    else if (error.code == VAMPErrorCodeNotLoadedAd) {
     }
 
     [self resumeSound];
 }
 
-// インセンティブ付与OK
-//
-// インセンティブ付与が可能になったタイミングで通知されます。
-// アドネットワークによって通知タイミングは異なります（動画再生完了時、またはエンドカードを閉じたタイミング）
+/**
+ * インセンティブ付与が可能になると通知されます。
+ *
+ * ※ユーザが途中で再生をスキップしたり、動画視聴をキャンセルすると発生しません。
+ * ※アドネットワークによって発生タイミングが異なります。
+ *
+ * @param rewardedAd `VAMPRewardedAd` オブジェクト
+ */
 - (void) rewardedAdDidComplete:(VAMPRewardedAd *)rewardedAd {
-    [self addLogText:@"rewardedAdDidComplete()"
+    [self addLogText:@"didComplete()"
                color:UIColor.systemGreenColor];
 }
 
-// 広告表示終了
-//
-// エンドカードが閉じられたとき、または途中で広告再生がキャンセルされたときに通知されます
-- (void) rewardedAd:(VAMPRewardedAd *)rewardedAd didCloseWithClickedFlag:(BOOL)clickedFlag {
-    [self addLogText:[NSString stringWithFormat:@"rewardedAd:didCloseWithClickedFlag(Click:%@)", clickedFlag ? @"YES" : @"NO"]
+/**
+ * 広告の表示が開始されると通知されます。
+ *
+ * @param rewardedAd `VAMPRewardedAd` オブジェクト
+ */
+- (void) rewardedAdDidOpen:(VAMPRewardedAd *)rewardedAd {
+    [self addLogText:@"didOpen()"];
+}
+
+/**
+ * 広告が閉じられると通知されます。
+ * ユーザキャンセルなどの場合も通知されるため、インセンティブ付与は `VAMPRewardedAdShowDelegate#rewardedAdDidComplete:` で判定してください。
+ *
+ * @param rewardedAd `VAMPRewardedAd` オブジェクト
+ * @param adClicked 広告がクリックされたかどうか
+ */
+- (void) rewardedAd:(VAMPRewardedAd *)rewardedAd didCloseWithClickedFlag:(BOOL)adClicked {
+    [self addLogText:[NSString stringWithFormat:@"didClose(adClicked:%@)", adClicked ? @"YES" : @"NO"]
                color:UIColor.systemBlueColor];
     [self resumeSound];
 
     // 必要に応じて次に表示する広告をプリロード
     VAMPRequest *request = VAMPRequest.request;
-    [self.rewardedAd preloadRequest:request];
-}
-
-// 広告の有効期限切れ
-//
-// 広告取得完了から55分経つと取得した広告の表示はできてもRTBの収益は発生しません。
-// この通知を受け取ったら、もう一度loadからやり直してください
-- (void) rewardedAdDidExpire:(VAMPRewardedAd *)rewardedAd {
-    [self addLogText:@"rewardedAdDidExpired()"
-               color:UIColor.systemRedColor];
-}
-
-// ロード処理のプログレス通知
-//
-// アドネットワークの広告取得が開始されたときに通知されます
-- (void) rewardedAd:(VAMPRewardedAd *)rewardedAd didStartLoadingAd:(NSString *)adNetworkName {
-    [self addLogText:[NSString stringWithFormat:@"rewardedAd:didStartLoadingAd(%@)", adNetworkName]];
-}
-
-// ロード処理のプログレス通知
-//
-// アドネットワークの広告取得結果が通知されます。成功時はerror==nilとなりロード処理は終了します。
-// error!=nilのときは次位のアドネットワークがある場合はロード処理が継続されます
-- (void) rewardedAd:(VAMPRewardedAd *)rewardedAd didLoadAd:(NSString *)adNetworkName withError:(VAMPError *)error {
-    [self addLogText:[NSString stringWithFormat:@"rewardedAd:didLoadAd:withError(%@, %@)", adNetworkName, error.description]
-               color:error != nil ? UIColor.systemRedColor : UIColor.blackColor];
+    [VAMPRewardedAd loadWithPlacementID:self.placementId request:request delegate:nil];
 }
 
 #pragma mark - private method

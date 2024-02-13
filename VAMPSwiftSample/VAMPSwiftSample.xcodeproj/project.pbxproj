@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -27,7 +27,6 @@
 		F40AAC5129880702002E6CD8 /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40AAC4F29880702002E6CD8 /* TextFieldCell.swift */; };
 		F40AAC5229880702002E6CD8 /* TextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F40AAC5029880702002E6CD8 /* TextFieldCell.xib */; };
 		F458944A29852950001E6EC4 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F458944929852950001E6EC4 /* InfoViewController.swift */; };
-		F4C4FB85298F74DB007502CB /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C4FB84298F74DB007502CB /* ARViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -67,7 +66,6 @@
 		F40AAC4F29880702002E6CD8 /* TextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCell.swift; sourceTree = "<group>"; };
 		F40AAC5029880702002E6CD8 /* TextFieldCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldCell.xib; sourceTree = "<group>"; };
 		F458944929852950001E6EC4 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
-		F4C4FB84298F74DB007502CB /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		FB6EE66278FC7C368B8883CB /* Pods-VAMPSwiftSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VAMPSwiftSample.debug.xcconfig"; path = "Target Support Files/Pods-VAMPSwiftSample/Pods-VAMPSwiftSample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,20 +106,19 @@
 			children = (
 				5E680407226488680032924C /* Ad1ViewController.swift */,
 				5E680409226488730032924C /* Ad2ViewController.swift */,
-				F4C4FB84298F74DB007502CB /* ARViewController.swift */,
 				5E6803E92264869F0032924C /* AppDelegate.swift */,
 				5E6803F0226486A10032924C /* Assets.xcassets */,
 				5E6803F5226486A10032924C /* Info.plist */,
+				F458944929852950001E6EC4 /* InfoViewController.swift */,
 				5E6803F2226486A10032924C /* LaunchScreen.storyboard */,
 				5E6803ED2264869F0032924C /* Main.storyboard */,
 				5E6803FB226487CB0032924C /* Resources */,
 				5E6803FC226487D30032924C /* SDK */,
-				5E6803EB2264869F0032924C /* ViewController.swift */,
-				F458944929852950001E6EC4 /* InfoViewController.swift */,
 				F40AAC4B298802AE002E6CD8 /* SwitchCell.swift */,
 				F40AAC4C298802AE002E6CD8 /* SwitchCell.xib */,
 				F40AAC4F29880702002E6CD8 /* TextFieldCell.swift */,
 				F40AAC5029880702002E6CD8 /* TextFieldCell.xib */,
+				5E6803EB2264869F0032924C /* ViewController.swift */,
 			);
 			path = VAMPSwiftSample;
 			sourceTree = "<group>";
@@ -176,8 +173,8 @@
 				5E6803E32264869F0032924C /* Frameworks */,
 				5E6803E42264869F0032924C /* Resources */,
 				5E680495226568310032924C /* Embed Frameworks */,
-				BCEEB9CF8AB57F78AC340B59 /* [CP] Embed Pods Frameworks */,
-				1BA97062FE894AE5D9631F15 /* [CP] Copy Pods Resources */,
+				714228090B72CD737BEEB639 /* [CP] Embed Pods Frameworks */,
+				2E916571E9C45EDDF81CB3F0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -242,7 +239,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1BA97062FE894AE5D9631F15 /* [CP] Copy Pods Resources */ = {
+		2E916571E9C45EDDF81CB3F0 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -257,6 +254,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VAMPSwiftSample/Pods-VAMPSwiftSample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		714228090B72CD737BEEB639 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VAMPSwiftSample/Pods-VAMPSwiftSample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VAMPSwiftSample/Pods-VAMPSwiftSample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VAMPSwiftSample/Pods-VAMPSwiftSample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7FE65F36461FBE3D77624EF9 /* [CP] Check Pods Manifest.lock */ = {
@@ -281,23 +295,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BCEEB9CF8AB57F78AC340B59 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-VAMPSwiftSample/Pods-VAMPSwiftSample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-VAMPSwiftSample/Pods-VAMPSwiftSample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VAMPSwiftSample/Pods-VAMPSwiftSample-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -308,7 +305,6 @@
 				5E68040A226488730032924C /* Ad2ViewController.swift in Sources */,
 				5E6803EC2264869F0032924C /* ViewController.swift in Sources */,
 				5E6803EA2264869F0032924C /* AppDelegate.swift in Sources */,
-				F4C4FB85298F74DB007502CB /* ARViewController.swift in Sources */,
 				5E680408226488680032924C /* Ad1ViewController.swift in Sources */,
 				F458944A29852950001E6EC4 /* InfoViewController.swift in Sources */,
 				F40AAC5129880702002E6CD8 /* TextFieldCell.swift in Sources */,
@@ -464,6 +460,7 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = VAMPSwiftSample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -489,6 +486,7 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = VAMPSwiftSample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -15,10 +15,10 @@ import VAMP
 
 class ViewController: UIViewController {
     enum MenuType: Int {
-        case ad1placemnetid = 0
-        case ad2placementid
-        case testmode
-        case debugmode
+        case ad1PlacementID = 0
+        case ad2PlacementID
+        case testMode
+        case debugMode
         case ad1
         case ad2
         case info
@@ -27,10 +27,10 @@ class ViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     @IBOutlet var sdkVersionLabel: UILabel!
 
-    let menuItems = [MenuType.ad1placemnetid,
-                     MenuType.ad2placementid,
-                     MenuType.testmode,
-                     MenuType.debugmode,
+    let menuItems = [MenuType.ad1PlacementID,
+                     MenuType.ad2PlacementID,
+                     MenuType.testMode,
+                     MenuType.debugMode,
                      MenuType.ad1,
                      MenuType.ad2,
                      MenuType.info]
@@ -51,6 +51,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        VAMPDebugUtils.logSDKDetails()
+
         title = "VAMP Swift Sample"
 
         tableView.dataSource = self
@@ -65,12 +67,12 @@ class ViewController: UIViewController {
         sdkVersionLabel.text = "VAMP SDK \(VAMPSDKVersion)"
 
         // テストモード
-        // 連携アドネットワーク（AdMob、AppLovin、FAN、maio、nend、UnityAds）
+        // 連携アドネットワーク（AdMob、AppLovin、maio、UnityAds）
         // リリースする際は必ずコメントアウトしてください。収益が発生しない広告が配信されます
         VAMP.setTestMode(true)
 
         // デバッグモード
-        // 連携アドネットワーク（AppLovin、UnityAds、FAN、nend、Tapjoy）
+        // 連携アドネットワーク（AppLovin、UnityAds）
         VAMP.setDebugMode(true)
 
         // 国コードの取得サンプル
@@ -144,7 +146,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         let menu = MenuType(rawValue: indexPath.row)!
         let labelText = menu.toString
 
-        if menu == .ad1placemnetid || menu == .ad2placementid {
+        if menu == .ad1PlacementID || menu == .ad2PlacementID {
             let cell = tableView
                 .dequeueReusableCell(withIdentifier: "TextFieldCell",
                                      for: indexPath) as! TextFieldCell
@@ -153,13 +155,13 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             cell.label.text = labelText
             cell.textField.keyboardType = .numberPad
 
-            if menu == .ad1placemnetid {
+            if menu == .ad1PlacementID {
                 cell.textField.text = ad1PlacementId
-            } else if menu == .ad2placementid {
+            } else if menu == .ad2PlacementID {
                 cell.textField.text = ad2PlacementId
             }
             return cell
-        } else if menu == .debugmode || menu == .testmode {
+        } else if menu == .debugMode || menu == .testMode {
             let cell = tableView
                 .dequeueReusableCell(withIdentifier: "SwitchCell",
                                      for: indexPath) as! SwitchCell
@@ -167,9 +169,9 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             cell.label.text = labelText
             cell.delegate = self
 
-            if menu == .debugmode {
+            if menu == .debugMode {
                 cell.uiSwitch.isOn = VAMP.isDebugMode()
-            } else if menu == .testmode {
+            } else if menu == .testMode {
                 cell.uiSwitch.isOn = VAMP.isTestMode()
             }
             return cell
@@ -212,13 +214,13 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
 extension ViewController.MenuType {
     var toString: String {
         switch self {
-            case .ad1placemnetid:
+            case .ad1PlacementID:
                 return "AD1"
-            case .ad2placementid:
+            case .ad2PlacementID:
                 return "AD2"
-            case .testmode:
+            case .testMode:
                 return "TEST MODE"
-            case .debugmode:
+            case .debugMode:
                 return "DEBUG MODE"
             case .ad1:
                 return "AD1"
@@ -235,11 +237,11 @@ extension ViewController.MenuType {
 extension ViewController: TextFieldCellDelegate {
     func textFieldCellDidChange(_ textFieldCell: TextFieldCell) {
         switch textFieldCell.tag {
-            case MenuType.ad1placemnetid.rawValue:
+            case MenuType.ad1PlacementID.rawValue:
                 if let text = textFieldCell.textField.text {
                     ad1PlacementId = text
                 }
-            case MenuType.ad2placementid.rawValue:
+            case MenuType.ad2PlacementID.rawValue:
                 if let text = textFieldCell.textField.text {
                     ad2PlacementId = text
                 }
@@ -252,9 +254,9 @@ extension ViewController: TextFieldCellDelegate {
 extension ViewController: SwitchCellDelegate {
     func switchCell(_ switchCell: SwitchCell, didValueChange value: Bool) {
         switch switchCell.tag {
-            case MenuType.debugmode.rawValue:
+            case MenuType.debugMode.rawValue:
                 VAMP.setDebugMode(value)
-            case MenuType.testmode.rawValue:
+            case MenuType.testMode.rawValue:
                 VAMP.setTestMode(value)
             default:
                 break

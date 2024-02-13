@@ -47,14 +47,8 @@ class InfoViewController: UIViewController {
         // アドネットワークバージョン
         addInfoText(text: String(format: "AdMobSDK: %@",
                                  adNetworkVersion(adapterClass: "VAMPAdMobSDKAdapter")))
-        addInfoText(text: String(format: "FAN SDK: %@",
-                                 adNetworkVersion(adapterClass: "VAMPFANSDKAdapter")))
         addInfoText(text: String(format: "maioSDK: %@",
                                  adNetworkVersion(adapterClass: "VAMPMaioSDKAdapter")))
-        addInfoText(text: String(format: "nendSDK: %@",
-                                 adNetworkVersion(adapterClass: "VAMPNendSDKAdapter")))
-        addInfoText(text: String(format: "TapjoySDK: %@",
-                                 adNetworkVersion(adapterClass: "VAMPTapjoySDKAdapter")))
         addInfoText(text: String(format: "UnityAdsSDK: %@",
                                  adNetworkVersion(adapterClass: "VAMPUnityAdsSDKAdapter")))
         addInfoText(text: String(format: "PangleSDK: %@",
@@ -68,14 +62,8 @@ class InfoViewController: UIViewController {
         // アダプタバージョン
         addInfoText(text: String(format: "AdMob Adapter: %@",
                                  adapterVersion(adapterClass: "VAMPAdMobSDKAdapter")))
-        addInfoText(text: String(format: "FAN Adapter: %@",
-                                 adapterVersion(adapterClass: "VAMPFANSDKAdapter")))
         addInfoText(text: String(format: "maio Adapter: %@",
                                  adapterVersion(adapterClass: "VAMPMaioSDKAdapter")))
-        addInfoText(text: String(format: "nend Apater: %@",
-                                 adapterVersion(adapterClass: "VAMPNendSDKAdapter")))
-        addInfoText(text: String(format: "Tapjoy Adapter: %@",
-                                 adapterVersion(adapterClass: "VAMPTapjoySDKAdapter")))
         addInfoText(text: String(format: "UnityAds Adapter: %@",
                                  adapterVersion(adapterClass: "VAMPUnityAdsSDKAdapter")))
         addInfoText(text: String(format: "Pangle Adapter: %@",
@@ -89,12 +77,6 @@ class InfoViewController: UIViewController {
 
         addInfoText(text: String(format: "useHyperID: %@",
                                  VAMP.useHyperID().description))
-        addInfoText(text: String(format: "useMetaAudienceNetworkBidding: %@",
-                                 VAMP.useMetaAudienceNetworkBidding()
-                                     .description))
-        addInfoText(text: String(format: "isMetaAudienceNetworkBiddingTestMode: %@",
-                                 VAMP.isMetaAudienceNetworkBiddingTestMode()
-                                     .description))
 
         addInfoText(text: "\n")
 

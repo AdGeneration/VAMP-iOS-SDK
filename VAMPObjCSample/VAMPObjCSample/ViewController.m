@@ -50,18 +50,20 @@ static NSString *const kPlacementId = @"59755";
     [super awakeFromNib];
 
     self.menuItems = @[
-        [NSNumber numberWithInt:kMenuTypeAd1PlacementId],
-        [NSNumber numberWithInt:kMenuTypeAd2PlacementId],
-        [NSNumber numberWithInt:kMenuTypeTestMode],
-        [NSNumber numberWithInt:kMenuTypeDebugMode],
-        [NSNumber numberWithInt:kMenuTypeAd1],
-        [NSNumber numberWithInt:kMenuTypeAd2],
-        [NSNumber numberWithInt:kMenuTypeInfo]
+        @(kMenuTypeAd1PlacementId),
+        @(kMenuTypeAd2PlacementId),
+        @(kMenuTypeTestMode),
+        @(kMenuTypeDebugMode),
+        @(kMenuTypeAd1),
+        @(kMenuTypeAd2),
+        @(kMenuTypeInfo)
     ];
 }
 
 - (void) viewDidLoad {
     [super viewDidLoad];
+
+    [VAMPDebugUtils logSDKDetails];
 
     self.title = @"VAMP ObjC Sample";
 
@@ -79,12 +81,12 @@ static NSString *const kPlacementId = @"59755";
     self.sdkVersionLabel.text = [NSString stringWithFormat:@"VAMP SDK %@", VAMPSDKVersion];
 
     // テストモード
-    // 連携アドネットワーク（AdMob、AppLovin、FAN、maio、nend、UnityAds）
+    // 連携アドネットワーク（AdMob、AppLovin、maio、UnityAds）
     // リリースする際は必ずコメントアウトしてください。収益が発生しない広告が配信されます
     [VAMP setTestMode:YES];
 
     // デバッグモード
-    // 連携アドネットワーク（AppLovin、UnityAds、FAN、nend、Tapjoy）
+    // 連携アドネットワーク（AppLovin、UnityAds）
     [VAMP setDebugMode:YES];
 
     // 国コードの取得サンプル

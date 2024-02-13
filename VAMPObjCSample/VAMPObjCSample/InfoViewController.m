@@ -58,14 +58,8 @@ typedef NSString *(*AdapterVersionMethod)(id, SEL);
     // アドネットワークバージョン
     [self addInfoText:[NSString stringWithFormat:@"AdMobSDK: %@",
                        [self adNetworkVersion:@"VAMPAdMobSDKAdapter"]]];
-    [self addInfoText:[NSString stringWithFormat:@"FAN SDK: %@",
-                       [self adNetworkVersion:@"VAMPFANSDKAdapter"]]];
     [self addInfoText:[NSString stringWithFormat:@"maioSDK: %@",
                        [self adNetworkVersion:@"VAMPMaioSDKAdapter"]]];
-    [self addInfoText:[NSString stringWithFormat:@"nendSDK: %@",
-                       [self adNetworkVersion:@"VAMPNendSDKAdapter"]]];
-    [self addInfoText:[NSString stringWithFormat:@"TapjoySDK: %@",
-                       [self adNetworkVersion:@"VAMPTapjoySDKAdapter"]]];
     [self addInfoText:[NSString stringWithFormat:@"UnityAdsSDK: %@",
                        [self adNetworkVersion:@"VAMPUnityAdsSDKAdapter"]]];
     [self addInfoText:[NSString stringWithFormat:@"PangleSDK: %@",
@@ -80,14 +74,8 @@ typedef NSString *(*AdapterVersionMethod)(id, SEL);
     // アダプタバージョン
     [self addInfoText:[NSString stringWithFormat:@"AdMob Adapter: %@",
                        [self adapterVersion:@"VAMPAdMobSDKAdapter"]]];
-    [self addInfoText:[NSString stringWithFormat:@"FAN Adapter: %@",
-                       [self adapterVersion:@"VAMPFANSDKAdapter"]]];
     [self addInfoText:[NSString stringWithFormat:@"maio Adapter: %@",
                        [self adapterVersion:@"VAMPMaioSDKAdapter"]]];
-    [self addInfoText:[NSString stringWithFormat:@"nend Adapter: %@",
-                       [self adapterVersion:@"VAMPNendSDKAdapter"]]];
-    [self addInfoText:[NSString stringWithFormat:@"Tapjoy Adapter: %@",
-                       [self adapterVersion:@"VAMPTapjoySDKAdapter"]]];
     [self addInfoText:[NSString stringWithFormat:@"UnityAds Adapter: %@",
                        [self adapterVersion:@"VAMPUnityAdsSDKAdapter"]]];
     [self addInfoText:[NSString stringWithFormat:@"Pangle Adapter: %@",
@@ -101,10 +89,6 @@ typedef NSString *(*AdapterVersionMethod)(id, SEL);
 
     [self addInfoText:[NSString stringWithFormat:@"useHyperID: %@",
                        b2s(VAMP.useHyperID)]];
-    [self addInfoText:[NSString stringWithFormat:@"useMetaAudienceNetworkBidding: %@",
-                       b2s(VAMP.useMetaAudienceNetworkBidding)]];
-    [self addInfoText:[NSString stringWithFormat:@"isMetaAudienceNetworkBiddingTestMode: %@",
-                       b2s(VAMP.isMetaAudienceNetworkBiddingTestMode)]];
 
     [self addInfoText:@"\n"];
 

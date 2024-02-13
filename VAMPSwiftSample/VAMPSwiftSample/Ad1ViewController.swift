@@ -21,8 +21,6 @@ class Ad1ViewController: UIViewController {
     var soundPlayer: AVAudioPlayer!
     var isPlayingPrev = false
     var placementId: String = ""
-    // VAMPRewardedAdオブジェクト
-    var rewardedAd: VAMPRewardedAd!
 
     class func instantiate(with placementId: String) -> Ad1ViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -71,10 +69,6 @@ class Ad1ViewController: UIViewController {
         addLogText("TestMode:\(VAMP.isTestMode()) DebugMode:\(VAMP.isDebugMode())")
         print("[VAMP]isTestMode:\(VAMP.isTestMode())")
         print("[VAMP]isDebugMode:\(VAMP.isDebugMode())")
-
-        // VAMPRewardedAdインスタンスを生成し初期化
-        rewardedAd = VAMPRewardedAd(placementID: placementId)
-        rewardedAd.delegate = self
     }
 
     // MARK: - IBAction
@@ -84,19 +78,19 @@ class Ad1ViewController: UIViewController {
 
         // 広告の読み込みを開始
         let request = VAMPRequest()
-        rewardedAd.load(request)
+        VAMPRewardedAd.load(withPlacementID: placementId, request: request, delegate: self)
     }
 
     @IBAction func showButtonPressed(sender: Any) {
         // 広告の準備ができているか確認してから表示
-        if rewardedAd.isReady {
+        if let rewardedAd = VAMPRewardedAd.of(placementID: placementId) {
             addLogText("[show]")
             pauseSound()
 
             // 広告の表示
-            rewardedAd.show(from: self)
+            rewardedAd.show(from: self, delegate: self)
         } else {
-            print("[VAMP]not ready")
+            addLogText("Not loaded")
         }
     }
 
@@ -109,9 +103,9 @@ class Ad1ViewController: UIViewController {
         navigationItem.rightBarButtonItem = soundOffButton
         soundPlayer.play()
     }
+}
 
-    // MARK: - private method
-
+private extension Ad1ViewController {
     func addLogText(_ message: String, color: UIColor) {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = NSLocale.system
@@ -154,115 +148,128 @@ class Ad1ViewController: UIViewController {
     }
 }
 
-extension Ad1ViewController: VAMPRewardedAdDelegate {
-    // 広告取得完了
-    //
-    // 広告表示が可能になると通知されます
-    func rewardedAdDidReceive(_ rewardedAd: VAMPRewardedAd) {
-        addLogText("rewardedAdDidReceive()")
+extension Ad1ViewController: VAMPRewardedAdLoadAdvancedDelegate {
+    /// 広告表示が可能になると通知されます。
+    ///
+    /// - Parameter placementID: 広告枠ID
+    func rewardedAdDidReceive(withPlacementID placementID: String) {
+        addLogText("didReceive(\(placementID))")
     }
 
-    // 広告取得失敗
-    //
-    // 広告が取得できなかったときに通知されます。例）在庫が無い、タイムアウトなど
-    func rewardedAd(_ rewardedAd: VAMPRewardedAd,
-                    didFailToLoadWithError error: VAMPError)
-    {
-        addLogText("vampDidFailToLoad(\(error.localizedDescription))",
-                   color: .red)
+    /// 広告の取得に失敗すると通知されます。
+    ///
+    /// 例) 広告取得時のタイムアウトや、全てのアドネットワークの在庫がない場合など。
+    ///
+    /// EU圏からのアクセスの場合( `VAMPErrorCodeNoAdnetwork` )が発生します。2018-05-23現在 ※本仕様は変更する可能性があります。
+    ///
+    /// - Parameters:
+    ///   - placementID: 広告枠ID
+    ///   - error: `VAMPError` オブジェクト
+    func rewardedAdDidFailToLoad(withPlacementID placementID: String, error: VAMPError) {
+        addLogText("didFailToLoad(\(placementID), \(error.localizedDescription))", color: .red)
 
         let code = VAMPErrorCode(rawValue: UInt(error.code))
 
         if code == .noAdStock {
             // 在庫が無いので、再度loadをしてもらう必要があります。
             // 連続で発生する場合、時間を置いてからloadをする必要があります。
-            print("[VAMP]didFailToLoadWithError(noAdStock, \(error.localizedDescription))")
         } else if code == .noAdnetwork {
             // アドジェネ管理画面でアドネットワークの配信がONになっていない、
             // またはEU圏からのアクセスの場合(GDPR)に発生します。
-            print("[VAMP]didFailToLoadWithError(noAdnetwork, \(error.localizedDescription))")
         } else if code == .needConnection {
             // ネットワークに接続できない状況です。
             // 電波状況をご確認ください。
-            print("[VAMP]didFailToLoadWithError(needConnection, \(error.localizedDescription))")
         } else if code == .mediationTimeout {
             // アドネットワークSDKから返答が得られず、タイムアウトしました。
-            print("[VAMP]didFailToLoadWithError(mediationTimeout, \(error.localizedDescription))")
         }
     }
 
-    // 広告表示失敗
-    //
-    // showを実行したが、何らかの理由で広告表示が失敗したときに通知されます。
-    // 例）ユーザーが広告再生を途中でキャンセルなど
-    func rewardedAd(_ rewardedAd: VAMPRewardedAd,
-                    didFailToShowWithError error: VAMPError)
+    /// RTBはロードが完了してから1時間経過すると、広告表示ができても無効扱いとなり、収益が発生しません。
+    ///
+    /// この通知を受け取ったらロードからやり直してください。
+    ///
+    /// - Parameter placementID: 広告枠ID
+    func rewardedAdDidExpire(withPlacementID placementID: String) {
+        addLogText("didExpire(\(placementID))", color: .red)
+    }
+
+    /// アドネットワークごとの広告取得が開始されたときに通知されます。
+    ///
+    /// - Parameters:
+    ///   - adNetworkName: アドネットワーク名
+    ///   - placementID: 広告枠ID
+    func rewardedAdDidStartLoading(_ adNetworkName: String, withPlacementID placementID: String) {
+        addLogText("didStartLoading(\(placementID), \(adNetworkName))")
+    }
+
+    /// アドネットワークごとの広告取得結果が通知されます。
+    /// このイベントは、ロードの成功時、失敗時どちらの場合も通知されます。
+    /// 広告のロードに成功した時は `error==nil` となりロード処理は成功終了します。
+    /// `error!=nil` の時は次の配信可能なアドネットワークがある場合、ロード処理は継続されます。ない場合は失敗終了します。
+    ///
+    /// - Parameters:
+    ///   - adNetworkName: アドネットワーク名
+    ///   - placementID: 広告枠ID
+    ///   - error: `VAMPError` オブジェクト
+    func rewardedAdDidLoad(_ adNetworkName: String, withPlacementID placementID: String,
+                           error: VAMPError?)
     {
-        addLogText("didFailToShowWithError(\(error.localizedDescription))",
-                   color: .red)
+        if let error {
+            addLogText("didLoad(\(placementID), \(adNetworkName), \(error.localizedDescription))",
+                       color: .red)
+        } else {
+            addLogText("didLoad(\(placementID), \(adNetworkName))", color: .black)
+        }
+    }
+}
+
+extension Ad1ViewController: VAMPRewardedAdShowDelegate {
+    /// 広告の表示に失敗すると通知されます。
+    ///
+    /// 例) 視聴完了する前にユーザがキャンセルするなど。
+    ///
+    /// - Parameters:
+    ///   - rewardedAd: `VAMPRewardedAd` オブジェクト
+    ///   - error: `VAMPError` オブジェクト
+    func rewardedAd(_ rewardedAd: VAMPRewardedAd, didFailToShowWithError error: VAMPError) {
+        addLogText("didFailToShow(\(error.localizedDescription))", color: .red)
 
         let code = VAMPErrorCode(rawValue: UInt(error.code))
 
         if code == .userCancel {
             // ユーザが広告再生を途中でキャンセルしました。
             // AdMobは動画再生の途中でユーザーによるキャンセルが可能
-            print("[VAMP]didFailToShowWithError(userCancel, \(error.localizedDescription))")
-        } else if code == .notLoadedAd {
-            print("[VAMP]didFailToShowWithError(notLoadedAd, \(error.localizedDescription))")
-        }
+        } else if code == .notLoadedAd {}
 
         resumeSound()
     }
 
-    // インセンティブ付与OK
-    //
-    // インセンティブ付与が可能になったタイミングで通知されます。
-    // アドネットワークによって通知タイミングは異なります（動画再生完了時、またはエンドカードを閉じたタイミング）
+    /// インセンティブ付与が可能になると通知されます。
+    ///
+    /// ※ユーザが途中で再生をスキップしたり、動画視聴をキャンセルすると発生しません。
+    /// ※アドネットワークによって発生タイミングが異なります。
+    ///
+    /// - Parameter rewardedAd: `VAMPRewardedAd` オブジェクト
     func rewardedAdDidComplete(_ rewardedAd: VAMPRewardedAd) {
-        addLogText("rewardedAdDidComplete()", color: .systemGreen)
+        addLogText("didComplete()", color: .systemGreen)
     }
 
-    // 広告表示終了
-    //
-    // エンドカードが閉じられたとき、または途中で広告再生がキャンセルされたときに通知されます
-    func rewardedAd(_ rewardedAd: VAMPRewardedAd,
-                    didCloseWithClickedFlag clickedFlag: Bool)
-    {
-        addLogText("didCloseWithClickedFlag(Click:\(clickedFlag))",
-                   color: .systemBlue)
+    /// 広告の表示が開始されると通知されます。
+    ///
+    /// - Parameter rewardedAd: `VAMPRewardedAd` オブジェクト
+    func rewardedAdDidOpen(_ rewardedAd: VAMPRewardedAd) {
+        addLogText("didOpen()")
+    }
+
+    /// 広告が閉じられると通知されます。
+    /// ユーザキャンセルなどの場合も通知されるため、インセンティブ付与は `VAMPRewardedAdShowDelegate#rewardedAdDidComplete:`
+    /// で判定してください。
+    ///
+    /// - Parameters:
+    ///   - rewardedAd: `VAMPRewardedAd` オブジェクト
+    ///   - adClicked: 広告がクリックされたかどうか
+    func rewardedAd(_ rewardedAd: VAMPRewardedAd, didCloseWithClickedFlag adClicked: Bool) {
+        addLogText("didClose(adClicked:\(adClicked))", color: .systemBlue)
         resumeSound()
-    }
-
-    // 広告の有効期限切れ
-    //
-    // 広告取得完了から55分経つと取得した広告の表示はできてもRTBの収益は発生しません。
-    // この通知を受け取ったら、もう一度loadからやり直してください
-    func rewardedAdDidExpire(_ rewardedAd: VAMPRewardedAd) {
-        addLogText("rewardedAdDidExpire()", color: .red)
-    }
-
-    // ロード処理のプログレス通知
-    //
-    // アドネットワークの広告取得が開始されたときに通知されます
-    func rewardedAd(_ rewardedAd: VAMPRewardedAd,
-                    didStartLoadingAd adNetworkName: String)
-    {
-        addLogText("didStartLoadingAd(\(adNetworkName))")
-    }
-
-    // ロード処理のプログレス通知
-    //
-    // アドネットワークの広告取得結果が通知されます。成功時はerror==nilとなりロード処理は終了します。
-    // error!=nilのときは次位のアドネットワークがある場合はロード処理が継続されます
-    func rewardedAd(_ rewardedAd: VAMPRewardedAd,
-                    didLoadAd adNetworkName: String,
-                    withError error: VAMPError?)
-    {
-        if let err = error {
-            addLogText("didLoadAd(\(adNetworkName), success:NG, \(err.description))",
-                       color: .red)
-        } else {
-            addLogText("didLoadAd(\(adNetworkName), success:OK)", color: .black)
-        }
     }
 }

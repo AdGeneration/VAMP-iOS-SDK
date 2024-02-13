@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -28,7 +28,6 @@
 		F40AAC452987F530002E6CD8 /* TextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F40AAC432987F530002E6CD8 /* TextFieldCell.m */; };
 		F40AAC462987F530002E6CD8 /* TextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F40AAC442987F530002E6CD8 /* TextFieldCell.xib */; };
 		F4291EEE2984FE73008B2A57 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4291EED2984FE73008B2A57 /* InfoViewController.m */; };
-		F4C4FB83298F7305007502CB /* ARViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C4FB82298F7305007502CB /* ARViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -77,8 +76,6 @@
 		F40AAC442987F530002E6CD8 /* TextFieldCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldCell.xib; sourceTree = "<group>"; };
 		F4291EEC2984FE73008B2A57 /* InfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
 		F4291EED2984FE73008B2A57 /* InfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
-		F4C4FB81298F7305007502CB /* ARViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARViewController.h; sourceTree = "<group>"; };
-		F4C4FB82298F7305007502CB /* ARViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,27 +117,25 @@
 				5E68039D226471800032924C /* Ad1ViewController.m */,
 				5E68039F226471880032924C /* Ad2ViewController.h */,
 				5E6803A0226471880032924C /* Ad2ViewController.m */,
-				F4291EEC2984FE73008B2A57 /* InfoViewController.h */,
-				F4291EED2984FE73008B2A57 /* InfoViewController.m */,
-				F4C4FB81298F7305007502CB /* ARViewController.h */,
-				F4C4FB82298F7305007502CB /* ARViewController.m */,
 				5E68038622646E200032924C /* AppDelegate.h */,
 				5E68038722646E200032924C /* AppDelegate.m */,
 				5E68038F22646E210032924C /* Assets.xcassets */,
 				5E68039422646E210032924C /* Info.plist */,
+				F4291EEC2984FE73008B2A57 /* InfoViewController.h */,
+				F4291EED2984FE73008B2A57 /* InfoViewController.m */,
 				5E68039122646E210032924C /* LaunchScreen.storyboard */,
 				5E68039522646E210032924C /* main.m */,
 				5E68038C22646E200032924C /* Main.storyboard */,
 				5E6803D222647FA60032924C /* Resources */,
 				5E6803A2226474AB0032924C /* SDK */,
-				5E68038922646E200032924C /* ViewController.h */,
-				5E68038A22646E200032924C /* ViewController.m */,
 				F40AAC3D2987F2ED002E6CD8 /* SwitchCell.h */,
 				F40AAC3E2987F2ED002E6CD8 /* SwitchCell.m */,
 				F40AAC3F2987F2ED002E6CD8 /* SwitchCell.xib */,
 				F40AAC422987F530002E6CD8 /* TextFieldCell.h */,
 				F40AAC432987F530002E6CD8 /* TextFieldCell.m */,
 				F40AAC442987F530002E6CD8 /* TextFieldCell.xib */,
+				5E68038922646E200032924C /* ViewController.h */,
+				5E68038A22646E200032924C /* ViewController.m */,
 			);
 			path = VAMPObjCSample;
 			sourceTree = "<group>";
@@ -195,8 +190,8 @@
 				5E68038022646E200032924C /* Frameworks */,
 				5E68038122646E200032924C /* Resources */,
 				5E6803D12264793D0032924C /* Embed Frameworks */,
-				E709ECBDFDA4865F9477B9A9 /* [CP] Embed Pods Frameworks */,
-				0A7858336EADC9D395008B51 /* [CP] Copy Pods Resources */,
+				C0DBE085F43543EDB887182F /* [CP] Embed Pods Frameworks */,
+				0A2B504A296B39ED9A806DD6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -260,7 +255,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0A7858336EADC9D395008B51 /* [CP] Copy Pods Resources */ = {
+		0A2B504A296B39ED9A806DD6 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -299,7 +294,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E709ECBDFDA4865F9477B9A9 /* [CP] Embed Pods Frameworks */ = {
+		C0DBE085F43543EDB887182F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -327,7 +322,6 @@
 				5E6803A1226471880032924C /* Ad2ViewController.m in Sources */,
 				F4291EEE2984FE73008B2A57 /* InfoViewController.m in Sources */,
 				F40AAC452987F530002E6CD8 /* TextFieldCell.m in Sources */,
-				F4C4FB83298F7305007502CB /* ARViewController.m in Sources */,
 				F40AAC402987F2ED002E6CD8 /* SwitchCell.m in Sources */,
 				5E68039622646E210032924C /* main.m in Sources */,
 				5E68038822646E200032924C /* AppDelegate.m in Sources */,
