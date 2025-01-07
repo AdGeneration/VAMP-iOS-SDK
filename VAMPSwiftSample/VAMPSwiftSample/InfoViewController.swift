@@ -57,6 +57,9 @@ class InfoViewController: UIViewController {
                                  adNetworkVersion(adapterClass: "VAMPLINEAdsSDKAdapter")))
         addInfoText(text: String(format: "IronSourceSDK: %@",
                                  adNetworkVersion(adapterClass: "VAMPIronSourceSDKAdapter")))
+        addInfoText(text: String(format: "AppLovinSDK: %@",
+                                 adNetworkVersion(adapterClass: "VAMPAppLovinSDKAdapter")))
+
         addInfoText(text: "\n")
 
         // アダプタバージョン
@@ -72,6 +75,8 @@ class InfoViewController: UIViewController {
                                  adapterVersion(adapterClass: "VAMPLINEAdsSDKAdapter")))
         addInfoText(text: String(format: "IronSource Adapter: %@",
                                  adapterVersion(adapterClass: "VAMPIronSourceSDKAdapter")))
+        addInfoText(text: String(format: "AppLovin Adapter: %@",
+                                 adapterVersion(adapterClass: "VAMPAppLovinSDKAdapter")))
 
         addInfoText(text: "\n")
 

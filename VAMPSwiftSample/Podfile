@@ -13,4 +13,5 @@ target 'VAMPSwiftSample' do
   pod 'VAMPMaioAdapter'
   pod 'VAMPPangleAdapter'
   pod 'VAMPUnityAdsAdapter'
+  pod 'VAMPAppLovinAdapter'
 end
