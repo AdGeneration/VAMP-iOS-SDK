@@ -80,11 +80,6 @@ class InfoViewController: UIViewController {
 
         addInfoText(text: "\n")
 
-        addInfoText(text: String(format: "useHyperID: %@",
-                                 VAMP.useHyperID().description))
-
-        addInfoText(text: "\n")
-
         // デバイス名
         addInfoText(text: String(format: "device name: %@",
                                  UIDevice.current.name))

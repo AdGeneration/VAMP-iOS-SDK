@@ -90,11 +90,6 @@ typedef NSString *(*AdapterVersionMethod)(id, SEL);
 
     [self addInfoText:@"\n"];
 
-    [self addInfoText:[NSString stringWithFormat:@"useHyperID: %@",
-                       b2s(VAMP.useHyperID)]];
-
-    [self addInfoText:@"\n"];
-
     // デバイス名
     [self addInfoText:[NSString stringWithFormat:@"device name: %@", [UIDevice currentDevice].name]];
 
