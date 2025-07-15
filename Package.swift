@@ -12,18 +12,31 @@ let package = Package(
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "VAMP",
-            targets: ["VAMP", "SSCore"]),
+            targets: ["VAMPTarget"]),
+    ],
+    dependencies: [
+        .package(
+            url: "https://github.com/AdGeneration/ADG-SSCore-iOS.git",
+            "0.2.2"..<"1.0.0")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
+        .target(
+            name: "VAMPTarget",
+            dependencies: [
+                .target(name: "VAMP"),
+                .product(name: "SSCore", package: "ADG-SSCore-iOS")
+            ],
+            path: "VAMPTarget",
+            linkerSettings: [
+                .linkedFramework("VAMP"),
+                .unsafeFlags(["-ObjC"])
+            ]
+        ),
         .binaryTarget(
             name: "VAMP",
-            url: "https://d2dylwb3shzel1.cloudfront.net/iOS/VAMP-v5.3.2.zip",
-            checksum: "076708fa0ad535bc1762971f9e6a7a8cffafcb1de409c03a4af835e89eee4d5a"),
-        .binaryTarget(
-            name: "SSCore",
-            url: "https://d2dylwb3shzel1.cloudfront.net/iOS/SSCore-Release-v0.2.2.zip",
-            checksum: "a079fc71c8e8f9d3456d1d6c11685e6419e9ed5f35a1273b78ffbb580dfaa1c0"),
+            url: "https://d2dylwb3shzel1.cloudfront.net/iOS/VAMP-v5.3.3.zip",
+            checksum: "ff3c0f679fe3b4da9b2f77882cddfbfebe98ef295d2bf91eb9cc2b7a2011e52d"),
     ]
 )
