@@ -31,7 +31,8 @@ let package = Package(
             path: "VAMPTarget",
             linkerSettings: [
                 .linkedFramework("VAMP"),
-                .unsafeFlags(["-ObjC"])
+                // "The package product 'VAMP' cannot be used as a dependency of this target because it uses unsafe build flags."
+                // .unsafeFlags(["-ObjC"])
             ]
         ),
         .binaryTarget(
