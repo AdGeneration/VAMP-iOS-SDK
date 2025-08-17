@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F4A08F8C2E51AFF100B36C77 /* VAMP in Frameworks */ = {isa = PBXBuildFile; productRef = F4A08F8B2E51AFF100B36C77 /* VAMP */; };
 		F4B9463C2C79A68500163501 /* VAMPSwiftUISampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B9463B2C79A68500163501 /* VAMPSwiftUISampleApp.swift */; };
 		F4B9463E2C79A68500163501 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B9463D2C79A68500163501 /* ContentView.swift */; };
 		F4B946402C79A68900163501 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4B9463F2C79A68900163501 /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4A08F8C2E51AFF100B36C77 /* VAMP in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,6 +135,9 @@
 				Base,
 			);
 			mainGroup = F4B9462F2C79A68500163501;
+			packageReferences = (
+				F4A08F8A2E51AFF100B36C77 /* XCRemoteSwiftPackageReference "VAMP-iOS-SDK" */,
+			);
 			productRefGroup = F4B946392C79A68500163501 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -395,6 +400,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F4A08F8A2E51AFF100B36C77 /* XCRemoteSwiftPackageReference "VAMP-iOS-SDK" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AdGeneration/VAMP-iOS-SDK";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.3.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F4A08F8B2E51AFF100B36C77 /* VAMP */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4A08F8A2E51AFF100B36C77 /* XCRemoteSwiftPackageReference "VAMP-iOS-SDK" */;
+			productName = VAMP;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F4B946302C79A68500163501 /* Project object */;
 }

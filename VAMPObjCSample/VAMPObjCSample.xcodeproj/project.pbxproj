@@ -27,6 +27,7 @@
 		F40AAC452987F530002E6CD8 /* TextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F40AAC432987F530002E6CD8 /* TextFieldCell.m */; };
 		F40AAC462987F530002E6CD8 /* TextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F40AAC442987F530002E6CD8 /* TextFieldCell.xib */; };
 		F4291EEE2984FE73008B2A57 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4291EED2984FE73008B2A57 /* InfoViewController.m */; };
+		F4A08F922E51B0C000B36C77 /* VAMP in Frameworks */ = {isa = PBXBuildFile; productRef = F4A08F912E51B0C000B36C77 /* VAMP */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -79,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4A08F922E51B0C000B36C77 /* VAMP in Frameworks */,
 				83AA03F9264E7B0200DA1434 /* ARKit.framework in Frameworks */,
 				6542D6042615B9DF00806E2A /* AVFoundation.framework in Frameworks */,
 			);
@@ -93,7 +95,6 @@
 				5E68038522646E200032924C /* VAMPObjCSample */,
 				5E68038422646E200032924C /* Products */,
 				6542D6022615B9DF00806E2A /* Frameworks */,
-				8CB650EED9E6C6490DC3D70D /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -163,13 +164,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		8CB650EED9E6C6490DC3D70D /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -214,6 +208,9 @@
 				Base,
 			);
 			mainGroup = 5E68037A22646E200032924C;
+			packageReferences = (
+				F4A08F902E51B0C000B36C77 /* XCRemoteSwiftPackageReference "VAMP-iOS-SDK" */,
+			);
 			productRefGroup = 5E68038422646E200032924C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -463,6 +460,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F4A08F902E51B0C000B36C77 /* XCRemoteSwiftPackageReference "VAMP-iOS-SDK" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AdGeneration/VAMP-iOS-SDK";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.3.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F4A08F912E51B0C000B36C77 /* VAMP */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4A08F902E51B0C000B36C77 /* XCRemoteSwiftPackageReference "VAMP-iOS-SDK" */;
+			productName = VAMP;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5E68037B22646E200032924C /* Project object */;
 }
