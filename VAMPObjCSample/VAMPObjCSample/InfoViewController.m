@@ -66,8 +66,6 @@ typedef NSString *(*AdapterVersionMethod)(id, SEL);
                        [self adNetworkVersion:@"VAMPPangleSDKAdapter"]]];
     [self addInfoText:[NSString stringWithFormat:@"LINEAdsSDK: %@",
                        [self adNetworkVersion:@"VAMPLINEAdsSDKAdapter"]]];
-    [self addInfoText:[NSString stringWithFormat:@"IronSourceSDK: %@",
-                       [self adNetworkVersion:@"VAMPIronSourceSDKAdapter"]]];
     [self addInfoText:[NSString stringWithFormat:@"AppLovinSDK: %@",
                        [self adNetworkVersion:@"VAMPAppLovinSDKAdapter"]]];
     [self addInfoText:@"\n"];
@@ -83,8 +81,6 @@ typedef NSString *(*AdapterVersionMethod)(id, SEL);
                        [self adapterVersion:@"VAMPPangleSDKAdapter"]]];
     [self addInfoText:[NSString stringWithFormat:@"LINEAds Adapter: %@",
                        [self adapterVersion:@"VAMPLINEAdsSDKAdapter"]]];
-    [self addInfoText:[NSString stringWithFormat:@"IronSource Adapter: %@",
-                       [self adapterVersion:@"VAMPIronSourceSDKAdapter"]]];
     [self addInfoText:[NSString stringWithFormat:@"AppLovin Adapter: %@",
                        [self adapterVersion:@"VAMPAppLovinSDKAdapter"]]];
 

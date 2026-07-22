@@ -32,8 +32,6 @@ struct InfoView: View {
                             value: adNetworkVersion(adapterClass: "VAMPPangleSDKAdapter"))
                     InfoRow(label: "LINEAdsSDK",
                             value: adNetworkVersion(adapterClass: "VAMPLINEAdsSDKAdapter"))
-                    InfoRow(label: "IronSourceSDK",
-                            value: adNetworkVersion(adapterClass: "VAMPIronSourceSDKAdapter"))
                     InfoRow(label: "AppLovinSDK",
                             value: adNetworkVersion(adapterClass: "VAMPAppLovinSDKAdapter"))
                 }
@@ -57,8 +55,6 @@ struct InfoView: View {
                             value: adapterVersion(adapterClass: "VAMPPangleSDKAdapter"))
                     InfoRow(label: "LINEAdsAdapter",
                             value: adapterVersion(adapterClass: "VAMPLINEAdsSDKAdapter"))
-                    InfoRow(label: "IronSourceAdapter",
-                            value: adapterVersion(adapterClass: "VAMPIronSourceSDKAdapter"))
                     InfoRow(label: "AppLovinAdapter",
                             value: adapterVersion(adapterClass: "VAMPAppLovinSDKAdapter"))
                 }

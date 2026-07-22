@@ -17,7 +17,7 @@ let package = Package(
     dependencies: [
         .package(
             url: "https://github.com/AdGeneration/ADG-SSCore-iOS.git",
-            exact: "3.5.0")
+            exact: "3.7.0")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -37,7 +37,7 @@ let package = Package(
         ),
         .binaryTarget(
             name: "VAMP",
-            url: "https://github.com/AdGeneration/VAMP-iOS-SDK/releases/download/5.3.6/VAMP-v5.3.6.zip",
-            checksum: "9309723da1d3a09ed47d0f669050c915c33bc73326b24a493f75695a8e4ade14"),
+            url: "https://github.com/AdGeneration/VAMP-iOS-SDK/releases/download/5.3.7/VAMP-v5.3.7.zip",
+            checksum: "31b1e31b89a01fe5b8f42277d88327c606121166ee10ec7cad544a5fd7ed0fac"),
     ]
 )
